@@ -36,21 +36,21 @@
 
 ## Data
 
-- [ ] Generate `public/data/endpoints.json` using the prompt in `docs/regenerate-data-prompt.md` (Claude reads Canvas LMS source on GitHub)
+- [x] Generate `public/data/endpoints.json` using the prompt in `docs/regenerate-data-prompt.md` (Claude reads Canvas LMS source on GitHub)
   - `version` is the Canvas stable release date from the `prod` branch (e.g. `"2026-02-11"`) — Claude extracts this in Step 0 of the prompt
   - Verify: `pnpm run dev` → error state shows any Zod errors; spot-check 5–10 endpoints against source
-- [ ] Write Zod schema for `endpoints.json` in `src/schemas/endpoints.ts`
+- [x] Write Zod schema for `endpoints.json` in `src/schemas/endpoints.ts`
   - `EndpointPermissionSchema` is a union of `SinglePermissionSchema` and `AnyOfPermissionSchema`
   - Both shapes support `required?: boolean` and `note?: string` for conditional/optional permissions
-- [ ] Write Zod schema for Canvas locale YAML in `src/schemas/canvasLocale.ts`
+- [x] Write Zod schema for Canvas locale YAML in `src/schemas/canvasLocale.ts`
 
 ## Core Features
 
-- [ ] `src/types/index.ts` — shared TypeScript interfaces (Endpoint, PermissionRef, AggregatedPermission, etc.)
+- [x] `src/types/index.ts` — shared TypeScript interfaces (Endpoint, PermissionRef, AggregatedPermission, etc.)
 - [ ] `src/utils/i18nKey.ts` — Canvas i18nliner key derivation: `slug + "_" + CRC32("{len}:{label}").toString(16)`
 - [ ] `src/utils/i18nKey.test.ts` — unit tests: verified case + edge cases (special chars, spaces, single char)
 - [x] `src/components/AppErrorBoundary/index.tsx` — class-based React Error Boundary; wraps app root in `main.tsx` (outside `MantineProvider`); catches unexpected render errors
-- [ ] `src/hooks/useEndpoints.ts` — fetch `public/data/endpoints.json` on mount, Zod-validate, module-level cache; returns discriminated union `{ status: 'loading' } | { status: 'error', error } | { status: 'ready', version, allPermissions, endpoints }`
+- [x] `src/hooks/useEndpoints.ts` — fetch `public/data/endpoints.json` on mount, Zod-validate, module-level cache; returns discriminated union `{ status: 'loading' } | { status: 'error', error } | { status: 'ready', version, allPermissions, endpoints }`
 - [ ] `src/schemas/endpoints.test.ts` — unit tests: valid data passes; invalid data (missing fields, bad anyOf, duplicate scope) fails
 - [ ] `src/schemas/canvasLocale.test.ts` — unit tests: `canvasLocaleSchema(locale)` validates outer key; `getTranslation` returns string/undefined correctly
 - [ ] `src/utils/endpointMatcher.ts` — normalise and match pasted/typed URLs to known endpoints; returns `Endpoint[]` (empty = unrecognised, one = unambiguous, many = multiple methods matched path with no method specified)

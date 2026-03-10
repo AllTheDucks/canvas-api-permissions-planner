@@ -1,0 +1,3052 @@
+{
+  "version": "2026-02-11",
+  "permissions": {
+    "become_user": { "label": "Users - act as", "scope": ["Account"] },
+    "import_sis": { "label": "SIS Data - import", "scope": ["Account"] },
+    "create_access_tokens": { "label": "Access Tokens - create / update", "scope": ["Account"] },
+    "delete_access_tokens": { "label": "Access Tokens - delete", "scope": ["Account"] },
+    "view_user_generated_access_tokens": { "label": "Manually Generated Access Tokens - view", "scope": ["Account"] },
+    "manage_account_memberships": { "label": "Admins - add / remove", "scope": ["Account"] },
+    "manage_account_settings": { "label": "Account-level settings - manage", "scope": ["Account"] },
+    "manage_alerts": { "label": "Global Announcements - add / edit / delete", "scope": ["Account"] },
+    "manage_catalog": { "label": "Catalog - manage", "scope": ["Account"] },
+    "manage_courses_admin": { "label": "Courses - manage / update", "scope": ["Account"] },
+    "manage_courses_add": { "label": "Courses - add", "scope": ["Account"] },
+    "manage_courses_publish": { "label": "Courses - publish", "scope": ["Course", "Account"] },
+    "manage_courses_conclude": { "label": "Courses - conclude", "scope": ["Course", "Account"] },
+    "manage_courses_reset": { "label": "Courses - reset", "scope": ["Course", "Account"] },
+    "manage_courses_delete": { "label": "Courses - delete", "scope": ["Course", "Account"] },
+    "undelete_courses": { "label": "Courses - undelete", "scope": ["Account"] },
+    "view_archived_courses": { "label": "Courses - view archived", "scope": ["Course", "Account"] },
+    "manage_data_services": { "label": "Data Services - manage", "scope": ["Account"] },
+    "manage_course_visibility": { "label": "Courses - change visibility", "scope": ["Course", "Account"] },
+    "manage_developer_keys": { "label": "Developer Keys - manage", "scope": ["Account"] },
+    "moderate_user_content": { "label": "Users - moderate content", "scope": ["Account"] },
+    "view_feature_flags": { "label": "Feature Options - view", "scope": ["Course", "Account"] },
+    "manage_feature_flags": { "label": "Feature Options - enable / disable", "scope": ["Course", "Account"] },
+    "manage_frozen_assignments": { "label": "Manage frozen assignments", "scope": ["Course", "Account"] },
+    "manage_global_outcomes": { "label": "Manage global learning outcomes", "scope": ["Account"] },
+    "manage_lti_registrations": { "label": "LTI Registrations - Manage", "scope": ["Account"] },
+    "manage_master_courses": { "label": "Blueprint Courses - add/edit/associate/delete", "scope": ["Account"] },
+    "manage_role_overrides": { "label": "Permissions - manage", "scope": ["Account"] },
+    "manage_storage_quotas": { "label": "Storage Quotas - manage", "scope": ["Account"] },
+    "manage_sis": { "label": "SIS Data - manage", "scope": ["Account"] },
+    "manage_site_settings": { "label": "Manage site-wide settings", "scope": ["Account"] },
+    "manage_user_logins": { "label": "Users - manage login details", "scope": ["Account"] },
+    "manage_user_observers": { "label": "Users - manage observers", "scope": ["Account"] },
+    "read_course_content": { "label": "Course Content - view", "scope": ["Course", "Account"] },
+    "read_course_list": { "label": "Courses - view list", "scope": ["Account"] },
+    "read_messages": { "label": "View notifications sent to users", "scope": ["Account"] },
+    "reset_any_mfa": { "label": "Reset Multi-Factor Authentication", "scope": ["Account"] },
+    "view_course_changes": { "label": "Courses - view change logs", "scope": ["Account"] },
+    "view_error_reports": { "label": "View error reports", "scope": ["Account"] },
+    "view_grade_changes": { "label": "Grades - view change logs", "scope": ["Account"] },
+    "view_notifications": { "label": "Notifications - view", "scope": ["Account"] },
+    "view_statistics": { "label": "Statistics - view", "scope": ["Account"] },
+    "create_collaborations": { "label": "Student Collaborations - create", "scope": ["Course", "Account"] },
+    "create_conferences": { "label": "Web Conferences - create", "scope": ["Course", "Account"] },
+    "create_forum": { "label": "Discussions - create", "scope": ["Course", "Account"] },
+    "generate_observer_pairing_code": { "label": "Users - generate observer codes", "scope": ["Course", "Account"] },
+    "import_outcomes": { "label": "Learning Outcomes - import", "scope": ["Course", "Account"] },
+    "manage_lti_add": { "label": "LTI - add", "scope": ["Course", "Account"] },
+    "manage_lti_edit": { "label": "LTI - edit", "scope": ["Course", "Account"] },
+    "manage_lti_delete": { "label": "LTI - delete", "scope": ["Course", "Account"] },
+    "allow_course_admin_actions": { "label": "Users - allow administrative actions", "scope": ["Course", "Account"] },
+    "add_teacher_to_course": { "label": "Teachers - add", "scope": ["Course"] },
+    "remove_teacher_from_course": { "label": "Teachers - remove", "scope": ["Course"] },
+    "add_ta_to_course": { "label": "TAs - add", "scope": ["Course"] },
+    "remove_ta_from_course": { "label": "TAs - remove", "scope": ["Course"] },
+    "add_observer_to_course": { "label": "Observers - add", "scope": ["Course"] },
+    "remove_observer_from_course": { "label": "Observers - remove", "scope": ["Course"] },
+    "add_designer_to_course": { "label": "Designers - add", "scope": ["Course"] },
+    "remove_designer_from_course": { "label": "Designers - remove", "scope": ["Course"] },
+    "manage_assignments_add": { "label": "Assignments and Quizzes - add", "scope": ["Course", "Account"] },
+    "manage_assignments_edit": { "label": "Assignments and Quizzes - edit", "scope": ["Course", "Account"] },
+    "manage_assignments_delete": { "label": "Assignments and Quizzes - delete", "scope": ["Course", "Account"] },
+    "manage_account_calendar_visibility": { "label": "Account Calendars - change visibility", "scope": ["Account"] },
+    "manage_account_calendar_events": { "label": "Account Calendars - add/edit/delete events", "scope": ["Account"] },
+    "manage_calendar": { "label": "Course Calendar - add/edit/delete", "scope": ["Course", "Account"] },
+    "manage_course_content_add": { "label": "Course Content - add", "scope": ["Course"] },
+    "manage_course_content_edit": { "label": "Course Content - edit", "scope": ["Course"] },
+    "manage_course_content_delete": { "label": "Course Content - delete", "scope": ["Course"] },
+    "manage_account_banks": { "label": "Item Banks - manage account", "scope": ["Course", "Account"] },
+    "manage_files_add": { "label": "Course Files - add", "scope": ["Course", "Account"] },
+    "manage_files_edit": { "label": "Course Files - edit", "scope": ["Course", "Account"] },
+    "manage_files_delete": { "label": "Course Files - delete", "scope": ["Course", "Account"] },
+    "manage_grades": { "label": "Grades - edit", "scope": ["Course", "Account"] },
+    "manage_groups_add": { "label": "Groups - add", "scope": ["Course"] },
+    "manage_groups_manage": { "label": "Groups - manage", "scope": ["Course"] },
+    "manage_groups_delete": { "label": "Groups - delete", "scope": ["Course"] },
+    "manage_tags_add": { "label": "Differentiation Tags - add", "scope": ["Course"] },
+    "manage_tags_manage": { "label": "Differentiation Tags - manage", "scope": ["Course"] },
+    "manage_tags_delete": { "label": "Differentiation Tags - delete", "scope": ["Course"] },
+    "manage_interaction_alerts": { "label": "Alerts - add/edit/delete", "scope": ["Course", "Account"] },
+    "manage_outcomes": { "label": "Learning Outcomes - add/edit/delete", "scope": ["Course", "Account"] },
+    "manage_proficiency_calculations": { "label": "Outcome Proficiency Calculations - add/edit", "scope": ["Course", "Account"] },
+    "manage_proficiency_scales": { "label": "Outcome Mastery Scales - add/edit", "scope": ["Course", "Account"] },
+    "manage_sections_add": { "label": "Course Sections - add", "scope": ["Course"] },
+    "manage_sections_edit": { "label": "Course Sections - edit", "scope": ["Course"] },
+    "manage_sections_delete": { "label": "Course Sections - delete", "scope": ["Course"] },
+    "manage_students": { "label": "Users - manage students in courses", "scope": ["Course", "Account"] },
+    "add_student_to_course": { "label": "Students - add", "scope": ["Course"] },
+    "remove_student_from_course": { "label": "Students - remove", "scope": ["Course"] },
+    "temporary_enrollments_add": { "label": "Temporary Enrollments - add", "scope": ["Account"] },
+    "temporary_enrollments_edit": { "label": "Temporary Enrollments - edit", "scope": ["Account"] },
+    "temporary_enrollments_delete": { "label": "Temporary Enrollments - delete", "scope": ["Account"] },
+    "manage_rubrics": { "label": "Rubrics - add/edit/delete", "scope": ["Course", "Account"] },
+    "manage_wiki_create": { "label": "Pages - create", "scope": ["Course"] },
+    "manage_wiki_update": { "label": "Pages - update", "scope": ["Course"] },
+    "manage_wiki_delete": { "label": "Pages - delete", "scope": ["Course"] },
+    "moderate_forum": { "label": "Discussions - moderate", "scope": ["Course", "Account"] },
+    "post_to_forum": { "label": "Discussions - post", "scope": ["Course", "Account"] },
+    "proxy_assignment_submission": { "label": "Submission - Submit on behalf of student", "scope": ["Course"] },
+    "read_announcements": { "label": "Announcements - view", "scope": ["Course", "Account"] },
+    "read_email_addresses": { "label": "Users - view primary email address", "scope": ["Course", "Account"] },
+    "read_forum": { "label": "Discussions - view", "scope": ["Course", "Account"] },
+    "read_question_banks": { "label": "Question banks - view and link", "scope": ["Course", "Account"] },
+    "read_reports": { "label": "Reports - manage", "scope": ["Course", "Account"] },
+    "read_roster": { "label": "Users - view list", "scope": ["Course", "Account"] },
+    "read_sis": { "label": "SIS Data - read", "scope": ["Course", "Account"] },
+    "view_all_grades": { "label": "Grades - view all grades", "scope": ["Course", "Account"] },
+    "select_final_grade": { "label": "Grades - select final grade for moderation", "scope": ["Course", "Account"] },
+    "send_messages": { "label": "Conversations - send messages to individual course members", "scope": ["Course", "Account"] },
+    "send_messages_all": { "label": "Conversations - send messages to entire class", "scope": ["Course", "Account"] },
+    "view_user_logins": { "label": "Users - view login IDs", "scope": ["Course", "Account"] },
+    "view_audit_trail": { "label": "Grades - view audit trail", "scope": ["Course", "Account"] },
+    "read_outcomes": { "label": "Learning Outcomes - view", "scope": ["Course", "Account"] },
+    "manage_grading_schemes": { "label": "Grading Schemes - manage", "scope": ["Course", "Account"] },
+    "add_course_template": { "label": "Course Templates - create", "scope": ["Account"] },
+    "edit_course_template": { "label": "Course Templates - edit", "scope": ["Account"] },
+    "delete_course_template": { "label": "Course Templates - delete", "scope": ["Account"] }
+  },
+  "endpoints": [
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts",
+      "category": "Accounts",
+      "permissions": [],
+      "notes": "Returns accounts the current user has access to. No specific permission required beyond authentication."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:id",
+      "category": "Accounts",
+      "permissions": [
+        { "symbol": "manage_account_settings", "required": false, "note": "Required to see full account details" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/accounts/:id",
+      "category": "Accounts",
+      "permissions": [
+        { "symbol": "manage_account_settings" },
+        { "symbol": "manage_sis", "required": false, "note": "Required to set sis_account_id" },
+        { "symbol": "manage_storage_quotas", "required": false, "note": "Required to change storage quotas" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/sub_accounts",
+      "category": "Accounts",
+      "permissions": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/courses",
+      "category": "Accounts",
+      "permissions": [
+        { "symbol": "read_course_list" },
+        { "anyOf": ["read_sis", "manage_sis"], "required": false, "note": "Required to receive SIS ID fields in response" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/permissions",
+      "category": "Accounts",
+      "permissions": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/course_accounts",
+      "category": "Accounts",
+      "permissions": [],
+      "notes": "Returns accounts the user can create courses in."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/users",
+      "category": "Users",
+      "permissions": [
+        { "symbol": "read_roster" },
+        { "anyOf": ["read_sis", "manage_sis"], "required": false, "note": "Required to receive SIS ID fields in response" },
+        { "symbol": "view_user_logins", "required": false, "note": "Required to receive login_id in response" },
+        { "symbol": "read_email_addresses", "required": false, "note": "Required to receive email addresses in response" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/accounts/:account_id/users",
+      "category": "Users",
+      "permissions": [
+        { "symbol": "manage_user_logins" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/:id",
+      "category": "Users",
+      "permissions": [],
+      "notes": "Requires ability to view the user. Admins can view any user in their account."
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/users/:id",
+      "category": "Users",
+      "permissions": [
+        { "symbol": "manage_user_logins", "required": false, "note": "Required to update name, email, or login details for other users" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/users/:id",
+      "category": "Users",
+      "permissions": [
+        { "symbol": "manage_user_logins" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/:user_id/courses",
+      "category": "Users",
+      "permissions": [],
+      "notes": "Returns courses for the specified user. The current user can list their own courses. Admins can list courses for users in their account."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/self/activity_stream",
+      "category": "Users",
+      "permissions": [],
+      "notes": "Returns the current user's activity stream."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/self/activity_stream/summary",
+      "category": "Users",
+      "permissions": [],
+      "notes": "Returns a summary of the current user's activity stream."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/self/todo",
+      "category": "Users",
+      "permissions": [],
+      "notes": "Returns the current user's TODO items."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/self/upcoming_events",
+      "category": "Users",
+      "permissions": [],
+      "notes": "Returns the current user's upcoming events."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/:user_id/settings",
+      "category": "Users",
+      "permissions": [],
+      "notes": "Returns user settings. Users can view their own settings."
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/users/:user_id/settings",
+      "category": "Users",
+      "permissions": [
+        { "symbol": "manage_user_logins", "required": false, "note": "Required to update settings for other users" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/:user_id/custom_colors",
+      "category": "Users",
+      "permissions": [],
+      "notes": "Returns custom colors for the user. Users can view their own."
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/users/:user_id/colors/:asset_string",
+      "category": "Users",
+      "permissions": [],
+      "notes": "Sets a custom color for a context. Users can set their own."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses",
+      "category": "Courses",
+      "permissions": [],
+      "notes": "Returns courses the current user is enrolled in or has access to."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:id",
+      "category": "Courses",
+      "permissions": [],
+      "notes": "Returns course details. Enrolled users and admins can view."
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/accounts/:account_id/courses",
+      "category": "Courses",
+      "permissions": [
+        { "symbol": "manage_courses_add" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:id",
+      "category": "Courses",
+      "permissions": [
+        { "symbol": "manage_courses_admin", "required": false, "note": "Account-level permission to manage courses" },
+        { "symbol": "manage_sis", "required": false, "note": "Required to update SIS course ID" }
+      ],
+      "notes": "Course teachers/admins can update their own courses."
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/courses/:id",
+      "category": "Courses",
+      "permissions": [
+        { "symbol": "manage_courses_delete", "required": false, "note": "Required for event=delete" },
+        { "symbol": "manage_courses_conclude", "required": false, "note": "Required for event=conclude" }
+      ],
+      "notes": "The event parameter determines which permission is checked: 'delete' or 'conclude'."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/users",
+      "category": "Courses",
+      "permissions": [
+        { "anyOf": ["read_roster", "view_all_grades", "manage_grades"] },
+        { "anyOf": ["read_sis", "manage_sis"], "required": false, "note": "Required to receive SIS ID fields in response" },
+        { "symbol": "read_email_addresses", "required": false, "note": "Required to receive email addresses in response" },
+        { "symbol": "view_user_logins", "required": false, "note": "Required to receive login_id in response" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/students",
+      "category": "Courses",
+      "permissions": [
+        { "symbol": "read_roster" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/recent_students",
+      "category": "Courses",
+      "permissions": [
+        { "symbol": "read_reports" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/users/:id",
+      "category": "Courses",
+      "permissions": [
+        { "symbol": "read_roster" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/activity_stream",
+      "category": "Courses",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/activity_stream/summary",
+      "category": "Courses",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/settings",
+      "category": "Courses",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/settings",
+      "category": "Courses",
+      "permissions": [
+        { "symbol": "manage_course_content_edit" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/tabs",
+      "category": "Courses",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/tabs/:tab_id",
+      "category": "Courses",
+      "permissions": [
+        { "symbol": "manage_course_content_edit" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/course_copy",
+      "category": "Courses",
+      "permissions": [
+        { "symbol": "manage_course_content_add" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/assignments",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "read_course_content" },
+        { "anyOf": ["manage_assignments_add", "manage_assignments_edit", "manage_assignments_delete"], "required": false, "note": "Required to see unpublished assignments" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/assignments/:id",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/assignments",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "manage_assignments_add" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/assignments/:id",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "manage_assignments_edit" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/courses/:course_id/assignments/:id",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "manage_assignments_delete" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/assignments/:assignment_id/duplicate",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "manage_assignments_add" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/:user_id/courses/:course_id/assignments",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "read_course_content" },
+        { "symbol": "view_all_grades", "required": false, "note": "Required to view assignments for other users" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/assignments/bulk_update",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "manage_assignments_edit" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/assignment_groups",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/assignment_groups/:assignment_group_id",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/assignment_groups",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "manage_assignments_add" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/assignment_groups/:assignment_group_id",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "manage_assignments_edit" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/courses/:course_id/assignment_groups/:assignment_group_id",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "manage_assignments_delete" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/assignments/:assignment_id/overrides",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/assignments/:assignment_id/overrides/:id",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/assignments/:assignment_id/overrides",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "manage_assignments_edit" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/assignments/:assignment_id/overrides/:id",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "manage_assignments_edit" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/courses/:course_id/assignments/:assignment_id/overrides/:id",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "manage_assignments_edit" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/assignments/:assignment_id/overrides/batch_create",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "manage_assignments_edit" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/assignments/:assignment_id/overrides/batch_update",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "manage_assignments_edit" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/assignments/:assignment_id/extensions",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "manage_assignments_edit" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/assignments/:assignment_id/peer_reviews",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "read_course_content" },
+        { "symbol": "manage_grades", "required": false, "note": "Required to see all peer reviews; without it only own reviews are returned" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/assignments/:assignment_id/submissions/:submission_id/peer_reviews",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "manage_grades" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/courses/:course_id/assignments/:assignment_id/submissions/:submission_id/peer_reviews",
+      "category": "Assignments",
+      "permissions": [
+        { "symbol": "manage_grades" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/enrollments",
+      "category": "Enrollments",
+      "permissions": [
+        { "anyOf": ["read_roster", "view_all_grades", "manage_grades"] },
+        { "anyOf": ["read_sis", "manage_sis"], "required": false, "note": "Required to receive SIS ID fields in response" },
+        { "symbol": "read_email_addresses", "required": false, "note": "Required to receive email addresses in response" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/sections/:section_id/enrollments",
+      "category": "Enrollments",
+      "permissions": [
+        { "anyOf": ["read_roster", "view_all_grades", "manage_grades"] },
+        { "anyOf": ["read_sis", "manage_sis"], "required": false, "note": "Required to receive SIS ID fields in response" },
+        { "symbol": "read_email_addresses", "required": false, "note": "Required to receive email addresses in response" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/:user_id/enrollments",
+      "category": "Enrollments",
+      "permissions": [],
+      "notes": "Users can view their own enrollments. Admins can view enrollments for users in their account."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/enrollments/:id",
+      "category": "Enrollments",
+      "permissions": [
+        { "symbol": "read_roster" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/enrollments",
+      "category": "Enrollments",
+      "permissions": [
+        { "symbol": "manage_students", "required": false, "note": "Required to enroll students" },
+        { "anyOf": ["add_teacher_to_course", "add_ta_to_course", "add_observer_to_course", "add_designer_to_course"], "required": false, "note": "Required to enroll the respective enrollment type" },
+        { "symbol": "manage_sis", "required": false, "note": "Required to write SIS ID fields" }
+      ],
+      "notes": "The specific permission required depends on the enrollment type being created."
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/sections/:section_id/enrollments",
+      "category": "Enrollments",
+      "permissions": [
+        { "symbol": "manage_students", "required": false, "note": "Required to enroll students" },
+        { "anyOf": ["add_teacher_to_course", "add_ta_to_course", "add_observer_to_course", "add_designer_to_course"], "required": false, "note": "Required to enroll the respective enrollment type" },
+        { "symbol": "manage_sis", "required": false, "note": "Required to write SIS ID fields" }
+      ],
+      "notes": "The specific permission required depends on the enrollment type being created."
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/courses/:course_id/enrollments/:id",
+      "category": "Enrollments",
+      "permissions": [
+        { "symbol": "manage_students", "required": false, "note": "Required to delete/deactivate student enrollments" },
+        { "anyOf": ["remove_teacher_from_course", "remove_ta_from_course", "remove_observer_from_course", "remove_designer_from_course"], "required": false, "note": "Required to remove the respective enrollment type" }
+      ],
+      "notes": "The specific permission depends on the enrollment type and task (delete, conclude, deactivate)."
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/enrollments/:id/accept",
+      "category": "Enrollments",
+      "permissions": [],
+      "notes": "Users can only accept their own enrollment invitations."
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/enrollments/:id/reject",
+      "category": "Enrollments",
+      "permissions": [],
+      "notes": "Users can only reject their own enrollment invitations."
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/enrollments/:id/reactivate",
+      "category": "Enrollments",
+      "permissions": [
+        { "symbol": "manage_students" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/enrollments/:id/last_attended",
+      "category": "Enrollments",
+      "permissions": [
+        { "anyOf": ["view_all_grades", "manage_grades"] }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/sections",
+      "category": "Sections",
+      "permissions": [
+        { "anyOf": ["read_roster", "view_all_grades", "manage_grades"] },
+        { "anyOf": ["read_sis", "manage_sis"], "required": false, "note": "Required to receive SIS ID fields in response" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/sections/:id",
+      "category": "Sections",
+      "permissions": [
+        { "symbol": "read_roster" },
+        { "anyOf": ["read_sis", "manage_sis"], "required": false, "note": "Required to receive SIS ID fields in response" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/sections/:id",
+      "category": "Sections",
+      "permissions": [
+        { "symbol": "read_roster" },
+        { "anyOf": ["read_sis", "manage_sis"], "required": false, "note": "Required if referencing this section by SIS ID in the URL" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/sections",
+      "category": "Sections",
+      "permissions": [
+        { "symbol": "manage_sections_add" },
+        { "symbol": "manage_sis", "required": false, "note": "Required to write SIS ID fields" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/sections/:id",
+      "category": "Sections",
+      "permissions": [
+        { "symbol": "manage_sections_edit" },
+        { "symbol": "manage_sis", "required": false, "note": "Required to update SIS ID fields" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/sections/:id",
+      "category": "Sections",
+      "permissions": [
+        { "symbol": "manage_sections_delete" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/sections/:id/crosslist/:new_course_id",
+      "category": "Sections",
+      "permissions": [
+        { "symbol": "manage_sections_edit" },
+        { "symbol": "manage_courses_admin", "required": false, "note": "Required on the target course" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/sections/:id/crosslist",
+      "category": "Sections",
+      "permissions": [
+        { "symbol": "manage_sections_edit" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/assignments/:assignment_id/submissions",
+      "category": "Submissions",
+      "permissions": [
+        { "anyOf": ["manage_grades", "view_all_grades"] }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/students/submissions",
+      "category": "Submissions",
+      "permissions": [
+        { "anyOf": ["manage_grades", "view_all_grades"] }
+      ],
+      "notes": "Returns submissions for multiple students/assignments. Students can also view their own submissions."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id",
+      "category": "Submissions",
+      "permissions": [],
+      "notes": "Users can view their own submissions. Teachers need manage_grades or view_all_grades for other users' submissions."
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/assignments/:assignment_id/submissions",
+      "category": "Submissions",
+      "permissions": [],
+      "notes": "Students submit their own work. No specific admin permission required."
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id/files",
+      "category": "Submissions",
+      "permissions": [
+        { "symbol": "proxy_assignment_submission", "required": false, "note": "Required to upload files on behalf of another student" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/assignments/:assignment_id/submissions/:user_id",
+      "category": "Submissions",
+      "permissions": [
+        { "symbol": "manage_grades" }
+      ],
+      "notes": "Used to grade submissions or add comments. manage_grades is required for grading; posting comments may have different requirements."
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/submissions/update_grades",
+      "category": "Submissions",
+      "permissions": [
+        { "symbol": "manage_grades" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/assignments/:assignment_id/gradeable_students",
+      "category": "Submissions",
+      "permissions": [
+        { "anyOf": ["manage_grades", "view_all_grades"] }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/assignments/gradeable_students",
+      "category": "Submissions",
+      "permissions": [
+        { "anyOf": ["manage_grades", "view_all_grades"] }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/assignments/:assignment_id/submission_summary",
+      "category": "Submissions",
+      "permissions": [
+        { "anyOf": ["manage_grades", "view_all_grades"] }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/discussion_topics",
+      "category": "Discussion Topics",
+      "permissions": [
+        { "symbol": "read_forum" },
+        { "symbol": "moderate_forum", "required": false, "note": "Required to see unpublished discussion topics" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/:group_id/discussion_topics",
+      "category": "Discussion Topics",
+      "permissions": [
+        { "symbol": "read_forum" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/discussion_topics/:topic_id",
+      "category": "Discussion Topics",
+      "permissions": [
+        { "symbol": "read_forum" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/discussion_topics",
+      "category": "Discussion Topics",
+      "permissions": [
+        { "symbol": "create_forum" },
+        { "symbol": "moderate_forum", "required": false, "note": "Required for podcast and allow_rating settings" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/groups/:group_id/discussion_topics",
+      "category": "Discussion Topics",
+      "permissions": [
+        { "symbol": "create_forum" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/discussion_topics/:topic_id",
+      "category": "Discussion Topics",
+      "permissions": [
+        { "symbol": "moderate_forum", "required": false, "note": "Required for publish/unpublish, positioning, and locked state changes" }
+      ],
+      "notes": "Topic authors can update their own topics. moderate_forum is required for moderator-only fields."
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/courses/:course_id/discussion_topics/:topic_id",
+      "category": "Discussion Topics",
+      "permissions": [
+        { "symbol": "moderate_forum" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/discussion_topics/:topic_id/entries",
+      "category": "Discussion Topics",
+      "permissions": [
+        { "symbol": "post_to_forum" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/discussion_topics/:topic_id/entries",
+      "category": "Discussion Topics",
+      "permissions": [
+        { "symbol": "read_forum" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/discussion_topics/:topic_id/entries/:entry_id/replies",
+      "category": "Discussion Topics",
+      "permissions": [
+        { "symbol": "post_to_forum" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/discussion_topics/:topic_id/entries/:entry_id/replies",
+      "category": "Discussion Topics",
+      "permissions": [
+        { "symbol": "read_forum" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/discussion_topics/:topic_id/view",
+      "category": "Discussion Topics",
+      "permissions": [
+        { "symbol": "read_forum" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/discussion_topics/:topic_id/read",
+      "category": "Discussion Topics",
+      "permissions": [
+        { "symbol": "read_forum" }
+      ],
+      "notes": "Marks the topic as read for the current user."
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/courses/:course_id/discussion_topics/:topic_id/read",
+      "category": "Discussion Topics",
+      "permissions": [
+        { "symbol": "read_forum" }
+      ],
+      "notes": "Marks the topic as unread for the current user."
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/discussion_topics/:topic_id/read_all",
+      "category": "Discussion Topics",
+      "permissions": [
+        { "symbol": "read_forum" }
+      ],
+      "notes": "Marks all entries in the topic as read."
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/discussion_topics/:topic_id/entries/:entry_id/rating",
+      "category": "Discussion Topics",
+      "permissions": [
+        { "symbol": "read_forum" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/modules",
+      "category": "Modules",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/modules/:id",
+      "category": "Modules",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/modules",
+      "category": "Modules",
+      "permissions": [
+        { "symbol": "manage_course_content_add" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/modules/:id",
+      "category": "Modules",
+      "permissions": [
+        { "symbol": "manage_course_content_edit" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/courses/:course_id/modules/:id",
+      "category": "Modules",
+      "permissions": [
+        { "symbol": "manage_course_content_delete" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/modules/:module_id/duplicate",
+      "category": "Modules",
+      "permissions": [
+        { "symbol": "manage_course_content_add" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/modules/batch_update",
+      "category": "Modules",
+      "permissions": [
+        { "symbol": "manage_course_content_edit" }
+      ],
+      "notes": "Used to publish, unpublish, or delete multiple modules at once."
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/modules/:id/relock",
+      "category": "Modules",
+      "permissions": [
+        { "symbol": "manage_course_content_edit" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/modules/:module_id/items",
+      "category": "Modules",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/modules/:module_id/items/:id",
+      "category": "Modules",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/modules/:module_id/items",
+      "category": "Modules",
+      "permissions": [
+        { "symbol": "manage_course_content_add" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/modules/:module_id/items/:id",
+      "category": "Modules",
+      "permissions": [
+        { "symbol": "manage_course_content_edit" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/courses/:course_id/modules/:module_id/items/:id",
+      "category": "Modules",
+      "permissions": [
+        { "symbol": "manage_course_content_delete" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/modules/:module_id/items/:id/select_mastery_path",
+      "category": "Modules",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/module_item_sequence",
+      "category": "Modules",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/modules/:module_id/items/:id/mark_read",
+      "category": "Modules",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/pages",
+      "category": "Pages",
+      "permissions": [
+        { "symbol": "read_course_content" },
+        { "symbol": "manage_wiki_update", "required": false, "note": "Required to see unpublished pages" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/:group_id/pages",
+      "category": "Pages",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/pages/:url_or_id",
+      "category": "Pages",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/pages",
+      "category": "Pages",
+      "permissions": [
+        { "symbol": "manage_wiki_create" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/pages/:url_or_id",
+      "category": "Pages",
+      "permissions": [
+        { "symbol": "manage_wiki_update" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/courses/:course_id/pages/:url_or_id",
+      "category": "Pages",
+      "permissions": [
+        { "symbol": "manage_wiki_delete" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/pages/:url_or_id/revisions",
+      "category": "Pages",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ],
+      "notes": "Returns revision history for a page."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/pages/:url_or_id/revisions/:revision_id",
+      "category": "Pages",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/pages/:url_or_id/revisions/:revision_id",
+      "category": "Pages",
+      "permissions": [
+        { "symbol": "manage_wiki_update" }
+      ],
+      "notes": "Reverts a page to a previous revision."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/files",
+      "category": "Files",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/files/:id",
+      "category": "Files",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/files/:id",
+      "category": "Files",
+      "permissions": [
+        { "symbol": "manage_files_edit" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/files/:id",
+      "category": "Files",
+      "permissions": [
+        { "symbol": "manage_files_delete" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/files",
+      "category": "Files",
+      "permissions": [
+        { "symbol": "manage_files_add" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/folders",
+      "category": "Files",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/folders/:id",
+      "category": "Files",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/folders/:id",
+      "category": "Files",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/folders",
+      "category": "Files",
+      "permissions": [
+        { "symbol": "manage_files_add" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/folders/:id",
+      "category": "Files",
+      "permissions": [
+        { "symbol": "manage_files_edit" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/folders/:id",
+      "category": "Files",
+      "permissions": [
+        { "symbol": "manage_files_delete" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/folders/by_path/*full_path",
+      "category": "Files",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/folders/:folder_id/files",
+      "category": "Files",
+      "permissions": [
+        { "symbol": "manage_files_add" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/folders/:folder_id/folders",
+      "category": "Files",
+      "permissions": [
+        { "symbol": "manage_files_add" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/folders/:id/folders",
+      "category": "Files",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/folders/:id/files",
+      "category": "Files",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/quizzes",
+      "category": "Quizzes",
+      "permissions": [
+        { "symbol": "read_course_content" },
+        { "anyOf": ["manage_assignments_add", "manage_assignments_edit", "manage_assignments_delete"], "required": false, "note": "Required to see unpublished quizzes" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/quizzes/:id",
+      "category": "Quizzes",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/quizzes",
+      "category": "Quizzes",
+      "permissions": [
+        { "symbol": "manage_assignments_add" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/quizzes/:id",
+      "category": "Quizzes",
+      "permissions": [
+        { "symbol": "manage_assignments_edit" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/courses/:course_id/quizzes/:id",
+      "category": "Quizzes",
+      "permissions": [
+        { "symbol": "manage_assignments_delete" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/quizzes/:id/reorder",
+      "category": "Quizzes",
+      "permissions": [
+        { "symbol": "manage_assignments_edit" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/quizzes/:quiz_id/submissions",
+      "category": "Quizzes",
+      "permissions": [
+        { "anyOf": ["manage_grades", "view_all_grades"] }
+      ],
+      "notes": "Students can view their own quiz submissions."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/quizzes/:quiz_id/questions",
+      "category": "Quizzes",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/quizzes/:quiz_id/questions",
+      "category": "Quizzes",
+      "permissions": [
+        { "symbol": "manage_assignments_edit" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/quizzes/:quiz_id/questions/:id",
+      "category": "Quizzes",
+      "permissions": [
+        { "symbol": "manage_assignments_edit" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/courses/:course_id/quizzes/:quiz_id/questions/:id",
+      "category": "Quizzes",
+      "permissions": [
+        { "symbol": "manage_assignments_delete" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/groups",
+      "category": "Groups",
+      "permissions": [
+        { "symbol": "read_roster" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/:group_id",
+      "category": "Groups",
+      "permissions": [],
+      "notes": "Group members can view their own group."
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/groups",
+      "category": "Groups",
+      "permissions": [
+        { "symbol": "manage_groups_add" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/group_categories/:group_category_id/groups",
+      "category": "Groups",
+      "permissions": [
+        { "symbol": "manage_groups_add" },
+        { "symbol": "manage_sis", "required": false, "note": "Required to set SIS attributes" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/groups/:group_id",
+      "category": "Groups",
+      "permissions": [
+        { "symbol": "manage_groups_manage" },
+        { "symbol": "manage_sis", "required": false, "note": "Required to update SIS attributes" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/groups/:group_id",
+      "category": "Groups",
+      "permissions": [
+        { "symbol": "manage_groups_delete" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/:group_id/users",
+      "category": "Groups",
+      "permissions": [],
+      "notes": "Group members can list users in their own group."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/:group_id/memberships",
+      "category": "Groups",
+      "permissions": [
+        { "symbol": "read_roster" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/:group_id/memberships/:membership_id",
+      "category": "Groups",
+      "permissions": [],
+      "notes": "Members can view their own membership."
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/groups/:group_id/memberships",
+      "category": "Groups",
+      "permissions": [
+        { "symbol": "manage_groups_manage" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/groups/:group_id/memberships/:membership_id",
+      "category": "Groups",
+      "permissions": [
+        { "symbol": "manage_groups_manage" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/groups/:group_id/memberships/:membership_id",
+      "category": "Groups",
+      "permissions": [
+        { "symbol": "manage_groups_manage" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/group_categories",
+      "category": "Groups",
+      "permissions": [
+        { "anyOf": ["manage_groups_add", "manage_groups_manage", "manage_groups_delete"] }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/group_categories/:group_category_id",
+      "category": "Groups",
+      "permissions": [
+        { "anyOf": ["manage_groups_add", "manage_groups_manage", "manage_groups_delete"] }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/group_categories",
+      "category": "Groups",
+      "permissions": [
+        { "symbol": "manage_groups_add" },
+        { "symbol": "manage_sis", "required": false, "note": "Required to set SIS attributes" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/group_categories/:group_category_id",
+      "category": "Groups",
+      "permissions": [
+        { "symbol": "manage_groups_manage" },
+        { "symbol": "manage_sis", "required": false, "note": "Required to update SIS attributes" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/group_categories/:group_category_id",
+      "category": "Groups",
+      "permissions": [
+        { "symbol": "manage_groups_delete" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/group_categories/:group_category_id/groups",
+      "category": "Groups",
+      "permissions": [
+        { "anyOf": ["manage_groups_add", "manage_groups_manage", "manage_groups_delete"] }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/group_categories/:group_category_id/users",
+      "category": "Groups",
+      "permissions": [
+        { "symbol": "read_roster" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/group_categories/:group_category_id/assign_unassigned_members",
+      "category": "Groups",
+      "permissions": [
+        { "symbol": "manage_groups_manage" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/rubrics",
+      "category": "Rubrics",
+      "permissions": [
+        { "symbol": "manage_rubrics" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/rubrics",
+      "category": "Rubrics",
+      "permissions": [
+        { "symbol": "manage_rubrics" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/rubrics/:id",
+      "category": "Rubrics",
+      "permissions": [
+        { "symbol": "manage_rubrics" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/rubrics/:id",
+      "category": "Rubrics",
+      "permissions": [
+        { "symbol": "manage_rubrics" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/rubrics",
+      "category": "Rubrics",
+      "permissions": [
+        { "symbol": "manage_rubrics" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/rubrics/:id",
+      "category": "Rubrics",
+      "permissions": [
+        { "symbol": "manage_rubrics" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/courses/:course_id/rubrics/:id",
+      "category": "Rubrics",
+      "permissions": [
+        { "symbol": "manage_rubrics" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/calendar_events",
+      "category": "Calendar Events",
+      "permissions": [],
+      "notes": "Returns calendar events for contexts the user has access to."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/calendar_events/:id",
+      "category": "Calendar Events",
+      "permissions": [],
+      "notes": "Users can view events in contexts they have access to."
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/calendar_events",
+      "category": "Calendar Events",
+      "permissions": [
+        { "symbol": "manage_calendar" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/calendar_events/:id",
+      "category": "Calendar Events",
+      "permissions": [
+        { "symbol": "manage_calendar" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/calendar_events/:id",
+      "category": "Calendar Events",
+      "permissions": [
+        { "symbol": "manage_calendar" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/calendar_events/:id/reservations",
+      "category": "Calendar Events",
+      "permissions": [],
+      "notes": "Used for appointment group reservations. Users reserve for themselves."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/calendar_events/:id/participants",
+      "category": "Calendar Events",
+      "permissions": [
+        { "symbol": "manage_calendar" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/calendar_events/timetable",
+      "category": "Calendar Events",
+      "permissions": [
+        { "symbol": "manage_calendar" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/conversations",
+      "category": "Conversations",
+      "permissions": [
+        { "symbol": "send_messages" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/conversations",
+      "category": "Conversations",
+      "permissions": [
+        { "symbol": "send_messages" },
+        { "symbol": "send_messages_all", "required": false, "note": "Required to send to all course members at once" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/conversations/:id",
+      "category": "Conversations",
+      "permissions": [],
+      "notes": "Users can view their own conversations."
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/conversations/:id",
+      "category": "Conversations",
+      "permissions": [],
+      "notes": "Users can update their own conversations (star, archive, etc.)."
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/conversations/:id",
+      "category": "Conversations",
+      "permissions": [],
+      "notes": "Users can delete their own conversations."
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/conversations/:id/add_recipients",
+      "category": "Conversations",
+      "permissions": [
+        { "symbol": "send_messages" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/conversations/:id/add_message",
+      "category": "Conversations",
+      "permissions": [
+        { "symbol": "send_messages" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/conversations/:id/remove_messages",
+      "category": "Conversations",
+      "permissions": [],
+      "notes": "Users can remove messages from their own conversations."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/conversations/batches",
+      "category": "Conversations",
+      "permissions": [],
+      "notes": "Returns in-progress batch message operations for the current user."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/announcements",
+      "category": "Announcements",
+      "permissions": [
+        { "symbol": "read_announcements" },
+        { "symbol": "moderate_forum", "required": false, "note": "Required to see unpublished announcements" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/announcements",
+      "category": "Announcements",
+      "permissions": [
+        { "symbol": "read_announcements" }
+      ],
+      "notes": "Returns announcements for a list of context codes. Requires read_announcements in each context."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/account_notifications",
+      "category": "Announcements",
+      "permissions": [],
+      "notes": "Returns active global announcements for the current user."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/account_notifications/:id",
+      "category": "Announcements",
+      "permissions": [],
+      "notes": "Returns a single global announcement."
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/accounts/:account_id/account_notifications",
+      "category": "Announcements",
+      "permissions": [
+        { "symbol": "manage_alerts" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/accounts/:account_id/account_notifications/:id",
+      "category": "Announcements",
+      "permissions": [
+        { "symbol": "manage_alerts" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/accounts/:account_id/account_notifications/:id",
+      "category": "Announcements",
+      "permissions": [
+        { "symbol": "manage_alerts" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/accounts/:account_id/account_notifications/:id/close",
+      "category": "Announcements",
+      "permissions": [],
+      "notes": "Users dismiss announcements for themselves."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/external_tools",
+      "category": "External Tools",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/external_tools",
+      "category": "External Tools",
+      "permissions": [],
+      "notes": "Account admins can list external tools."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/external_tools/:external_tool_id",
+      "category": "External Tools",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/external_tools/:external_tool_id",
+      "category": "External Tools",
+      "permissions": []
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/external_tools",
+      "category": "External Tools",
+      "permissions": [
+        { "symbol": "manage_lti_add" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/accounts/:account_id/external_tools",
+      "category": "External Tools",
+      "permissions": [
+        { "symbol": "manage_lti_add" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/external_tools/:external_tool_id",
+      "category": "External Tools",
+      "permissions": [
+        { "symbol": "manage_lti_edit" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/accounts/:account_id/external_tools/:external_tool_id",
+      "category": "External Tools",
+      "permissions": [
+        { "symbol": "manage_lti_edit" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/courses/:course_id/external_tools/:external_tool_id",
+      "category": "External Tools",
+      "permissions": [
+        { "symbol": "manage_lti_delete" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/accounts/:account_id/external_tools/:external_tool_id",
+      "category": "External Tools",
+      "permissions": [
+        { "symbol": "manage_lti_delete" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/external_tools/sessionless_launch",
+      "category": "External Tools",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/accounts/:account_id/sis_imports",
+      "category": "SIS Imports",
+      "permissions": [
+        { "symbol": "import_sis" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/sis_imports",
+      "category": "SIS Imports",
+      "permissions": [
+        { "anyOf": ["import_sis", "manage_sis"] }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/sis_imports/:id",
+      "category": "SIS Imports",
+      "permissions": [
+        { "anyOf": ["import_sis", "manage_sis"] }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/sis_imports/importing",
+      "category": "SIS Imports",
+      "permissions": [
+        { "anyOf": ["import_sis", "manage_sis"] }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/accounts/:account_id/sis_imports/:id/abort",
+      "category": "SIS Imports",
+      "permissions": [
+        { "anyOf": ["import_sis", "manage_sis"] }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/accounts/:account_id/sis_imports/abort_all_pending",
+      "category": "SIS Imports",
+      "permissions": [
+        { "anyOf": ["import_sis", "manage_sis"] }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/accounts/:account_id/sis_imports/:id/restore_states",
+      "category": "SIS Imports",
+      "permissions": [
+        { "symbol": "manage_sis" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/sis_import_errors",
+      "category": "SIS Imports",
+      "permissions": [
+        { "anyOf": ["import_sis", "manage_sis"] }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/sis_imports/:id/errors",
+      "category": "SIS Imports",
+      "permissions": [
+        { "anyOf": ["import_sis", "manage_sis"] }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/content_migrations",
+      "category": "Content Migrations",
+      "permissions": [
+        { "anyOf": ["manage_course_content_add", "manage_course_content_edit", "manage_course_content_delete"] }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/content_migrations/:id",
+      "category": "Content Migrations",
+      "permissions": [
+        { "anyOf": ["manage_course_content_add", "manage_course_content_edit", "manage_course_content_delete"] }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/content_migrations",
+      "category": "Content Migrations",
+      "permissions": [
+        { "symbol": "manage_course_content_add" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/content_migrations/:id",
+      "category": "Content Migrations",
+      "permissions": [
+        { "symbol": "manage_course_content_edit" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/content_migrations/:id/selective_data",
+      "category": "Content Migrations",
+      "permissions": [
+        { "anyOf": ["manage_course_content_add", "manage_course_content_edit", "manage_course_content_delete"] }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/content_migrations",
+      "category": "Content Migrations",
+      "permissions": [
+        { "symbol": "manage_account_settings" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/accounts/:account_id/content_migrations",
+      "category": "Content Migrations",
+      "permissions": [
+        { "symbol": "manage_account_settings" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/content_migrations/:id",
+      "category": "Content Migrations",
+      "permissions": [
+        { "symbol": "manage_account_settings" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/accounts/:account_id/content_migrations/:id",
+      "category": "Content Migrations",
+      "permissions": [
+        { "symbol": "manage_account_settings" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/:user_id/content_shares",
+      "category": "Content Shares",
+      "permissions": [],
+      "notes": "Users can list their own content shares."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/:user_id/content_shares/:id",
+      "category": "Content Shares",
+      "permissions": [],
+      "notes": "Users can view their own content shares."
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/users/:user_id/content_shares",
+      "category": "Content Shares",
+      "permissions": [],
+      "notes": "Users can create content shares from courses they have access to."
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/users/:user_id/content_shares/:id",
+      "category": "Content Shares",
+      "permissions": [],
+      "notes": "Users can update their own content shares (e.g. mark as read)."
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/users/:user_id/content_shares/:id",
+      "category": "Content Shares",
+      "permissions": [],
+      "notes": "Users can delete their own content shares."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/:user_id/content_shares/unread_count",
+      "category": "Content Shares",
+      "permissions": [],
+      "notes": "Returns count of unread content shares for the user."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/outcome_groups",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "read_outcomes" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/outcome_groups/:id",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "read_outcomes" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/outcome_groups/:id/subgroups",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "manage_outcomes" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/outcome_groups/:id",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "manage_outcomes" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/courses/:course_id/outcome_groups/:id",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "manage_outcomes" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/outcome_groups/:id/outcomes",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "read_outcomes" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/outcome_groups/:id/outcomes/:outcome_id",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "manage_outcomes" }
+      ],
+      "notes": "Links an outcome to the group."
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/courses/:course_id/outcome_groups/:id/outcomes/:outcome_id",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "manage_outcomes" }
+      ],
+      "notes": "Unlinks an outcome from the group."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/outcome_groups/:id/subgroups",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "read_outcomes" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/outcome_groups",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "read_outcomes" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/outcome_groups/:id",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "read_outcomes" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/accounts/:account_id/outcome_groups/:id/subgroups",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "manage_outcomes" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/accounts/:account_id/outcome_groups/:id",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "manage_outcomes" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/accounts/:account_id/outcome_groups/:id",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "manage_outcomes" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/outcomes/:id",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "read_outcomes" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/outcomes/:id",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "manage_outcomes" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/outcome_alignments",
+      "category": "Outcomes",
+      "permissions": [
+        { "anyOf": ["manage_grades", "view_all_grades"] }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/outcome_imports",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "import_outcomes" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/outcome_imports/:id",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "import_outcomes" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/accounts/:account_id/outcome_imports",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "import_outcomes" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/outcome_imports/:id",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "import_outcomes" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/roles",
+      "category": "Roles",
+      "permissions": [
+        { "symbol": "manage_role_overrides" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/roles/:id",
+      "category": "Roles",
+      "permissions": [
+        { "symbol": "manage_role_overrides" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/accounts/:account_id/roles",
+      "category": "Roles",
+      "permissions": [
+        { "symbol": "manage_role_overrides" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/accounts/:account_id/roles/:id",
+      "category": "Roles",
+      "permissions": [
+        { "symbol": "manage_role_overrides" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/accounts/:account_id/roles/:id",
+      "category": "Roles",
+      "permissions": [
+        { "symbol": "manage_role_overrides" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/accounts/:account_id/roles/:id/activate",
+      "category": "Roles",
+      "permissions": [
+        { "symbol": "manage_role_overrides" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/permissions",
+      "category": "Roles",
+      "permissions": [],
+      "notes": "Checks specific permissions for the current user in the account."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/permissions",
+      "category": "Roles",
+      "permissions": [],
+      "notes": "Checks specific permissions for the current user in the course."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/features",
+      "category": "Feature Flags",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/features",
+      "category": "Feature Flags",
+      "permissions": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/features/enabled",
+      "category": "Feature Flags",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/features/enabled",
+      "category": "Feature Flags",
+      "permissions": []
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/features/flags/:feature",
+      "category": "Feature Flags",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/features/flags/:feature",
+      "category": "Feature Flags",
+      "permissions": []
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/features/flags/:feature",
+      "category": "Feature Flags",
+      "permissions": [
+        { "symbol": "manage_feature_flags" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/accounts/:account_id/features/flags/:feature",
+      "category": "Feature Flags",
+      "permissions": [
+        { "symbol": "manage_feature_flags" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/courses/:course_id/features/flags/:feature",
+      "category": "Feature Flags",
+      "permissions": [
+        { "symbol": "manage_feature_flags" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/accounts/:account_id/features/flags/:feature",
+      "category": "Feature Flags",
+      "permissions": [
+        { "symbol": "manage_feature_flags" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/custom_gradebook_columns",
+      "category": "Custom Gradebook Columns",
+      "permissions": [
+        { "anyOf": ["manage_grades", "view_all_grades"] }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/custom_gradebook_columns",
+      "category": "Custom Gradebook Columns",
+      "permissions": [
+        { "symbol": "manage_grades" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/custom_gradebook_columns/:id",
+      "category": "Custom Gradebook Columns",
+      "permissions": [
+        { "symbol": "manage_grades" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/courses/:course_id/custom_gradebook_columns/:id",
+      "category": "Custom Gradebook Columns",
+      "permissions": [
+        { "symbol": "manage_grades" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/custom_gradebook_columns/reorder",
+      "category": "Custom Gradebook Columns",
+      "permissions": [
+        { "symbol": "manage_grades" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/custom_gradebook_columns/:id/data",
+      "category": "Custom Gradebook Columns",
+      "permissions": [
+        { "anyOf": ["manage_grades", "view_all_grades"] }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/custom_gradebook_columns/:id/data/:user_id",
+      "category": "Custom Gradebook Columns",
+      "permissions": [
+        { "symbol": "manage_grades" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/custom_gradebook_columns/:id/bulk_update",
+      "category": "Custom Gradebook Columns",
+      "permissions": [
+        { "symbol": "manage_grades" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/gradebook_history/days",
+      "category": "Gradebook History",
+      "permissions": [
+        { "symbol": "manage_grades" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/gradebook_history/:date",
+      "category": "Gradebook History",
+      "permissions": [
+        { "symbol": "manage_grades" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/gradebook_history/feed",
+      "category": "Gradebook History",
+      "permissions": [
+        { "symbol": "manage_grades" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/audit/grade_change/assignments/:assignment_id",
+      "category": "Grade Change Audit Log",
+      "permissions": [
+        { "symbol": "view_grade_changes" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/audit/grade_change/courses/:course_id",
+      "category": "Grade Change Audit Log",
+      "permissions": [
+        { "anyOf": ["manage_grades", "view_all_grades"] }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/audit/grade_change/students/:student_id",
+      "category": "Grade Change Audit Log",
+      "permissions": [
+        { "symbol": "view_grade_changes" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/audit/grade_change/graders/:grader_id",
+      "category": "Grade Change Audit Log",
+      "permissions": [
+        { "symbol": "view_grade_changes" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/grading_periods",
+      "category": "Grading Periods",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/grading_periods/:id",
+      "category": "Grading Periods",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/grading_periods/batch_update",
+      "category": "Grading Periods",
+      "permissions": [
+        { "symbol": "manage_grades" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/grading_periods/:id",
+      "category": "Grading Periods",
+      "permissions": [
+        { "symbol": "manage_grades" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/courses/:course_id/grading_periods/:id",
+      "category": "Grading Periods",
+      "permissions": [
+        { "symbol": "manage_grades" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/grading_periods",
+      "category": "Grading Periods",
+      "permissions": [
+        { "symbol": "manage_account_settings" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/grading_standards",
+      "category": "Grading Standards",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/grading_standards/:grading_standard_id",
+      "category": "Grading Standards",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/grading_standards",
+      "category": "Grading Standards",
+      "permissions": [
+        { "symbol": "manage_grading_schemes" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/grading_standards",
+      "category": "Grading Standards",
+      "permissions": []
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/accounts/:account_id/grading_standards",
+      "category": "Grading Standards",
+      "permissions": [
+        { "symbol": "manage_grading_schemes" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/collaborations",
+      "category": "Collaborations",
+      "permissions": [
+        { "symbol": "read_course_content" },
+        { "symbol": "create_collaborations", "required": false, "note": "Required to create collaborations" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/groups/:group_id/collaborations",
+      "category": "Collaborations",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/collaborations/:id/members",
+      "category": "Collaborations",
+      "permissions": [],
+      "notes": "Collaboration members can view the member list."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/potential_collaborators",
+      "category": "Collaborations",
+      "permissions": [
+        { "symbol": "read_roster" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/blueprint_templates/:template_id",
+      "category": "Blueprint Courses",
+      "permissions": [
+        { "symbol": "manage_courses_admin", "required": false, "note": "Course-level manage right required" }
+      ],
+      "notes": "Requires manage right on the course."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/blueprint_templates/:template_id/associated_courses",
+      "category": "Blueprint Courses",
+      "permissions": [],
+      "notes": "Requires manage right on the course."
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/blueprint_templates/:template_id/update_associations",
+      "category": "Blueprint Courses",
+      "permissions": [
+        { "symbol": "manage_master_courses" }
+      ],
+      "notes": "Also requires manage right on the course."
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/blueprint_templates/:template_id/migrations",
+      "category": "Blueprint Courses",
+      "permissions": [],
+      "notes": "Requires manage right on the course."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/blueprint_templates/:template_id/migrations",
+      "category": "Blueprint Courses",
+      "permissions": [],
+      "notes": "Requires manage right on the course."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/blueprint_templates/:template_id/migrations/:id",
+      "category": "Blueprint Courses",
+      "permissions": [],
+      "notes": "Requires manage right on the course."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/blueprint_templates/:template_id/unsynced_changes",
+      "category": "Blueprint Courses",
+      "permissions": [],
+      "notes": "Requires manage right on the course."
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/courses/:course_id/blueprint_templates/:template_id/restrict_item",
+      "category": "Blueprint Courses",
+      "permissions": [],
+      "notes": "Requires manage right on the course."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/blueprint_subscriptions",
+      "category": "Blueprint Courses",
+      "permissions": [],
+      "notes": "Requires manage right on the associated course."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/blueprint_subscriptions/:subscription_id/migrations",
+      "category": "Blueprint Courses",
+      "permissions": [],
+      "notes": "Requires manage right on the associated course."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/blueprint_subscriptions/:subscription_id/migrations/:id",
+      "category": "Blueprint Courses",
+      "permissions": [],
+      "notes": "Requires manage right on the associated course."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/audit/authentication/logins/:login_id",
+      "category": "Authentication",
+      "permissions": [
+        { "symbol": "view_statistics" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/audit/authentication/accounts/:account_id",
+      "category": "Authentication",
+      "permissions": [
+        { "symbol": "view_statistics" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/audit/authentication/users/:user_id",
+      "category": "Authentication",
+      "permissions": [
+        { "symbol": "view_statistics" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/terms",
+      "category": "Accounts",
+      "permissions": [],
+      "notes": "Accessible to users with any account role."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/terms/:id",
+      "category": "Accounts",
+      "permissions": [],
+      "notes": "Accessible to users with any account role."
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/accounts/:account_id/terms",
+      "category": "Accounts",
+      "permissions": [
+        { "symbol": "manage_account_settings" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/accounts/:account_id/terms/:id",
+      "category": "Accounts",
+      "permissions": [
+        { "symbol": "manage_account_settings" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/accounts/:account_id/terms/:id",
+      "category": "Accounts",
+      "permissions": [
+        { "symbol": "manage_account_settings" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/analytics/users/:student_id/activity",
+      "category": "Analytics",
+      "permissions": [
+        { "anyOf": ["manage_grades", "view_all_grades"] }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/analytics/users/:student_id/assignments",
+      "category": "Analytics",
+      "permissions": [
+        { "anyOf": ["manage_grades", "view_all_grades"] }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/analytics/users/:student_id/communication",
+      "category": "Analytics",
+      "permissions": [
+        { "anyOf": ["manage_grades", "view_all_grades"] }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/analytics/activity",
+      "category": "Analytics",
+      "permissions": [
+        { "symbol": "view_all_grades" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/analytics/assignments",
+      "category": "Analytics",
+      "permissions": [
+        { "symbol": "view_all_grades" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/analytics/student_summaries",
+      "category": "Analytics",
+      "permissions": [
+        { "symbol": "view_all_grades" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/analytics/current/activity",
+      "category": "Analytics",
+      "permissions": [
+        { "symbol": "view_statistics" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/analytics/current/grades",
+      "category": "Analytics",
+      "permissions": [
+        { "symbol": "view_statistics" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/analytics/terms/:term_id/activity",
+      "category": "Analytics",
+      "permissions": [
+        { "symbol": "view_statistics" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/analytics/terms/:term_id/grades",
+      "category": "Analytics",
+      "permissions": [
+        { "symbol": "view_statistics" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/:user_id/profile",
+      "category": "Users",
+      "permissions": [],
+      "notes": "Users can view their own profile. Admins can view profiles of users in their account."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/:user_id/avatars",
+      "category": "Users",
+      "permissions": [],
+      "notes": "Returns available avatars for the user."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/:user_id/page_views",
+      "category": "Users",
+      "permissions": [
+        { "symbol": "view_statistics" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/:user_id/logins",
+      "category": "Users",
+      "permissions": [
+        { "symbol": "manage_user_logins" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/accounts/:account_id/logins",
+      "category": "Users",
+      "permissions": [
+        { "symbol": "manage_user_logins" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/accounts/:account_id/logins/:id",
+      "category": "Users",
+      "permissions": [
+        { "symbol": "manage_user_logins" },
+        { "symbol": "manage_sis", "required": false, "note": "Required to update SIS user ID" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/users/:user_id/logins/:id",
+      "category": "Users",
+      "permissions": [
+        { "symbol": "manage_user_logins" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/users/:user_id/observer_pairing_codes",
+      "category": "Users",
+      "permissions": [
+        { "symbol": "generate_observer_pairing_code" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/users/:user_id/observees",
+      "category": "Users",
+      "permissions": [
+        { "symbol": "manage_user_observers" }
+      ],
+      "notes": "Users can also list their own observees."
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/users/:user_id/observees",
+      "category": "Users",
+      "permissions": [
+        { "symbol": "manage_user_observers" }
+      ]
+    },
+    {
+      "method": "DELETE",
+      "path": "/api/v1/users/:user_id/observees/:observee_id",
+      "category": "Users",
+      "permissions": [
+        { "symbol": "manage_user_observers" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/users/:user_id/progress",
+      "category": "Courses",
+      "permissions": [
+        { "symbol": "view_all_grades", "required": false, "note": "Required to view progress for other users" }
+      ],
+      "notes": "Users can view their own progress."
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/bulk_user_progress",
+      "category": "Courses",
+      "permissions": [
+        { "symbol": "view_all_grades" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/effective_due_dates",
+      "category": "Courses",
+      "permissions": [
+        { "anyOf": ["manage_grades", "view_all_grades"] }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/proficiency_ratings",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/proficiency_ratings",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "manage_proficiency_scales" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/proficiency_ratings",
+      "category": "Outcomes",
+      "permissions": []
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/accounts/:account_id/proficiency_ratings",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "manage_proficiency_scales" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/courses/:course_id/outcome_proficiency",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "read_course_content" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/courses/:course_id/outcome_proficiency",
+      "category": "Outcomes",
+      "permissions": [
+        { "symbol": "manage_proficiency_calculations" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/account_calendars",
+      "category": "Calendar Events",
+      "permissions": [
+        { "symbol": "manage_account_calendar_visibility" }
+      ]
+    },
+    {
+      "method": "PUT",
+      "path": "/api/v1/accounts/:account_id/account_calendars/:id",
+      "category": "Calendar Events",
+      "permissions": [
+        { "symbol": "manage_account_calendar_visibility" }
+      ]
+    },
+    {
+      "method": "POST",
+      "path": "/api/v1/accounts/:account_id/account_calendars",
+      "category": "Calendar Events",
+      "permissions": [
+        { "symbol": "manage_account_calendar_events" }
+      ]
+    },
+    {
+      "method": "GET",
+      "path": "/api/v1/accounts/:account_id/account_calendars/visible_calendars_count",
+      "category": "Calendar Events",
+      "permissions": [
+        { "symbol": "manage_account_calendar_visibility" }
+      ]
+    }
+  ]
+}

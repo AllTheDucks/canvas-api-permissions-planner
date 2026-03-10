@@ -1,7 +1,10 @@
-import { Container, Group, Text, Title } from '@mantine/core'
+import { Center, Container, Group, Loader, Stack, Text, Title } from '@mantine/core'
 import AtdLogo from './assets/atd-logo.svg?react'
+import { useEndpoints } from './hooks/useEndpoints'
 
 function App() {
+  const endpoints = useEndpoints()
+
   return (
     <>
       <header>
@@ -22,7 +25,28 @@ function App() {
 
       <main>
         <Container size="xl" py="md">
-          <Text c="dimmed">Select endpoints to see required permissions.</Text>
+          {endpoints.status === 'loading' && (
+            <Center h="60vh"><Loader /></Center>
+          )}
+
+          {endpoints.status === 'error' && (
+            <Center h="60vh">
+              <Stack align="center">
+                <Text c="red" fw={500}>Failed to load permission data</Text>
+                <Text size="sm" c="dimmed" maw={400} ta="center">
+                  {endpoints.error.message}
+                </Text>
+              </Stack>
+            </Center>
+          )}
+
+          {endpoints.status === 'ready' && (
+            <Text c="dimmed">
+              Loaded {endpoints.endpoints.length} endpoints and{' '}
+              {Object.keys(endpoints.allPermissions).length} permissions
+              (v{endpoints.version}).
+            </Text>
+          )}
         </Container>
       </main>
 
@@ -30,7 +54,9 @@ function App() {
         <Container size="xl" py="sm">
           <Group justify="space-between">
             <Text size="xs" c="dimmed">
-              Canvas data: (not loaded)
+              {endpoints.status === 'ready'
+                ? `Canvas data: ${endpoints.version}`
+                : 'Canvas data: (not loaded)'}
             </Text>
             <Group gap="xs" align="center">
               <Text size="xs" c="dimmed">A free tool by</Text>
