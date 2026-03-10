@@ -62,8 +62,11 @@ export function EndpointSelector({ endpoints, selected, onToggle, inputRef }: En
 
   function handleGroupChange(values: string[]) {
     const valueSet = new Set(values)
+    const processed = new Set<string>()
     for (const ep of endpoints) {
       const id = endpointId(ep)
+      if (processed.has(id)) continue
+      processed.add(id)
       const wasSelected = selectedIds.has(id)
       const isNowSelected = valueSet.has(id)
       if (wasSelected !== isNowSelected) {

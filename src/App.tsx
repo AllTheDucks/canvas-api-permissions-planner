@@ -3,6 +3,7 @@ import { Center, Container, Grid, Group, Loader, Stack, Text, Title } from '@man
 import AtdLogo from './assets/atd-logo.svg?react'
 import { useEndpoints } from './hooks/useEndpoints'
 import { EndpointSelector } from './components/EndpointSelector'
+import { EndpointPaste } from './components/EndpointPaste'
 import { SelectedEndpoints } from './components/SelectedEndpoints'
 import { PermissionsResult } from './components/PermissionsResult'
 import { aggregatePermissions } from './utils/permissionAggregator'
@@ -13,10 +14,11 @@ type ReadyContentProps = {
   endpointList: Endpoint[]
   selectedEndpoints: Endpoint[]
   onToggle: (endpoint: Endpoint) => void
+  onAddMany: (endpoints: Endpoint[]) => void
   searchInputRef: React.RefObject<HTMLInputElement | null>
 }
 
-function ReadyContent({ allPermissions, endpointList, selectedEndpoints, onToggle, searchInputRef }: ReadyContentProps) {
+function ReadyContent({ allPermissions, endpointList, selectedEndpoints, onToggle, onAddMany, searchInputRef }: ReadyContentProps) {
   const aggregated = useMemo(
     () => aggregatePermissions(selectedEndpoints, allPermissions, {}),
     [selectedEndpoints, allPermissions],
@@ -32,7 +34,7 @@ function ReadyContent({ allPermissions, endpointList, selectedEndpoints, onToggl
           onToggle={onToggle}
           inputRef={searchInputRef}
         />
-        {/* EndpointPaste will be wired here in Step 9 */}
+        <EndpointPaste endpoints={endpointList} onAdd={onAddMany} />
         <SelectedEndpoints
           selected={selectedEndpoints}
           onRemove={onToggle}
@@ -41,7 +43,7 @@ function ReadyContent({ allPermissions, endpointList, selectedEndpoints, onToggl
       </Grid.Col>
       <Grid.Col span={{ base: 12, sm: 7 }}>
         <Title order={2} size="h4" mb="sm">Required Permissions</Title>
-        <PermissionsResult permissions={aggregated} />
+        <PermissionsResult permissions={aggregated} selectedCount={selectedEndpoints.length} />
       </Grid.Col>
     </Grid>
   )
@@ -59,6 +61,14 @@ function App() {
         ? prev.filter(e => `${e.method} ${e.path}` !== id)
         : [...prev, endpoint]
     )
+  }, [])
+
+  const handleAddMany = useCallback((newEndpoints: Endpoint[]) => {
+    setSelectedEndpoints(prev => {
+      const existing = new Set(prev.map(e => `${e.method} ${e.path}`))
+      const toAdd = newEndpoints.filter(e => !existing.has(`${e.method} ${e.path}`))
+      return toAdd.length > 0 ? [...prev, ...toAdd] : prev
+    })
   }, [])
 
   return (
@@ -102,6 +112,7 @@ function App() {
               endpointList={endpoints.endpoints}
               selectedEndpoints={selectedEndpoints}
               onToggle={handleToggleEndpoint}
+              onAddMany={handleAddMany}
               searchInputRef={searchInputRef}
             />
           )}

@@ -65,7 +65,7 @@
 - [x] `src/utils/permissionAggregator.test.ts` — unit tests: required singles, optional singles, required OR groups, optional OR groups, optional suppressed when already required, notes collected and deduplicated, subsumption, result sort order
 - [x] `src/components/EndpointSelector/index.tsx` — props: `{ endpoints, selected, onToggle, inputRef?: React.Ref<HTMLInputElement> }` (inputRef forwarded to the search TextInput for external focus control); `TextInput` (search) + `ScrollArea` + one `Checkbox.Group`; category headings as `Text` dividers (not accordion); checkbox value is `` `${e.method} ${e.path}` ``; search filters by case-insensitive substring on method+path, hiding category headers with zero matches; already-selected endpoints always visible regardless of search; endpoints with `notes` show inline `IconInfoCircle` + `Tooltip`; "No endpoints match" empty state when nothing matches
 - [ ] `src/components/EndpointSelector/EndpointSelector.stories.tsx` — Default, WithSearch, WithSelections
-- [ ] `src/components/EndpointPaste/index.tsx` — textarea to paste a list of endpoints
+- [x] `src/components/EndpointPaste/index.tsx` — textarea to paste a list of endpoints
 - [ ] `src/components/EndpointPaste/EndpointPaste.stories.tsx` — Default, WithUnmatched, WithMultipleMethodMatches
 - [x] `src/components/SelectedEndpoints/index.tsx` — props: `{ selected, onRemove: (endpoint) => void, onLastRemoved?: () => void }`; display selected endpoints with remove controls; badge text truncated at `max-width: 280px` with ellipsis, full path shown in `Tooltip`; endpoints with a `notes` field show an `IconInfoCircle` + Mantine `Tooltip` on the badge; each remove button needs `aria-label="${t('selectedEndpoints.remove')} METHOD /path"`; on removal focus moves to: next badge → previous badge → calls `onLastRemoved` (App.tsx then focuses EndpointSelector search input); renders nothing when `selected` is empty
 - [ ] `src/components/SelectedEndpoints/SelectedEndpoints.stories.tsx` — Empty, WithItems, WithNotes
@@ -128,7 +128,7 @@
 
 ## Polish
 
-- [ ] Unmatched endpoint reporting in paste input (show which lines could not be matched, using `role="alert"`)
+- [x] Unmatched endpoint reporting in paste input (show which lines could not be matched, using `role="alert"`)
 - [x] Responsive layout (works on tablet/mobile)
   - Use `Grid` with `span={{ base: 12, sm: 5/7 }}` for two-panel layout; panels stack on mobile
   - Header: hide `<Title order={1}>` below `sm` (`visibleFrom="sm"`); add `aria-label="Canvas API Permissions Planner"` to `<main>`

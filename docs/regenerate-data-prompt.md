@@ -292,6 +292,8 @@ Rules for the `permissions` array entries:
 
 The `permissions` array on each endpoint must contain only symbols that exist as keys in the top-level `permissions` map.
 
+**No duplicate endpoints.** Each `method + path` combination must appear exactly once in the `endpoints` array. If the same API endpoint appears in multiple controllers or route contexts (e.g. a permissions-check endpoint listed under both "Accounts" and "Roles"), merge them into a single entry. Use the category and notes from the more specific or informative context.
+
 ---
 
 Produce both files in full. If the task is too large for one response, work through the endpoint categories in order and I will ask you to continue with the next batch.

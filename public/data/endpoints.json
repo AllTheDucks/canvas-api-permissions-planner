@@ -162,12 +162,6 @@
     },
     {
       "method": "GET",
-      "path": "/api/v1/accounts/:account_id/permissions",
-      "category": "Accounts",
-      "permissions": []
-    },
-    {
-      "method": "GET",
       "path": "/api/v1/course_accounts",
       "category": "Accounts",
       "permissions": [],

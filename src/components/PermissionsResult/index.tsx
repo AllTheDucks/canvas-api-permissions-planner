@@ -16,6 +16,7 @@ import type { AggregatedPermission, AnyOfAggregated, Scope, SingleAggregated } f
 
 type PermissionsResultProps = {
   permissions: AggregatedPermission[]
+  selectedCount: number
   isLoadingLocale?: boolean
 }
 
@@ -132,7 +133,7 @@ const SCOPE_HEADINGS = {
   both: 'Course or Account',
 } as const
 
-export function PermissionsResult({ permissions, isLoadingLocale = false }: PermissionsResultProps) {
+export function PermissionsResult({ permissions, selectedCount, isLoadingLocale = false }: PermissionsResultProps) {
   const required = permissions.filter((p) => !p.optional)
   const optional = permissions.filter((p) => p.optional)
 
@@ -167,9 +168,15 @@ export function PermissionsResult({ permissions, isLoadingLocale = false }: Perm
         </Overlay>
       )}
 
-      {isEmpty && (
+      {isEmpty && selectedCount === 0 && (
         <Text c="dimmed" ta="center" py="xl">
           Select endpoints to see required permissions
+        </Text>
+      )}
+
+      {isEmpty && selectedCount > 0 && (
+        <Text c="dimmed" ta="center" py="xl">
+          No additional permissions required for the selected endpoints
         </Text>
       )}
 
