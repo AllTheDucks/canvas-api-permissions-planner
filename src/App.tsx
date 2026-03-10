@@ -1,5 +1,5 @@
 import { useCallback, useMemo, useRef, useState } from 'react'
-import { Center, Container, Group, Loader, Stack, Text, Title } from '@mantine/core'
+import { Center, Container, Grid, Group, Loader, Stack, Text, Title } from '@mantine/core'
 import AtdLogo from './assets/atd-logo.svg?react'
 import { useEndpoints } from './hooks/useEndpoints'
 import { EndpointSelector } from './components/EndpointSelector'
@@ -23,20 +23,27 @@ function ReadyContent({ allPermissions, endpointList, selectedEndpoints, onToggl
   )
 
   return (
-    <>
-      <EndpointSelector
-        endpoints={endpointList}
-        selected={selectedEndpoints}
-        onToggle={onToggle}
-        inputRef={searchInputRef}
-      />
-      <SelectedEndpoints
-        selected={selectedEndpoints}
-        onRemove={onToggle}
-        onLastRemoved={() => searchInputRef.current?.focus()}
-      />
-      <PermissionsResult permissions={aggregated} />
-    </>
+    <Grid>
+      <Grid.Col span={{ base: 12, sm: 5 }}>
+        <Title order={2} size="h4" mb="sm">Add Endpoints</Title>
+        <EndpointSelector
+          endpoints={endpointList}
+          selected={selectedEndpoints}
+          onToggle={onToggle}
+          inputRef={searchInputRef}
+        />
+        {/* EndpointPaste will be wired here in Step 9 */}
+        <SelectedEndpoints
+          selected={selectedEndpoints}
+          onRemove={onToggle}
+          onLastRemoved={() => searchInputRef.current?.focus()}
+        />
+      </Grid.Col>
+      <Grid.Col span={{ base: 12, sm: 7 }}>
+        <Title order={2} size="h4" mb="sm">Required Permissions</Title>
+        <PermissionsResult permissions={aggregated} />
+      </Grid.Col>
+    </Grid>
   )
 }
 
@@ -63,7 +70,7 @@ function App() {
               <a href="https://alltheducks.com" target="_blank" rel="noopener noreferrer">
                 <AtdLogo height={32} aria-label="All the Ducks" />
               </a>
-              <Title order={2}>Canvas API Permissions Planner</Title>
+              <Title order={1} size="h3" visibleFrom="sm">Canvas API Permissions Planner</Title>
             </Group>
             <Group gap="xs">
               {/* Controls: LanguagePicker, ColorSchemeToggle, HelpModal — wired in later steps */}
@@ -72,7 +79,7 @@ function App() {
         </Container>
       </header>
 
-      <main>
+      <main aria-label="Canvas API Permissions Planner">
         <Container size="xl" py="md">
           {endpoints.status === 'loading' && (
             <Center h="60vh"><Loader /></Center>

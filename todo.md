@@ -71,7 +71,7 @@
 - [ ] `src/components/SelectedEndpoints/SelectedEndpoints.stories.tsx` — Empty, WithItems, WithNotes
 - [x] `src/components/PermissionsResult/index.tsx` — two sections: Required Permissions (singles in three scope sections + OR groups) and Optional Permissions (flat list with notes in dimmed text); each section suppressed when empty; `<Divider />` between sections when both present; each OR group row: `[ⓘ] Any one of: Label [scope] · Label [scope]` with scope badge per option (not per row); optional permission rows show `notes[]` below label as `Text size="xs" c="dimmed"`; add `aria-live="polite"` `aria-atomic="false"` on the container; add `aria-busy="true"` during locale fetch
 - [ ] `src/components/PermissionsResult/PermissionsResult.stories.tsx` — Empty, SinglesOnly, WithAnyOfGroup, Mixed, WithOptionalPermissions
-- [ ] `src/App.tsx` — wire all components into the two-panel layout; use `<header>`, `<main>`, `<footer>` landmarks; heading hierarchy: `<h1>` app title, `<h2>` panel headings, `<h3>` subsections; implement `handleToggleEndpoint` (single handler passed to `EndpointSelector` as `onToggle` and `SelectedEndpoints` as `onRemove`); pass `aggregatePermissions(selectedEndpoints, allPermissions, localeLabels)` result to `<PermissionsResult>`
+- [x] `src/App.tsx` — wire all components into the two-panel layout; use `<header>`, `<main>`, `<footer>` landmarks; heading hierarchy: `<h1>` app title, `<h2>` panel headings, `<h3>` subsections; implement `handleToggleEndpoint` (single handler passed to `EndpointSelector` as `onToggle` and `SelectedEndpoints` as `onRemove`); pass `aggregatePermissions(selectedEndpoints, allPermissions, localeLabels)` result to `<PermissionsResult>`
 
 ## Localisation
 
@@ -129,14 +129,14 @@
 ## Polish
 
 - [ ] Unmatched endpoint reporting in paste input (show which lines could not be matched, using `role="alert"`)
-- [ ] Responsive layout (works on tablet/mobile)
+- [x] Responsive layout (works on tablet/mobile)
   - Use `Grid` with `span={{ base: 12, sm: 5/7 }}` for two-panel layout; panels stack on mobile
   - Header: hide `<Title order={1}>` below `sm` (`visibleFrom="sm"`); add `aria-label="Canvas API Permissions Planner"` to `<main>`
   - `EndpointSelector` `ScrollArea`: `h={{ base: 240, sm: 400 }}`
   - `EndpointPaste`: `Stack` layout (textarea above, `fullWidth` button below) at all widths
   - Touch targets: `ActionIcon` info icons use `size="sm"` minimum (never `size="xs"`); verify badge `CloseButton` meets 44×44px on device
   - Wrap `Grid` in `Container` / `maw="100%"` to prevent horizontal overflow at ≥ 375px
-- [ ] Empty state for permissions panel (no endpoints selected yet)
+- [x] Empty state for permissions panel (no endpoints selected yet)
 - [ ] Copy-to-clipboard button for permissions list
 - [ ] `src/styles/print.css` — `@media print` stylesheet: hide left panel, header controls, footer, action buttons; show permissions result full-width with print-only header (tool name, selected endpoints list, date); force light scheme; `break-inside: avoid` on permission rows; import in `main.tsx`
 - [ ] Print-only header block in `App.tsx` — `div` with `display: none` default / `display: block` in print; contains tool name, selected endpoint list, and `data-print-date` attribute for current date
