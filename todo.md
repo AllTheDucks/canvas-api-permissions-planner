@@ -31,8 +31,8 @@
 
 ## Color Scheme
 
-- [ ] `src/components/ColorSchemeToggle/index.tsx` — `ActionIcon` using `useMantineColorScheme` + `useComputedColorScheme`; shows moon in light mode, sun in dark mode; toggles and persists scheme; `aria-label` must reflect the *action* ("Switch to dark mode" / "Switch to light mode")
-- [ ] Add `ColorSchemeToggle` to `App.tsx` header between language picker and help button
+- [x] `src/components/ColorSchemeToggle/index.tsx` — `ActionIcon` using `useMantineColorScheme` + `useComputedColorScheme`; shows moon in light mode, sun in dark mode; toggles and persists scheme; `aria-label` must reflect the *action* ("Switch to dark mode" / "Switch to light mode")
+- [x] Add `ColorSchemeToggle` to `App.tsx` header between language picker and help button
 
 ## Data
 

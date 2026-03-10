@@ -6,6 +6,7 @@ import { EndpointSelector } from './components/EndpointSelector'
 import { EndpointPaste } from './components/EndpointPaste'
 import { SelectedEndpoints } from './components/SelectedEndpoints'
 import { PermissionsResult } from './components/PermissionsResult'
+import { ColorSchemeToggle } from './components/ColorSchemeToggle'
 import { aggregatePermissions } from './utils/permissionAggregator'
 import type { Endpoint, PermissionRef } from './types'
 
@@ -77,13 +78,15 @@ function App() {
         <Container size="xl" py="sm">
           <Group justify="space-between">
             <Group gap="sm">
-              <a href="https://alltheducks.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://alltheducks.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
                 <AtdLogo height={32} aria-label="All the Ducks" />
               </a>
               <Title order={1} size="h3" visibleFrom="sm">Canvas API Permissions Planner</Title>
             </Group>
             <Group gap="xs">
-              {/* Controls: LanguagePicker, ColorSchemeToggle, HelpModal — wired in later steps */}
+              {/* LanguagePicker — wired in Step 14 */}
+              <ColorSchemeToggle />
+              {/* HelpModal — wired in Step 17 */}
             </Group>
           </Group>
         </Container>
@@ -129,7 +132,7 @@ function App() {
             </Text>
             <Group gap="xs" align="center">
               <Text size="xs" c="dimmed">A free tool by</Text>
-              <a href="https://alltheducks.com" target="_blank" rel="noopener noreferrer">
+              <a href="https://alltheducks.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
                 <AtdLogo height={24} aria-label="All the Ducks" />
               </a>
             </Group>
