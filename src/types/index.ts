@@ -19,8 +19,16 @@ export type AnyOfPermission = {
 
 export type EndpointPermission = SinglePermission | AnyOfPermission;
 
+export type HttpMethod = "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
+
+const HTTP_METHODS: ReadonlySet<string> = new Set<HttpMethod>(["GET", "POST", "PUT", "DELETE", "PATCH"]);
+
+export function isHttpMethod(value: string): value is HttpMethod {
+  return HTTP_METHODS.has(value);
+}
+
 export type Endpoint = {
-  method: "GET" | "POST" | "PUT" | "DELETE" | "PATCH";
+  method: HttpMethod;
   path: string;
   category: string;
   permissions: EndpointPermission[];
