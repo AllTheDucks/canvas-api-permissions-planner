@@ -47,12 +47,12 @@
 ## Core Features
 
 - [x] `src/types/index.ts` — shared TypeScript interfaces (Endpoint, PermissionRef, AggregatedPermission, etc.)
-- [ ] `src/utils/i18nKey.ts` — Canvas i18nliner key derivation: `slug + "_" + CRC32("{len}:{label}").toString(16)`
-- [ ] `src/utils/i18nKey.test.ts` — unit tests: verified case + edge cases (special chars, spaces, single char)
+- [x] `src/utils/i18nKey.ts` — Canvas i18nliner key derivation: `slug + "_" + CRC32("{len}:{label}").toString(16)`
+- [x] `src/utils/i18nKey.test.ts` — unit tests: verified case + edge cases (special chars, spaces, single char)
 - [x] `src/components/AppErrorBoundary/index.tsx` — class-based React Error Boundary; wraps app root in `main.tsx` (outside `MantineProvider`); catches unexpected render errors
 - [x] `src/hooks/useEndpoints.ts` — fetch `public/data/endpoints.json` on mount, Zod-validate, module-level cache; returns discriminated union `{ status: 'loading' } | { status: 'error', error } | { status: 'ready', version, allPermissions, endpoints }`
-- [ ] `src/schemas/endpoints.test.ts` — unit tests: valid data passes; invalid data (missing fields, bad anyOf, duplicate scope) fails
-- [ ] `src/schemas/canvasLocale.test.ts` — unit tests: `canvasLocaleSchema(locale)` validates outer key; `getTranslation` returns string/undefined correctly
+- [x] `src/schemas/endpoints.test.ts` — unit tests: valid data passes; invalid data (missing fields, bad anyOf, duplicate scope) fails
+- [x] `src/schemas/canvasLocale.test.ts` — unit tests: `canvasLocaleSchema(locale)` validates outer key; `getTranslation` returns string/undefined correctly
 - [ ] `src/utils/endpointMatcher.ts` — normalise and match pasted/typed URLs to known endpoints; returns `Endpoint[]` (empty = unrecognised, one = unambiguous, many = multiple methods matched path with no method specified)
 - [ ] `src/utils/endpointMatcher.test.ts` — unit tests: full URL, query string stripped, numeric IDs, SIS IDs (all 7 prefixes), path-only; method specified + match found → that endpoint; no method + multiple methods in data → all returned; method specified + no matching method → `[]` (unrecognised, no fallback); unrecognised path → `[]`
 - [ ] `src/utils/permissionAggregator.ts` — multi-pass, order-independent aggregation
