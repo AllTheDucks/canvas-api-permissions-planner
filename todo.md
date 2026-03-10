@@ -55,14 +55,14 @@
 - [x] `src/schemas/canvasLocale.test.ts` — unit tests: `canvasLocaleSchema(locale)` validates outer key; `getTranslation` returns string/undefined correctly
 - [x] `src/utils/endpointMatcher.ts` — normalise and match pasted/typed URLs to known endpoints; returns `Endpoint[]` (empty = unrecognised, one = unambiguous, many = multiple methods matched path with no method specified)
 - [x] `src/utils/endpointMatcher.test.ts` — unit tests: full URL, query string stripped, numeric IDs, SIS IDs (all 7 prefixes), path-only; method specified + match found → that endpoint; no method + multiple methods in data → all returned; method specified + no matching method → `[]` (unrecognised, no fallback); unrecognised path → `[]`
-- [ ] `src/utils/permissionAggregator.ts` — multi-pass, order-independent aggregation
+- [x] `src/utils/permissionAggregator.ts` — multi-pass, order-independent aggregation
   - Pass 1: collect all definite required symbols into a Set
   - Pass 1b: collect optional singles (`required: false`) separately, skipping if already in required set
   - Pass 2: collect unsatisfied required OR groups (skip if any member is in the Pass 1 set)
   - Pass 2b: collect optional OR groups (`required: false`), skipping if satisfied by required singles or matching a required OR group
   - Pass 2.5: subsumption elimination (applied to required and optional groups separately)
   - Result: required singles/OR groups followed by optional singles/OR groups, each with `notes[]`
-- [ ] `src/utils/permissionAggregator.test.ts` — unit tests: required singles, optional singles, required OR groups, optional OR groups, optional suppressed when already required, notes collected and deduplicated, subsumption, result sort order
+- [x] `src/utils/permissionAggregator.test.ts` — unit tests: required singles, optional singles, required OR groups, optional OR groups, optional suppressed when already required, notes collected and deduplicated, subsumption, result sort order
 - [ ] `src/components/EndpointSelector/index.tsx` — props: `{ endpoints, selected, onToggle, inputRef?: React.Ref<HTMLInputElement> }` (inputRef forwarded to the search TextInput for external focus control); `TextInput` (search) + `ScrollArea` + one `Checkbox.Group`; category headings as `Text` dividers (not accordion); checkbox value is `` `${e.method} ${e.path}` ``; search filters by case-insensitive substring on method+path, hiding category headers with zero matches; already-selected endpoints always visible regardless of search; endpoints with `notes` show inline `IconInfoCircle` + `Tooltip`; "No endpoints match" empty state when nothing matches
 - [ ] `src/components/EndpointSelector/EndpointSelector.stories.tsx` — Default, WithSearch, WithSelections
 - [ ] `src/components/EndpointPaste/index.tsx` — textarea to paste a list of endpoints
