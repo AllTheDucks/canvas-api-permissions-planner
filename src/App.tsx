@@ -1,9 +1,23 @@
+import { useCallback, useRef, useState } from 'react'
 import { Center, Container, Group, Loader, Stack, Text, Title } from '@mantine/core'
 import AtdLogo from './assets/atd-logo.svg?react'
 import { useEndpoints } from './hooks/useEndpoints'
+import { EndpointSelector } from './components/EndpointSelector'
+import type { Endpoint } from './types'
 
 function App() {
   const endpoints = useEndpoints()
+  const [selectedEndpoints, setSelectedEndpoints] = useState<Endpoint[]>([])
+  const searchInputRef = useRef<HTMLInputElement>(null)
+
+  const handleToggleEndpoint = useCallback((endpoint: Endpoint) => {
+    const id = `${endpoint.method} ${endpoint.path}`
+    setSelectedEndpoints(prev =>
+      prev.some(e => `${e.method} ${e.path}` === id)
+        ? prev.filter(e => `${e.method} ${e.path}` !== id)
+        : [...prev, endpoint]
+    )
+  }, [])
 
   return (
     <>
@@ -41,11 +55,12 @@ function App() {
           )}
 
           {endpoints.status === 'ready' && (
-            <Text c="dimmed">
-              Loaded {endpoints.endpoints.length} endpoints and{' '}
-              {Object.keys(endpoints.allPermissions).length} permissions
-              (v{endpoints.version}).
-            </Text>
+            <EndpointSelector
+              endpoints={endpoints.endpoints}
+              selected={selectedEndpoints}
+              onToggle={handleToggleEndpoint}
+              inputRef={searchInputRef}
+            />
           )}
         </Container>
       </main>
