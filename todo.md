@@ -4,17 +4,17 @@
 
 ## Project Setup
 
-- [ ] Scaffold Vite + React + TypeScript project (`pnpm create vite . --template react-ts`)
-- [ ] Install Mantine 7 and configure PostCSS (`postcss.config.cjs`); import `@mantine/core/styles.css` and `@mantine/notifications/styles.css` in `main.tsx`; mount `<Notifications />` inside `<MantineProvider>` in `main.tsx`
-- [ ] Install Zod, js-yaml, and crc-32
-- [ ] Install `vite-plugin-svgr` (devDependency); add to `vite.config.ts` plugins; add `/// <reference types="vite-plugin-svgr/client" />` to `src/vite-env.d.ts`
-- [ ] Install Vitest and Testing Library (`vitest`, `@testing-library/react`, `@testing-library/user-event`, `jsdom`)
+- [x] Scaffold Vite + React + TypeScript project (`pnpm create vite . --template react-ts`)
+- [x] Install Mantine 8 and configure PostCSS (`postcss.config.cjs`); import `@mantine/core/styles.css` and `@mantine/notifications/styles.css` in `main.tsx`; mount `<Notifications />` inside `<MantineProvider>` in `main.tsx`
+- [x] Install Zod, js-yaml, and crc-32
+- [x] Install `vite-plugin-svgr` (devDependency); add to `vite.config.ts` plugins; add `/// <reference types="vite-plugin-svgr/client" />` to `src/vite-env.d.ts`
+- [x] Install Vitest and Testing Library (`vitest`, `@testing-library/react`, `@testing-library/user-event`, `jsdom`)
   - Add `test: { environment: 'jsdom', globals: true }` to `vite.config.ts`
-  - Add `"vitest/globals"` to `tsconfig.json` types
+  - Add `"vitest/globals"` to `tsconfig.app.json` types
 - [ ] Install Storybook (`pnpm dlx storybook@latest init`) and configure `.storybook/preview.tsx` with `AppTranslationsProvider locale="en"` + `MantineProvider` decorators
 - [ ] Install `@axe-core/react` (devDependency) and enable in `main.tsx` during development for automated WCAG violation reporting
-- [ ] Configure `vite.config.ts` (base path placeholder for GitHub Pages)
-- [ ] Confirm `tsconfig.json` strict mode is enabled
+- [x] Configure `vite.config.ts` (SVGR plugin, Vitest config)
+- [x] Confirm `tsconfig.json` strict mode is enabled
 
 ## Branding
 
@@ -111,7 +111,7 @@
 
 ## Help and Documentation
 
-- [ ] Install `@tabler/icons-react` (`pnpm add @tabler/icons-react`)
+- [x] Install `@tabler/icons-react` (`pnpm add @tabler/icons-react`)
 - [ ] `src/components/HelpModal/index.tsx` — `?` ActionIcon button + Modal with three Tabs:
   - Tab 1 "How to use": step-by-step guide for using the tool
   - Tab 2 "Canvas Permissions": RBAC overview, course vs account scope, permission inheritance, OR groups

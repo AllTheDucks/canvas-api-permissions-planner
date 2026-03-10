@@ -9,11 +9,12 @@ A fully client-side React/TypeScript tool for Canvas LMS extension developers. U
 | Tool | Version | Notes |
 |------|---------|-------|
 | Vite | 6 | Build tool and dev server |
-| React | 18 | UI framework |
+| React | 19 | UI framework |
 | TypeScript | 5 | Strict mode enabled |
-| Mantine | 7 | Component library — uses CSS Modules + PostCSS (not Emotion) |
-| Zod | 3 | Schema validation for ALL externally loaded data |
+| Mantine | 8 | Component library — uses CSS Modules + PostCSS (not Emotion) |
+| Zod | 4 | Schema validation for ALL externally loaded data |
 | js-yaml | 4 | Parses Canvas YAML locale files fetched from GitHub |
+| Vitest | 4 | Unit testing framework |
 | pnpm | latest | **Always use pnpm. Never npm or yarn.** |
 
 ## Key Architectural Decisions
@@ -60,14 +61,14 @@ src/
 - Components live in their own subdirectory with an `index.tsx` file
 - No default exports from utility files — named exports only
 - Prefer functional components with hooks
-- Mantine v7 component imports come from `@mantine/core`
+- Mantine v8 component imports come from `@mantine/core`
 - Do not add comments or docstrings to code unless the logic is genuinely non-obvious
 
-## Mantine v7 Notes
+## Mantine v8 Notes
 
 - Requires PostCSS: `postcss.config.cjs` must include `postcss-preset-mantine` and `postcss-simple-vars`
 - CSS import required in `main.tsx`: `import '@mantine/core/styles.css'`
-- No Emotion dependency (v7 dropped it)
+- No Emotion dependency (dropped in v7, still absent in v8)
 - Wrap the app root in `<MantineProvider>` in `main.tsx`
 
 ## Do Not

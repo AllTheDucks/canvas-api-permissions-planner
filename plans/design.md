@@ -20,13 +20,14 @@ CI/CD is explicitly deferred to a later phase.
 | Tool | Version | Purpose |
 |------|---------|---------|
 | Vite | 6 | Build tool and dev server |
-| React | 18 | UI |
+| React | 19 | UI |
 | TypeScript | 5 | Type safety |
-| Mantine | 7 | Component library (uses CSS Modules, requires PostCSS) |
-| Zod | 3 | Schema validation for all external data |
+| Mantine | 8 | Component library (uses CSS Modules, requires PostCSS) |
+| Zod | 4 | Schema validation for all external data |
 | js-yaml | 4 | Parse Canvas YAML locale files |
 | crc-32 | latest | CRC32 for i18nliner key derivation (pure JS) |
 | vite-plugin-svgr | latest | Import SVGs as React components (for theme-aware logo) |
+| Vitest | 4 | Unit testing framework |
 | pnpm | latest | Package manager |
 
 ### Browser Compatibility
@@ -47,7 +48,7 @@ pnpm add zod js-yaml crc-32
 pnpm add -D @types/js-yaml postcss postcss-preset-mantine postcss-simple-vars vite-plugin-svgr
 ```
 
-Mantine v7 requires a `postcss.config.cjs` with `postcss-preset-mantine` and explicit CSS imports in `main.tsx` for each Mantine package used:
+Mantine v8 requires a `postcss.config.cjs` with `postcss-preset-mantine` and explicit CSS imports in `main.tsx` for each Mantine package used:
 
 ```tsx
 import '@mantine/core/styles.css';
@@ -930,7 +931,7 @@ useEffect(() => {
 }, [locale]);
 ```
 
-Mantine v7 uses CSS logical properties throughout — the `dir` attribute change alone is sufficient to mirror the layout correctly for RTL, with no per-component changes required. The `lang` attribute is required for screen readers to select the correct speech engine, and affects system font selection and rendering for non-Latin scripts.
+Mantine v8 uses CSS logical properties throughout — the `dir` attribute change alone is sufficient to mirror the layout correctly for RTL, with no per-component changes required. The `lang` attribute is required for screen readers to select the correct speech engine, and affects system font selection and rendering for non-Latin scripts.
 
 ### Supplemental Font Loading
 
@@ -999,7 +1000,7 @@ useEffect(() => {
 }, [locale]);
 ```
 
-Mantine v7 sets `--mantine-font-family` and `--mantine-font-family-headings` on `:root` from the theme. Overriding them with an inline style on `<html>` takes precedence without touching the theme object. Removing the inline style reverts to the theme-set value automatically.
+Mantine v8 sets `--mantine-font-family` and `--mantine-font-family-headings` on `:root` from the theme. Overriding them with an inline style on `<html>` takes precedence without touching the theme object. Removing the inline style reverts to the theme-set value automatically.
 
 No additional `pnpm` install is required — fonts are loaded from Google Fonts at runtime, consistent with how Poppins and Source Sans 3 are loaded.
 
@@ -1740,7 +1741,7 @@ All tooltips use Mantine `Tooltip` with `multiline` and a `maw` (max-width) of ~
 
 ### `@tabler/icons-react` dependency
 
-Mantine v7 pairs naturally with Tabler Icons. Add the dependency:
+Mantine v8 pairs naturally with Tabler Icons. Add the dependency:
 
 ```bash
 pnpm add @tabler/icons-react
@@ -1894,7 +1895,7 @@ All `<head>` concerns are collected here for implementation convenience. Replace
 </head>
 ```
 
-The `<script>` for `ColorSchemeScript` must remain synchronous (no `defer` or `async`) — it reads `localStorage` and sets `data-mantine-color-scheme` on `<html>` before the first paint. See the Mantine v7 docs for the exact script content.
+The `<script>` for `ColorSchemeScript` must remain synchronous (no `defer` or `async`) — it reads `localStorage` and sets `data-mantine-color-scheme` on `<html>` before the first paint. See the Mantine v8 docs for the exact script content.
 
 ### Header
 
@@ -1930,9 +1931,9 @@ The tool supports light and dark color schemes, defaulting to the OS-level `pref
 
 ### Mantine Integration
 
-Mantine v7 manages color scheme natively. The `main.tsx` render tree is documented in **Startup Data Loading and Error Handling** — `AppErrorBoundary` wraps `MantineProvider`, which wraps `Notifications` and `App`.
+Mantine v8 manages color scheme natively. The `main.tsx` render tree is documented in **Startup Data Loading and Error Handling** — `AppErrorBoundary` wraps `MantineProvider`, which wraps `Notifications` and `App`.
 
-`<Notifications />` must be mounted inside `MantineProvider` — this is a required Mantine v7 setup step; without it, `notifications.show(...)` calls are silently dropped. It renders the notification portal and requires no props.
+`<Notifications />` must be mounted inside `MantineProvider` — this is a required Mantine v8 setup step; without it, `notifications.show(...)` calls are silently dropped. It renders the notification portal and requires no props.
 
 `defaultColorScheme="auto"` reads `prefers-color-scheme` on first render. When the user manually toggles, Mantine stores the preference in `localStorage` under the key `mantine-color-scheme`. `localStorage` is appropriate for UI preferences — the no-persistence constraint applies to application data, not theme or locale settings.
 
@@ -1947,7 +1948,7 @@ Add Mantine's `ColorSchemeScript` to `index.html` synchronously before the bundl
 </head>
 ```
 
-In Vite's static `index.html` there is no JSX rendering context, so paste the raw inline script from the Mantine v7 `ColorSchemeScript` documentation directly. The script reads `localStorage` and sets `data-mantine-color-scheme` on `<html>` synchronously.
+In Vite's static `index.html` there is no JSX rendering context, so paste the raw inline script from the Mantine v8 `ColorSchemeScript` documentation directly. The script reads `localStorage` and sets `data-mantine-color-scheme` on `<html>` synchronously.
 
 ### `ColorSchemeToggle` Component
 
@@ -2079,7 +2080,7 @@ The `requiredBy` array on each permission row lists the endpoint paths that requ
 
 Target WCAG 2.1 AA. This is appropriate for a professional developer tool.
 
-Mantine v7 is the right choice — no library change is warranted. Its standard components provide solid ARIA baselines for Modal, Tabs, Checkbox, Select, Tooltip, and Notifications. The gaps below are standard developer responsibilities, not Mantine deficiencies.
+Mantine v8 is the right choice — no library change is warranted. Its standard components provide solid ARIA baselines for Modal, Tabs, Checkbox, Select, Tooltip, and Notifications. The gaps below are standard developer responsibilities, not Mantine deficiencies.
 
 ---
 

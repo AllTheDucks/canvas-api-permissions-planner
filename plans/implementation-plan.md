@@ -32,8 +32,8 @@ Scaffold the Vite + React + TypeScript project and configure all tooling.
 Scaffold Vite + React + TS project with Mantine, Zod, and tooling
 
 Set up the project with all production and dev dependencies:
-Mantine 7 (with PostCSS config), Zod, js-yaml, crc-32, SVGR,
-Vitest, Testing Library, and Tabler Icons.
+Mantine 8 (with PostCSS config), Zod 4, js-yaml, crc-32, SVGR,
+Vitest 4, Testing Library, and Tabler Icons.
 ```
 
 ---
