@@ -20,14 +20,14 @@
 
 - [x] `src/assets/atd-logo.svg` — text group has `fill="currentColor"`; icon mark fixed `#FFAF11` (single file, no dark variant needed)
 - [ ] Create `public/og-image.png` — 1200×630 branded social card (dark background, ATD logo, tool name + description); manual design step required before first public deploy
-- [ ] Write `index.html` `<head>` — use the complete block from the plan (charset, viewport, title, favicon links, meta description, Open Graph + Twitter card tags, Google Fonts preconnect + stylesheet, ColorSchemeScript inline script); update GitHub Pages URLs (`og:url`, `og:image`) when repo URL is finalised
+- [x] Write `index.html` `<head>` — use the complete block from the plan (charset, viewport, title, favicon links, meta description, Open Graph + Twitter card tags, Google Fonts preconnect + stylesheet, ColorSchemeScript inline script); update GitHub Pages URLs (`og:url`, `og:image`) when repo URL is finalised
 - [ ] Favicon — create `public/favicon.svg` (icon mark only, square viewBox ~`20 20 120 120`, `#FFAF11` duck shape extracted from `atd-logo.svg`) and `public/favicon.ico` (16×16 + 32×32 raster, generated from the SVG)
-- [ ] Generate 10-shade Mantine colour palette for #FFAF11 (use mantine.dev/colors-generator) — confirm shade [5] is assigned **dark (black) text** by Mantine's auto-contrast; override if not (accessibility: #FFAF11 on white is only ~1.8:1)
-- [ ] Configure custom Mantine theme in `main.tsx` — `primaryColor: 'atdOrange'`, `fontFamily: 'Poppins'`, `headings.fontFamily: 'Source Sans 3'`
-- [ ] Set `defaultColorScheme="auto"` on `MantineProvider` in `main.tsx`
+- [x] Generate 10-shade Mantine colour palette for #FFAF11 (use mantine.dev/colors-generator) — confirm shade [5] is assigned **dark (black) text** by Mantine's auto-contrast; override if not (accessibility: #FFAF11 on white is only ~1.8:1)
+- [x] Configure custom Mantine theme in `main.tsx` — `primaryColor: 'atdOrange'`, `fontFamily: 'Poppins'`, `headings.fontFamily: 'Source Sans 3'`
+- [x] Set `defaultColorScheme="auto"` on `MantineProvider` in `main.tsx`
 - [ ] Update `.storybook/preview.tsx` — use custom theme + add global color scheme toolbar toggle (`forceColorScheme` per story)
-- [ ] `App.tsx` header — `<AtdLogo>` SVGR component + tool name on the left, controls on the right
-- [ ] `App.tsx` footer — `Group` with `justify="space-between"`: left side shows Canvas data version (`t('footer.dataVersion', { version })` where `version` comes from `useEndpoints()`); right side shows "A free tool by" + `<AtdLogo>` SVGR component linked to alltheducks.com
+- [x] `App.tsx` header — `<AtdLogo>` SVGR component + tool name on the left, controls on the right
+- [x] `App.tsx` footer — `Group` with `justify="space-between"`: left side shows Canvas data version (`t('footer.dataVersion', { version })` where `version` comes from `useEndpoints()`); right side shows "A free tool by" + `<AtdLogo>` SVGR component linked to alltheducks.com
 
 ## Color Scheme
 
@@ -49,7 +49,7 @@
 - [ ] `src/types/index.ts` — shared TypeScript interfaces (Endpoint, PermissionRef, AggregatedPermission, etc.)
 - [ ] `src/utils/i18nKey.ts` — Canvas i18nliner key derivation: `slug + "_" + CRC32("{len}:{label}").toString(16)`
 - [ ] `src/utils/i18nKey.test.ts` — unit tests: verified case + edge cases (special chars, spaces, single char)
-- [ ] `src/components/AppErrorBoundary/index.tsx` — class-based React Error Boundary; wraps app root in `main.tsx` (outside `MantineProvider`); catches unexpected render errors
+- [x] `src/components/AppErrorBoundary/index.tsx` — class-based React Error Boundary; wraps app root in `main.tsx` (outside `MantineProvider`); catches unexpected render errors
 - [ ] `src/hooks/useEndpoints.ts` — fetch `public/data/endpoints.json` on mount, Zod-validate, module-level cache; returns discriminated union `{ status: 'loading' } | { status: 'error', error } | { status: 'ready', version, allPermissions, endpoints }`
 - [ ] `src/schemas/endpoints.test.ts` — unit tests: valid data passes; invalid data (missing fields, bad anyOf, duplicate scope) fails
 - [ ] `src/schemas/canvasLocale.test.ts` — unit tests: `canvasLocaleSchema(locale)` validates outer key; `getTranslation` returns string/undefined correctly
