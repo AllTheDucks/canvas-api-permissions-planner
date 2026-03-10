@@ -55,7 +55,7 @@ describe('aggregatePermissions', () => {
         optional: false,
         notes: [],
       });
-      expect(result[0].scope).toEqual(new Set(['Course']));
+      expect(result[0].kind === 'single' && result[0].scope).toEqual(new Set(['Course']));
     });
 
     it('deduplicates the same symbol from multiple endpoints', () => {

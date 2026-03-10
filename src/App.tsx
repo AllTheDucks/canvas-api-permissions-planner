@@ -1,10 +1,44 @@
-import { useCallback, useRef, useState } from 'react'
+import { useCallback, useMemo, useRef, useState } from 'react'
 import { Center, Container, Group, Loader, Stack, Text, Title } from '@mantine/core'
 import AtdLogo from './assets/atd-logo.svg?react'
 import { useEndpoints } from './hooks/useEndpoints'
 import { EndpointSelector } from './components/EndpointSelector'
 import { SelectedEndpoints } from './components/SelectedEndpoints'
-import type { Endpoint } from './types'
+import { PermissionsResult } from './components/PermissionsResult'
+import { aggregatePermissions } from './utils/permissionAggregator'
+import type { Endpoint, PermissionRef } from './types'
+
+type ReadyContentProps = {
+  allPermissions: Record<string, PermissionRef>
+  endpointList: Endpoint[]
+  selectedEndpoints: Endpoint[]
+  onToggle: (endpoint: Endpoint) => void
+  searchInputRef: React.RefObject<HTMLInputElement | null>
+}
+
+function ReadyContent({ allPermissions, endpointList, selectedEndpoints, onToggle, searchInputRef }: ReadyContentProps) {
+  const aggregated = useMemo(
+    () => aggregatePermissions(selectedEndpoints, allPermissions, {}),
+    [selectedEndpoints, allPermissions],
+  )
+
+  return (
+    <>
+      <EndpointSelector
+        endpoints={endpointList}
+        selected={selectedEndpoints}
+        onToggle={onToggle}
+        inputRef={searchInputRef}
+      />
+      <SelectedEndpoints
+        selected={selectedEndpoints}
+        onRemove={onToggle}
+        onLastRemoved={() => searchInputRef.current?.focus()}
+      />
+      <PermissionsResult permissions={aggregated} />
+    </>
+  )
+}
 
 function App() {
   const endpoints = useEndpoints()
@@ -56,19 +90,13 @@ function App() {
           )}
 
           {endpoints.status === 'ready' && (
-            <>
-              <EndpointSelector
-                endpoints={endpoints.endpoints}
-                selected={selectedEndpoints}
-                onToggle={handleToggleEndpoint}
-                inputRef={searchInputRef}
-              />
-              <SelectedEndpoints
-                selected={selectedEndpoints}
-                onRemove={handleToggleEndpoint}
-                onLastRemoved={() => searchInputRef.current?.focus()}
-              />
-            </>
+            <ReadyContent
+              allPermissions={endpoints.allPermissions}
+              endpointList={endpoints.endpoints}
+              selectedEndpoints={selectedEndpoints}
+              onToggle={handleToggleEndpoint}
+              searchInputRef={searchInputRef}
+            />
           )}
         </Container>
       </main>
