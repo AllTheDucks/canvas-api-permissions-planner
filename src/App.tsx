@@ -3,6 +3,7 @@ import { Center, Container, Group, Loader, Stack, Text, Title } from '@mantine/c
 import AtdLogo from './assets/atd-logo.svg?react'
 import { useEndpoints } from './hooks/useEndpoints'
 import { EndpointSelector } from './components/EndpointSelector'
+import { SelectedEndpoints } from './components/SelectedEndpoints'
 import type { Endpoint } from './types'
 
 function App() {
@@ -55,12 +56,19 @@ function App() {
           )}
 
           {endpoints.status === 'ready' && (
-            <EndpointSelector
-              endpoints={endpoints.endpoints}
-              selected={selectedEndpoints}
-              onToggle={handleToggleEndpoint}
-              inputRef={searchInputRef}
-            />
+            <>
+              <EndpointSelector
+                endpoints={endpoints.endpoints}
+                selected={selectedEndpoints}
+                onToggle={handleToggleEndpoint}
+                inputRef={searchInputRef}
+              />
+              <SelectedEndpoints
+                selected={selectedEndpoints}
+                onRemove={handleToggleEndpoint}
+                onLastRemoved={() => searchInputRef.current?.focus()}
+              />
+            </>
           )}
         </Container>
       </main>
