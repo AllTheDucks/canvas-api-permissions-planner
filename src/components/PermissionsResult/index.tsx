@@ -75,7 +75,7 @@ function AnyOfRow({ perm }: { perm: AnyOfAggregated }) {
           <Text size="sm" fw={600}>{t('permissions.anyOf')}</Text>
           {perm.options.map((opt, i) => (
             <Group key={opt.symbol} gap={4} wrap="nowrap">
-              {i > 0 && <Text size="sm" c="dimmed">&middot;</Text>}
+              {i > 0 && <Text size="sm" c="dimmed" fs="italic">or</Text>}
               <RequiredByTooltip requiredBy={perm.requiredBy}>
                 <Text size="sm">{opt.label}</Text>
               </RequiredByTooltip>
