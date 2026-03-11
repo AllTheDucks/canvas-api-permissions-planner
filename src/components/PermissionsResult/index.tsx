@@ -1,6 +1,5 @@
 import {
   ActionIcon,
-  Badge,
   Box,
   Divider,
   Group,
@@ -19,29 +18,6 @@ type PermissionsResultProps = {
   permissions: AggregatedPermission[]
   selectedCount: number
   isLoadingLocale?: boolean
-}
-
-function ScopeBadge({ scope }: { scope: Scope }) {
-  const { t } = useAppTranslations()
-  const tooltipKey = scope === 'Course' ? 'permissions.scopeCourseTooltip' : 'permissions.scopeAccountTooltip'
-  const labelKey = scope === 'Course' ? 'permissions.scopeCourse' : 'permissions.scopeAccount'
-
-  return (
-    <Tooltip label={t(tooltipKey)} multiline maw={300} withArrow>
-      <Badge size="sm" variant="light" style={{ cursor: 'help' }}>
-        {t(labelKey)}
-      </Badge>
-    </Tooltip>
-  )
-}
-
-function ScopeBadges({ scope }: { scope: Set<Scope> }) {
-  return (
-    <>
-      {scope.has('Course') && <ScopeBadge scope="Course" />}
-      {scope.has('Account') && <ScopeBadge scope="Account" />}
-    </>
-  )
 }
 
 function RequiredByTooltip({ requiredBy, children }: { requiredBy: string[]; children: React.ReactNode }) {
@@ -66,7 +42,6 @@ function SingleRow({ perm }: { perm: SingleAggregated }) {
         <RequiredByTooltip requiredBy={perm.requiredBy}>
           <Text size="sm">{perm.label}</Text>
         </RequiredByTooltip>
-        <ScopeBadges scope={perm.scope} />
       </Group>
       {perm.notes.length > 0 && (
         <Stack gap={0} ml="xs" mt={2}>
@@ -103,7 +78,6 @@ function AnyOfRow({ perm }: { perm: AnyOfAggregated }) {
               <RequiredByTooltip requiredBy={perm.requiredBy}>
                 <Text size="sm">{opt.label}</Text>
               </RequiredByTooltip>
-              <ScopeBadges scope={opt.scope} />
             </Group>
           ))}
         </Group>
@@ -184,8 +158,6 @@ export function PermissionsResult({ permissions, selectedCount, isLoadingLocale 
 
       {hasRequired && (
         <section>
-          <Title order={3} size="h5" mb="sm">{t('permissions.heading')}</Title>
-
           {(['course', 'account', 'both'] as const).map((cat) => {
             const singles = singlesByScope.get(cat)
             if (!singles || singles.length === 0) return null
