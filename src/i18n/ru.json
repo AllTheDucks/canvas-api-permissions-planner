@@ -28,6 +28,7 @@
   "endpoints.unmatched": "Нераспознанные конечные точки:",
   "endpoints.noResults": "Конечные точки не найдены",
 
+  "selectedEndpoints.heading": "Выбранные эндпоинты",
   "selectedEndpoints.remove": "Удалить",
   "common.moreInfo": "Подробнее",
 

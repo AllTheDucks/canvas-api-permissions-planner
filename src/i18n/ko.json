@@ -28,6 +28,7 @@
   "endpoints.unmatched": "인식되지 않는 엔드포인트:",
   "endpoints.noResults": "엔드포인트를 찾을 수 없습니다",
 
+  "selectedEndpoints.heading": "선택된 엔드포인트",
   "selectedEndpoints.remove": "제거",
   "common.moreInfo": "추가 정보",
 

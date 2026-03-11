@@ -28,6 +28,7 @@
   "endpoints.unmatched": "Endpoints no reconocidos:",
   "endpoints.noResults": "No se encontraron endpoints",
 
+  "selectedEndpoints.heading": "Endpoints seleccionados",
   "selectedEndpoints.remove": "Eliminar",
   "common.moreInfo": "Más información",
 

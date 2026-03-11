@@ -28,6 +28,7 @@
   "endpoints.unmatched": "Okaenda endpunkter:",
   "endpoints.noResults": "Inga endpunkter hittades",
 
+  "selectedEndpoints.heading": "Valda endpoints",
   "selectedEndpoints.remove": "Ta bort",
   "common.moreInfo": "Mer information",
 

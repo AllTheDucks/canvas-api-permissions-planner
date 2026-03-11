@@ -28,6 +28,7 @@
   "endpoints.unmatched": "Ugenkendte endpoints:",
   "endpoints.noResults": "Ingen endpoints fundet",
 
+  "selectedEndpoints.heading": "Valgte endpoints",
   "selectedEndpoints.remove": "Fjern",
   "common.moreInfo": "Mere information",
 

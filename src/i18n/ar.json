@@ -28,6 +28,7 @@
   "endpoints.unmatched": "نقاط نهاية غير معروفة:",
   "endpoints.noResults": "لم يتم العثور على نقاط نهاية",
 
+  "selectedEndpoints.heading": "نقاط النهاية المحددة",
   "selectedEndpoints.remove": "إزالة",
   "common.moreInfo": "مزيد من المعلومات",
 

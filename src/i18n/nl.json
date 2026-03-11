@@ -28,6 +28,7 @@
   "endpoints.unmatched": "Niet-herkende endpoints:",
   "endpoints.noResults": "Geen endpoints gevonden",
 
+  "selectedEndpoints.heading": "Geselecteerde endpoints",
   "selectedEndpoints.remove": "Verwijderen",
   "common.moreInfo": "Meer informatie",
 

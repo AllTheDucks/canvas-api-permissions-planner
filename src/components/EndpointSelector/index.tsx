@@ -44,9 +44,15 @@ const EndpointRow = memo(function EndpointRow({ endpoint, checked, onToggle }: E
     <Checkbox
       checked={checked}
       onChange={handleChange}
+      styles={{
+        label: {
+          fontFamily: 'var(--mantine-font-family-monospace)',
+          fontSize: 'var(--mantine-font-size-xs)',
+        },
+      }}
       label={
         <>
-          {id}
+          <strong>{endpoint.method}</strong> {endpoint.path.replace(/^\/api\/v1/, '')}
           {endpoint.notes && (
             <Tooltip label={endpoint.notes} multiline maw={300} withArrow>
               <ActionIcon

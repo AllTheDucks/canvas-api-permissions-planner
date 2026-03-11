@@ -1,5 +1,5 @@
 import { useCallback, useEffect, useRef } from 'react'
-import { ActionIcon, CloseButton, Group, Tooltip } from '@mantine/core'
+import { ActionIcon, CloseButton, Group, Paper, Stack, Text, Title, Tooltip } from '@mantine/core'
 import { IconInfoCircle } from '@tabler/icons-react'
 import { useAppTranslations } from '../../context/AppTranslationsContext'
 import type { Endpoint } from '../../types'
@@ -15,21 +15,21 @@ function endpointId(e: Endpoint): string {
 }
 
 export function SelectedEndpoints({ selected, onRemove, onLastRemoved }: SelectedEndpointsProps) {
-  const badgeRefs = useRef<Map<string, HTMLButtonElement>>(new Map())
+  const removeRefs = useRef<Map<string, HTMLButtonElement>>(new Map())
   const focusTargetRef = useRef<string | null>(null)
   const { t } = useAppTranslations()
 
   const setRef = useCallback((id: string, el: HTMLButtonElement | null) => {
     if (el) {
-      badgeRefs.current.set(id, el)
+      removeRefs.current.set(id, el)
     } else {
-      badgeRefs.current.delete(id)
+      removeRefs.current.delete(id)
     }
   }, [])
 
   useEffect(() => {
     if (focusTargetRef.current) {
-      badgeRefs.current.get(focusTargetRef.current)?.focus()
+      removeRefs.current.get(focusTargetRef.current)?.focus()
       focusTargetRef.current = null
     }
   }, [selected])
@@ -59,55 +59,49 @@ export function SelectedEndpoints({ selected, onRemove, onLastRemoved }: Selecte
   }
 
   return (
-    <Group gap="xs" mt="xs">
-      {selected.map((ep, index) => {
-        const id = endpointId(ep)
-        return (
-          <Group
-            key={id}
-            gap={4}
-            wrap="nowrap"
-            style={{
-              border: '1px solid var(--mantine-color-default-border)',
-              borderRadius: 'var(--mantine-radius-sm)',
-              padding: '2px 4px 2px 8px',
-              lineHeight: 1.4,
-            }}
-          >
-            <Tooltip label={id} openDelay={400}>
-              <span
-                style={{
-                  maxWidth: 280,
-                  whiteSpace: 'nowrap',
-                  overflow: 'hidden',
-                  textOverflow: 'ellipsis',
-                  fontSize: 'var(--mantine-font-size-sm)',
-                }}
-              >
-                {id}
-              </span>
-            </Tooltip>
-            {ep.notes && (
-              <Tooltip label={ep.notes} multiline maw={300} withArrow>
-                <ActionIcon
+    <Paper shadow="xs" radius="md" p="md" withBorder>
+      <Title order={3} size="h6" mb="xs">{t('selectedEndpoints.heading')}</Title>
+      <Stack gap={0}>
+        {selected.map((ep, index) => {
+          const id = endpointId(ep)
+          const isLast = index === selected.length - 1
+          return (
+            <Group
+              key={id}
+              gap="xs"
+              wrap="nowrap"
+              justify="space-between"
+              py={6}
+              style={isLast ? undefined : { borderBottom: '1px solid var(--mantine-color-default-border)' }}
+            >
+              <Text size="xs" ff="monospace" style={{ wordBreak: 'break-all' }}>
+                <Text span fw={700} size="xs" ff="monospace">{ep.method}</Text>{' '}
+                {ep.path.replace(/^\/api\/v1/, '')}
+              </Text>
+              <Group gap={4} wrap="nowrap" style={{ flexShrink: 0 }}>
+                {ep.notes && (
+                  <Tooltip label={ep.notes} multiline maw={300} withArrow>
+                    <ActionIcon
+                      size="sm"
+                      variant="transparent"
+                      component="span"
+                      tabIndex={-1}
+                    >
+                      <IconInfoCircle size={14} />
+                    </ActionIcon>
+                  </Tooltip>
+                )}
+                <CloseButton
                   size="sm"
-                  variant="transparent"
-                  component="span"
-                  tabIndex={-1}
-                >
-                  <IconInfoCircle size={14} />
-                </ActionIcon>
-              </Tooltip>
-            )}
-            <CloseButton
-              size="sm"
-              ref={(el) => setRef(id, el)}
-              aria-label={`${t('selectedEndpoints.remove')} ${ep.method} ${ep.path}`}
-              onClick={() => handleRemove(ep, index)}
-            />
-          </Group>
-        )
-      })}
-    </Group>
+                  ref={(el) => setRef(id, el)}
+                  aria-label={`${t('selectedEndpoints.remove')} ${ep.method} ${ep.path}`}
+                  onClick={() => handleRemove(ep, index)}
+                />
+              </Group>
+            </Group>
+          )
+        })}
+      </Stack>
+    </Paper>
   )
 }

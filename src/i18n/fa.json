@@ -28,6 +28,7 @@
   "endpoints.unmatched": "endpointهای ناشناخته:",
   "endpoints.noResults": "هیچ endpointی یافت نشد",
 
+  "selectedEndpoints.heading": "نقاط پایانی انتخاب‌شده",
   "selectedEndpoints.remove": "حذف",
   "common.moreInfo": "اطلاعات بیشتر",
 

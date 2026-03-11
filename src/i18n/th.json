@@ -28,6 +28,7 @@
   "endpoints.unmatched": "endpoint ที่ไม่รู้จัก:",
   "endpoints.noResults": "ไม่พบ endpoint",
 
+  "selectedEndpoints.heading": "เอนด์พอยต์ที่เลือก",
   "selectedEndpoints.remove": "ลบ",
   "common.moreInfo": "ข้อมูลเพิ่มเติม",
 

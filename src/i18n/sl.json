@@ -28,6 +28,7 @@
   "endpoints.unmatched": "Neprepoznane koncne tocke:",
   "endpoints.noResults": "Koncne tocke niso najdene",
 
+  "selectedEndpoints.heading": "Izbrane končne točke",
   "selectedEndpoints.remove": "Odstrani",
   "common.moreInfo": "Vec informacij",
 

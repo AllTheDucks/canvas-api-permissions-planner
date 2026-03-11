@@ -28,6 +28,7 @@
   "endpoints.unmatched": "無法辨識的端點：",
   "endpoints.noResults": "找不到端點",
 
+  "selectedEndpoints.heading": "已選端點",
   "selectedEndpoints.remove": "移除",
   "common.moreInfo": "更多資訊",
 

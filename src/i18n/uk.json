@@ -28,6 +28,7 @@
   "endpoints.unmatched": "Нерозпiзнанi кiнцевi точки:",
   "endpoints.noResults": "Кiнцевi точки не знайдено",
 
+  "selectedEndpoints.heading": "Вибрані ендпоінти",
   "selectedEndpoints.remove": "Видалити",
   "common.moreInfo": "Додаткова iнформацiя",
 

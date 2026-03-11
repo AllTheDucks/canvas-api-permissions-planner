@@ -28,6 +28,7 @@
   "endpoints.unmatched": "Nem felismert végpontok:",
   "endpoints.noResults": "Nem található végpont",
 
+  "selectedEndpoints.heading": "Kiválasztott végpontok",
   "selectedEndpoints.remove": "Eltávolítás",
   "common.moreInfo": "További információ",
 

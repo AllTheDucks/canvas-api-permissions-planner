@@ -28,6 +28,7 @@
   "endpoints.unmatched": "認識されないエンドポイント：",
   "endpoints.noResults": "エンドポイントが見つかりません",
 
+  "selectedEndpoints.heading": "選択済みエンドポイント",
   "selectedEndpoints.remove": "削除",
   "common.moreInfo": "詳細情報",
 

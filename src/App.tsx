@@ -1,5 +1,5 @@
 import { useCallback, useDeferredValue, useMemo, useRef, useState } from 'react'
-import { ActionIcon, Center, Container, Grid, Group, Loader, Stack, Text, Title, Tooltip } from '@mantine/core'
+import { ActionIcon, Center, Container, Divider, Grid, Group, Loader, Paper, Stack, Text, Title, Tooltip } from '@mantine/core'
 import { notifications } from '@mantine/notifications'
 import { IconLink } from '@tabler/icons-react'
 import AtdLogo from './assets/atd-logo.svg?react'
@@ -51,19 +51,25 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion }: Rea
   return (
     <Grid>
       <Grid.Col span={{ base: 12, sm: 5 }} data-print-hide>
-        <Title order={2} size="h4" mb="sm">{t('endpoints.heading')}</Title>
-        <EndpointSelector
-          endpoints={endpointList}
-          selected={selectedEndpoints}
-          onToggle={handleToggle}
-          inputRef={searchInputRef}
-        />
-        <EndpointPaste endpoints={endpointList} onAdd={handleAddMany} />
-        <SelectedEndpoints
-          selected={deferredSelected}
-          onRemove={handleToggle}
-          onLastRemoved={() => searchInputRef.current?.focus()}
-        />
+        <Stack gap="md">
+          <Paper shadow="xs" radius="md" p="md" withBorder>
+            <Title order={2} size="h4" mb="sm">{t('endpoints.heading')}</Title>
+            <EndpointSelector
+              endpoints={endpointList}
+              selected={selectedEndpoints}
+              onToggle={handleToggle}
+              inputRef={searchInputRef}
+            />
+          </Paper>
+          <Paper shadow="xs" radius="md" p="md" withBorder>
+            <EndpointPaste endpoints={endpointList} onAdd={handleAddMany} />
+          </Paper>
+          <SelectedEndpoints
+            selected={deferredSelected}
+            onRemove={handleToggle}
+            onLastRemoved={() => searchInputRef.current?.focus()}
+          />
+        </Stack>
       </Grid.Col>
       <Grid.Col span={{ base: 12, sm: 7 }} data-print-permissions>
         <div data-print-only>
@@ -79,21 +85,23 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion }: Rea
             </Stack>
           )}
         </div>
-        <Group justify="space-between" mb="sm">
-          <Title order={2} size="h4">{t('permissions.heading')}</Title>
-          {deferredSelected.length > 0 && (
-            <Tooltip label={t('share.copyLink')} withArrow>
-              <ActionIcon
-                onClick={handleCopyLink}
-                aria-label={t('share.copyLink')}
-                variant="subtle"
-              >
-                <IconLink size={18} />
-              </ActionIcon>
-            </Tooltip>
-          )}
-        </Group>
-        <PermissionsResult permissions={aggregated} selectedCount={deferredSelected.length} isLoadingLocale={localeLoading} />
+        <Paper shadow="xs" radius="md" p="md" withBorder>
+          <Group justify="space-between" mb="sm">
+            <Title order={2} size="h4">{t('permissions.heading')}</Title>
+            {deferredSelected.length > 0 && (
+              <Tooltip label={t('share.copyLink')} withArrow>
+                <ActionIcon
+                  onClick={handleCopyLink}
+                  aria-label={t('share.copyLink')}
+                  variant="subtle"
+                >
+                  <IconLink size={18} />
+                </ActionIcon>
+              </Tooltip>
+            )}
+          </Group>
+          <PermissionsResult permissions={aggregated} selectedCount={deferredSelected.length} isLoadingLocale={localeLoading} />
+        </Paper>
       </Grid.Col>
     </Grid>
   )
@@ -131,6 +139,7 @@ function AppContent({
             </Group>
           </Group>
         </Container>
+        <Divider />
       </header>
 
       <main aria-label={t('app.title')}>
@@ -162,6 +171,7 @@ function AppContent({
       </main>
 
       <footer>
+        <Divider />
         <Container size="xl" py="sm">
           <Group justify="space-between">
             <Text size="xs" c="dimmed">

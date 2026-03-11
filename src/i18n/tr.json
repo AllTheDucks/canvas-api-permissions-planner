@@ -28,6 +28,7 @@
   "endpoints.unmatched": "Taninamayan endpointler:",
   "endpoints.noResults": "Endpoint bulunamadi",
 
+  "selectedEndpoints.heading": "Seçilen uç noktalar",
   "selectedEndpoints.remove": "Kaldir",
   "common.moreInfo": "Daha fazla bilgi",
 

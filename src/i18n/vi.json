@@ -28,6 +28,7 @@
   "endpoints.unmatched": "Endpoint khong nhan dang:",
   "endpoints.noResults": "Khong tim thay endpoint",
 
+  "selectedEndpoints.heading": "Endpoint đã chọn",
   "selectedEndpoints.remove": "Xoa",
   "common.moreInfo": "Them thong tin",
 

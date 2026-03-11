@@ -28,6 +28,7 @@
   "endpoints.unmatched": "Tunnistamattomat päätepisteet:",
   "endpoints.noResults": "Päätepisteitä ei löytynyt",
 
+  "selectedEndpoints.heading": "Valitut päätepisteet",
   "selectedEndpoints.remove": "Poista",
   "common.moreInfo": "Lisätietoja",
 

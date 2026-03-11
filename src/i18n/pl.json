@@ -28,6 +28,7 @@
   "endpoints.unmatched": "Nierozpoznane endpointy:",
   "endpoints.noResults": "Nie znaleziono endpointow",
 
+  "selectedEndpoints.heading": "Wybrane endpointy",
   "selectedEndpoints.remove": "Usun",
   "common.moreInfo": "Wiecej informacji",
 
