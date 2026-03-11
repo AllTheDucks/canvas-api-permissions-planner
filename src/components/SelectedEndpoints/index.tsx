@@ -4,6 +4,7 @@ import { IconInfoCircle } from '@tabler/icons-react'
 import { useAppTranslations } from '../../context/AppTranslationsContext'
 import type { Endpoint } from '../../types'
 import { StyledPath } from '../StyledPath'
+import classes from './SelectedEndpoints.module.css'
 
 type SelectedEndpointsProps = {
   selected: Endpoint[]
@@ -109,9 +110,9 @@ export function SelectedEndpoints({ selected, onRemove, onRemoveCategory, onLast
                   py={6}
                   style={isLastInGroup ? undefined : { borderBottom: '1px solid var(--mantine-color-default-border)' }}
                 >
-                  <Text size="xs" ff="monospace" style={{ display: 'flex', overflow: 'hidden' }}>
+                  <Text size="xs" ff="monospace" className={classes.endpointPath}>
                     <Text span fw={700} size="xs" ff="monospace" style={{ flexShrink: 0 }}>{ep.method}&nbsp;</Text>
-                    <span style={{ direction: 'rtl', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                    <span className={classes.pathText}>
                       <bdo dir="ltr"><StyledPath path={ep.path} /></bdo>
                     </span>
                   </Text>

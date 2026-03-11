@@ -1,0 +1,22 @@
+.endpointPath {
+  display: flex;
+  overflow: hidden;
+}
+
+.pathText {
+  direction: rtl;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.endpointPath:hover .pathText {
+  white-space: normal;
+  direction: ltr;
+  overflow: visible;
+  word-break: break-all;
+}
+
+.endpointPath:hover .pathText bdo {
+  unicode-bidi: normal;
+}
