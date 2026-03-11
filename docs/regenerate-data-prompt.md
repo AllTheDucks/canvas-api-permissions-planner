@@ -50,10 +50,7 @@ The commit message will contain a reference like `stable/2026-02-11`. Extract th
 Read the Canvas permission definitions:
 https://raw.githubusercontent.com/instructure/canvas-lms/prod/config/initializers/permissions_registry.rb
 
-From this file extract every permission symbol and its UI label. The label is the string passed to `I18n.t(...)` inline in the Ruby. The scope of each permission comes from the `:available_to` key in the permission definition hash:
-- `:account_level_only` (or similar) → Account scope only
-- `:course_level_only` (or similar) → Course scope only
-- Both listed → Course and Account scope
+From this file extract every permission symbol and its UI label. The label is the string passed to `I18n.t(...)` inline in the Ruby.
 
 Build a complete permissions reference table from this.
 
@@ -221,8 +218,8 @@ Produce a markdown file with this structure:
 
 ## Permission Reference Table
 
-| Permission Symbol | Canvas UI Label | Scope |
-|---|---|---|
+| Permission Symbol | Canvas UI Label |
+|---|---|
 [one row per permission]
 
 ---
@@ -241,8 +238,6 @@ Produce a markdown file with this structure:
 [repeat for each category]
 ```
 
-Scope values: `"Account"`, `"Course"`, or `"Course / Account"`.
-
 For the Permission Symbol(s) column:
 - Single permission: `:symbol_name`
 - OR group (any one sufficient): `:symbolA` / `:symbolB`
@@ -259,8 +254,7 @@ Produce a JSON file with this exact structure:
   "version": "[stable branch date from Step 0, e.g. 2026-02-11]",
   "permissions": {
     "[symbol]": {
-      "label": "[Canvas UI label — the I18n.t() string from permissions_registry.rb]",
-      "scope": ["Course"]           // ["Course"], ["Account"], or ["Course", "Account"]
+      "label": "[Canvas UI label — the I18n.t() string from permissions_registry.rb]"
     }
     // one entry per permission symbol
   },
