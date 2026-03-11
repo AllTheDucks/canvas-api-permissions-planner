@@ -53,7 +53,7 @@ const EndpointRow = memo(function EndpointRow({ endpoint, checked, onToggle }: E
       }}
       label={
         <>
-          <strong>{endpoint.method}</strong> {endpoint.path.replace(/^\/api\/v1/, '')}
+          <strong>{endpoint.method}</strong>{' '}{endpoint.path}
           {endpoint.notes && (
             <Tooltip label={endpoint.notes} multiline maw={300} withArrow>
               <ActionIcon

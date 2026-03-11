@@ -108,9 +108,11 @@ export function SelectedEndpoints({ selected, onRemove, onRemoveCategory, onLast
                   py={6}
                   style={isLastInGroup ? undefined : { borderBottom: '1px solid var(--mantine-color-default-border)' }}
                 >
-                  <Text size="xs" ff="monospace" style={{ wordBreak: 'break-all' }}>
-                    <Text span fw={700} size="xs" ff="monospace">{ep.method}</Text>{' '}
-                    {ep.path.replace(/^\/api\/v1/, '')}
+                  <Text size="xs" ff="monospace" style={{ display: 'flex', overflow: 'hidden' }}>
+                    <Text span fw={700} size="xs" ff="monospace" style={{ flexShrink: 0 }}>{ep.method}&nbsp;</Text>
+                    <span style={{ direction: 'rtl', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                      <bdo dir="ltr">{ep.path}</bdo>
+                    </span>
                   </Text>
                   <Group gap={4} wrap="nowrap" style={{ flexShrink: 0 }}>
                     {ep.notes && (
