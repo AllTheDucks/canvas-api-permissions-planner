@@ -3,6 +3,7 @@ import { ActionIcon, Center, Container, Divider, Grid, Group, Loader, Paper, Sta
 import { notifications } from '@mantine/notifications'
 import { IconLink } from '@tabler/icons-react'
 import AtdLogo from './assets/atd-logo.svg?react'
+import AtdLogoIcon from './assets/atd-logo-icon.svg?react'
 import { useEndpoints } from './hooks/useEndpoints'
 import { useLocale } from './hooks/useLocale'
 import { useLocalePreference } from './hooks/useLocalePreference'
@@ -125,9 +126,12 @@ function AppContent({
           <Group justify="space-between">
             <Group gap="sm">
               <a href="https://alltheducks.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
-                <AtdLogo height={32} aria-label="All the Ducks" />
+                <AtdLogoIcon height={48} aria-label="All the Ducks" />
               </a>
-              <Title order={1} size="h3" visibleFrom="sm">{t('app.title')}</Title>
+              <Stack gap={0} visibleFrom="sm">
+                <Title order={1} size="h3">{t('app.title')}</Title>
+                <Text size="xs" c="dimmed" ta="right" pr="xs">from <a href="https://alltheducks.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>All the Ducks</a></Text>
+              </Stack>
             </Group>
             <Group gap="xs">
               {locale !== 'en' && (
