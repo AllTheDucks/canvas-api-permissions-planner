@@ -21,7 +21,7 @@
 - [x] `src/assets/atd-logo.svg` — text group has `fill="currentColor"`; icon mark fixed `#FFAF11` (single file, no dark variant needed)
 - [ ] Create `public/og-image.png` — 1200×630 branded social card (dark background, ATD logo, tool name + description); manual design step required before first public deploy
 - [x] Write `index.html` `<head>` — use the complete block from the plan (charset, viewport, title, favicon links, meta description, Open Graph + Twitter card tags, Google Fonts preconnect + stylesheet, ColorSchemeScript inline script); update GitHub Pages URLs (`og:url`, `og:image`) when repo URL is finalised
-- [ ] Favicon — create `public/favicon.svg` (icon mark only, square viewBox ~`20 20 120 120`, `#FFAF11` duck shape extracted from `atd-logo.svg`) and `public/favicon.ico` (16×16 + 32×32 raster, generated from the SVG)
+- [x] Favicon — create `public/favicon.svg` (icon mark only, square viewBox ~`18 26 110 95`, `#FFAF11` duck shape extracted from `atd-logo.svg`) and `public/favicon.ico` (16×16 raster, generated from the SVG)
 - [x] Generate 10-shade Mantine colour palette for #FFAF11 (use mantine.dev/colors-generator) — confirm shade [5] is assigned **dark (black) text** by Mantine's auto-contrast; override if not (accessibility: #FFAF11 on white is only ~1.8:1)
 - [x] Configure custom Mantine theme in `main.tsx` — `primaryColor: 'atdOrange'`, `fontFamily: 'Poppins'`, `headings.fontFamily: 'Source Sans 3'`
 - [x] Set `defaultColorScheme="auto"` on `MantineProvider` in `main.tsx`
@@ -174,11 +174,11 @@
 
 ## Deployment
 
-- [ ] Add `<meta http-equiv="Content-Security-Policy">` to `index.html` `<head>` — lock down `script-src`, `style-src`, `font-src`, `connect-src`, `img-src` to known origins (see plan for full directive)
+- [x] Add `<meta http-equiv="Content-Security-Policy">` to `index.html` `<head>` — lock down `script-src`, `style-src`, `font-src`, `connect-src`, `img-src` to known origins (see plan for full directive)
 - [ ] Add `public/CNAME` file containing `canvas-permissions.alltheducks.com`
 - [ ] Add `public/404.html` SPA redirect (preserves query string for shareable links)
 - [ ] Create `.github/workflows/deploy.yml` — build with pnpm, deploy via `actions/deploy-pages@v4` on push to `main`
-- [ ] Update `index.html` `og:url` / `og:image` / `twitter:image` URLs to use `https://canvas-permissions.alltheducks.com/`
+- [x] Update `index.html` `og:url` / `og:image` / `twitter:image` URLs to use `https://canvas-permissions.alltheducks.com/`
 - [ ] Configure DNS: `canvas-permissions.alltheducks.com` CNAME → `alltheducks.github.io`
 - [ ] Configure repo Settings → Pages: source "GitHub Actions", custom domain, enforce HTTPS
 - [ ] Add `LICENSE` file to repo root (MIT, 2026, All the Ducks)
