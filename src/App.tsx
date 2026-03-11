@@ -9,6 +9,7 @@ import { SelectedEndpoints } from './components/SelectedEndpoints'
 import { PermissionsResult } from './components/PermissionsResult'
 import { ColorSchemeToggle } from './components/ColorSchemeToggle'
 import { LanguagePicker } from './components/LanguagePicker'
+import { HelpModal } from './components/HelpModal'
 import { AppTranslationsProvider, useAppTranslations } from './context/AppTranslationsContext'
 import { aggregatePermissions } from './utils/permissionAggregator'
 import { detectLocale } from './utils/detectLocale'
@@ -132,7 +133,7 @@ function AppContent({
               )}
               <LanguagePicker value={locale} onChange={onLocaleChange} />
               <ColorSchemeToggle />
-              {/* HelpModal — wired in Step 17 */}
+              <HelpModal />
             </Group>
           </Group>
         </Container>

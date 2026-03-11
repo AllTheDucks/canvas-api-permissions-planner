@@ -112,12 +112,12 @@
 ## Help and Documentation
 
 - [x] Install `@tabler/icons-react` (`pnpm add @tabler/icons-react`)
-- [ ] `src/components/HelpModal/index.tsx` — `?` ActionIcon button + Modal with three Tabs:
+- [x] `src/components/HelpModal/index.tsx` — `?` ActionIcon button + Modal with three Tabs:
   - Tab 1 "How to use": step-by-step guide for using the tool
   - Tab 2 "Canvas Permissions": RBAC overview, course vs account scope, permission inheritance, OR groups
   - Tab 3 "Common setups": read-only / gradebook / SIS integration examples
 - [ ] `src/components/HelpModal/HelpModal.stories.tsx` — Closed (default), Open
-- [ ] Add `[?]` HelpModal trigger to the `App.tsx` header (next to LanguagePicker)
+- [x] Add `[?]` HelpModal trigger to the `App.tsx` header (next to LanguagePicker)
 - [ ] `PermissionsResult` contextual tooltips:
   - **Course** scope badge tooltip: course-level role explanation
   - **Account** scope badge tooltip: account-level role explanation
