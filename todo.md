@@ -138,8 +138,8 @@
   - Wrap `Grid` in `Container` / `maw="100%"` to prevent horizontal overflow at ≥ 375px
 - [x] Empty state for permissions panel (no endpoints selected yet)
 - [ ] Copy-to-clipboard button for permissions list
-- [ ] `src/styles/print.css` — `@media print` stylesheet: hide left panel, header controls, footer, action buttons; show permissions result full-width with print-only header (tool name, selected endpoints list, date); force light scheme; `break-inside: avoid` on permission rows; import in `main.tsx`
-- [ ] Print-only header block in `App.tsx` — `div` with `display: none` default / `display: block` in print; contains tool name, selected endpoint list, and `data-print-date` attribute for current date
+- [x] `src/styles/print.css` — `@media print` stylesheet: hide left panel, header controls, footer, action buttons; show permissions result full-width with print-only header (tool name, selected endpoints list, date); force light scheme; `break-inside: avoid` on permission rows; import in `main.tsx`
+- [x] Print-only header block in `App.tsx` — `div` with `display: none` default / `display: block` in print; contains tool name, selected endpoint list, and `data-print-date` attribute for current date
 
 ## Accessibility Verification
 

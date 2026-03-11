@@ -39,7 +39,7 @@ function ReadyContent({ allPermissions, endpointList, selectedEndpoints, onToggl
 
   return (
     <Grid>
-      <Grid.Col span={{ base: 12, sm: 5 }}>
+      <Grid.Col span={{ base: 12, sm: 5 }} data-print-hide>
         <Title order={2} size="h4" mb="sm">{t('endpoints.heading')}</Title>
         <EndpointSelector
           endpoints={endpointList}
@@ -54,7 +54,20 @@ function ReadyContent({ allPermissions, endpointList, selectedEndpoints, onToggl
           onLastRemoved={() => searchInputRef.current?.focus()}
         />
       </Grid.Col>
-      <Grid.Col span={{ base: 12, sm: 7 }}>
+      <Grid.Col span={{ base: 12, sm: 7 }} data-print-permissions>
+        <div data-print-only>
+          <Text fw={700} size="lg" mb={2}>{t('app.title')}</Text>
+          <Text data-print-date size="xs" c="dimmed" mb="md">{new Date().toLocaleDateString()}</Text>
+          {selectedEndpoints.length > 0 && (
+            <Stack gap={0} mb="md">
+              {selectedEndpoints.map(e => (
+                <Text key={`${e.method} ${e.path}`} size="sm" c="dimmed">
+                  {e.method} {e.path}
+                </Text>
+              ))}
+            </Stack>
+          )}
+        </div>
         <Title order={2} size="h4" mb="sm">{t('permissions.heading')}</Title>
         <PermissionsResult permissions={aggregated} selectedCount={selectedEndpoints.length} isLoadingLocale={localeLoading} />
       </Grid.Col>

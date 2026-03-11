@@ -1,0 +1,63 @@
+@media print {
+  /* Force light colour scheme */
+  :root {
+    color-scheme: light;
+    color: black;
+    background: white;
+  }
+
+  /* Hide left panel, header controls, footer, action buttons */
+  [data-print-hide] {
+    display: none !important;
+  }
+
+  /* Show print-only header */
+  [data-print-only] {
+    display: block !important;
+  }
+
+  /* Permissions panel full-width */
+  [data-print-permissions] {
+    flex: 0 0 100% !important;
+    max-width: 100% !important;
+  }
+
+  /* Remove decorative shadows, borders, backgrounds */
+  *,
+  *::before,
+  *::after {
+    box-shadow: none !important;
+    text-shadow: none !important;
+  }
+
+  /* Scope badges: bordered outlines instead of filled */
+  .mantine-Badge-root {
+    background: transparent !important;
+    border: 1px solid currentColor !important;
+    color: black !important;
+  }
+
+  /* Hide info icons and their ActionIcon wrappers — tooltips are not interactive in print */
+  .mantine-ActionIcon-root:has(.tabler-icon-info-circle) {
+    display: none !important;
+  }
+
+  /* Prevent page breaks inside permission rows */
+  [data-print-no-break] {
+    break-inside: avoid;
+  }
+
+  header,
+  footer {
+    display: none !important;
+  }
+
+  main {
+    padding: 0 !important;
+  }
+}
+
+/* Print-only block: hidden on screen */
+[data-print-only] {
+  display: none;
+}

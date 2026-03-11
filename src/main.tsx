@@ -8,6 +8,7 @@ import App from './App'
 
 import '@mantine/core/styles.css'
 import '@mantine/notifications/styles.css'
+import './styles/print.css'
 
 createRoot(document.getElementById('root')!).render(
   <StrictMode>

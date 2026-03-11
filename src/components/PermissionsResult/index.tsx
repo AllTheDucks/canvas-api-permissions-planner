@@ -61,7 +61,7 @@ function RequiredByTooltip({ requiredBy, children }: { requiredBy: string[]; chi
 
 function SingleRow({ perm }: { perm: SingleAggregated }) {
   return (
-    <Box mb="xs">
+    <Box mb="xs" data-print-no-break>
       <Group gap="xs" wrap="nowrap">
         <RequiredByTooltip requiredBy={perm.requiredBy}>
           <Text size="sm">{perm.label}</Text>
@@ -83,7 +83,7 @@ function AnyOfRow({ perm }: { perm: AnyOfAggregated }) {
   const { t } = useAppTranslations()
 
   return (
-    <Box mb="xs">
+    <Box mb="xs" data-print-no-break>
       <Group gap="xs" wrap="nowrap" align="flex-start">
         <Tooltip
           label={t('permissions.anyOfTooltip')}
