@@ -1,0 +1,78 @@
+{
+  "app.title": "Canvas API Izin Planlayicisi",
+
+  "header.help": "Yardim",
+  "language.label": "Dil",
+  "language.tooltip": "Bir dil secin. Canvas izin etiketleri Canvas toplulugu tarafindan cevrilir; uygulama arayuzu etiketleri yapay zeka tarafindan cevrilir.",
+
+  "permissions.heading": "Gerekli Izinler",
+  "permissions.optionalHeading": "Istege Bagli Izinler",
+  "permissions.optionalDescription": "Bu izinler endpoint cagrilari icin gerekli degildir, ancak yanit-larda ek verilerin kilidini acar.",
+  "permissions.empty": "Gerekli izinleri gormek icin endpoint ekleyin",
+  "permissions.noAdditional": "Secilen endpointler icin ek izin gerekmiyor",
+  "permissions.scopeCourse": "Ders",
+  "permissions.scopeAccount": "Hesap",
+  "permissions.scopeBoth": "Ders veya Hesap",
+  "permissions.anyOf": "Herhangi biri:",
+  "permissions.anyOfTooltip": "API kullanici-nizin bu izinlerden en az birine ihtiyaci var. Herhangi bir tanesi bu gereksinimi karsilamak icin yeterlidir.",
+  "permissions.scopeCourseTooltip": "Ilgili ders icin ders duzeyinde bir rolde (orn. Ogretmen, Ozel Ders Rolu) etkinlestirilmelidir.",
+  "permissions.scopeAccountTooltip": "Hesap duzeyinde bir rolde (orn. Hesap Yoneticisi, Ozel Hesap Rolu) etkinlestirilmelidir. Hesap duzeyi izinleri o hesaptaki tum dersleri kapsar.",
+  "permissions.optionalNote": "Bu izinler ek veri alanlari-nin kilidini acar. Entegrasyonunuzun bunlara ihtiyaci olup olmadigina karar vermek icin notlari inceleyin.",
+
+  "endpoints.heading": "Endpoint Ekle",
+  "endpoints.searchPlaceholder": "Endpoint ara…",
+  "endpoints.pasteLabel": "Veya bir liste yapisitirin:",
+  "endpoints.addButton": "Ekle",
+  "endpoints.pasteTooltip": "Satir basina bir endpoint yapisitirin. Kabul edilen formatlar: tam URL, yalnizca yol veya METHOD /yol. Sorgu dizeleri yok sayilir. Sayisal kimlikler ve SIS kimlikleri (orn. sis_course_id:ABC) taninir.",
+  "endpoints.pastePlaceholder": "Satir basina bir endpoint, orn. GET /api/v1/courses/:id",
+  "endpoints.unmatched": "Taninamayan endpointler:",
+  "endpoints.noResults": "Endpoint bulunamadi",
+
+  "selectedEndpoints.remove": "Kaldir",
+  "common.moreInfo": "Daha fazla bilgi",
+
+  "colorScheme.switchToDark": "Karanlik moda gec",
+  "colorScheme.switchToLight": "Aydinlik moda gec",
+  "colorScheme.switchToSystem": "Sistem moduna gec",
+
+  "footer.dataVersion": "Canvas verileri: {{version}}",
+  "footer.dataNotLoaded": "Canvas verileri: (yuklenmedi)",
+  "footer.credit": "Ucretsiz bir arac",
+
+  "error.loadFailed": "Izin verileri yuklenemedi",
+
+  "aiTranslation.note": "Uygulama arayuzu yapay zeka tarafindan cevrildi",
+
+  "help.tab.howToUse": "Nasil kullanilir",
+  "help.tab.permissions": "Canvas Izinleri",
+  "help.tab.commonSetups": "Yaygin yapilandirmalar",
+
+  "help.howToUse.step1": "Entegrasyonunuzun cagirdigi API endpoint yollarini secin veya yapisitirin.",
+  "help.howToUse.step2": "Gerekli Izinler paneli, API kullanicini-zin ihtiyac duydugu tum Canvas rol izinlerini listeler.",
+  "help.howToUse.step3": "Istege Bagli Izinler bolumunu inceleyin — bunlar API yanitlarinda ek verilerin kilidini acar (orn. SIS kimlikleri, e-posta adresleri, yayinlanmamis icerik).",
+  "help.howToUse.step4": "Tam olarak bu izinler etkinlestirilmis bir ozel Canvas rolu olusturun (veya mevcut birini duzenleyin).",
+
+  "help.permissions.rbac.heading": "Rol Tabanli Erisim Kontrolu",
+  "help.permissions.rbac.body": "Izinler kullanicilara degil rollere verilir. Kullanicilar izinleri kayit (ders rolu) veya hesap uyeligi (hesap rolu) araciligiyla miras alir.",
+  "help.permissions.scope.heading": "Ders ve Hesap kapsami",
+  "help.permissions.scope.body": "Ders kapsamli bir izin, ders duzeyinde bir rolde etkinlestirilmelidir. Hesap kapsamli bir izin, hesap duzeyi yonetici rolunde olmalidir. Bazi izinler her iki duzey-de de mevcuttur — Hesap izni o hesaptaki tum dersleri kapsar.",
+  "help.permissions.inheritance.heading": "Izin mirasi",
+  "help.permissions.inheritance.body": "Bir izne sahip hesap duzeyindeki rol, otomatik olarak hesap altindaki tum dersler icin bu izne sahiptir.",
+  "help.permissions.orGroups.heading": "VEYA gruplari",
+  "help.permissions.orGroups.body": "Arac \"Herhangi biri: A · B · C\" gosterd-iginde, listeden herhangi bir tek izin yeterlidir. Hepsine ihtiyaciniz yok.",
+  "help.permissions.optional.heading": "Istege bagli izinler",
+  "help.permissions.optional.body": "Bazi endpointler, arayan ek izinlere sahip oldugunda ekstra veri dondurur. Bunlar, neyin kilidini actiklarini acoklayan bir notla birlikte Istege Bagli Izinler olarak ayri gosterilir — ornegin SIS kimlik alanlari, e-posta adresleri, giris kimlikleri veya yayinlanmamis icerik. Endpoint bunlar olmadan da calisir; sadece daha az alan veya kayit alirsiniz.",
+  "help.permissions.featureFlags.heading": "Ozellik bayraklari",
+  "help.permissions.featureFlags.body": "Az sayida izin, Izinler arayuzunde gorunmeden once bir Canvas ozellik bayraginin etkinlestirilmesini gerektirir. Bu, bireysel endpointlerde belirtilir.",
+
+  "help.commonSetups.intro": "Yaygin entegrasyon turleri icin uc ornek yapilandirma:",
+  "help.commonSetups.col.type": "Entegrasyon turu",
+  "help.commonSetups.col.permissions": "Minimum izinler",
+  "help.commonSetups.readOnly.name": "Salt okunur",
+  "help.commonSetups.readOnly.description": "Ders verileri, odevler, kayitlar",
+  "help.commonSetups.gradebook.name": "Tam not defteri",
+  "help.commonSetups.gradebook.description": "Notlari okuma ve yazma",
+  "help.commonSetups.sis.name": "SIS entegrasyonu",
+  "help.commonSetups.sis.description": "SIS icerik-aktarilari, kullanici senkronizasyonu",
+  "help.commonSetups.optional": "istege bagli"
+}

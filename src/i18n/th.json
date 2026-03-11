@@ -1,0 +1,78 @@
+{
+  "app.title": "ตัววางแผนสิทธิ์ Canvas API",
+
+  "header.help": "ช่วยเหลือ",
+  "language.label": "ภาษา",
+  "language.tooltip": "เลือกภาษา ป้ายกำกับสิทธิ์ Canvas แปลโดยชุมชน Canvas ป้ายกำกับอินเทอร์เฟซแอปแปลโดย AI",
+
+  "permissions.heading": "สิทธิ์ที่จำเป็น",
+  "permissions.optionalHeading": "สิทธิ์เพิ่มเติม",
+  "permissions.optionalDescription": "สิทธิ์เหล่านี้ไม่จำเป็นสำหรับการเรียก endpoint แต่จะปลดล็อกข้อมูลเพิ่มเติมในการตอบกลับ",
+  "permissions.empty": "เพิ่ม endpoint เพื่อดูสิทธิ์ที่จำเป็น",
+  "permissions.noAdditional": "ไม่ต้องการสิทธิ์เพิ่มเติมสำหรับ endpoint ที่เลือก",
+  "permissions.scopeCourse": "รายวิชา",
+  "permissions.scopeAccount": "บัญชี",
+  "permissions.scopeBoth": "รายวิชาหรือบัญชี",
+  "permissions.anyOf": "อย่างใดอย่างหนึ่ง:",
+  "permissions.anyOfTooltip": "ผู้ใช้ API ของคุณต้องมีสิทธิ์อย่างน้อยหนึ่งรายการจากรายการนี้ สิทธิ์ใดสิทธิ์หนึ่งก็เพียงพอ",
+  "permissions.scopeCourseTooltip": "ต้องเปิดใช้งานบนบทบาทระดับรายวิชา (เช่น ผู้สอน บทบาทรายวิชาที่กำหนดเอง) สำหรับรายวิชาที่เกี่ยวข้อง",
+  "permissions.scopeAccountTooltip": "ต้องเปิดใช้งานบนบทบาทระดับบัญชี (เช่น ผู้ดูแลบัญชี บทบาทบัญชีที่กำหนดเอง) สิทธิ์ระดับบัญชีครอบคลุมทุกรายวิชาภายใต้บัญชีนั้น",
+  "permissions.optionalNote": "สิทธิ์เหล่านี้ปลดล็อกฟิลด์ข้อมูลเพิ่มเติม ตรวจสอบหมายเหตุเพื่อตัดสินใจว่าการเชื่อมต่อของคุณต้องการหรือไม่",
+
+  "endpoints.heading": "เพิ่ม Endpoint",
+  "endpoints.searchPlaceholder": "ค้นหา endpoint…",
+  "endpoints.pasteLabel": "หรือวางรายการ:",
+  "endpoints.addButton": "เพิ่ม",
+  "endpoints.pasteTooltip": "วาง endpoint หนึ่งรายการต่อบรรทัด รูปแบบที่รับ: URL เต็ม เฉพาะเส้นทาง หรือ METHOD /เส้นทาง ข้อความค้นหาจะถูกละเว้น ระบบจดจำ ID ตัวเลขและ SIS ID (เช่น sis_course_id:ABC)",
+  "endpoints.pastePlaceholder": "endpoint หนึ่งรายการต่อบรรทัด เช่น GET /api/v1/courses/:id",
+  "endpoints.unmatched": "endpoint ที่ไม่รู้จัก:",
+  "endpoints.noResults": "ไม่พบ endpoint",
+
+  "selectedEndpoints.remove": "ลบ",
+  "common.moreInfo": "ข้อมูลเพิ่มเติม",
+
+  "colorScheme.switchToDark": "สลับเป็นโหมดมืด",
+  "colorScheme.switchToLight": "สลับเป็นโหมดสว่าง",
+  "colorScheme.switchToSystem": "สลับเป็นโหมดระบบ",
+
+  "footer.dataVersion": "ข้อมูล Canvas: {{version}}",
+  "footer.dataNotLoaded": "ข้อมูล Canvas: (ยังไม่โหลด)",
+  "footer.credit": "เครื่องมือฟรีจาก",
+
+  "error.loadFailed": "โหลดข้อมูลสิทธิ์ล้มเหลว",
+
+  "aiTranslation.note": "อินเทอร์เฟซแอปแปลโดย AI",
+
+  "help.tab.howToUse": "วิธีใช้งาน",
+  "help.tab.permissions": "สิทธิ์ Canvas",
+  "help.tab.commonSetups": "การตั้งค่าทั่วไป",
+
+  "help.howToUse.step1": "เลือกหรือวางเส้นทาง endpoint API ที่การเชื่อมต่อของคุณเรียกใช้",
+  "help.howToUse.step2": "แผงสิทธิ์ที่จำเป็นแสดงรายการสิทธิ์บทบาท Canvas ทั้งหมดที่ผู้ใช้ API ของคุณต้องการ",
+  "help.howToUse.step3": "ตรวจสอบส่วนสิทธิ์เพิ่มเติม — สิ่งเหล่านี้ปลดล็อกข้อมูลเพิ่มเติมในการตอบกลับ API (เช่น SIS ID ที่อยู่อีเมล เนื้อหาที่ยังไม่เผยแพร่)",
+  "help.howToUse.step4": "ตั้งค่าบทบาท Canvas ที่กำหนดเอง (หรือแก้ไขบทบาทที่มีอยู่) โดยเปิดใช้งานสิทธิ์เหล่านี้อย่างแม่นยำ",
+
+  "help.permissions.rbac.heading": "การควบคุมการเข้าถึงตามบทบาท",
+  "help.permissions.rbac.body": "สิทธิ์มอบให้กับบทบาท ไม่ใช่ผู้ใช้ ผู้ใช้สืบทอดสิทธิ์ผ่านการลงทะเบียน (บทบาทรายวิชา) หรือสมาชิกภาพบัญชี (บทบาทบัญชี)",
+  "help.permissions.scope.heading": "ขอบเขตรายวิชาเทียบกับบัญชี",
+  "help.permissions.scope.body": "สิทธิ์ขอบเขตรายวิชาต้องเปิดใช้งานบนบทบาทระดับรายวิชา สิทธิ์ขอบเขตบัญชีต้องอยู่บนบทบาทผู้ดูแลระดับบัญชี สิทธิ์บางอย่างมีอยู่ทั้งสองระดับ — การมอบสิทธิ์ระดับบัญชีครอบคลุมทุกรายวิชาภายใต้บัญชีนั้น",
+  "help.permissions.inheritance.heading": "การสืบทอดสิทธิ์",
+  "help.permissions.inheritance.body": "บทบาทระดับบัญชีที่มีสิทธิ์จะมีสิทธิ์นั้นโดยอัตโนมัติสำหรับทุกรายวิชาภายใต้บัญชี",
+  "help.permissions.orGroups.heading": "กลุ่ม OR",
+  "help.permissions.orGroups.body": "เมื่อเครื่องมือแสดง \"อย่างใดอย่างหนึ่ง: A · B · C\" สิทธิ์ใดสิทธิ์หนึ่งจากรายการก็เพียงพอ คุณไม่ต้องการทั้งหมด",
+  "help.permissions.optional.heading": "สิทธิ์เพิ่มเติม",
+  "help.permissions.optional.body": "endpoint บางตัวส่งคืนข้อมูลเพิ่มเติมเมื่อผู้เรียกมีสิทธิ์เพิ่มเติม สิ่งเหล่านี้แสดงแยกต่างหากเป็นสิทธิ์เพิ่มเติมพร้อมหมายเหตุอธิบายสิ่งที่ปลดล็อก — เช่น ฟิลด์ SIS ID ที่อยู่อีเมล ID เข้าสู่ระบบ หรือเนื้อหาที่ยังไม่เผยแพร่ endpoint ทำงานได้โดยไม่มีสิ่งเหล่านี้ คุณแค่ได้รับฟิลด์หรือระเบียนน้อยลง",
+  "help.permissions.featureFlags.heading": "แฟล็กคุณสมบัติ",
+  "help.permissions.featureFlags.body": "สิทธิ์จำนวนเล็กน้อยต้องการให้เปิดใช้งานแฟล็กคุณสมบัติ Canvas ก่อนที่จะปรากฏในอินเทอร์เฟซสิทธิ์ สิ่งนี้ระบุไว้ที่ endpoint แต่ละตัว",
+
+  "help.commonSetups.intro": "ตัวอย่างการกำหนดค่าสามแบบสำหรับประเภทการเชื่อมต่อทั่วไป:",
+  "help.commonSetups.col.type": "ประเภทการเชื่อมต่อ",
+  "help.commonSetups.col.permissions": "สิทธิ์ขั้นต่ำ",
+  "help.commonSetups.readOnly.name": "อ่านอย่างเดียว",
+  "help.commonSetups.readOnly.description": "ข้อมูลรายวิชา การมอบหมาย การลงทะเบียน",
+  "help.commonSetups.gradebook.name": "สมุดเกรดเต็มรูปแบบ",
+  "help.commonSetups.gradebook.description": "อ่านและเขียนเกรด",
+  "help.commonSetups.sis.name": "การเชื่อมต่อ SIS",
+  "help.commonSetups.sis.description": "นำเข้า SIS ซิงค์ผู้ใช้",
+  "help.commonSetups.optional": "ไม่บังคับ"
+}

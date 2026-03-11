@@ -1,0 +1,78 @@
+{
+  "app.title": "Planificateur de Permissions Canvas API",
+
+  "header.help": "Aide",
+  "language.label": "Langue",
+  "language.tooltip": "Choisissez une langue. Les libellés de permissions Canvas sont traduits par la communauté Canvas ; les libellés de l'interface de l'application sont traduits par IA.",
+
+  "permissions.heading": "Permissions requises",
+  "permissions.optionalHeading": "Permissions optionnelles",
+  "permissions.optionalDescription": "Ces permissions ne sont pas nécessaires pour appeler les endpoints, mais débloquent des données supplémentaires dans les réponses.",
+  "permissions.empty": "Ajoutez des endpoints pour voir les permissions requises",
+  "permissions.noAdditional": "Aucune permission supplémentaire requise pour les endpoints sélectionnés",
+  "permissions.scopeCourse": "Cours",
+  "permissions.scopeAccount": "Compte",
+  "permissions.scopeBoth": "Cours ou Compte",
+  "permissions.anyOf": "N'importe laquelle parmi :",
+  "permissions.anyOfTooltip": "Votre utilisateur API a besoin d'au moins une de ces permissions. Une seule suffit pour satisfaire cette exigence.",
+  "permissions.scopeCourseTooltip": "Doit être activée sur un rôle de niveau cours (ex. Enseignant, Rôle de cours personnalisé) pour le cours concerné.",
+  "permissions.scopeAccountTooltip": "Doit être activée sur un rôle de niveau compte (ex. Administrateur de compte, Rôle de compte personnalisé). Les permissions de niveau compte couvrent tous les cours sous ce compte.",
+  "permissions.optionalNote": "Ces permissions débloquent des champs de données supplémentaires. Consultez les notes pour décider si votre intégration en a besoin.",
+
+  "endpoints.heading": "Ajouter des Endpoints",
+  "endpoints.searchPlaceholder": "Rechercher des endpoints…",
+  "endpoints.pasteLabel": "Ou collez une liste :",
+  "endpoints.addButton": "Ajouter",
+  "endpoints.pasteTooltip": "Collez un endpoint par ligne. Formats acceptés : URL complète, chemin seul ou METHOD /chemin. Les chaînes de requête sont ignorées. Les identifiants numériques et les identifiants SIS (ex. sis_course_id:ABC) sont reconnus.",
+  "endpoints.pastePlaceholder": "Un endpoint par ligne, ex. GET /api/v1/courses/:id",
+  "endpoints.unmatched": "Endpoints non reconnus :",
+  "endpoints.noResults": "Aucun endpoint trouvé",
+
+  "selectedEndpoints.remove": "Supprimer",
+  "common.moreInfo": "Plus d'informations",
+
+  "colorScheme.switchToDark": "Passer au mode sombre",
+  "colorScheme.switchToLight": "Passer au mode clair",
+  "colorScheme.switchToSystem": "Passer au mode système",
+
+  "footer.dataVersion": "Données Canvas : {{version}}",
+  "footer.dataNotLoaded": "Données Canvas : (non chargées)",
+  "footer.credit": "Un outil gratuit de",
+
+  "error.loadFailed": "Échec du chargement des données de permissions",
+
+  "aiTranslation.note": "Interface de l'application traduite par IA",
+
+  "help.tab.howToUse": "Comment utiliser",
+  "help.tab.permissions": "Permissions Canvas",
+  "help.tab.commonSetups": "Configurations courantes",
+
+  "help.howToUse.step1": "Sélectionnez ou collez les chemins d'endpoints API que votre intégration appelle.",
+  "help.howToUse.step2": "Le panneau Permissions requises liste toutes les permissions de rôle Canvas dont votre utilisateur API a besoin.",
+  "help.howToUse.step3": "Consultez la section Permissions optionnelles — elles débloquent des données supplémentaires dans les réponses API (ex. identifiants SIS, adresses e-mail, contenu non publié).",
+  "help.howToUse.step4": "Configurez un rôle Canvas personnalisé (ou modifiez un rôle existant) avec exactement ces permissions activées.",
+
+  "help.permissions.rbac.heading": "Contrôle d'accès basé sur les rôles",
+  "help.permissions.rbac.body": "Les permissions sont accordées aux rôles, pas aux utilisateurs. Les utilisateurs héritent des permissions via l'inscription (rôle de cours) ou l'appartenance au compte (rôle de compte).",
+  "help.permissions.scope.heading": "Portée Cours vs. Compte",
+  "help.permissions.scope.body": "Une permission de portée Cours doit être activée sur un rôle de niveau cours. Une permission de portée Compte doit être sur un rôle d'administrateur de compte. Certaines permissions existent aux deux niveaux — la permission de Compte couvre tous les cours sous ce compte.",
+  "help.permissions.inheritance.heading": "Héritage des permissions",
+  "help.permissions.inheritance.body": "Un rôle de niveau compte avec une permission a automatiquement cette permission pour tous les cours sous le compte.",
+  "help.permissions.orGroups.heading": "Groupes OU",
+  "help.permissions.orGroups.body": "Lorsque l'outil affiche « N'importe laquelle parmi : A · B · C », n'importe quelle permission unique de cette liste suffit. Vous n'avez pas besoin de toutes.",
+  "help.permissions.optional.heading": "Permissions optionnelles",
+  "help.permissions.optional.body": "Certains endpoints renvoient des données supplémentaires lorsque l'appelant a des permissions additionnelles. Celles-ci sont affichées séparément comme Permissions optionnelles avec une note expliquant ce qu'elles débloquent — par exemple, des champs d'identifiant SIS, des adresses e-mail, des identifiants de connexion ou du contenu non publié. L'endpoint fonctionne sans elles ; vous obtenez simplement moins de champs ou d'enregistrements.",
+  "help.permissions.featureFlags.heading": "Drapeaux de fonctionnalités",
+  "help.permissions.featureFlags.body": "Un petit nombre de permissions nécessite l'activation d'un drapeau de fonctionnalité Canvas avant d'apparaître dans l'interface des Permissions. Ceci est noté sur les endpoints individuels.",
+
+  "help.commonSetups.intro": "Trois exemples de configuration pour les types d'intégration courants :",
+  "help.commonSetups.col.type": "Type d'intégration",
+  "help.commonSetups.col.permissions": "Permissions minimales",
+  "help.commonSetups.readOnly.name": "Lecture seule",
+  "help.commonSetups.readOnly.description": "Données de cours, devoirs, inscriptions",
+  "help.commonSetups.gradebook.name": "Carnet de notes complet",
+  "help.commonSetups.gradebook.description": "Lire et écrire les notes",
+  "help.commonSetups.sis.name": "Intégration SIS",
+  "help.commonSetups.sis.description": "Imports SIS, synchronisation des utilisateurs",
+  "help.commonSetups.optional": "optionnel"
+}

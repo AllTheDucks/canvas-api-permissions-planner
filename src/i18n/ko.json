@@ -1,0 +1,78 @@
+{
+  "app.title": "Canvas API 권한 플래너",
+
+  "header.help": "도움말",
+  "language.label": "언어",
+  "language.tooltip": "언어를 선택하세요. Canvas 권한 레이블은 Canvas 커뮤니티에서 번역합니다. 앱 인터페이스 레이블은 AI가 번역합니다.",
+
+  "permissions.heading": "필수 권한",
+  "permissions.optionalHeading": "선택적 권한",
+  "permissions.optionalDescription": "이 권한은 엔드포인트 호출에 필수는 아니지만, 응답에서 추가 데이터를 사용할 수 있게 합니다.",
+  "permissions.empty": "엔드포인트를 추가하여 필수 권한을 확인하세요",
+  "permissions.noAdditional": "선택한 엔드포인트에 추가 권한이 필요하지 않습니다",
+  "permissions.scopeCourse": "과목",
+  "permissions.scopeAccount": "계정",
+  "permissions.scopeBoth": "과목 또는 계정",
+  "permissions.anyOf": "다음 중 하나:",
+  "permissions.anyOfTooltip": "API 사용자는 이 권한 중 하나 이상이 필요합니다. 하나만 있으면 이 요구사항을 충족합니다.",
+  "permissions.scopeCourseTooltip": "해당 과목의 과목 수준 역할(예: 교사, 사용자 정의 과목 역할)에서 활성화해야 합니다.",
+  "permissions.scopeAccountTooltip": "계정 수준 역할(예: 계정 관리자, 사용자 정의 계정 역할)에서 활성화해야 합니다. 계정 수준 권한은 해당 계정의 모든 과목에 적용됩니다.",
+  "permissions.optionalNote": "이 권한은 추가 데이터 필드를 사용할 수 있게 합니다. 통합에 필요한지 결정하려면 노트를 확인하세요.",
+
+  "endpoints.heading": "엔드포인트 추가",
+  "endpoints.searchPlaceholder": "엔드포인트 검색…",
+  "endpoints.pasteLabel": "또는 목록 붙여넣기:",
+  "endpoints.addButton": "추가",
+  "endpoints.pasteTooltip": "한 줄에 하나의 엔드포인트를 붙여넣으세요. 허용 형식: 전체 URL, 경로만, 또는 METHOD /경로. 쿼리 문자열은 무시됩니다. 숫자 ID 및 SIS ID(예: sis_course_id:ABC)가 인식됩니다.",
+  "endpoints.pastePlaceholder": "한 줄에 하나의 엔드포인트, 예: GET /api/v1/courses/:id",
+  "endpoints.unmatched": "인식되지 않는 엔드포인트:",
+  "endpoints.noResults": "엔드포인트를 찾을 수 없습니다",
+
+  "selectedEndpoints.remove": "제거",
+  "common.moreInfo": "추가 정보",
+
+  "colorScheme.switchToDark": "다크 모드로 전환",
+  "colorScheme.switchToLight": "라이트 모드로 전환",
+  "colorScheme.switchToSystem": "시스템 모드로 전환",
+
+  "footer.dataVersion": "Canvas 데이터: {{version}}",
+  "footer.dataNotLoaded": "Canvas 데이터: (로드되지 않음)",
+  "footer.credit": "무료 도구 제공:",
+
+  "error.loadFailed": "권한 데이터를 로드하지 못했습니다",
+
+  "aiTranslation.note": "앱 인터페이스는 AI로 번역되었습니다",
+
+  "help.tab.howToUse": "사용 방법",
+  "help.tab.permissions": "Canvas 권한",
+  "help.tab.commonSetups": "일반적인 설정",
+
+  "help.howToUse.step1": "통합이 호출하는 API 엔드포인트 경로를 선택하거나 붙여넣으세요.",
+  "help.howToUse.step2": "필수 권한 패널에는 API 사용자에게 필요한 모든 Canvas 역할 권한이 표시됩니다.",
+  "help.howToUse.step3": "선택적 권한 섹션을 확인하세요 — API 응답에서 추가 데이터를 사용할 수 있게 합니다(예: SIS ID, 이메일 주소, 미공개 콘텐츠).",
+  "help.howToUse.step4": "사용자 정의 Canvas 역할을 설정하거나 기존 역할을 편집하여 이 권한들을 정확히 활성화하세요.",
+
+  "help.permissions.rbac.heading": "역할 기반 접근 제어",
+  "help.permissions.rbac.body": "권한은 사용자가 아닌 역할에 부여됩니다. 사용자는 등록(과목 역할) 또는 계정 구성원(계정 역할)을 통해 권한을 상속받습니다.",
+  "help.permissions.scope.heading": "과목 대 계정 범위",
+  "help.permissions.scope.body": "과목 범위의 권한은 과목 수준 역할에서 활성화해야 합니다. 계정 범위의 권한은 계정 수준 관리자 역할에 있어야 합니다. 일부 권한은 두 수준 모두에 존재합니다 — 계정 권한 부여는 해당 계정의 모든 과목에 적용됩니다.",
+  "help.permissions.inheritance.heading": "권한 상속",
+  "help.permissions.inheritance.body": "권한이 있는 계정 수준 역할은 해당 계정 하의 모든 과목에 대해 자동으로 그 권한을 가집니다.",
+  "help.permissions.orGroups.heading": "OR 그룹",
+  "help.permissions.orGroups.body": "도구가 \"다음 중 하나: A · B · C\"를 표시하면, 해당 목록에서 단 하나의 권한으로 충분합니다. 모두 필요하지 않습니다.",
+  "help.permissions.optional.heading": "선택적 권한",
+  "help.permissions.optional.body": "일부 엔드포인트는 호출자가 추가 권한을 가지고 있을 때 추가 데이터를 반환합니다. 이는 선택적 권한으로 별도 표시되며, 무엇을 사용할 수 있게 하는지 설명하는 노트가 포함됩니다 — 예: SIS ID 필드, 이메일 주소, 로그인 ID 또는 미공개 콘텐츠. 엔드포인트는 이들 없이도 작동하지만, 더 적은 필드나 레코드를 받게 됩니다.",
+  "help.permissions.featureFlags.heading": "기능 플래그",
+  "help.permissions.featureFlags.body": "소수의 권한은 권한 UI에 표시되기 전에 Canvas 기능 플래그가 활성화되어야 합니다. 이는 개별 엔드포인트에 표시됩니다.",
+
+  "help.commonSetups.intro": "일반적인 통합 유형에 대한 세 가지 설정 예시:",
+  "help.commonSetups.col.type": "통합 유형",
+  "help.commonSetups.col.permissions": "최소 권한",
+  "help.commonSetups.readOnly.name": "읽기 전용",
+  "help.commonSetups.readOnly.description": "과목 데이터, 과제, 등록",
+  "help.commonSetups.gradebook.name": "전체 성적표",
+  "help.commonSetups.gradebook.description": "성적 읽기 및 쓰기",
+  "help.commonSetups.sis.name": "SIS 통합",
+  "help.commonSetups.sis.description": "SIS 가져오기, 사용자 동기화",
+  "help.commonSetups.optional": "선택 사항"
+}

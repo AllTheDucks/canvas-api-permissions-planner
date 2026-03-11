@@ -1,0 +1,78 @@
+{
+  "app.title": "Nacrtovalec dovoljenj Canvas API",
+
+  "header.help": "Pomoc",
+  "language.label": "Jezik",
+  "language.tooltip": "Izberite jezik. Oznake dovoljenj Canvas prevaja skupnost Canvas; oznake vmesnika aplikacije prevaja UI.",
+
+  "permissions.heading": "Zahtevana dovoljenja",
+  "permissions.optionalHeading": "Neobvezna dovoljenja",
+  "permissions.optionalDescription": "Ta dovoljenja niso potrebna za klicanje koncnih tock, vendar odklenejo dodatne podatke v odgovorih.",
+  "permissions.empty": "Dodajte koncne tocke za prikaz zahtevanih dovoljenj",
+  "permissions.noAdditional": "Za izbrane koncne tocke niso potrebna dodatna dovoljenja",
+  "permissions.scopeCourse": "Predmet",
+  "permissions.scopeAccount": "Racun",
+  "permissions.scopeBoth": "Predmet ali Racun",
+  "permissions.anyOf": "Katerokoli od:",
+  "permissions.anyOfTooltip": "Vas uporabnik API potrebuje vsaj eno od teh dovoljenj. Katerokoli posamezno zadostuje za izpolnitev te zahteve.",
+  "permissions.scopeCourseTooltip": "Omogoceno mora biti na vlogi ravni predmeta (npr. Ucitelj, Vloga predmeta po meri) za ustrezen predmet.",
+  "permissions.scopeAccountTooltip": "Omogoceno mora biti na vlogi ravni racuna (npr. Skrbnik racuna, Vloga racuna po meri). Dovoljenja ravni racuna pokrivajo vse predmete pod tem racunom.",
+  "permissions.optionalNote": "Ta dovoljenja odklenejo dodatna podatkovna polja. Preglejte opombe, da ugotovite, ali jih vasa integracija potrebuje.",
+
+  "endpoints.heading": "Dodaj koncne tocke",
+  "endpoints.searchPlaceholder": "Iskanje koncnih tock…",
+  "endpoints.pasteLabel": "Ali prilepite seznam:",
+  "endpoints.addButton": "Dodaj",
+  "endpoints.pasteTooltip": "Prilepite eno koncno tocko na vrstico. Sprejeti formati: polni URL, samo pot ali METHOD /pot. Poizvedbeni nizi se prezrejo. Stevilcni ID-ji in SIS ID-ji (npr. sis_course_id:ABC) so prepoznani.",
+  "endpoints.pastePlaceholder": "Ena koncna tocka na vrstico, npr. GET /api/v1/courses/:id",
+  "endpoints.unmatched": "Neprepoznane koncne tocke:",
+  "endpoints.noResults": "Koncne tocke niso najdene",
+
+  "selectedEndpoints.remove": "Odstrani",
+  "common.moreInfo": "Vec informacij",
+
+  "colorScheme.switchToDark": "Preklop na temni nacin",
+  "colorScheme.switchToLight": "Preklop na svetli nacin",
+  "colorScheme.switchToSystem": "Preklop na sistemski nacin",
+
+  "footer.dataVersion": "Podatki Canvas: {{version}}",
+  "footer.dataNotLoaded": "Podatki Canvas: (niso nalozeni)",
+  "footer.credit": "Brezplacno orodje od",
+
+  "error.loadFailed": "Nalaganje podatkov o dovoljenjih ni uspelo",
+
+  "aiTranslation.note": "Vmesnik aplikacije je prevedel UI",
+
+  "help.tab.howToUse": "Kako uporabiti",
+  "help.tab.permissions": "Dovoljenja Canvas",
+  "help.tab.commonSetups": "Pogoste nastavitve",
+
+  "help.howToUse.step1": "Izberite ali prilepite poti koncnih tock API, ki jih klice vasa integracija.",
+  "help.howToUse.step2": "Plosca zahtevanih dovoljenj navaja vsa dovoljenja vlog Canvas, ki jih potrebuje vas uporabnik API.",
+  "help.howToUse.step3": "Preglejte razdelek neobveznih dovoljenj — ta odklenejo dodatne podatke v odgovorih API (npr. SIS ID-ji, e-postni naslovi, neobjavljene vsebine).",
+  "help.howToUse.step4": "Nastavite vlogo Canvas po meri (ali uredite obstojecega) z natanko temi omogocenimi dovoljenji.",
+
+  "help.permissions.rbac.heading": "Nadzor dostopa na podlagi vlog",
+  "help.permissions.rbac.body": "Dovoljenja se dodeljujejo vlogam, ne uporabnikom. Uporabniki podedujejo dovoljenja prek vpisa (vloga predmeta) ali clanstva v racunu (vloga racuna).",
+  "help.permissions.scope.heading": "Obseg predmeta in racuna",
+  "help.permissions.scope.body": "Dovoljenje z obsegom predmeta mora biti omogoceno na vlogi ravni predmeta. Dovoljenje z obsegom racuna mora biti na vlogi skrbnika racuna. Nekatera dovoljenja obstajajo na obeh ravneh — dodelitev racuna pokrije vse predmete pod tem racunom.",
+  "help.permissions.inheritance.heading": "Dedovanje dovoljenj",
+  "help.permissions.inheritance.body": "Vloga ravni racuna z dovoljenjem samodejno ima to dovoljenje za vse predmete pod racunom.",
+  "help.permissions.orGroups.heading": "Skupine ALI",
+  "help.permissions.orGroups.body": "Ko orodje prikaze \"Katerokoli od: A · B · C\", zadostuje katerokoli posamezno dovoljenje s seznama. Ne potrebujete vseh.",
+  "help.permissions.optional.heading": "Neobvezna dovoljenja",
+  "help.permissions.optional.body": "Nekatere koncne tocke vrnejo dodatne podatke, ko ima klicatelj dodatna dovoljenja. Te so prikazane loceno kot neobvezna dovoljenja z opombo, ki pojasnjuje, kaj odklenejo — na primer polja SIS ID, e-postne naslove, ID-je za prijavo ali neobjavljene vsebine. Koncna tocka deluje brez njih; preprosto dobite manj polj ali zapisov.",
+  "help.permissions.featureFlags.heading": "Zastavice funkcij",
+  "help.permissions.featureFlags.body": "Majhno stevilo dovoljenj zahteva, da je zastavica funkcije Canvas omogocena, preden se prikazejo v vmesniku dovoljenj. To je oznaceno na posameznih koncnih tockah.",
+
+  "help.commonSetups.intro": "Trije primeri konfiguracij za pogoste vrste integracij:",
+  "help.commonSetups.col.type": "Vrsta integracije",
+  "help.commonSetups.col.permissions": "Najmanjsa dovoljenja",
+  "help.commonSetups.readOnly.name": "Samo za branje",
+  "help.commonSetups.readOnly.description": "Podatki predmeta, naloge, vpisi",
+  "help.commonSetups.gradebook.name": "Polna redovalnica",
+  "help.commonSetups.gradebook.description": "Branje in pisanje ocen",
+  "help.commonSetups.sis.name": "Integracija SIS",
+  "help.commonSetups.sis.description": "Uvozi SIS, sinhronizacija uporabnikov",
+  "help.commonSetups.optional": "neobvezno"
+}

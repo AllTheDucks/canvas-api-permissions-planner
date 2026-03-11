@@ -1,0 +1,78 @@
+{
+  "app.title": "Canvas API-tilladelsesplanlægger",
+
+  "header.help": "Hjælp",
+  "language.label": "Sprog",
+  "language.tooltip": "Vælg et sprog. Canvas-tilladelsesnavne oversættes af Canvas-fællesskabet; appens grænsefladetekster oversættes af AI.",
+
+  "permissions.heading": "Påkrævede tilladelser",
+  "permissions.optionalHeading": "Valgfrie tilladelser",
+  "permissions.optionalDescription": "Disse tilladelser er ikke påkrævet for at kalde endpoints, men giver adgang til yderligere data i svar.",
+  "permissions.empty": "Tilføj endpoints for at se påkrævede tilladelser",
+  "permissions.noAdditional": "Ingen yderligere tilladelser påkrævet for de valgte endpoints",
+  "permissions.scopeCourse": "Kursus",
+  "permissions.scopeAccount": "Konto",
+  "permissions.scopeBoth": "Kursus eller konto",
+  "permissions.anyOf": "Én af følgende:",
+  "permissions.anyOfTooltip": "Din API-bruger skal have mindst én af disse tilladelser. Én enkelt er nok til at opfylde dette krav.",
+  "permissions.scopeCourseTooltip": "Skal aktiveres på en kursusrolle (f.eks. Underviser, Brugerdefineret kursusrolle) for det relevante kursus.",
+  "permissions.scopeAccountTooltip": "Skal aktiveres på en kontorolle (f.eks. Kontoadministrator, Brugerdefineret kontorolle). Kontotilladelser dækker alle kurser under kontoen.",
+  "permissions.optionalNote": "Disse tilladelser giver adgang til yderligere datafelter. Gennemgå noterne for at afgøre, om din integration har brug for dem.",
+
+  "endpoints.heading": "Tilføj endpoints",
+  "endpoints.searchPlaceholder": "Søg efter endpoints…",
+  "endpoints.pasteLabel": "Eller indsæt en liste:",
+  "endpoints.addButton": "Tilføj",
+  "endpoints.pasteTooltip": "Indsæt ét endpoint pr. linje. Accepterede formater: fuld URL, kun sti eller METHOD /sti. Forespørgselsstrenge ignoreres. Numeriske ID'er og SIS-ID'er (f.eks. sis_course_id:ABC) genkendes.",
+  "endpoints.pastePlaceholder": "Ét endpoint pr. linje, f.eks. GET /api/v1/courses/:id",
+  "endpoints.unmatched": "Ugenkendte endpoints:",
+  "endpoints.noResults": "Ingen endpoints fundet",
+
+  "selectedEndpoints.remove": "Fjern",
+  "common.moreInfo": "Mere information",
+
+  "colorScheme.switchToDark": "Skift til mørk tilstand",
+  "colorScheme.switchToLight": "Skift til lys tilstand",
+  "colorScheme.switchToSystem": "Skift til systemtilstand",
+
+  "footer.dataVersion": "Canvas-data: {{version}}",
+  "footer.dataNotLoaded": "Canvas-data: (ikke indlæst)",
+  "footer.credit": "Et gratis værktøj fra",
+
+  "error.loadFailed": "Kunne ikke indlæse tilladelsesdata",
+
+  "aiTranslation.note": "Appens grænseflade er oversat af AI",
+
+  "help.tab.howToUse": "Sådan bruges det",
+  "help.tab.permissions": "Canvas-tilladelser",
+  "help.tab.commonSetups": "Almindelige opsætninger",
+
+  "help.howToUse.step1": "Vælg eller indsæt de API-endpointstier, din integration kalder.",
+  "help.howToUse.step2": "Panelet Påkrævede tilladelser viser alle Canvas-rolletilladelser, din API-bruger har brug for.",
+  "help.howToUse.step3": "Gennemgå afsnittet Valgfrie tilladelser — disse giver adgang til yderligere data i API-svar (f.eks. SIS-ID'er, e-mailadresser, upubliceret indhold).",
+  "help.howToUse.step4": "Opret en brugerdefineret Canvas-rolle (eller rediger en eksisterende) med præcis disse tilladelser aktiveret.",
+
+  "help.permissions.rbac.heading": "Rollebaseret adgangskontrol",
+  "help.permissions.rbac.body": "Tilladelser tildeles roller, ikke brugere. Brugere arver tilladelser via tilmelding (kursusrolle) eller kontomedlemskab (kontorolle).",
+  "help.permissions.scope.heading": "Kursus vs. kontoområde",
+  "help.permissions.scope.body": "En tilladelse med kursusområde skal aktiveres på en kursusrolle. En tilladelse med kontoområde skal være på en kontoadministratorrolle. Nogle tilladelser findes på begge niveauer — kontotilladelsen dækker alle kurser under kontoen.",
+  "help.permissions.inheritance.heading": "Tilladelsesarv",
+  "help.permissions.inheritance.body": "En kontorolle med en tilladelse har automatisk denne tilladelse for alle kurser under kontoen.",
+  "help.permissions.orGroups.heading": "OR-grupper",
+  "help.permissions.orGroups.body": "Når værktøjet viser \"Én af følgende: A · B · C\", er én enkelt tilladelse fra listen tilstrækkelig. Du behøver ikke alle.",
+  "help.permissions.optional.heading": "Valgfrie tilladelser",
+  "help.permissions.optional.body": "Nogle endpoints returnerer ekstra data, når den kaldende har yderligere tilladelser. Disse vises separat som Valgfrie tilladelser med en note, der forklarer, hvad de giver adgang til — f.eks. SIS-ID-felter, e-mailadresser, login-ID'er eller upubliceret indhold. Endpointet fungerer uden dem; du får blot færre felter eller poster.",
+  "help.permissions.featureFlags.heading": "Funktionsflag",
+  "help.permissions.featureFlags.body": "Et lille antal tilladelser kræver, at et Canvas-funktionsflag er aktiveret, før de vises i tilladelsesgrænsefladen. Dette er noteret på de enkelte endpoints.",
+
+  "help.commonSetups.intro": "Tre eksempler på konfigurationer til almindelige integrationstyper:",
+  "help.commonSetups.col.type": "Integrationstype",
+  "help.commonSetups.col.permissions": "Minimumstilladelser",
+  "help.commonSetups.readOnly.name": "Skrivebeskyttet",
+  "help.commonSetups.readOnly.description": "Kursusdata, opgaver, tilmeldinger",
+  "help.commonSetups.gradebook.name": "Fuld karakterbog",
+  "help.commonSetups.gradebook.description": "Læse og skrive karakterer",
+  "help.commonSetups.sis.name": "SIS-integration",
+  "help.commonSetups.sis.description": "SIS-importer, brugersynkronisering",
+  "help.commonSetups.optional": "valgfri"
+}

@@ -1,0 +1,78 @@
+{
+  "app.title": "مخطط صلاحيات Canvas API",
+
+  "header.help": "مساعدة",
+  "language.label": "اللغة",
+  "language.tooltip": "اختر لغة. تتم ترجمة تسميات صلاحيات Canvas بواسطة مجتمع Canvas؛ وتتم ترجمة تسميات واجهة التطبيق بواسطة الذكاء الاصطناعي.",
+
+  "permissions.heading": "الصلاحيات المطلوبة",
+  "permissions.optionalHeading": "صلاحيات اختيارية",
+  "permissions.optionalDescription": "هذه الصلاحيات غير مطلوبة لاستدعاء نقاط النهاية، لكنها تتيح بيانات إضافية في الاستجابات.",
+  "permissions.empty": "أضف نقاط نهاية لعرض الصلاحيات المطلوبة",
+  "permissions.noAdditional": "لا توجد صلاحيات إضافية مطلوبة لنقاط النهاية المحددة",
+  "permissions.scopeCourse": "المقرر",
+  "permissions.scopeAccount": "الحساب",
+  "permissions.scopeBoth": "المقرر أو الحساب",
+  "permissions.anyOf": "أي واحدة من:",
+  "permissions.anyOfTooltip": "يحتاج مستخدم API الخاص بك إلى واحدة على الأقل من هذه الصلاحيات. أي صلاحية واحدة كافية لتلبية هذا المتطلب.",
+  "permissions.scopeCourseTooltip": "يجب تفعيلها على دور مستوى المقرر (مثل المعلم، دور مقرر مخصص) للمقرر المعني.",
+  "permissions.scopeAccountTooltip": "يجب تفعيلها على دور مستوى الحساب (مثل مدير الحساب، دور حساب مخصص). تغطي منح مستوى الحساب جميع المقررات تحت ذلك الحساب.",
+  "permissions.optionalNote": "هذه الصلاحيات تتيح حقول بيانات إضافية. راجع الملاحظات لتحديد ما إذا كان تكاملك يحتاجها.",
+
+  "endpoints.heading": "إضافة نقاط نهاية",
+  "endpoints.searchPlaceholder": "البحث في نقاط النهاية…",
+  "endpoints.pasteLabel": "أو الصق قائمة:",
+  "endpoints.addButton": "إضافة",
+  "endpoints.pasteTooltip": "الصق نقطة نهاية واحدة لكل سطر. الصيغ المقبولة: عنوان URL كامل، مسار فقط، أو METHOD /path. يتم تجاهل سلاسل الاستعلام. يتم التعرف على المعرفات الرقمية ومعرفات SIS (مثل sis_course_id:ABC).",
+  "endpoints.pastePlaceholder": "نقطة نهاية واحدة لكل سطر، مثال GET /api/v1/courses/:id",
+  "endpoints.unmatched": "نقاط نهاية غير معروفة:",
+  "endpoints.noResults": "لم يتم العثور على نقاط نهاية",
+
+  "selectedEndpoints.remove": "إزالة",
+  "common.moreInfo": "مزيد من المعلومات",
+
+  "colorScheme.switchToDark": "التبديل إلى الوضع الداكن",
+  "colorScheme.switchToLight": "التبديل إلى الوضع الفاتح",
+  "colorScheme.switchToSystem": "التبديل إلى وضع النظام",
+
+  "footer.dataVersion": "بيانات Canvas: {{version}}",
+  "footer.dataNotLoaded": "بيانات Canvas: (لم يتم التحميل)",
+  "footer.credit": "أداة مجانية من",
+
+  "error.loadFailed": "فشل تحميل بيانات الصلاحيات",
+
+  "aiTranslation.note": "تمت ترجمة واجهة التطبيق بواسطة الذكاء الاصطناعي",
+
+  "help.tab.howToUse": "كيفية الاستخدام",
+  "help.tab.permissions": "صلاحيات Canvas",
+  "help.tab.commonSetups": "إعدادات شائعة",
+
+  "help.howToUse.step1": "حدد أو الصق مسارات نقاط نهاية API التي يستدعيها تكاملك.",
+  "help.howToUse.step2": "تعرض لوحة الصلاحيات المطلوبة كل صلاحية دور Canvas يحتاجها مستخدم API الخاص بك.",
+  "help.howToUse.step3": "راجع قسم الصلاحيات الاختيارية — هذه تتيح بيانات إضافية في استجابات API (مثل معرفات SIS، عناوين البريد الإلكتروني، المحتوى غير المنشور).",
+  "help.howToUse.step4": "أنشئ دورًا مخصصًا في Canvas (أو عدّل دورًا موجودًا) مع تفعيل هذه الصلاحيات بالتحديد.",
+
+  "help.permissions.rbac.heading": "التحكم في الوصول المبني على الأدوار",
+  "help.permissions.rbac.body": "تُمنح الصلاحيات للأدوار وليس للمستخدمين. يرث المستخدمون الصلاحيات عبر التسجيل (دور المقرر) أو عضوية الحساب (دور الحساب).",
+  "help.permissions.scope.heading": "نطاق المقرر مقابل الحساب",
+  "help.permissions.scope.body": "الصلاحية المحددة بنطاق المقرر يجب تفعيلها على دور مستوى المقرر. الصلاحية المحددة بنطاق الحساب يجب أن تكون على دور مسؤول مستوى الحساب. بعض الصلاحيات موجودة على كلا المستويين — منح مستوى الحساب يغطي جميع المقررات تحت ذلك الحساب.",
+  "help.permissions.inheritance.heading": "وراثة الصلاحيات",
+  "help.permissions.inheritance.body": "الدور على مستوى الحساب الذي يمتلك صلاحية ما يحصل تلقائيًا على تلك الصلاحية لجميع المقررات تحت الحساب.",
+  "help.permissions.orGroups.heading": "مجموعات OR",
+  "help.permissions.orGroups.body": "عندما تعرض الأداة \"أي واحدة من: أ · ب · ج\"، فإن أي صلاحية واحدة من تلك القائمة كافية. لا تحتاج إلى جميعها.",
+  "help.permissions.optional.heading": "الصلاحيات الاختيارية",
+  "help.permissions.optional.body": "بعض نقاط النهاية تعيد بيانات إضافية عندما يمتلك المستدعي صلاحيات إضافية. تظهر هذه بشكل منفصل كصلاحيات اختيارية مع ملاحظة توضح ما تتيحه — مثل حقول معرف SIS، عناوين البريد الإلكتروني، معرفات تسجيل الدخول، أو المحتوى غير المنشور. نقطة النهاية تعمل بدونها؛ فقط تحصل على حقول أو سجلات أقل.",
+  "help.permissions.featureFlags.heading": "علامات الميزات",
+  "help.permissions.featureFlags.body": "عدد صغير من الصلاحيات يتطلب تفعيل علامة ميزة Canvas قبل ظهورها في واجهة الصلاحيات. يتم ملاحظة ذلك على نقاط النهاية الفردية.",
+
+  "help.commonSetups.intro": "ثلاثة أمثلة تكوين لأنواع التكامل الشائعة:",
+  "help.commonSetups.col.type": "نوع التكامل",
+  "help.commonSetups.col.permissions": "الحد الأدنى من الصلاحيات",
+  "help.commonSetups.readOnly.name": "للقراءة فقط",
+  "help.commonSetups.readOnly.description": "بيانات المقرر، الواجبات، التسجيلات",
+  "help.commonSetups.gradebook.name": "سجل الدرجات الكامل",
+  "help.commonSetups.gradebook.description": "قراءة وكتابة الدرجات",
+  "help.commonSetups.sis.name": "تكامل SIS",
+  "help.commonSetups.sis.description": "استيراد SIS، مزامنة المستخدمين",
+  "help.commonSetups.optional": "اختياري"
+}

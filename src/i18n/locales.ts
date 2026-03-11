@@ -1,7 +1,7 @@
 export const SUPPORTED_LOCALES = [
   'en',
   'ar', 'cy', 'da', 'de', 'el', 'es', 'es-ES', 'fa', 'fi', 'fr',
-  'he', 'hu', 'hy', 'ja', 'ko', 'mi', 'nb', 'nl', 'pl', 'pt', 'pt-BR',
+  'he', 'hu', 'ja', 'ko', 'mi', 'nb', 'nl', 'pl', 'pt', 'pt-BR',
   'ru', 'sl', 'sv', 'th', 'tr', 'uk', 'vi', 'zh-Hans', 'zh-Hant',
 ] as const;
 
@@ -27,7 +27,6 @@ export const LOCALE_NAMES = {
   fr:        'Français',
   he:        'עברית',
   hu:        'Magyar',
-  hy:        'Հայերեն',
   ja:        '日本語',
   ko:        '한국어',
   mi:        'Te Reo Māori',
@@ -51,7 +50,6 @@ export const SUPPLEMENTAL_FONTS = {
   ar:        { family: 'Noto Sans Arabic', googleId: 'Noto+Sans+Arabic:wght@400;500;700' },
   fa:        { family: 'Noto Sans Arabic', googleId: 'Noto+Sans+Arabic:wght@400;500;700' },
   he:        { family: 'Noto Sans Hebrew', googleId: 'Noto+Sans+Hebrew:wght@400;500;700' },
-  hy:        { family: 'Noto Sans',        googleId: 'Noto+Sans:wght@400;500;700' },
   el:        { family: 'Noto Sans',        googleId: 'Noto+Sans:wght@400;500;700' },
   ru:        { family: 'Noto Sans',        googleId: 'Noto+Sans:wght@400;500;700' },
   uk:        { family: 'Noto Sans',        googleId: 'Noto+Sans:wght@400;500;700' },

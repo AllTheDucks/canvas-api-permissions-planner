@@ -1,0 +1,78 @@
+{
+  "app.title": "Canvas API 權限規劃器",
+
+  "header.help": "說明",
+  "language.label": "語言",
+  "language.tooltip": "選擇語言。Canvas 權限標籤由 Canvas 社群翻譯；應用程式介面標籤由 AI 翻譯。",
+
+  "permissions.heading": "必要權限",
+  "permissions.optionalHeading": "選擇性權限",
+  "permissions.optionalDescription": "這些權限並非呼叫端點所必需，但會在回應中解鎖額外資料。",
+  "permissions.empty": "新增端點以檢視必要權限",
+  "permissions.noAdditional": "所選端點不需要額外權限",
+  "permissions.scopeCourse": "課程",
+  "permissions.scopeAccount": "帳戶",
+  "permissions.scopeBoth": "課程或帳戶",
+  "permissions.anyOf": "以下任一：",
+  "permissions.anyOfTooltip": "您的 API 使用者至少需要其中一項權限。任何一項即可滿足此要求。",
+  "permissions.scopeCourseTooltip": "必須在課程層級角色（如教師、自訂課程角色）上為相關課程啟用。",
+  "permissions.scopeAccountTooltip": "必須在帳戶層級角色（如帳戶管理員、自訂帳戶角色）上啟用。帳戶層級權限涵蓋該帳戶下的所有課程。",
+  "permissions.optionalNote": "這些權限會解鎖額外的資料欄位。請查看備註以決定您的整合是否需要它們。",
+
+  "endpoints.heading": "新增端點",
+  "endpoints.searchPlaceholder": "搜尋端點…",
+  "endpoints.pasteLabel": "或貼上清單：",
+  "endpoints.addButton": "新增",
+  "endpoints.pasteTooltip": "每行貼上一個端點。接受的格式：完整 URL、僅路徑或 METHOD /路徑。查詢字串將被忽略。可辨識數字 ID 和 SIS ID（如 sis_course_id:ABC）。",
+  "endpoints.pastePlaceholder": "每行一個端點，例如 GET /api/v1/courses/:id",
+  "endpoints.unmatched": "無法辨識的端點：",
+  "endpoints.noResults": "找不到端點",
+
+  "selectedEndpoints.remove": "移除",
+  "common.moreInfo": "更多資訊",
+
+  "colorScheme.switchToDark": "切換至深色模式",
+  "colorScheme.switchToLight": "切換至淺色模式",
+  "colorScheme.switchToSystem": "切換至系統模式",
+
+  "footer.dataVersion": "Canvas 資料：{{version}}",
+  "footer.dataNotLoaded": "Canvas 資料：（未載入）",
+  "footer.credit": "免費工具，來自",
+
+  "error.loadFailed": "無法載入權限資料",
+
+  "aiTranslation.note": "應用程式介面由 AI 翻譯",
+
+  "help.tab.howToUse": "使用方式",
+  "help.tab.permissions": "Canvas 權限",
+  "help.tab.commonSetups": "常見設定",
+
+  "help.howToUse.step1": "選擇或貼上您的整合呼叫的 API 端點路徑。",
+  "help.howToUse.step2": "必要權限面板列出您的 API 使用者所需的所有 Canvas 角色權限。",
+  "help.howToUse.step3": "查看選擇性權限區段 — 這些權限在 API 回應中解鎖額外資料（如 SIS ID、電子郵件地址、未發佈的內容）。",
+  "help.howToUse.step4": "設定自訂 Canvas 角色（或編輯現有角色），啟用這些確切的權限。",
+
+  "help.permissions.rbac.heading": "角色型存取控制",
+  "help.permissions.rbac.body": "權限授予角色而非使用者。使用者透過註冊（課程角色）或帳戶成員資格（帳戶角色）繼承權限。",
+  "help.permissions.scope.heading": "課程與帳戶範圍",
+  "help.permissions.scope.body": "課程範圍的權限必須在課程層級角色上啟用。帳戶範圍的權限必須在帳戶層級管理員角色上設定。部分權限在兩個層級都存在 — 帳戶授權涵蓋該帳戶下的所有課程。",
+  "help.permissions.inheritance.heading": "權限繼承",
+  "help.permissions.inheritance.body": "擁有某權限的帳戶層級角色自動對該帳戶下所有課程擁有該權限。",
+  "help.permissions.orGroups.heading": "OR 群組",
+  "help.permissions.orGroups.body": "當工具顯示「以下任一：A · B · C」時，清單中任何一項權限即可。不需要全部。",
+  "help.permissions.optional.heading": "選擇性權限",
+  "help.permissions.optional.body": "當呼叫者擁有額外權限時，部分端點會傳回額外資料。這些作為選擇性權限單獨顯示，並附有備註說明它們解鎖的內容 — 例如 SIS ID 欄位、電子郵件地址、登入 ID 或未發佈的內容。端點在沒有這些權限的情況下也能運作；只是傳回的欄位或記錄會減少。",
+  "help.permissions.featureFlags.heading": "功能旗標",
+  "help.permissions.featureFlags.body": "少數權限需要在 Canvas 功能旗標啟用後才會出現在權限介面中。這在各個端點上有標註。",
+
+  "help.commonSetups.intro": "常見整合類型的三個設定範例：",
+  "help.commonSetups.col.type": "整合類型",
+  "help.commonSetups.col.permissions": "最低權限",
+  "help.commonSetups.readOnly.name": "唯讀",
+  "help.commonSetups.readOnly.description": "課程資料、作業、註冊",
+  "help.commonSetups.gradebook.name": "完整成績冊",
+  "help.commonSetups.gradebook.description": "讀寫成績",
+  "help.commonSetups.sis.name": "SIS 整合",
+  "help.commonSetups.sis.description": "SIS 匯入、使用者同步",
+  "help.commonSetups.optional": "選擇性"
+}

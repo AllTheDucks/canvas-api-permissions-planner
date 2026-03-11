@@ -1,0 +1,78 @@
+{
+  "app.title": "Planeador de Permissoes Canvas API",
+
+  "header.help": "Ajuda",
+  "language.label": "Idioma",
+  "language.tooltip": "Escolha um idioma. As etiquetas de permissoes Canvas sao traduzidas pela comunidade Canvas; as etiquetas da interface da aplicacao sao traduzidas por IA.",
+
+  "permissions.heading": "Permissoes Obrigatorias",
+  "permissions.optionalHeading": "Permissoes Opcionais",
+  "permissions.optionalDescription": "Estas permissoes nao sao obrigatorias para chamar os endpoints, mas desbloqueiam dados adicionais nas respostas.",
+  "permissions.empty": "Adicione endpoints para ver as permissoes obrigatorias",
+  "permissions.noAdditional": "Nao sao necessarias permissoes adicionais para os endpoints selecionados",
+  "permissions.scopeCourse": "Disciplina",
+  "permissions.scopeAccount": "Conta",
+  "permissions.scopeBoth": "Disciplina ou Conta",
+  "permissions.anyOf": "Qualquer uma de:",
+  "permissions.anyOfTooltip": "O seu utilizador API precisa de pelo menos uma destas permissoes. Qualquer uma e suficiente para satisfazer este requisito.",
+  "permissions.scopeCourseTooltip": "Deve ser ativada num papel ao nivel de disciplina (p. ex. Professor, Papel de Disciplina Personalizado) para a disciplina relevante.",
+  "permissions.scopeAccountTooltip": "Deve ser ativada num papel ao nivel de conta (p. ex. Administrador de Conta, Papel de Conta Personalizado). As permissoes ao nivel de conta abrangem todas as disciplinas dessa conta.",
+  "permissions.optionalNote": "Estas permissoes desbloqueiam campos de dados adicionais. Consulte as notas para decidir se a sua integracao precisa delas.",
+
+  "endpoints.heading": "Adicionar Endpoints",
+  "endpoints.searchPlaceholder": "Pesquisar endpoints…",
+  "endpoints.pasteLabel": "Ou cole uma lista:",
+  "endpoints.addButton": "Adicionar",
+  "endpoints.pasteTooltip": "Cole um endpoint por linha. Formatos aceites: URL completo, apenas caminho ou METHOD /caminho. As cadeias de consulta sao ignoradas. IDs numericos e IDs SIS (p. ex. sis_course_id:ABC) sao reconhecidos.",
+  "endpoints.pastePlaceholder": "Um endpoint por linha, p. ex. GET /api/v1/courses/:id",
+  "endpoints.unmatched": "Endpoints nao reconhecidos:",
+  "endpoints.noResults": "Nenhum endpoint encontrado",
+
+  "selectedEndpoints.remove": "Remover",
+  "common.moreInfo": "Mais informacoes",
+
+  "colorScheme.switchToDark": "Mudar para modo escuro",
+  "colorScheme.switchToLight": "Mudar para modo claro",
+  "colorScheme.switchToSystem": "Mudar para modo do sistema",
+
+  "footer.dataVersion": "Dados Canvas: {{version}}",
+  "footer.dataNotLoaded": "Dados Canvas: (nao carregados)",
+  "footer.credit": "Uma ferramenta gratuita de",
+
+  "error.loadFailed": "Falha ao carregar dados de permissoes",
+
+  "aiTranslation.note": "Interface da aplicacao traduzida por IA",
+
+  "help.tab.howToUse": "Como utilizar",
+  "help.tab.permissions": "Permissoes Canvas",
+  "help.tab.commonSetups": "Configuracoes comuns",
+
+  "help.howToUse.step1": "Selecione ou cole os caminhos de endpoints API que a sua integracao chama.",
+  "help.howToUse.step2": "O painel de Permissoes Obrigatorias lista todas as permissoes de papel Canvas de que o seu utilizador API precisa.",
+  "help.howToUse.step3": "Consulte a seccao de Permissoes Opcionais — estas desbloqueiam dados adicionais nas respostas API (p. ex. IDs SIS, enderecos de e-mail, conteudo nao publicado).",
+  "help.howToUse.step4": "Configure um papel Canvas personalizado (ou edite um existente) com exatamente estas permissoes ativadas.",
+
+  "help.permissions.rbac.heading": "Controlo de Acesso Baseado em Papeis",
+  "help.permissions.rbac.body": "As permissoes sao atribuidas a papeis, nao a utilizadores. Os utilizadores herdam permissoes atraves da inscricao (papel de disciplina) ou membro de conta (papel de conta).",
+  "help.permissions.scope.heading": "Ambito de Disciplina vs. Conta",
+  "help.permissions.scope.body": "Uma permissao com ambito de Disciplina deve ser ativada num papel ao nivel de disciplina. Uma permissao com ambito de Conta deve estar num papel de administrador ao nivel de conta. Algumas permissoes existem em ambos os niveis — a permissao de Conta abrange todas as disciplinas dessa conta.",
+  "help.permissions.inheritance.heading": "Heranca de permissoes",
+  "help.permissions.inheritance.body": "Um papel ao nivel de conta com uma permissao tem automaticamente essa permissao para todas as disciplinas dessa conta.",
+  "help.permissions.orGroups.heading": "Grupos OU",
+  "help.permissions.orGroups.body": "Quando a ferramenta mostra \"Qualquer uma de: A · B · C\", qualquer permissao individual da lista e suficiente. Nao precisa de todas.",
+  "help.permissions.optional.heading": "Permissoes opcionais",
+  "help.permissions.optional.body": "Alguns endpoints devolvem dados adicionais quando o chamador tem permissoes extra. Estas sao apresentadas separadamente como Permissoes Opcionais com uma nota a explicar o que desbloqueiam — por exemplo, campos de ID SIS, enderecos de e-mail, IDs de login ou conteudo nao publicado. O endpoint funciona sem elas; simplesmente obtem menos campos ou registos.",
+  "help.permissions.featureFlags.heading": "Flags de funcionalidades",
+  "help.permissions.featureFlags.body": "Um pequeno numero de permissoes requer que uma flag de funcionalidade Canvas esteja ativada antes de aparecerem na interface de Permissoes. Isto esta indicado nos endpoints individuais.",
+
+  "help.commonSetups.intro": "Tres exemplos de configuracao para tipos de integracao comuns:",
+  "help.commonSetups.col.type": "Tipo de integracao",
+  "help.commonSetups.col.permissions": "Permissoes minimas",
+  "help.commonSetups.readOnly.name": "Apenas leitura",
+  "help.commonSetups.readOnly.description": "Dados de disciplina, tarefas, inscricoes",
+  "help.commonSetups.gradebook.name": "Livro de notas completo",
+  "help.commonSetups.gradebook.description": "Ler e escrever notas",
+  "help.commonSetups.sis.name": "Integracao SIS",
+  "help.commonSetups.sis.description": "Importacoes SIS, sincronizacao de utilizadores",
+  "help.commonSetups.optional": "opcional"
+}

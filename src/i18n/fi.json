@@ -1,0 +1,78 @@
+{
+  "app.title": "Canvas API -käyttöoikeussuunnittelija",
+
+  "header.help": "Ohje",
+  "language.label": "Kieli",
+  "language.tooltip": "Valitse kieli. Canvas-käyttöoikeuksien nimet on kääntänyt Canvas-yhteisö; sovelluksen käyttöliittymätekstit on kääntänyt tekoäly.",
+
+  "permissions.heading": "Vaaditut käyttöoikeudet",
+  "permissions.optionalHeading": "Valinnaiset käyttöoikeudet",
+  "permissions.optionalDescription": "Näitä käyttöoikeuksia ei vaadita päätepisteiden kutsumiseen, mutta ne avaavat lisätietoja vastauksissa.",
+  "permissions.empty": "Lisää päätepisteitä nähdäksesi vaaditut käyttöoikeudet",
+  "permissions.noAdditional": "Valituille päätepisteille ei tarvita lisäkäyttöoikeuksia",
+  "permissions.scopeCourse": "Kurssi",
+  "permissions.scopeAccount": "Tili",
+  "permissions.scopeBoth": "Kurssi tai tili",
+  "permissions.anyOf": "Mikä tahansa seuraavista:",
+  "permissions.anyOfTooltip": "API-käyttäjäsi tarvitsee vähintään yhden näistä käyttöoikeuksista. Mikä tahansa yksittäinen riittää tämän vaatimuksen täyttämiseen.",
+  "permissions.scopeCourseTooltip": "On otettava käyttöön kurssitason roolissa (esim. Opettaja, Mukautettu kurssirooli) kyseiselle kurssille.",
+  "permissions.scopeAccountTooltip": "On otettava käyttöön tilitason roolissa (esim. Tilin ylläpitäjä, Mukautettu tilirooli). Tilitason käyttöoikeudet kattavat kaikki tilin alaiset kurssit.",
+  "permissions.optionalNote": "Nämä käyttöoikeudet avaavat lisätietokenttiä. Tarkista huomautukset päättääksesi, tarvitseeko integraatiosi niitä.",
+
+  "endpoints.heading": "Lisää päätepisteitä",
+  "endpoints.searchPlaceholder": "Hae päätepisteitä…",
+  "endpoints.pasteLabel": "Tai liitä lista:",
+  "endpoints.addButton": "Lisää",
+  "endpoints.pasteTooltip": "Liitä yksi päätepiste per rivi. Hyväksytyt muodot: täysi URL, pelkkä polku tai METHOD /polku. Kyselymerkkijonot ohitetaan. Numeeriset tunnisteet ja SIS-tunnisteet (esim. sis_course_id:ABC) tunnistetaan.",
+  "endpoints.pastePlaceholder": "Yksi päätepiste per rivi, esim. GET /api/v1/courses/:id",
+  "endpoints.unmatched": "Tunnistamattomat päätepisteet:",
+  "endpoints.noResults": "Päätepisteitä ei löytynyt",
+
+  "selectedEndpoints.remove": "Poista",
+  "common.moreInfo": "Lisätietoja",
+
+  "colorScheme.switchToDark": "Vaihda tummaan tilaan",
+  "colorScheme.switchToLight": "Vaihda vaaleaan tilaan",
+  "colorScheme.switchToSystem": "Vaihda järjestelmätilaan",
+
+  "footer.dataVersion": "Canvas-tiedot: {{version}}",
+  "footer.dataNotLoaded": "Canvas-tiedot: (ei ladattu)",
+  "footer.credit": "Ilmainen työkalu tekijältä",
+
+  "error.loadFailed": "Käyttöoikeustietojen lataus epäonnistui",
+
+  "aiTranslation.note": "Sovelluksen käyttöliittymä käännetty tekoälyllä",
+
+  "help.tab.howToUse": "Käyttöohje",
+  "help.tab.permissions": "Canvas-käyttöoikeudet",
+  "help.tab.commonSetups": "Yleiset asetukset",
+
+  "help.howToUse.step1": "Valitse tai liitä API-päätepistepolut, joita integraatiosi kutsuu.",
+  "help.howToUse.step2": "Vaaditut käyttöoikeudet -paneeli listaa kaikki Canvas-roolikäyttöoikeudet, joita API-käyttäjäsi tarvitsee.",
+  "help.howToUse.step3": "Tarkista Valinnaiset käyttöoikeudet -osio — nämä avaavat lisätietoja API-vastauksissa (esim. SIS-tunnisteet, sähköpostiosoitteet, julkaisematon sisältö).",
+  "help.howToUse.step4": "Luo mukautettu Canvas-rooli (tai muokkaa olemassa olevaa) juuri näillä käyttöoikeuksilla käytössä.",
+
+  "help.permissions.rbac.heading": "Roolipohjainen pääsynhallinta",
+  "help.permissions.rbac.body": "Käyttöoikeudet myönnetään rooleille, ei käyttäjille. Käyttäjät perivät käyttöoikeudet ilmoittautumisen (kurssirooli) tai tilijäsenyyden (tilirooli) kautta.",
+  "help.permissions.scope.heading": "Kurssi- vs. tililaajuus",
+  "help.permissions.scope.body": "Kurssilaajuudella oleva käyttöoikeus on otettava käyttöön kurssitason roolissa. Tililaajuudella oleva käyttöoikeus on oltava tilitason ylläpitäjäroolissa. Jotkut käyttöoikeudet ovat olemassa molemmilla tasoilla — tilikäyttöoikeus kattaa kaikki tilin alaiset kurssit.",
+  "help.permissions.inheritance.heading": "Käyttöoikeuksien periytyminen",
+  "help.permissions.inheritance.body": "Tilitason roolilla, jolla on käyttöoikeus, on automaattisesti kyseinen käyttöoikeus kaikilla tilin alaisilla kursseilla.",
+  "help.permissions.orGroups.heading": "TAI-ryhmät",
+  "help.permissions.orGroups.body": "Kun työkalu näyttää \"Mikä tahansa seuraavista: A · B · C\", mikä tahansa yksittäinen käyttöoikeus listalta riittää. Et tarvitse kaikkia.",
+  "help.permissions.optional.heading": "Valinnaiset käyttöoikeudet",
+  "help.permissions.optional.body": "Jotkut päätepisteet palauttavat lisätietoja, kun kutsujalla on lisäkäyttöoikeuksia. Nämä näytetään erikseen Valinnaisina käyttöoikeuksina huomautuksella, joka selittää mitä ne avaavat — esimerkiksi SIS-tunnistekentät, sähköpostiosoitteet, kirjautumistunnisteet tai julkaisematon sisältö. Päätepiste toimii ilman niitä; saat vain vähemmän kenttiä tai tietueita.",
+  "help.permissions.featureFlags.heading": "Ominaisuusliput",
+  "help.permissions.featureFlags.body": "Pieni määrä käyttöoikeuksia vaatii Canvas-ominaisuuslipun käyttöönoton ennen kuin ne näkyvät Käyttöoikeudet-käyttöliittymässä. Tämä on merkitty yksittäisiin päätepisteisiin.",
+
+  "help.commonSetups.intro": "Kolme esimerkkikonfiguraatiota yleisille integraatiotyypeille:",
+  "help.commonSetups.col.type": "Integraatiotyyppi",
+  "help.commonSetups.col.permissions": "Vähimmäiskäyttöoikeudet",
+  "help.commonSetups.readOnly.name": "Vain luku",
+  "help.commonSetups.readOnly.description": "Kurssitiedot, tehtävät, ilmoittautumiset",
+  "help.commonSetups.gradebook.name": "Täysi arviointikirja",
+  "help.commonSetups.gradebook.description": "Lue ja kirjoita arvosanoja",
+  "help.commonSetups.sis.name": "SIS-integraatio",
+  "help.commonSetups.sis.description": "SIS-tuonnit, käyttäjien synkronointi",
+  "help.commonSetups.optional": "valinnainen"
+}

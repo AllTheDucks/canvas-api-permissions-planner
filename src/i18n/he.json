@@ -1,0 +1,78 @@
+{
+  "app.title": "מתכנן הרשאות Canvas API",
+
+  "header.help": "עזרה",
+  "language.label": "שפה",
+  "language.tooltip": "בחר שפה. תוויות הרשאות Canvas מתורגמות על ידי קהילת Canvas; תוויות ממשק האפליקציה מתורגמות על ידי AI.",
+
+  "permissions.heading": "הרשאות נדרשות",
+  "permissions.optionalHeading": "הרשאות אופציונליות",
+  "permissions.optionalDescription": "הרשאות אלה אינן נדרשות לקריאת ה-endpoints, אך הן מאפשרות נתונים נוספים בתגובות.",
+  "permissions.empty": "הוסף endpoints כדי לראות הרשאות נדרשות",
+  "permissions.noAdditional": "אין צורך בהרשאות נוספות עבור ה-endpoints שנבחרו",
+  "permissions.scopeCourse": "קורס",
+  "permissions.scopeAccount": "חשבון",
+  "permissions.scopeBoth": "קורס או חשבון",
+  "permissions.anyOf": "כל אחת מ:",
+  "permissions.anyOfTooltip": "משתמש ה-API שלך צריך לפחות אחת מהרשאות אלה. כל הרשאה בודדת מספיקה כדי לעמוד בדרישה זו.",
+  "permissions.scopeCourseTooltip": "יש להפעיל על תפקיד ברמת קורס (למשל מורה, תפקיד קורס מותאם אישית) עבור הקורס הרלוונטי.",
+  "permissions.scopeAccountTooltip": "יש להפעיל על תפקיד ברמת חשבון (למשל מנהל חשבון, תפקיד חשבון מותאם אישית). הרשאות ברמת חשבון מכסות את כל הקורסים תחת חשבון זה.",
+  "permissions.optionalNote": "הרשאות אלה מאפשרות שדות נתונים נוספים. בדוק את ההערות כדי להחליט אם האינטגרציה שלך צריכה אותן.",
+
+  "endpoints.heading": "הוספת Endpoints",
+  "endpoints.searchPlaceholder": "חיפוש endpoints…",
+  "endpoints.pasteLabel": "או הדבק רשימה:",
+  "endpoints.addButton": "הוסף",
+  "endpoints.pasteTooltip": "הדבק endpoint אחד לכל שורה. פורמטים מקובלים: URL מלא, נתיב בלבד, או METHOD /נתיב. מחרוזות שאילתה מתעלמות. מזהים מספריים ומזהי SIS (למשל sis_course_id:ABC) מזוהים.",
+  "endpoints.pastePlaceholder": "endpoint אחד לכל שורה, למשל GET /api/v1/courses/:id",
+  "endpoints.unmatched": "endpoints לא מזוהים:",
+  "endpoints.noResults": "לא נמצאו endpoints",
+
+  "selectedEndpoints.remove": "הסר",
+  "common.moreInfo": "מידע נוסף",
+
+  "colorScheme.switchToDark": "עבור למצב כהה",
+  "colorScheme.switchToLight": "עבור למצב בהיר",
+  "colorScheme.switchToSystem": "עבור למצב מערכת",
+
+  "footer.dataVersion": "נתוני Canvas: {{version}}",
+  "footer.dataNotLoaded": "נתוני Canvas: (לא נטענו)",
+  "footer.credit": "כלי חינמי מאת",
+
+  "error.loadFailed": "טעינת נתוני ההרשאות נכשלה",
+
+  "aiTranslation.note": "ממשק האפליקציה תורגם על ידי AI",
+
+  "help.tab.howToUse": "כיצד להשתמש",
+  "help.tab.permissions": "הרשאות Canvas",
+  "help.tab.commonSetups": "הגדרות נפוצות",
+
+  "help.howToUse.step1": "בחר או הדבק את נתיבי ה-API endpoint שהאינטגרציה שלך קוראת להם.",
+  "help.howToUse.step2": "לוח ההרשאות הנדרשות מציג כל הרשאת תפקיד Canvas שמשתמש ה-API שלך צריך.",
+  "help.howToUse.step3": "עיין בסעיף ההרשאות האופציונליות — אלה מאפשרות נתונים נוספים בתגובות API (למשל מזהי SIS, כתובות דוא\"ל, תוכן לא מפורסם).",
+  "help.howToUse.step4": "הגדר תפקיד Canvas מותאם אישית (או ערוך קיים) עם בדיוק הרשאות אלה מופעלות.",
+
+  "help.permissions.rbac.heading": "בקרת גישה מבוססת תפקידים",
+  "help.permissions.rbac.body": "הרשאות ניתנות לתפקידים, לא למשתמשים. משתמשים יורשים הרשאות דרך הרשמה (תפקיד קורס) או חברות בחשבון (תפקיד חשבון).",
+  "help.permissions.scope.heading": "היקף קורס מול חשבון",
+  "help.permissions.scope.body": "הרשאה בהיקף קורס חייבת להיות מופעלת על תפקיד ברמת קורס. הרשאה בהיקף חשבון חייבת להיות על תפקיד מנהל ברמת חשבון. חלק מההרשאות קיימות בשני הרמות — הענקת חשבון מכסה את כל הקורסים תחת החשבון.",
+  "help.permissions.inheritance.heading": "ירושת הרשאות",
+  "help.permissions.inheritance.body": "תפקיד ברמת חשבון עם הרשאה מקבל אוטומטית את ההרשאה הזו עבור כל הקורסים תחת החשבון.",
+  "help.permissions.orGroups.heading": "קבוצות OR",
+  "help.permissions.orGroups.body": "כאשר הכלי מציג \"כל אחת מ: A · B · C\", כל הרשאה בודדת מהרשימה מספיקה. אין צורך בכולן.",
+  "help.permissions.optional.heading": "הרשאות אופציונליות",
+  "help.permissions.optional.body": "חלק מה-endpoints מחזירים נתונים נוספים כאשר לקורא יש הרשאות נוספות. אלה מוצגות בנפרד כהרשאות אופציונליות עם הערה המסבירה מה הן מאפשרות — למשל שדות מזהה SIS, כתובות דוא\"ל, מזהי התחברות, או תוכן לא מפורסם. ה-endpoint עובד בלעדיהן; פשוט מקבלים פחות שדות או רשומות.",
+  "help.permissions.featureFlags.heading": "דגלי תכונות",
+  "help.permissions.featureFlags.body": "מספר קטן של הרשאות דורש שדגל תכונה של Canvas יופעל לפני שהן מופיעות בממשק ההרשאות. זה מצוין על endpoints בודדים.",
+
+  "help.commonSetups.intro": "שלוש דוגמאות של הגדרות לסוגי אינטגרציה נפוצים:",
+  "help.commonSetups.col.type": "סוג אינטגרציה",
+  "help.commonSetups.col.permissions": "הרשאות מינימליות",
+  "help.commonSetups.readOnly.name": "קריאה בלבד",
+  "help.commonSetups.readOnly.description": "נתוני קורס, משימות, הרשמות",
+  "help.commonSetups.gradebook.name": "גיליון ציונים מלא",
+  "help.commonSetups.gradebook.description": "קריאה וכתיבת ציונים",
+  "help.commonSetups.sis.name": "אינטגרציית SIS",
+  "help.commonSetups.sis.description": "יבוא SIS, סנכרון משתמשים",
+  "help.commonSetups.optional": "אופציונלי"
+}

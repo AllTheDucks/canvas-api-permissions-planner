@@ -1,0 +1,78 @@
+{
+  "app.title": "Planer Uprawnien Canvas API",
+
+  "header.help": "Pomoc",
+  "language.label": "Jezyk",
+  "language.tooltip": "Wybierz jezyk. Etykiety uprawnien Canvas sa tlumaczone przez spolecznosc Canvas; etykiety interfejsu aplikacji sa tlumaczone przez AI.",
+
+  "permissions.heading": "Wymagane uprawnienia",
+  "permissions.optionalHeading": "Opcjonalne uprawnienia",
+  "permissions.optionalDescription": "Te uprawnienia nie sa wymagane do wywolywania endpointow, ale odblokowuja dodatkowe dane w odpowiedziach.",
+  "permissions.empty": "Dodaj endpointy, aby zobaczyc wymagane uprawnienia",
+  "permissions.noAdditional": "Brak dodatkowych uprawnien wymaganych dla wybranych endpointow",
+  "permissions.scopeCourse": "Kurs",
+  "permissions.scopeAccount": "Konto",
+  "permissions.scopeBoth": "Kurs lub Konto",
+  "permissions.anyOf": "Dowolne z nastepujacych:",
+  "permissions.anyOfTooltip": "Twoj uzytkownik API potrzebuje co najmniej jednego z tych uprawnien. Jedno wystarczy, aby spelnic to wymaganie.",
+  "permissions.scopeCourseTooltip": "Musi byc wlaczone na roli poziomu kursu (np. Nauczyciel, Niestandardowa rola kursu) dla odpowiedniego kursu.",
+  "permissions.scopeAccountTooltip": "Musi byc wlaczone na roli poziomu konta (np. Administrator Konta, Niestandardowa rola konta). Uprawnienia poziomu konta obejmuja wszystkie kursy w ramach tego konta.",
+  "permissions.optionalNote": "Te uprawnienia odblokowuja dodatkowe pola danych. Przejrzyj notatki, aby zdecydowac, czy Twoja integracja ich potrzebuje.",
+
+  "endpoints.heading": "Dodaj endpointy",
+  "endpoints.searchPlaceholder": "Szukaj endpointow…",
+  "endpoints.pasteLabel": "Lub wklej liste:",
+  "endpoints.addButton": "Dodaj",
+  "endpoints.pasteTooltip": "Wklej jeden endpoint na linie. Akceptowane formaty: pelny URL, sama sciezka lub METHOD /sciezka. Ciagi zapytan sa ignorowane. Identyfikatory numeryczne i identyfikatory SIS (np. sis_course_id:ABC) sa rozpoznawane.",
+  "endpoints.pastePlaceholder": "Jeden endpoint na linie, np. GET /api/v1/courses/:id",
+  "endpoints.unmatched": "Nierozpoznane endpointy:",
+  "endpoints.noResults": "Nie znaleziono endpointow",
+
+  "selectedEndpoints.remove": "Usun",
+  "common.moreInfo": "Wiecej informacji",
+
+  "colorScheme.switchToDark": "Przelacz na tryb ciemny",
+  "colorScheme.switchToLight": "Przelacz na tryb jasny",
+  "colorScheme.switchToSystem": "Przelacz na tryb systemowy",
+
+  "footer.dataVersion": "Dane Canvas: {{version}}",
+  "footer.dataNotLoaded": "Dane Canvas: (nie zaladowane)",
+  "footer.credit": "Darmowe narzedzie od",
+
+  "error.loadFailed": "Nie udalo sie zaladowac danych uprawnien",
+
+  "aiTranslation.note": "Interfejs aplikacji przetlumaczony przez AI",
+
+  "help.tab.howToUse": "Jak uzywac",
+  "help.tab.permissions": "Uprawnienia Canvas",
+  "help.tab.commonSetups": "Typowe konfiguracje",
+
+  "help.howToUse.step1": "Wybierz lub wklej sciezki endpointow API, ktore wywoluje Twoja integracja.",
+  "help.howToUse.step2": "Panel Wymagane uprawnienia wymienia wszystkie uprawnienia rol Canvas, ktorych potrzebuje Twoj uzytkownik API.",
+  "help.howToUse.step3": "Przejrzyj sekcje Opcjonalne uprawnienia — odblokowuja one dodatkowe dane w odpowiedziach API (np. identyfikatory SIS, adresy e-mail, nieopublikowana zawartosc).",
+  "help.howToUse.step4": "Skonfiguruj niestandardowa role Canvas (lub edytuj istniejaca) z dokladnie tymi uprawnieniami wlaczonymi.",
+
+  "help.permissions.rbac.heading": "Kontrola dostepu oparta na rolach",
+  "help.permissions.rbac.body": "Uprawnienia sa przyznawane rolom, nie uzytkownikom. Uzytkownicy dziedzicza uprawnienia poprzez zapis (rola kursu) lub czlonkostwo w koncie (rola konta).",
+  "help.permissions.scope.heading": "Zakres kursu vs. konta",
+  "help.permissions.scope.body": "Uprawnienie z zakresem kursu musi byc wlaczone na roli poziomu kursu. Uprawnienie z zakresem konta musi byc na roli administratora konta. Niektore uprawnienia istnieja na obu poziomach — uprawnienie konta obejmuje wszystkie kursy w ramach tego konta.",
+  "help.permissions.inheritance.heading": "Dziedziczenie uprawnien",
+  "help.permissions.inheritance.body": "Rola poziomu konta z uprawnieniem automatycznie ma to uprawnienie dla wszystkich kursow w ramach konta.",
+  "help.permissions.orGroups.heading": "Grupy LUB",
+  "help.permissions.orGroups.body": "Gdy narzedzie pokazuje \"Dowolne z nastepujacych: A · B · C\", wystarczy jedno uprawnienie z listy. Nie potrzebujesz wszystkich.",
+  "help.permissions.optional.heading": "Opcjonalne uprawnienia",
+  "help.permissions.optional.body": "Niektore endpointy zwracaja dodatkowe dane, gdy wywolujacy ma dodatkowe uprawnienia. Sa one wyswietlane oddzielnie jako Opcjonalne uprawnienia z notatka wyjasniajaca, co odblokowuja — np. pola identyfikatora SIS, adresy e-mail, identyfikatory logowania lub nieopublikowana zawartosc. Endpoint dziala bez nich; po prostu otrzymujesz mniej pol lub rekordow.",
+  "help.permissions.featureFlags.heading": "Flagi funkcji",
+  "help.permissions.featureFlags.body": "Niewielka liczba uprawnien wymaga wlaczenia flagi funkcji Canvas, zanim pojawia sie w interfejsie Uprawnien. Jest to odnotowane przy poszczegolnych endpointach.",
+
+  "help.commonSetups.intro": "Trzy przykladowe konfiguracje dla typowych rodzajow integracji:",
+  "help.commonSetups.col.type": "Rodzaj integracji",
+  "help.commonSetups.col.permissions": "Minimalne uprawnienia",
+  "help.commonSetups.readOnly.name": "Tylko do odczytu",
+  "help.commonSetups.readOnly.description": "Dane kursu, zadania, zapisy",
+  "help.commonSetups.gradebook.name": "Pelny dziennik ocen",
+  "help.commonSetups.gradebook.description": "Odczyt i zapis ocen",
+  "help.commonSetups.sis.name": "Integracja SIS",
+  "help.commonSetups.sis.description": "Import SIS, synchronizacja uzytkownikow",
+  "help.commonSetups.optional": "opcjonalnie"
+}

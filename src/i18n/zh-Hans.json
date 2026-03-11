@@ -1,0 +1,78 @@
+{
+  "app.title": "Canvas API 权限规划器",
+
+  "header.help": "帮助",
+  "language.label": "语言",
+  "language.tooltip": "选择语言。Canvas 权限标签由 Canvas 社区翻译；应用界面标签由 AI 翻译。",
+
+  "permissions.heading": "必需权限",
+  "permissions.optionalHeading": "可选权限",
+  "permissions.optionalDescription": "这些权限不是调用端点所必需的，但会在响应中解锁额外数据。",
+  "permissions.empty": "添加端点以查看必需权限",
+  "permissions.noAdditional": "所选端点不需要额外权限",
+  "permissions.scopeCourse": "课程",
+  "permissions.scopeAccount": "账户",
+  "permissions.scopeBoth": "课程或账户",
+  "permissions.anyOf": "以下任一：",
+  "permissions.anyOfTooltip": "您的 API 用户至少需要其中一项权限。任何一项即可满足此要求。",
+  "permissions.scopeCourseTooltip": "必须在课程级别角色（如教师、自定义课程角色）上为相关课程启用。",
+  "permissions.scopeAccountTooltip": "必须在账户级别角色（如账户管理员、自定义账户角色）上启用。账户级别权限覆盖该账户下的所有课程。",
+  "permissions.optionalNote": "这些权限会解锁额外的数据字段。请查看备注以决定您的集成是否需要它们。",
+
+  "endpoints.heading": "添加端点",
+  "endpoints.searchPlaceholder": "搜索端点…",
+  "endpoints.pasteLabel": "或粘贴列表：",
+  "endpoints.addButton": "添加",
+  "endpoints.pasteTooltip": "每行粘贴一个端点。接受的格式：完整 URL、仅路径或 METHOD /路径。查询字符串将被忽略。可识别数字 ID 和 SIS ID（如 sis_course_id:ABC）。",
+  "endpoints.pastePlaceholder": "每行一个端点，例如 GET /api/v1/courses/:id",
+  "endpoints.unmatched": "无法识别的端点：",
+  "endpoints.noResults": "未找到端点",
+
+  "selectedEndpoints.remove": "移除",
+  "common.moreInfo": "更多信息",
+
+  "colorScheme.switchToDark": "切换到深色模式",
+  "colorScheme.switchToLight": "切换到浅色模式",
+  "colorScheme.switchToSystem": "切换到系统模式",
+
+  "footer.dataVersion": "Canvas 数据：{{version}}",
+  "footer.dataNotLoaded": "Canvas 数据：（未加载）",
+  "footer.credit": "免费工具，来自",
+
+  "error.loadFailed": "加载权限数据失败",
+
+  "aiTranslation.note": "应用界面由 AI 翻译",
+
+  "help.tab.howToUse": "使用方法",
+  "help.tab.permissions": "Canvas 权限",
+  "help.tab.commonSetups": "常见配置",
+
+  "help.howToUse.step1": "选择或粘贴您的集成调用的 API 端点路径。",
+  "help.howToUse.step2": "必需权限面板列出您的 API 用户需要的所有 Canvas 角色权限。",
+  "help.howToUse.step3": "查看可选权限部分 — 这些权限在 API 响应中解锁额外数据（如 SIS ID、电子邮件地址、未发布的内容）。",
+  "help.howToUse.step4": "设置自定义 Canvas 角色（或编辑现有角色），启用这些确切的权限。",
+
+  "help.permissions.rbac.heading": "基于角色的访问控制",
+  "help.permissions.rbac.body": "权限授予角色而非用户。用户通过注册（课程角色）或账户成员身份（账户角色）继承权限。",
+  "help.permissions.scope.heading": "课程与账户范围",
+  "help.permissions.scope.body": "课程范围的权限必须在课程级别角色上启用。账户范围的权限必须在账户级别管理员角色上设置。某些权限在两个级别都存在 — 账户授权覆盖该账户下的所有课程。",
+  "help.permissions.inheritance.heading": "权限继承",
+  "help.permissions.inheritance.body": "拥有某权限的账户级别角色自动对该账户下所有课程拥有该权限。",
+  "help.permissions.orGroups.heading": "OR 组",
+  "help.permissions.orGroups.body": "当工具显示「以下任一：A · B · C」时，列表中任何一项权限即可。不需要全部。",
+  "help.permissions.optional.heading": "可选权限",
+  "help.permissions.optional.body": "当调用者拥有额外权限时，某些端点会返回额外数据。这些作为可选权限单独显示，并附有备注说明它们解锁的内容 — 例如 SIS ID 字段、电子邮件地址、登录 ID 或未发布的内容。端点在没有这些权限的情况下也能工作；只是返回的字段或记录会减少。",
+  "help.permissions.featureFlags.heading": "功能标志",
+  "help.permissions.featureFlags.body": "少数权限需要在 Canvas 功能标志启用后才会出现在权限界面中。这在各个端点上有标注。",
+
+  "help.commonSetups.intro": "常见集成类型的三个配置示例：",
+  "help.commonSetups.col.type": "集成类型",
+  "help.commonSetups.col.permissions": "最低权限",
+  "help.commonSetups.readOnly.name": "只读",
+  "help.commonSetups.readOnly.description": "课程数据、作业、注册",
+  "help.commonSetups.gradebook.name": "完整成绩册",
+  "help.commonSetups.gradebook.description": "读写成绩",
+  "help.commonSetups.sis.name": "SIS 集成",
+  "help.commonSetups.sis.description": "SIS 导入、用户同步",
+  "help.commonSetups.optional": "可选"
+}

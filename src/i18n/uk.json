@@ -1,0 +1,78 @@
+{
+  "app.title": "Планувальник дозволiв Canvas API",
+
+  "header.help": "Допомога",
+  "language.label": "Мова",
+  "language.tooltip": "Оберiть мову. Назви дозволiв Canvas перекладаються спiльнотою Canvas; написи iнтерфейсу додатку перекладаються ШI.",
+
+  "permissions.heading": "Необхiднi дозволи",
+  "permissions.optionalHeading": "Додатковi дозволи",
+  "permissions.optionalDescription": "Цi дозволи не потрiбнi для виклику кiнцевих точок, але вiдкривають додатковi данi у вiдповiдях.",
+  "permissions.empty": "Додайте кiнцевi точки, щоб побачити необхiднi дозволи",
+  "permissions.noAdditional": "Для обраних кiнцевих точок не потрiбнi додатковi дозволи",
+  "permissions.scopeCourse": "Курс",
+  "permissions.scopeAccount": "Облiковий запис",
+  "permissions.scopeBoth": "Курс або Облiковий запис",
+  "permissions.anyOf": "Будь-який з:",
+  "permissions.anyOfTooltip": "Вашому користувачу API потрiбен щонайменше один з цих дозволiв. Будь-який один достатнiй для виконання цiєї вимоги.",
+  "permissions.scopeCourseTooltip": "Повинен бути увiмкнений для ролi рiвня курсу (напр. Викладач, Користувацька роль курсу) для вiдповiдного курсу.",
+  "permissions.scopeAccountTooltip": "Повинен бути увiмкнений для ролi рiвня облiкового запису (напр. Адмiнiстратор облiкового запису, Користувацька роль облiкового запису). Дозволи рiвня облiкового запису охоплюють всi курси пiд цим облiковим записом.",
+  "permissions.optionalNote": "Цi дозволи вiдкривають додатковi поля даних. Перегляньте примiтки, щоб вирiшити, чи потрiбнi вони вашiй iнтеграцiї.",
+
+  "endpoints.heading": "Додати кiнцевi точки",
+  "endpoints.searchPlaceholder": "Пошук кiнцевих точок…",
+  "endpoints.pasteLabel": "Або вставте список:",
+  "endpoints.addButton": "Додати",
+  "endpoints.pasteTooltip": "Вставте одну кiнцеву точку на рядок. Прийнятнi формати: повна URL-адреса, лише шлях або METHOD /шлях. Рядки запитiв iгноруються. Числовi iдентифiкатори та SIS-iдентифiкатори (напр. sis_course_id:ABC) розпiзнаються.",
+  "endpoints.pastePlaceholder": "Одна кiнцева точка на рядок, напр. GET /api/v1/courses/:id",
+  "endpoints.unmatched": "Нерозпiзнанi кiнцевi точки:",
+  "endpoints.noResults": "Кiнцевi точки не знайдено",
+
+  "selectedEndpoints.remove": "Видалити",
+  "common.moreInfo": "Додаткова iнформацiя",
+
+  "colorScheme.switchToDark": "Перемкнути на темний режим",
+  "colorScheme.switchToLight": "Перемкнути на свiтлий режим",
+  "colorScheme.switchToSystem": "Перемкнути на системний режим",
+
+  "footer.dataVersion": "Данi Canvas: {{version}}",
+  "footer.dataNotLoaded": "Данi Canvas: (не завантажено)",
+  "footer.credit": "Безкоштовний iнструмент вiд",
+
+  "error.loadFailed": "Не вдалося завантажити данi дозволiв",
+
+  "aiTranslation.note": "Iнтерфейс додатку перекладено ШI",
+
+  "help.tab.howToUse": "Як використовувати",
+  "help.tab.permissions": "Дозволи Canvas",
+  "help.tab.commonSetups": "Типовi конфiгурацiї",
+
+  "help.howToUse.step1": "Оберiть або вставте шляхи кiнцевих точок API, якi викликає ваша iнтеграцiя.",
+  "help.howToUse.step2": "Панель необхiдних дозволiв показує всi дозволи ролей Canvas, якi потрiбнi вашому користувачу API.",
+  "help.howToUse.step3": "Перегляньте роздiл додаткових дозволiв — вони вiдкривають додатковi данi у вiдповiдях API (напр. SIS-iдентифiкатори, адреси електронної пошти, неопублiкований контент).",
+  "help.howToUse.step4": "Налаштуйте користувацьку роль Canvas (або вiдредагуйте iснуючу) з увiмкненими саме цими дозволами.",
+
+  "help.permissions.rbac.heading": "Управлiння доступом на основi ролей",
+  "help.permissions.rbac.body": "Дозволи надаються ролям, а не користувачам. Користувачi успадковують дозволи через зарахування (роль курсу) або членство в облiковому записi (роль облiкового запису).",
+  "help.permissions.scope.heading": "Область курсу та облiкового запису",
+  "help.permissions.scope.body": "Дозвiл з областю курсу повинен бути увiмкнений для ролi рiвня курсу. Дозвiл з областю облiкового запису повинен бути на ролi адмiнiстратора облiкового запису. Деякi дозволи iснують на обох рiвнях — надання облiкового запису охоплює всi курси пiд цим облiковим записом.",
+  "help.permissions.inheritance.heading": "Успадкування дозволiв",
+  "help.permissions.inheritance.body": "Роль рiвня облiкового запису з дозволом автоматично має цей дозвiл для всiх курсiв пiд облiковим записом.",
+  "help.permissions.orGroups.heading": "Групи АБО",
+  "help.permissions.orGroups.body": "Коли iнструмент показує \"Будь-який з: A · B · C\", будь-який окремий дозвiл зi списку достатнiй. Вам не потрiбнi всi.",
+  "help.permissions.optional.heading": "Додатковi дозволи",
+  "help.permissions.optional.body": "Деякi кiнцевi точки повертають додатковi данi, коли викликач має додатковi дозволи. Вони показуються окремо як додатковi дозволи з примiткою, що пояснює, що вони вiдкривають — наприклад, поля SIS-iдентифiкатора, адреси електронної пошти, iдентифiкатори входу або неопублiкований контент. Кiнцева точка працює без них; ви просто отримуєте менше полiв або записiв.",
+  "help.permissions.featureFlags.heading": "Прапорцi функцiй",
+  "help.permissions.featureFlags.body": "Невелика кiлькiсть дозволiв потребує увiмкнення прапорця функцiї Canvas перед тим, як вони з'являться в iнтерфейсi дозволiв. Це вказано на окремих кiнцевих точках.",
+
+  "help.commonSetups.intro": "Три приклади конфiгурацiй для типових типiв iнтеграцiї:",
+  "help.commonSetups.col.type": "Тип iнтеграцiї",
+  "help.commonSetups.col.permissions": "Мiнiмальнi дозволи",
+  "help.commonSetups.readOnly.name": "Тiльки читання",
+  "help.commonSetups.readOnly.description": "Данi курсу, завдання, зарахування",
+  "help.commonSetups.gradebook.name": "Повний журнал оцiнок",
+  "help.commonSetups.gradebook.description": "Читання та запис оцiнок",
+  "help.commonSetups.sis.name": "Iнтеграцiя SIS",
+  "help.commonSetups.sis.description": "Iмпорт SIS, синхронiзацiя користувачiв",
+  "help.commonSetups.optional": "необов'язково"
+}
