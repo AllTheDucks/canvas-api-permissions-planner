@@ -13,6 +13,7 @@ import { IconInfoCircle, IconSearch } from '@tabler/icons-react'
 import { useAppTranslations } from '../../context/AppTranslationsContext'
 import { trackEvent } from '../../utils/analytics'
 import type { Endpoint } from '../../types'
+import { StyledPath } from '../StyledPath'
 
 type EndpointSelectorProps = {
   endpoints: Endpoint[]
@@ -53,7 +54,7 @@ const EndpointRow = memo(function EndpointRow({ endpoint, checked, onToggle }: E
       }}
       label={
         <>
-          <strong>{endpoint.method}</strong>{' '}{endpoint.path}
+          <strong>{endpoint.method}</strong>{' '}<StyledPath path={endpoint.path} />
           {endpoint.notes && (
             <Tooltip label={endpoint.notes} multiline maw={300} withArrow>
               <ActionIcon
