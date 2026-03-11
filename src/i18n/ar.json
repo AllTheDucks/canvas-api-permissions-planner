@@ -21,7 +21,7 @@
 
   "endpoints.heading": "إضافة نقاط نهاية",
   "endpoints.searchPlaceholder": "البحث في نقاط النهاية…",
-  "endpoints.pasteLabel": "أو الصق قائمة:",
+  "endpoints.pasteLabel": "لصق نقاط النهاية",
   "endpoints.addButton": "إضافة",
   "endpoints.pasteTooltip": "الصق نقطة نهاية واحدة لكل سطر. الصيغ المقبولة: عنوان URL كامل، مسار فقط، أو METHOD /path. يتم تجاهل سلاسل الاستعلام. يتم التعرف على المعرفات الرقمية ومعرفات SIS (مثل sis_course_id:ABC).",
   "endpoints.pastePlaceholder": "نقطة نهاية واحدة لكل سطر، مثال GET /api/v1/courses/:id",

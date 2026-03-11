@@ -21,7 +21,7 @@
 
   "endpoints.heading": "Endpoints toevoegen",
   "endpoints.searchPlaceholder": "Endpoints zoeken…",
-  "endpoints.pasteLabel": "Of plak een lijst:",
+  "endpoints.pasteLabel": "Eindpunten plakken",
   "endpoints.addButton": "Toevoegen",
   "endpoints.pasteTooltip": "Plak een endpoint per regel. Geaccepteerde formaten: volledige URL, alleen pad of METHOD /pad. Querystrings worden genegeerd. Numerieke ID's en SIS-ID's (bijv. sis_course_id:ABC) worden herkend.",
   "endpoints.pastePlaceholder": "Een endpoint per regel, bijv. GET /api/v1/courses/:id",

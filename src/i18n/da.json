@@ -21,7 +21,7 @@
 
   "endpoints.heading": "Tilføj endpoints",
   "endpoints.searchPlaceholder": "Søg efter endpoints…",
-  "endpoints.pasteLabel": "Eller indsæt en liste:",
+  "endpoints.pasteLabel": "Indsæt slutpunkter",
   "endpoints.addButton": "Tilføj",
   "endpoints.pasteTooltip": "Indsæt ét endpoint pr. linje. Accepterede formater: fuld URL, kun sti eller METHOD /sti. Forespørgselsstrenge ignoreres. Numeriske ID'er og SIS-ID'er (f.eks. sis_course_id:ABC) genkendes.",
   "endpoints.pastePlaceholder": "Ét endpoint pr. linje, f.eks. GET /api/v1/courses/:id",

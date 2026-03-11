@@ -21,7 +21,7 @@
 
   "endpoints.heading": "Ychwanegu Endpoints",
   "endpoints.searchPlaceholder": "Chwilio endpoints…",
-  "endpoints.pasteLabel": "Neu gludwch restr:",
+  "endpoints.pasteLabel": "Gludo Pwyntiau Terfyn",
   "endpoints.addButton": "Ychwanegu",
   "endpoints.pasteTooltip": "Gludwch un endpoint fesul llinell. Fformatau derbyniol: URL llawn, llwybr yn unig, neu METHOD /path. Mae llinynau ymholiad yn cael eu hanwybyddu. Mae IDs rhifol ac IDs SIS (e.e. sis_course_id:ABC) yn cael eu hadnabod.",
   "endpoints.pastePlaceholder": "Un endpoint fesul llinell, e.e. GET /api/v1/courses/:id",

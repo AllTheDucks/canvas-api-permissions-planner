@@ -1,5 +1,5 @@
 import { useState } from 'react'
-import { Alert, Button, Code, Stack, Textarea } from '@mantine/core'
+import { Alert, Button, Code, Stack, Title, Textarea } from '@mantine/core'
 import { IconAlertCircle } from '@tabler/icons-react'
 import { useAppTranslations } from '../../context/AppTranslationsContext'
 import { trackEvent } from '../../utils/analytics'
@@ -47,10 +47,11 @@ export function EndpointPaste({ endpoints, onAdd }: EndpointPasteProps) {
   }
 
   return (
-    <Stack gap="xs" mt="md">
+    <Stack gap="xs">
+      <Title order={2} size="h4">{t('endpoints.pasteLabel')}</Title>
       <Textarea
-        label={t('endpoints.pasteLabel')}
         placeholder={t('endpoints.pastePlaceholder')}
+        aria-label={t('endpoints.pasteLabel')}
         autosize
         minRows={3}
         maxRows={6}

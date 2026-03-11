@@ -21,7 +21,7 @@
 
   "endpoints.heading": "エンドポイントの追加",
   "endpoints.searchPlaceholder": "エンドポイントを検索…",
-  "endpoints.pasteLabel": "またはリストを貼り付け：",
+  "endpoints.pasteLabel": "エンドポイントを貼り付け",
   "endpoints.addButton": "追加",
   "endpoints.pasteTooltip": "1行に1つのエンドポイントを貼り付けてください。受け付ける形式：完全なURL、パスのみ、またはMETHOD /パス。クエリ文字列は無視されます。数値IDおよびSIS ID（例：sis_course_id:ABC）が認識されます。",
   "endpoints.pastePlaceholder": "1行に1エンドポイント、例 GET /api/v1/courses/:id",

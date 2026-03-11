@@ -21,7 +21,7 @@
 
   "endpoints.heading": "Endpoint Ekle",
   "endpoints.searchPlaceholder": "Endpoint ara…",
-  "endpoints.pasteLabel": "Veya bir liste yapisitirin:",
+  "endpoints.pasteLabel": "Uç noktaları yapıştır",
   "endpoints.addButton": "Ekle",
   "endpoints.pasteTooltip": "Satir basina bir endpoint yapisitirin. Kabul edilen formatlar: tam URL, yalnizca yol veya METHOD /yol. Sorgu dizeleri yok sayilir. Sayisal kimlikler ve SIS kimlikleri (orn. sis_course_id:ABC) taninir.",
   "endpoints.pastePlaceholder": "Satir basina bir endpoint, orn. GET /api/v1/courses/:id",

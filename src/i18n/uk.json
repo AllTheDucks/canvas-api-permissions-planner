@@ -21,7 +21,7 @@
 
   "endpoints.heading": "Додати кiнцевi точки",
   "endpoints.searchPlaceholder": "Пошук кiнцевих точок…",
-  "endpoints.pasteLabel": "Або вставте список:",
+  "endpoints.pasteLabel": "Вставити кінцеві точки",
   "endpoints.addButton": "Додати",
   "endpoints.pasteTooltip": "Вставте одну кiнцеву точку на рядок. Прийнятнi формати: повна URL-адреса, лише шлях або METHOD /шлях. Рядки запитiв iгноруються. Числовi iдентифiкатори та SIS-iдентифiкатори (напр. sis_course_id:ABC) розпiзнаються.",
   "endpoints.pastePlaceholder": "Одна кiнцева точка на рядок, напр. GET /api/v1/courses/:id",

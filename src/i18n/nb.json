@@ -21,7 +21,7 @@
 
   "endpoints.heading": "Legg til endepunkter",
   "endpoints.searchPlaceholder": "Sok etter endepunkter…",
-  "endpoints.pasteLabel": "Eller lim inn en liste:",
+  "endpoints.pasteLabel": "Lim inn endepunkter",
   "endpoints.addButton": "Legg til",
   "endpoints.pasteTooltip": "Lim inn ett endepunkt per linje. Godtatte formater: full URL, bare sti eller METHOD /sti. Sporringer ignoreres. Numeriske ID-er og SIS-ID-er (f.eks. sis_course_id:ABC) gjenkjennes.",
   "endpoints.pastePlaceholder": "Ett endepunkt per linje, f.eks. GET /api/v1/courses/:id",

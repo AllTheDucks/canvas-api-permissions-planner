@@ -21,7 +21,7 @@
 
   "endpoints.heading": "Lisää päätepisteitä",
   "endpoints.searchPlaceholder": "Hae päätepisteitä…",
-  "endpoints.pasteLabel": "Tai liitä lista:",
+  "endpoints.pasteLabel": "Liitä päätepisteet",
   "endpoints.addButton": "Lisää",
   "endpoints.pasteTooltip": "Liitä yksi päätepiste per rivi. Hyväksytyt muodot: täysi URL, pelkkä polku tai METHOD /polku. Kyselymerkkijonot ohitetaan. Numeeriset tunnisteet ja SIS-tunnisteet (esim. sis_course_id:ABC) tunnistetaan.",
   "endpoints.pastePlaceholder": "Yksi päätepiste per rivi, esim. GET /api/v1/courses/:id",

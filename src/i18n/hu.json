@@ -21,7 +21,7 @@
 
   "endpoints.heading": "Végpontok hozzáadása",
   "endpoints.searchPlaceholder": "Végpontok keresése…",
-  "endpoints.pasteLabel": "Vagy illesszen be egy listát:",
+  "endpoints.pasteLabel": "Végpontok beillesztése",
   "endpoints.addButton": "Hozzáadás",
   "endpoints.pasteTooltip": "Illesszen be egy végpontot soronként. Elfogadott formátumok: teljes URL, csak útvonal, vagy METHOD /útvonal. A lekérdezési karakterláncok figyelmen kívül maradnak. A numerikus azonosítók és SIS-azonosítók (pl. sis_course_id:ABC) felismerésre kerülnek.",
   "endpoints.pastePlaceholder": "Egy végpont soronként, pl. GET /api/v1/courses/:id",

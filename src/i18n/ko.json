@@ -21,7 +21,7 @@
 
   "endpoints.heading": "엔드포인트 추가",
   "endpoints.searchPlaceholder": "엔드포인트 검색…",
-  "endpoints.pasteLabel": "또는 목록 붙여넣기:",
+  "endpoints.pasteLabel": "엔드포인트 붙여넣기",
   "endpoints.addButton": "추가",
   "endpoints.pasteTooltip": "한 줄에 하나의 엔드포인트를 붙여넣으세요. 허용 형식: 전체 URL, 경로만, 또는 METHOD /경로. 쿼리 문자열은 무시됩니다. 숫자 ID 및 SIS ID(예: sis_course_id:ABC)가 인식됩니다.",
   "endpoints.pastePlaceholder": "한 줄에 하나의 엔드포인트, 예: GET /api/v1/courses/:id",

@@ -21,7 +21,7 @@
 
   "endpoints.heading": "Laegg till endpunkter",
   "endpoints.searchPlaceholder": "Soek endpunkter…",
-  "endpoints.pasteLabel": "Eller klistra in en lista:",
+  "endpoints.pasteLabel": "Klistra in slutpunkter",
   "endpoints.addButton": "Laegg till",
   "endpoints.pasteTooltip": "Klistra in en endpunkt per rad. Godkaenda format: fullstaendig URL, enbart soekvaeg eller METHOD /soekvaeg. Fraagestrangar ignoreras. Numeriska ID:n och SIS-ID:n (t.ex. sis_course_id:ABC) kaenns igen.",
   "endpoints.pastePlaceholder": "En endpunkt per rad, t.ex. GET /api/v1/courses/:id",

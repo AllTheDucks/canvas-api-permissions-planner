@@ -21,7 +21,7 @@
 
   "endpoints.heading": "Добавить конечные точки",
   "endpoints.searchPlaceholder": "Поиск конечных точек…",
-  "endpoints.pasteLabel": "Или вставьте список:",
+  "endpoints.pasteLabel": "Вставить конечные точки",
   "endpoints.addButton": "Добавить",
   "endpoints.pasteTooltip": "Вставьте одну конечную точку на строку. Допустимые форматы: полный URL, только путь или METHOD /путь. Строки запроса игнорируются. Числовые идентификаторы и SIS-идентификаторы (напр. sis_course_id:ABC) распознаются.",
   "endpoints.pastePlaceholder": "Одна конечная точка на строку, напр. GET /api/v1/courses/:id",

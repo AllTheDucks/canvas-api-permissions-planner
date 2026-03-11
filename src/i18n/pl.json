@@ -21,7 +21,7 @@
 
   "endpoints.heading": "Dodaj endpointy",
   "endpoints.searchPlaceholder": "Szukaj endpointow…",
-  "endpoints.pasteLabel": "Lub wklej liste:",
+  "endpoints.pasteLabel": "Wklej punkty końcowe",
   "endpoints.addButton": "Dodaj",
   "endpoints.pasteTooltip": "Wklej jeden endpoint na linie. Akceptowane formaty: pelny URL, sama sciezka lub METHOD /sciezka. Ciagi zapytan sa ignorowane. Identyfikatory numeryczne i identyfikatory SIS (np. sis_course_id:ABC) sa rozpoznawane.",
   "endpoints.pastePlaceholder": "Jeden endpoint na linie, np. GET /api/v1/courses/:id",

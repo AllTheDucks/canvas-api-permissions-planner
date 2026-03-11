@@ -21,7 +21,7 @@
 
   "endpoints.heading": "添加端点",
   "endpoints.searchPlaceholder": "搜索端点…",
-  "endpoints.pasteLabel": "或粘贴列表：",
+  "endpoints.pasteLabel": "粘贴端点",
   "endpoints.addButton": "添加",
   "endpoints.pasteTooltip": "每行粘贴一个端点。接受的格式：完整 URL、仅路径或 METHOD /路径。查询字符串将被忽略。可识别数字 ID 和 SIS ID（如 sis_course_id:ABC）。",
   "endpoints.pastePlaceholder": "每行一个端点，例如 GET /api/v1/courses/:id",

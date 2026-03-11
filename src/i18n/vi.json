@@ -21,7 +21,7 @@
 
   "endpoints.heading": "Them Endpoint",
   "endpoints.searchPlaceholder": "Tim kiem endpoint…",
-  "endpoints.pasteLabel": "Hoac dan danh sach:",
+  "endpoints.pasteLabel": "Dán điểm cuối",
   "endpoints.addButton": "Them",
   "endpoints.pasteTooltip": "Dan mot endpoint moi dong. Cac dinh dang chap nhan: URL day du, chi duong dan, hoac METHOD /duong dan. Chuoi truy van bi bo qua. ID so va SIS ID (vd: sis_course_id:ABC) duoc nhan dang.",
   "endpoints.pastePlaceholder": "Mot endpoint moi dong, vd: GET /api/v1/courses/:id",

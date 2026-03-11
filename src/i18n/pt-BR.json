@@ -21,7 +21,7 @@
 
   "endpoints.heading": "Adicionar Endpoints",
   "endpoints.searchPlaceholder": "Buscar endpoints…",
-  "endpoints.pasteLabel": "Ou cole uma lista:",
+  "endpoints.pasteLabel": "Colar endpoints",
   "endpoints.addButton": "Adicionar",
   "endpoints.pasteTooltip": "Cole um endpoint por linha. Formatos aceitos: URL completa, apenas caminho ou METHOD /caminho. Strings de consulta sao ignoradas. IDs numericos e IDs SIS (ex: sis_course_id:ABC) sao reconhecidos.",
   "endpoints.pastePlaceholder": "Um endpoint por linha, ex: GET /api/v1/courses/:id",

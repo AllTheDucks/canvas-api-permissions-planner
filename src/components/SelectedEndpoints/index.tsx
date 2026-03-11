@@ -75,7 +75,7 @@ export function SelectedEndpoints({ selected, onRemove, onRemoveCategory, onLast
 
   return (
     <Paper shadow="xs" radius="md" p="md" withBorder>
-      <Title order={3} size="h6" mb="xs">{t('selectedEndpoints.heading')}</Title>
+      <Title order={2} size="h4" mb="sm">{t('selectedEndpoints.heading')}</Title>
       <Stack gap={0}>
         {Array.from(grouped, ([category, items]) => (
           <div key={category}>

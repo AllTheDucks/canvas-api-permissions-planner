@@ -21,7 +21,7 @@
 
   "endpoints.heading": "Add Endpoints",
   "endpoints.searchPlaceholder": "Search endpoints…",
-  "endpoints.pasteLabel": "Or paste a list:",
+  "endpoints.pasteLabel": "Paste Endpoints",
   "endpoints.addButton": "Add",
   "endpoints.pasteTooltip": "Paste one endpoint per line. Accepted formats: full URL, path only, or METHOD /path. Query strings are ignored. Numeric IDs and SIS IDs (e.g. sis_course_id:ABC) are recognised.",
   "endpoints.pastePlaceholder": "One endpoint per line, e.g. GET /api/v1/courses/:id",

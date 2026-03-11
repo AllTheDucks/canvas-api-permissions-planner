@@ -21,7 +21,7 @@
 
   "endpoints.heading": "הוספת Endpoints",
   "endpoints.searchPlaceholder": "חיפוש endpoints…",
-  "endpoints.pasteLabel": "או הדבק רשימה:",
+  "endpoints.pasteLabel": "הדבק נקודות קצה",
   "endpoints.addButton": "הוסף",
   "endpoints.pasteTooltip": "הדבק endpoint אחד לכל שורה. פורמטים מקובלים: URL מלא, נתיב בלבד, או METHOD /נתיב. מחרוזות שאילתה מתעלמות. מזהים מספריים ומזהי SIS (למשל sis_course_id:ABC) מזוהים.",
   "endpoints.pastePlaceholder": "endpoint אחד לכל שורה, למשל GET /api/v1/courses/:id",

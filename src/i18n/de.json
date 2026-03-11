@@ -21,7 +21,7 @@
 
   "endpoints.heading": "Endpunkte hinzufügen",
   "endpoints.searchPlaceholder": "Endpunkte suchen…",
-  "endpoints.pasteLabel": "Oder Liste einfügen:",
+  "endpoints.pasteLabel": "Endpunkte einfügen",
   "endpoints.addButton": "Hinzufügen",
   "endpoints.pasteTooltip": "Fügen Sie einen Endpunkt pro Zeile ein. Akzeptierte Formate: vollständige URL, nur Pfad oder METHOD /Pfad. Abfragezeichenfolgen werden ignoriert. Numerische IDs und SIS-IDs (z. B. sis_course_id:ABC) werden erkannt.",
   "endpoints.pastePlaceholder": "Ein Endpunkt pro Zeile, z. B. GET /api/v1/courses/:id",

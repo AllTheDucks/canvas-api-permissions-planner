@@ -21,7 +21,7 @@
 
   "endpoints.heading": "افزودن Endpointها",
   "endpoints.searchPlaceholder": "جستجوی endpointها…",
-  "endpoints.pasteLabel": "یا یک لیست بچسبانید:",
+  "endpoints.pasteLabel": "چسباندن نقاط پایانی",
   "endpoints.addButton": "افزودن",
   "endpoints.pasteTooltip": "یک endpoint در هر خط بچسبانید. فرمت‌های قابل قبول: URL کامل، فقط مسیر، یا METHOD /path. رشته‌های پرس‌وجو نادیده گرفته می‌شوند. شناسه‌های عددی و شناسه‌های SIS (مثلاً sis_course_id:ABC) شناسایی می‌شوند.",
   "endpoints.pastePlaceholder": "یک endpoint در هر خط، مثال GET /api/v1/courses/:id",

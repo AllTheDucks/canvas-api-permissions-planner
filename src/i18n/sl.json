@@ -21,7 +21,7 @@
 
   "endpoints.heading": "Dodaj koncne tocke",
   "endpoints.searchPlaceholder": "Iskanje koncnih tock…",
-  "endpoints.pasteLabel": "Ali prilepite seznam:",
+  "endpoints.pasteLabel": "Prilepi končne točke",
   "endpoints.addButton": "Dodaj",
   "endpoints.pasteTooltip": "Prilepite eno koncno tocko na vrstico. Sprejeti formati: polni URL, samo pot ali METHOD /pot. Poizvedbeni nizi se prezrejo. Stevilcni ID-ji in SIS ID-ji (npr. sis_course_id:ABC) so prepoznani.",
   "endpoints.pastePlaceholder": "Ena koncna tocka na vrstico, npr. GET /api/v1/courses/:id",

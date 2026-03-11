@@ -21,7 +21,7 @@
 
   "endpoints.heading": "Tapiri Pito Mutunga",
   "endpoints.searchPlaceholder": "Rapu pito mutunga…",
-  "endpoints.pasteLabel": "Whakapiri rarangi ranei:",
+  "endpoints.pasteLabel": "Whakapiri Tūmutumu",
   "endpoints.addButton": "Tapiri",
   "endpoints.pasteTooltip": "Whakapiri kotahi pito mutunga ia raina. Nga ahua e whakaaetia ana: URL katoa, ara anake, METHOD /ara ranei. Ka warewaretia nga aho patai. Ka mohiotia nga ID tau me nga SIS ID (hei tauira sis_course_id:ABC).",
   "endpoints.pastePlaceholder": "Kotahi pito mutunga ia raina, hei tauira GET /api/v1/courses/:id",

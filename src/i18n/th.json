@@ -21,7 +21,7 @@
 
   "endpoints.heading": "เพิ่ม Endpoint",
   "endpoints.searchPlaceholder": "ค้นหา endpoint…",
-  "endpoints.pasteLabel": "หรือวางรายการ:",
+  "endpoints.pasteLabel": "วางปลายทาง",
   "endpoints.addButton": "เพิ่ม",
   "endpoints.pasteTooltip": "วาง endpoint หนึ่งรายการต่อบรรทัด รูปแบบที่รับ: URL เต็ม เฉพาะเส้นทาง หรือ METHOD /เส้นทาง ข้อความค้นหาจะถูกละเว้น ระบบจดจำ ID ตัวเลขและ SIS ID (เช่น sis_course_id:ABC)",
   "endpoints.pastePlaceholder": "endpoint หนึ่งรายการต่อบรรทัด เช่น GET /api/v1/courses/:id",

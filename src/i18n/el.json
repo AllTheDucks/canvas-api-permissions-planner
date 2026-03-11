@@ -21,7 +21,7 @@
 
   "endpoints.heading": "Προσθήκη Endpoints",
   "endpoints.searchPlaceholder": "Αναζήτηση endpoints…",
-  "endpoints.pasteLabel": "Ή επικολλήστε μια λίστα:",
+  "endpoints.pasteLabel": "Επικόλληση τελικών σημείων",
   "endpoints.addButton": "Προσθήκη",
   "endpoints.pasteTooltip": "Επικολλήστε ένα endpoint ανά γραμμή. Αποδεκτές μορφές: πλήρες URL, μόνο διαδρομή ή METHOD /διαδρομή. Οι παράμετροι ερωτήματος αγνοούνται. Αναγνωρίζονται αριθμητικά IDs και SIS IDs (π.χ. sis_course_id:ABC).",
   "endpoints.pastePlaceholder": "Ένα endpoint ανά γραμμή, π.χ. GET /api/v1/courses/:id",
