@@ -1,4 +1,5 @@
-import { useState, useEffect, useRef } from 'react';
+import { useEffect, useMemo } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { notifications } from '@mantine/notifications';
 import yaml from 'js-yaml';
 import { canvasLocaleSchema, getTranslation } from '../schemas/canvasLocale';
@@ -18,8 +19,6 @@ type UseLocaleResult = {
   localeLabels: Record<string, string>;
   isLoading: boolean;
 };
-
-const cache = new Map<string, Record<string, string>>();
 
 function buildEnglishLabels(allPermissions: Record<string, PermissionRef>): Record<string, string> {
   const labels: Record<string, string> = {};
@@ -43,66 +42,50 @@ function buildLocaleLabels(
   return labels;
 }
 
+async function fetchCanvasLocale(
+  locale: string,
+  dataVersion: string,
+  allPermissions: Record<string, PermissionRef>,
+): Promise<Record<string, string>> {
+  const url = `https://raw.githubusercontent.com/instructure/canvas-lms/stable/${dataVersion}/config/locales/${locale}.yml`;
+  const res = await fetch(url);
+  if (!res.ok) throw new Error(`HTTP ${res.status}`);
+  const text = await res.text();
+  const raw = yaml.load(text);
+  if (!isRecord(raw)) throw new Error('YAML did not parse to an object');
+  const localeKey = Object.keys(raw)[0];
+  const result = canvasLocaleSchema(localeKey).parse(raw);
+  return buildLocaleLabels(localeKey, result, allPermissions);
+}
+
 export function useLocale(
   locale: string,
   allPermissions: Record<string, PermissionRef>,
   dataVersion: string,
 ): UseLocaleResult {
-  const englishLabels = useRef(buildEnglishLabels(allPermissions));
-  const [localeLabels, setLocaleLabels] = useState<Record<string, string>>(() => {
-    if (locale === 'en') return englishLabels.current;
-    return cache.get(locale) ?? englishLabels.current;
+  const englishLabels = useMemo(() => buildEnglishLabels(allPermissions), [allPermissions]);
+
+  const { data, isPending, isError, error } = useQuery({
+    queryKey: ['canvasLocale', locale],
+    queryFn: () => fetchCanvasLocale(locale, dataVersion, allPermissions),
+    enabled: locale !== 'en',
+    placeholderData: englishLabels,
   });
-  const [isLoading, setIsLoading] = useState(false);
 
   useEffect(() => {
-    if (locale === 'en') {
-      setLocaleLabels(englishLabels.current);
-      setIsLoading(false);
-      return;
-    }
+    if (!isError) return;
+    const localeName = isLocaleNameKey(locale) ? LOCALE_NAMES[locale] : locale;
+    notifications.show({
+      color: 'red',
+      title: 'Locale load failed',
+      message: `Could not load ${localeName} labels — showing in English`,
+    });
+  }, [isError, error, locale]);
 
-    const cached = cache.get(locale);
-    if (cached) {
-      setLocaleLabels(cached);
-      setIsLoading(false);
-      return;
-    }
+  if (locale === 'en') return { localeLabels: englishLabels, isLoading: false };
 
-    const controller = new AbortController();
-    setIsLoading(true);
-
-    const url = `https://raw.githubusercontent.com/instructure/canvas-lms/stable/${dataVersion}/config/locales/${locale}.yml`;
-
-    fetch(url, { signal: controller.signal })
-      .then((res) => {
-        if (!res.ok) throw new Error(`HTTP ${res.status}`);
-        return res.text();
-      })
-      .then((text) => {
-        const raw = yaml.load(text);
-        if (!isRecord(raw)) throw new Error('YAML did not parse to an object');
-        const localeKey = Object.keys(raw)[0];
-        const result = canvasLocaleSchema(localeKey).parse(raw);
-        const labels = buildLocaleLabels(localeKey, result, allPermissions);
-        cache.set(locale, labels);
-        setLocaleLabels(labels);
-        setIsLoading(false);
-      })
-      .catch((err) => {
-        if (err.name === 'AbortError') return;
-        setIsLoading(false);
-        setLocaleLabels(englishLabels.current);
-        const localeName = isLocaleNameKey(locale) ? LOCALE_NAMES[locale] : locale;
-        notifications.show({
-          color: 'red',
-          title: 'Locale load failed',
-          message: `Could not load ${localeName} labels — showing in English`,
-        });
-      });
-
-    return () => controller.abort();
-  }, [locale, allPermissions, dataVersion]);
-
-  return { localeLabels, isLoading };
+  return {
+    localeLabels: data ?? englishLabels,
+    isLoading: isPending,
+  };
 }

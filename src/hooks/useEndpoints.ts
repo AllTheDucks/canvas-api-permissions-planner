@@ -1,4 +1,4 @@
-import { useState, useEffect } from 'react';
+import { useQuery } from '@tanstack/react-query';
 import { EndpointsDataSchema } from '../schemas/endpoints';
 import type { PermissionRef, Endpoint } from '../types';
 
@@ -13,32 +13,25 @@ type EndpointsData = {
   endpoints: Endpoint[];
 };
 
-let cached: EndpointsData | null = null;
+async function fetchEndpoints(): Promise<EndpointsData> {
+  const res = await fetch('/data/endpoints.json');
+  if (!res.ok) throw new Error(`Failed to fetch endpoints.json: ${res.status}`);
+  const raw = await res.json();
+  const result = EndpointsDataSchema.parse(raw);
+  return {
+    version: result.version,
+    allPermissions: result.permissions,
+    endpoints: result.endpoints,
+  };
+}
 
 export function useEndpoints(): EndpointsResult {
-  const [state, setState] = useState<EndpointsResult>(
-    cached ? { status: 'ready', ...cached } : { status: 'loading' },
-  );
+  const { data, isPending, error } = useQuery({
+    queryKey: ['endpoints'],
+    queryFn: fetchEndpoints,
+  });
 
-  useEffect(() => {
-    if (cached) return;
-
-    fetch('/data/endpoints.json')
-      .then((res) => {
-        if (!res.ok) throw new Error(`Failed to fetch endpoints.json: ${res.status}`);
-        return res.json();
-      })
-      .then((raw) => {
-        const result = EndpointsDataSchema.parse(raw);
-        cached = {
-          version: result.version,
-          allPermissions: result.permissions,
-          endpoints: result.endpoints,
-        };
-        setState({ status: 'ready', ...cached });
-      })
-      .catch((err) => setState({ status: 'error', error: err }));
-  }, []);
-
-  return state;
+  if (isPending) return { status: 'loading' };
+  if (error) return { status: 'error', error: error instanceof Error ? error : new Error(String(error)) };
+  return { status: 'ready', ...data };
 }
