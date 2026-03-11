@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "Ler e escrever notas",
   "help.commonSetups.sis.name": "Integracao SIS",
   "help.commonSetups.sis.description": "Importacoes SIS, sincronizacao de utilizadores",
-  "help.commonSetups.optional": "opcional"
+  "help.commonSetups.optional": "opcional",
+
+  "share.copyLink": "Copiar ligação partilhável",
+  "share.copied": "Ligação copiada para a área de transferência",
+  "share.staleLink": "Ligação desatualizada",
+  "share.staleLinkMessage": "Esta ligação foi criada com um conjunto de dados mais antigo e não pode ser resolvida.",
+  "share.endpointsDropped": "Alguns endpoints não encontrados",
+  "share.endpointsDroppedMessage": "{{count}} endpoint(s) desta ligação já não existem no conjunto de dados atual e foram removidos: {{endpoints}}"
 }

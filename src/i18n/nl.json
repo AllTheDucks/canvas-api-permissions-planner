@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "Cijfers lezen en schrijven",
   "help.commonSetups.sis.name": "SIS-integratie",
   "help.commonSetups.sis.description": "SIS-imports, gebruikerssynchronisatie",
-  "help.commonSetups.optional": "optioneel"
+  "help.commonSetups.optional": "optioneel",
+
+  "share.copyLink": "Deelbare link kopiëren",
+  "share.copied": "Link gekopieerd naar klembord",
+  "share.staleLink": "Verouderde link",
+  "share.staleLinkMessage": "Deze link is gemaakt met een oudere dataset en kan niet worden opgelost.",
+  "share.endpointsDropped": "Sommige endpoints niet gevonden",
+  "share.endpointsDroppedMessage": "{{count}} endpoint(s) uit deze link bestaan niet meer in de huidige dataset en zijn verwijderd: {{endpoints}}"
 }

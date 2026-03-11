@@ -1,8 +1,12 @@
-import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
-import { Center, Container, Grid, Group, Loader, Stack, Text, Title } from '@mantine/core'
+import { useCallback, useMemo, useRef, useState } from 'react'
+import { ActionIcon, Center, Container, Grid, Group, Loader, Stack, Text, Title, Tooltip } from '@mantine/core'
+import { notifications } from '@mantine/notifications'
+import { IconLink } from '@tabler/icons-react'
 import AtdLogo from './assets/atd-logo.svg?react'
 import { useEndpoints } from './hooks/useEndpoints'
 import { useLocale } from './hooks/useLocale'
+import { useUrlSelection } from './hooks/useUrlSelection'
+import { useLocaleSync } from './hooks/useLocaleSync'
 import { EndpointSelector } from './components/EndpointSelector'
 import { EndpointPaste } from './components/EndpointPaste'
 import { SelectedEndpoints } from './components/SelectedEndpoints'
@@ -13,24 +17,30 @@ import { HelpModal } from './components/HelpModal'
 import { AppTranslationsProvider, useAppTranslations } from './context/AppTranslationsContext'
 import { aggregatePermissions } from './utils/permissionAggregator'
 import { detectLocale } from './utils/detectLocale'
-import { loadSupplementalFont } from './utils/supplementalFont'
 import { SUPPORTED_LOCALES, isSupportedLocale } from './i18n/locales'
 import type { Endpoint, PermissionRef } from './types'
 
 type ReadyContentProps = {
   allPermissions: Record<string, PermissionRef>
   endpointList: Endpoint[]
-  selectedEndpoints: Endpoint[]
-  onToggle: (endpoint: Endpoint) => void
-  onAddMany: (endpoints: Endpoint[]) => void
-  searchInputRef: React.RefObject<HTMLInputElement | null>
   locale: string
   dataVersion: string
 }
 
-function ReadyContent({ allPermissions, endpointList, selectedEndpoints, onToggle, onAddMany, searchInputRef, locale, dataVersion }: ReadyContentProps) {
+function ReadyContent({ allPermissions, endpointList, locale, dataVersion }: ReadyContentProps) {
   const { t } = useAppTranslations()
   const { localeLabels, isLoading: localeLoading } = useLocale(locale, allPermissions, dataVersion)
+  const searchInputRef = useRef<HTMLInputElement>(null)
+  const { selectedEndpoints, handleToggle, handleAddMany } = useUrlSelection(endpointList, dataVersion)
+
+  const handleCopyLink = useCallback(() => {
+    navigator.clipboard.writeText(window.location.href).then(() => {
+      notifications.show({
+        message: t('share.copied'),
+        autoClose: 3000,
+      })
+    })
+  }, [t])
 
   const aggregated = useMemo(
     () => aggregatePermissions(selectedEndpoints, allPermissions, localeLabels),
@@ -44,13 +54,13 @@ function ReadyContent({ allPermissions, endpointList, selectedEndpoints, onToggl
         <EndpointSelector
           endpoints={endpointList}
           selected={selectedEndpoints}
-          onToggle={onToggle}
+          onToggle={handleToggle}
           inputRef={searchInputRef}
         />
-        <EndpointPaste endpoints={endpointList} onAdd={onAddMany} />
+        <EndpointPaste endpoints={endpointList} onAdd={handleAddMany} />
         <SelectedEndpoints
           selected={selectedEndpoints}
-          onRemove={onToggle}
+          onRemove={handleToggle}
           onLastRemoved={() => searchInputRef.current?.focus()}
         />
       </Grid.Col>
@@ -68,7 +78,20 @@ function ReadyContent({ allPermissions, endpointList, selectedEndpoints, onToggl
             </Stack>
           )}
         </div>
-        <Title order={2} size="h4" mb="sm">{t('permissions.heading')}</Title>
+        <Group justify="space-between" mb="sm">
+          <Title order={2} size="h4">{t('permissions.heading')}</Title>
+          {selectedEndpoints.length > 0 && (
+            <Tooltip label={t('share.copyLink')} withArrow>
+              <ActionIcon
+                onClick={handleCopyLink}
+                aria-label={t('share.copyLink')}
+                variant="subtle"
+              >
+                <IconLink size={18} />
+              </ActionIcon>
+            </Tooltip>
+          )}
+        </Group>
         <PermissionsResult permissions={aggregated} selectedCount={selectedEndpoints.length} isLoadingLocale={localeLoading} />
       </Grid.Col>
     </Grid>
@@ -83,51 +106,8 @@ function AppContent({
   onLocaleChange: (locale: string) => void
 }) {
   const endpoints = useEndpoints()
-  const [selectedEndpoints, setSelectedEndpoints] = useState<Endpoint[]>([])
-  const searchInputRef = useRef<HTMLInputElement>(null)
   const { t, isRtl } = useAppTranslations()
-
-  useEffect(() => {
-    document.documentElement.dir = isRtl ? 'rtl' : 'ltr'
-  }, [isRtl])
-
-  useEffect(() => {
-    document.documentElement.lang = locale
-  }, [locale])
-
-  useEffect(() => {
-    const family = loadSupplementalFont(locale)
-    if (family) {
-      document.documentElement.style.setProperty(
-        '--mantine-font-family',
-        `'${family}', Poppins, sans-serif`,
-      )
-      document.documentElement.style.setProperty(
-        '--mantine-font-family-headings',
-        `'${family}', 'Source Sans 3', sans-serif`,
-      )
-    } else {
-      document.documentElement.style.removeProperty('--mantine-font-family')
-      document.documentElement.style.removeProperty('--mantine-font-family-headings')
-    }
-  }, [locale])
-
-  const handleToggleEndpoint = useCallback((endpoint: Endpoint) => {
-    const id = `${endpoint.method} ${endpoint.path}`
-    setSelectedEndpoints(prev =>
-      prev.some(e => `${e.method} ${e.path}` === id)
-        ? prev.filter(e => `${e.method} ${e.path}` !== id)
-        : [...prev, endpoint]
-    )
-  }, [])
-
-  const handleAddMany = useCallback((newEndpoints: Endpoint[]) => {
-    setSelectedEndpoints(prev => {
-      const existing = new Set(prev.map(e => `${e.method} ${e.path}`))
-      const toAdd = newEndpoints.filter(e => !existing.has(`${e.method} ${e.path}`))
-      return toAdd.length > 0 ? [...prev, ...toAdd] : prev
-    })
-  }, [])
+  useLocaleSync(locale, isRtl)
 
   return (
     <>
@@ -173,10 +153,6 @@ function AppContent({
             <ReadyContent
               allPermissions={endpoints.allPermissions}
               endpointList={endpoints.endpoints}
-              selectedEndpoints={selectedEndpoints}
-              onToggle={handleToggleEndpoint}
-              onAddMany={handleAddMany}
-              searchInputRef={searchInputRef}
               locale={locale}
               dataVersion={endpoints.version}
             />

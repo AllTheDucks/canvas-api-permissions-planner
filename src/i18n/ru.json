@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "Чтение и запись оценок",
   "help.commonSetups.sis.name": "Интеграция SIS",
   "help.commonSetups.sis.description": "Импорт SIS, синхронизация пользователей",
-  "help.commonSetups.optional": "необязательно"
+  "help.commonSetups.optional": "необязательно",
+
+  "share.copyLink": "Скопировать ссылку для обмена",
+  "share.copied": "Ссылка скопирована в буфер обмена",
+  "share.staleLink": "Устаревшая ссылка",
+  "share.staleLinkMessage": "Эта ссылка была создана с использованием устаревшего набора данных и не может быть разрешена.",
+  "share.endpointsDropped": "Некоторые конечные точки не найдены",
+  "share.endpointsDroppedMessage": "{{count}} конечная(-ых) точка(-ек) из этой ссылки больше не существует в текущем наборе данных и были удалены: {{endpoints}}"
 }

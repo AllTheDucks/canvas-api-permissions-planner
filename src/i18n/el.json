@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "Ανάγνωση και εγγραφή βαθμών",
   "help.commonSetups.sis.name": "Ενσωμάτωση SIS",
   "help.commonSetups.sis.description": "Εισαγωγές SIS, συγχρονισμός χρηστών",
-  "help.commonSetups.optional": "προαιρετικό"
+  "help.commonSetups.optional": "προαιρετικό",
+
+  "share.copyLink": "Αντιγραφή κοινοποιήσιμου συνδέσμου",
+  "share.copied": "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο",
+  "share.staleLink": "Παλαιός σύνδεσμος",
+  "share.staleLinkMessage": "Αυτός ο σύνδεσμος δημιουργήθηκε με παλαιότερο σύνολο δεδομένων και δεν μπορεί να επιλυθεί.",
+  "share.endpointsDropped": "Ορισμένα endpoints δεν βρέθηκαν",
+  "share.endpointsDroppedMessage": "{{count}} endpoint(s) από αυτόν τον σύνδεσμο δεν υπάρχουν πλέον στο τρέχον σύνολο δεδομένων και αφαιρέθηκαν: {{endpoints}}"
 }

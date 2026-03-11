@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "อ่านและเขียนเกรด",
   "help.commonSetups.sis.name": "การเชื่อมต่อ SIS",
   "help.commonSetups.sis.description": "นำเข้า SIS ซิงค์ผู้ใช้",
-  "help.commonSetups.optional": "ไม่บังคับ"
+  "help.commonSetups.optional": "ไม่บังคับ",
+
+  "share.copyLink": "คัดลอกลิงก์สำหรับแชร์",
+  "share.copied": "คัดลอกลิงก์ไปยังคลิปบอร์ดแล้ว",
+  "share.staleLink": "ลิงก์ล้าสมัย",
+  "share.staleLinkMessage": "ลิงก์นี้ถูกสร้างด้วยชุดข้อมูลเก่าและไม่สามารถแก้ไขได้",
+  "share.endpointsDropped": "ไม่พบ endpoint บางรายการ",
+  "share.endpointsDroppedMessage": "{{count}} endpoint จากลิงก์นี้ไม่มีอยู่ในชุดข้อมูลปัจจุบันอีกต่อไปและถูกลบออก: {{endpoints}}"
 }

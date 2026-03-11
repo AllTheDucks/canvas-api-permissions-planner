@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "Leer y escribir calificaciones",
   "help.commonSetups.sis.name": "Integración SIS",
   "help.commonSetups.sis.description": "Importaciones SIS, sincronización de usuarios",
-  "help.commonSetups.optional": "opcional"
+  "help.commonSetups.optional": "opcional",
+
+  "share.copyLink": "Copiar enlace para compartir",
+  "share.copied": "Enlace copiado al portapapeles",
+  "share.staleLink": "Enlace desactualizado",
+  "share.staleLinkMessage": "Este enlace fue creado con un conjunto de datos anterior y no se puede resolver.",
+  "share.endpointsDropped": "Algunos endpoints no encontrados",
+  "share.endpointsDroppedMessage": "{{count}} endpoint(s) de este enlace ya no existen en el conjunto de datos actual y fueron eliminados: {{endpoints}}"
 }

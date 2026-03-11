@@ -1,0 +1,116 @@
+import { useCallback, useEffect, useMemo, useState } from 'react'
+import { notifications } from '@mantine/notifications'
+import { useAppTranslations } from '../context/AppTranslationsContext'
+import { encodeSelection, decodeSelection, readUrlParams } from '../utils/urlState'
+import { EndpointsDataSchema } from '../schemas/endpoints'
+import type { Endpoint } from '../types'
+
+export function useUrlSelection(endpointList: Endpoint[], dataVersion: string) {
+  const { t } = useAppTranslations()
+  const urlState = useMemo(() => readUrlParams(), [])
+
+  const [selectedEndpoints, setSelectedEndpoints] = useState<Endpoint[]>(() => {
+    if (!urlState || urlState.version !== dataVersion) return []
+    const indices = decodeSelection(urlState.selectionEncoded)
+    return indices.map(i => endpointList[i]).filter((e): e is Endpoint => e !== undefined)
+  })
+
+  // Async resolution for version mismatch
+  useEffect(() => {
+    if (!urlState || urlState.version === dataVersion) return
+
+    const controller = new AbortController()
+
+    fetch(`${import.meta.env.BASE_URL}data/endpoints.${urlState.version}.json`, {
+      signal: controller.signal,
+    })
+      .then(res => {
+        if (!res.ok) throw new Error(`Archive not found: ${res.status}`)
+        return res.json()
+      })
+      .then(raw => {
+        const archived = EndpointsDataSchema.parse(raw)
+        const indices = decodeSelection(urlState.selectionEncoded)
+        const oldEndpoints = indices
+          .map(i => archived.endpoints[i])
+          .filter(Boolean)
+
+        const currentMap = new Map(endpointList.map(e => [`${e.method} ${e.path}`, e]))
+        const resolved: Endpoint[] = []
+        const dropped: string[] = []
+
+        for (const old of oldEndpoints) {
+          const id = `${old.method} ${old.path}`
+          const current = currentMap.get(id)
+          if (current) {
+            resolved.push(current)
+          } else {
+            dropped.push(id)
+          }
+        }
+
+        setSelectedEndpoints(resolved)
+
+        if (dropped.length > 0) {
+          notifications.show({
+            color: 'yellow',
+            title: t('share.endpointsDropped'),
+            message: t('share.endpointsDroppedMessage', {
+              count: String(dropped.length),
+              endpoints: dropped.join(', '),
+            }),
+            autoClose: false,
+          })
+        }
+      })
+      .catch(err => {
+        if (err.name === 'AbortError') return
+        notifications.show({
+          color: 'red',
+          title: t('share.staleLink'),
+          message: t('share.staleLinkMessage'),
+        })
+      })
+
+    return () => controller.abort()
+  }, [urlState, dataVersion, endpointList, t])
+
+  // Write URL on state change
+  useEffect(() => {
+    if (selectedEndpoints.length === 0) {
+      window.history.replaceState(null, '', window.location.pathname)
+      return
+    }
+
+    const params = new URLSearchParams()
+    params.set('v', dataVersion)
+
+    const indexMap = new Map(endpointList.map((e, i) => [`${e.method} ${e.path}`, i]))
+    const selectedIndices = selectedEndpoints
+      .map(e => indexMap.get(`${e.method} ${e.path}`))
+      .filter((i): i is number => i !== undefined)
+
+    params.set('s', encodeSelection(selectedIndices, endpointList.length))
+
+    window.history.replaceState(null, '', `?${params.toString()}`)
+  }, [selectedEndpoints, dataVersion, endpointList])
+
+  const handleToggle = useCallback((endpoint: Endpoint) => {
+    const id = `${endpoint.method} ${endpoint.path}`
+    setSelectedEndpoints(prev =>
+      prev.some(e => `${e.method} ${e.path}` === id)
+        ? prev.filter(e => `${e.method} ${e.path}` !== id)
+        : [...prev, endpoint]
+    )
+  }, [])
+
+  const handleAddMany = useCallback((newEndpoints: Endpoint[]) => {
+    setSelectedEndpoints(prev => {
+      const existing = new Set(prev.map(e => `${e.method} ${e.path}`))
+      const toAdd = newEndpoints.filter(e => !existing.has(`${e.method} ${e.path}`))
+      return toAdd.length > 0 ? [...prev, ...toAdd] : prev
+    })
+  }, [])
+
+  return { selectedEndpoints, handleToggle, handleAddMany }
+}

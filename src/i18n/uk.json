@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "Читання та запис оцiнок",
   "help.commonSetups.sis.name": "Iнтеграцiя SIS",
   "help.commonSetups.sis.description": "Iмпорт SIS, синхронiзацiя користувачiв",
-  "help.commonSetups.optional": "необов'язково"
+  "help.commonSetups.optional": "необов'язково",
+
+  "share.copyLink": "Скопіювати посилання для спільного доступу",
+  "share.copied": "Посилання скопійовано до буфера обміну",
+  "share.staleLink": "Застаріле посилання",
+  "share.staleLinkMessage": "Це посилання було створено зі старішим набором даних і не може бути оброблене.",
+  "share.endpointsDropped": "Деякі кінцеві точки не знайдено",
+  "share.endpointsDroppedMessage": "{{count}} кінцева(-их) точка(-ок) з цього посилання більше не існує в поточному наборі даних і були видалені: {{endpoints}}"
 }

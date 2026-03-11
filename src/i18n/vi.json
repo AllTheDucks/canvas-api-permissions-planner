@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "Doc va ghi diem",
   "help.commonSetups.sis.name": "Tich hop SIS",
   "help.commonSetups.sis.description": "Nhap SIS, dong bo nguoi dung",
-  "help.commonSetups.optional": "tuy chon"
+  "help.commonSetups.optional": "tuy chon",
+
+  "share.copyLink": "Sao chép liên kết chia sẻ",
+  "share.copied": "Đã sao chép liên kết vào bộ nhớ tạm",
+  "share.staleLink": "Liên kết lỗi thời",
+  "share.staleLinkMessage": "Liên kết này được tạo với bộ dữ liệu cũ hơn và không thể phân giải.",
+  "share.endpointsDropped": "Không tìm thấy một số endpoint",
+  "share.endpointsDroppedMessage": "{{count}} endpoint từ liên kết này không còn tồn tại trong bộ dữ liệu hiện tại và đã bị xóa: {{endpoints}}"
 }

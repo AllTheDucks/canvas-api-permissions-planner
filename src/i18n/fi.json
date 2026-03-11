@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "Lue ja kirjoita arvosanoja",
   "help.commonSetups.sis.name": "SIS-integraatio",
   "help.commonSetups.sis.description": "SIS-tuonnit, käyttäjien synkronointi",
-  "help.commonSetups.optional": "valinnainen"
+  "help.commonSetups.optional": "valinnainen",
+
+  "share.copyLink": "Kopioi jaettava linkki",
+  "share.copied": "Linkki kopioitu leikepöydälle",
+  "share.staleLink": "Vanhentunut linkki",
+  "share.staleLinkMessage": "Tämä linkki luotiin vanhemmalla tietoaineistolla eikä sitä voida ratkaista.",
+  "share.endpointsDropped": "Joitakin päätepisteitä ei löytynyt",
+  "share.endpointsDroppedMessage": "{{count}} päätepiste(ttä) tästä linkistä ei enää ole nykyisessä tietoaineistossa ja ne poistettiin: {{endpoints}}"
 }

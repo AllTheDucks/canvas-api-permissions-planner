@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "Darllen ac ysgrifennu graddau",
   "help.commonSetups.sis.name": "Integreiddiad SIS",
   "help.commonSetups.sis.description": "Mewnforion SIS, cysoni defnyddwyr",
-  "help.commonSetups.optional": "dewisol"
+  "help.commonSetups.optional": "dewisol",
+
+  "share.copyLink": "Copïo dolen y gellir ei rhannu",
+  "share.copied": "Dolen wedi'i chopïo i'r clipfwrdd",
+  "share.staleLink": "Dolen hen",
+  "share.staleLinkMessage": "Crëwyd y ddolen hon gyda set ddata hŷn ac ni ellir ei datrys.",
+  "share.endpointsDropped": "Ni chanfuwyd rhai pwyntiau terfyn",
+  "share.endpointsDroppedMessage": "Nid yw {{count}} pwynt(iau) terfyn o'r ddolen hon yn bodoli mwyach yn y set ddata gyfredol a chawsant eu dileu: {{endpoints}}"
 }

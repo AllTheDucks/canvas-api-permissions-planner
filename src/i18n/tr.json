@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "Notlari okuma ve yazma",
   "help.commonSetups.sis.name": "SIS entegrasyonu",
   "help.commonSetups.sis.description": "SIS icerik-aktarilari, kullanici senkronizasyonu",
-  "help.commonSetups.optional": "istege bagli"
+  "help.commonSetups.optional": "istege bagli",
+
+  "share.copyLink": "Paylaşılabilir bağlantıyı kopyala",
+  "share.copied": "Bağlantı panoya kopyalandı",
+  "share.staleLink": "Eski bağlantı",
+  "share.staleLinkMessage": "Bu bağlantı eski bir veri kümesiyle oluşturulmuş ve çözümlenemiyor.",
+  "share.endpointsDropped": "Bazı uç noktalar bulunamadı",
+  "share.endpointsDroppedMessage": "Bu bağlantıdaki {{count}} uç nokta mevcut veri kümesinde artık bulunmuyor ve kaldırıldı: {{endpoints}}"
 }

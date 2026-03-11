@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "Odczyt i zapis ocen",
   "help.commonSetups.sis.name": "Integracja SIS",
   "help.commonSetups.sis.description": "Import SIS, synchronizacja uzytkownikow",
-  "help.commonSetups.optional": "opcjonalnie"
+  "help.commonSetups.optional": "opcjonalnie",
+
+  "share.copyLink": "Kopiuj link do udostępnienia",
+  "share.copied": "Link skopiowany do schowka",
+  "share.staleLink": "Nieaktualny link",
+  "share.staleLinkMessage": "Ten link został utworzony ze starszym zestawem danych i nie może zostać rozwiązany.",
+  "share.endpointsDropped": "Niektóre endpointy nie zostały znalezione",
+  "share.endpointsDroppedMessage": "{{count}} endpoint(ów) z tego linku nie istnieje już w bieżącym zestawie danych i zostały usunięte: {{endpoints}}"
 }

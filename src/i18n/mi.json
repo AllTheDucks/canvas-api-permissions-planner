@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "Panui me te tuhi koeke",
   "help.commonSetups.sis.name": "Hononga SIS",
   "help.commonSetups.sis.description": "Kawemai SIS, tukutahi kaiwhakamahi",
-  "help.commonSetups.optional": "whiringa"
+  "help.commonSetups.optional": "whiringa",
+
+  "share.copyLink": "Tāruatia te hononga tiritahi",
+  "share.copied": "Kua tāruatia te hononga ki te papatopenga",
+  "share.staleLink": "Hononga tawhito",
+  "share.staleLinkMessage": "I hangaia tēnei hononga me tētahi huinga raraunga tawhito, ā kāore e taea te whakatau.",
+  "share.endpointsDropped": "Kāore i kitea ētahi pūtahitanga",
+  "share.endpointsDroppedMessage": "{{count}} pūtahitanga mai i tēnei hononga kāore anō e noho ana i te huinga raraunga o nāianei, ā kua tangohia: {{endpoints}}"
 }

@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "成績の読み取りと書き込み",
   "help.commonSetups.sis.name": "SIS統合",
   "help.commonSetups.sis.description": "SISインポート、ユーザー同期",
-  "help.commonSetups.optional": "オプション"
+  "help.commonSetups.optional": "オプション",
+
+  "share.copyLink": "共有リンクをコピー",
+  "share.copied": "リンクをクリップボードにコピーしました",
+  "share.staleLink": "古いリンク",
+  "share.staleLinkMessage": "このリンクは古いデータセットで作成されたため、解決できません。",
+  "share.endpointsDropped": "一部のエンドポイントが見つかりません",
+  "share.endpointsDroppedMessage": "このリンクの {{count}} 件のエンドポイントは現在のデータセットに存在しなくなったため、削除されました: {{endpoints}}"
 }

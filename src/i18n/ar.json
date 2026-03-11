@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "قراءة وكتابة الدرجات",
   "help.commonSetups.sis.name": "تكامل SIS",
   "help.commonSetups.sis.description": "استيراد SIS، مزامنة المستخدمين",
-  "help.commonSetups.optional": "اختياري"
+  "help.commonSetups.optional": "اختياري",
+
+  "share.copyLink": "نسخ رابط قابل للمشاركة",
+  "share.copied": "تم نسخ الرابط إلى الحافظة",
+  "share.staleLink": "رابط قديم",
+  "share.staleLinkMessage": "تم إنشاء هذا الرابط باستخدام مجموعة بيانات قديمة ولا يمكن حلّه.",
+  "share.endpointsDropped": "بعض نقاط النهاية غير موجودة",
+  "share.endpointsDroppedMessage": "{{count}} نقطة(نقاط) نهاية من هذا الرابط لم تعد موجودة في مجموعة البيانات الحالية وتمت إزالتها: {{endpoints}}"
 }

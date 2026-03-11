@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "Osztályzatok olvasása és írása",
   "help.commonSetups.sis.name": "SIS integráció",
   "help.commonSetups.sis.description": "SIS importok, felhasználó-szinkronizálás",
-  "help.commonSetups.optional": "opcionális"
+  "help.commonSetups.optional": "opcionális",
+
+  "share.copyLink": "Megosztható link másolása",
+  "share.copied": "Link vágólapra másolva",
+  "share.staleLink": "Elavult link",
+  "share.staleLinkMessage": "Ez a link egy régebbi adatkészlettel készült, és nem oldható fel.",
+  "share.endpointsDropped": "Néhány végpont nem található",
+  "share.endpointsDroppedMessage": "{{count}} végpont ebből a linkből már nem létezik a jelenlegi adatkészletben és eltávolításra került: {{endpoints}}"
 }

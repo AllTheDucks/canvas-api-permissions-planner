@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "Lese og skrive karakterer",
   "help.commonSetups.sis.name": "SIS-integrasjon",
   "help.commonSetups.sis.description": "SIS-import, brukersynkronisering",
-  "help.commonSetups.optional": "valgfri"
+  "help.commonSetups.optional": "valgfri",
+
+  "share.copyLink": "Kopier delbar lenke",
+  "share.copied": "Lenke kopiert til utklippstavlen",
+  "share.staleLink": "Utdatert lenke",
+  "share.staleLinkMessage": "Denne lenken ble opprettet med et eldre datasett og kan ikke løses.",
+  "share.endpointsDropped": "Noen endepunkter ble ikke funnet",
+  "share.endpointsDroppedMessage": "{{count}} endepunkt(er) fra denne lenken finnes ikke lenger i det gjeldende datasettet og ble fjernet: {{endpoints}}"
 }

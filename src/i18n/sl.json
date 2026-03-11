@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "Branje in pisanje ocen",
   "help.commonSetups.sis.name": "Integracija SIS",
   "help.commonSetups.sis.description": "Uvozi SIS, sinhronizacija uporabnikov",
-  "help.commonSetups.optional": "neobvezno"
+  "help.commonSetups.optional": "neobvezno",
+
+  "share.copyLink": "Kopiraj povezavo za deljenje",
+  "share.copied": "Povezava kopirana v odložišče",
+  "share.staleLink": "Zastarela povezava",
+  "share.staleLinkMessage": "Ta povezava je bila ustvarjena s starejšim naborom podatkov in je ni mogoče razrešiti.",
+  "share.endpointsDropped": "Nekaterih končnih točk ni mogoče najti",
+  "share.endpointsDroppedMessage": "{{count}} končna(-ih) točka(-k) iz te povezave ne obstaja več v trenutnem naboru podatkov in je bila(-e) odstranjena(-e): {{endpoints}}"
 }

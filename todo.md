@@ -149,14 +149,14 @@
 
 ## URL Sharing / Deep Linking
 
-- [ ] `src/utils/urlState.ts` — `encodeSelection` (indices → base64url bitmask via `Uint8Array` + `btoa`), `decodeSelection` (base64url → indices via `atob`), `readUrlParams` (parse `v`, `s` from query string)
-- [ ] `src/utils/urlState.test.ts` — round-trip encode/decode, empty selection, single endpoint at index 0 and 299, all selected, confirm output is URL-safe (`[A-Za-z0-9_-]` only), `readUrlParams` returns `null` when `v`/`s` missing
-- [ ] Update `useEndpoints` return type to include `version` string (needed for URL versioning)
-- [ ] `App.tsx` — read URL params on load: if `v` matches current version, decode bitmask synchronously in `useState` initialiser; if `v` differs, `useEffect` fetches archived index file, resolves to current endpoints, silently drops missing ones
-- [ ] `App.tsx` — write URL on state change: `useEffect` encodes current selection via `replaceState`; clears query string when empty
-- [ ] "Copy link" `ActionIcon` (`IconLink`) in permissions panel header — copies `window.location.href` to clipboard; Mantine notification confirms; only shown when ≥1 endpoint selected
+- [x] `src/utils/urlState.ts` — `encodeSelection` (indices → base64url bitmask via `Uint8Array` + `btoa`), `decodeSelection` (base64url → indices via `atob`), `readUrlParams` (parse `v`, `s` from query string)
+- [x] `src/utils/urlState.test.ts` — round-trip encode/decode, empty selection, single endpoint at index 0 and 299, all selected, confirm output is URL-safe (`[A-Za-z0-9_-]` only), `readUrlParams` returns `null` when `v`/`s` missing
+- [x] Update `useEndpoints` return type to include `version` string (needed for URL versioning)
+- [x] `App.tsx` — read URL params on load: if `v` matches current version, decode bitmask synchronously in `useState` initialiser; if `v` differs, `useEffect` fetches archived index file, resolves to current endpoints, silently drops missing ones
+- [x] `App.tsx` — write URL on state change: `useEffect` encodes current selection via `replaceState`; clears query string when empty
+- [x] "Copy link" `ActionIcon` (`IconLink`) in permissions panel header — copies `window.location.href` to clipboard; Mantine notification confirms; only shown when ≥1 endpoint selected
 - [ ] Data update workflow: before updating `endpoints.json`, copy it to `public/data/endpoints.{version}.json` to preserve old link resolution
-- [ ] Add `share.*` translation keys to `src/i18n/en.json` (and all locale files): `copyLink`, `copied`, `staleLink`, `staleLinkMessage`, `endpointsDropped`, `endpointsDroppedMessage`
+- [x] Add `share.*` translation keys to `src/i18n/en.json` (and all locale files): `copyLink`, `copied`, `staleLink`, `staleLinkMessage`, `endpointsDropped`, `endpointsDroppedMessage`
 - [ ] Analytics: fire `shared_link_opened` event (with `endpoint_count` and `version_match`) when page loads from a shared URL
 
 ## Analytics (Google Analytics 4)

@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "خواندن و نوشتن نمرات",
   "help.commonSetups.sis.name": "یکپارچه‌سازی SIS",
   "help.commonSetups.sis.description": "واردات SIS، همگام‌سازی کاربران",
-  "help.commonSetups.optional": "اختیاری"
+  "help.commonSetups.optional": "اختیاری",
+
+  "share.copyLink": "کپی لینک اشتراک‌گذاری",
+  "share.copied": "لینک در کلیپ‌بورد کپی شد",
+  "share.staleLink": "لینک قدیمی",
+  "share.staleLinkMessage": "این لینک با مجموعه داده‌ای قدیمی‌تر ایجاد شده و قابل حل نیست.",
+  "share.endpointsDropped": "برخی نقاط پایانی یافت نشدند",
+  "share.endpointsDroppedMessage": "{{count}} نقطه(های) پایانی از این لینک دیگر در مجموعه داده فعلی وجود ندارند و حذف شدند: {{endpoints}}"
 }

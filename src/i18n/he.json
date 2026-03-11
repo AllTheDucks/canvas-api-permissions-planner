@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "קריאה וכתיבת ציונים",
   "help.commonSetups.sis.name": "אינטגרציית SIS",
   "help.commonSetups.sis.description": "יבוא SIS, סנכרון משתמשים",
-  "help.commonSetups.optional": "אופציונלי"
+  "help.commonSetups.optional": "אופציונלי",
+
+  "share.copyLink": "העתק קישור לשיתוף",
+  "share.copied": "הקישור הועתק ללוח",
+  "share.staleLink": "קישור מיושן",
+  "share.staleLinkMessage": "קישור זה נוצר עם מערך נתונים ישן יותר ולא ניתן לפענחו.",
+  "share.endpointsDropped": "חלק מנקודות הקצה לא נמצאו",
+  "share.endpointsDroppedMessage": "{{count}} נקודת/ות קצה מקישור זה אינן קיימות עוד במערך הנתונים הנוכחי והוסרו: {{endpoints}}"
 }

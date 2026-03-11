@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "讀寫成績",
   "help.commonSetups.sis.name": "SIS 整合",
   "help.commonSetups.sis.description": "SIS 匯入、使用者同步",
-  "help.commonSetups.optional": "選擇性"
+  "help.commonSetups.optional": "選擇性",
+
+  "share.copyLink": "複製分享連結",
+  "share.copied": "連結已複製到剪貼簿",
+  "share.staleLink": "過期連結",
+  "share.staleLinkMessage": "此連結是使用舊版資料集建立的，無法解析。",
+  "share.endpointsDropped": "部分端點未找到",
+  "share.endpointsDroppedMessage": "此連結中的 {{count}} 個端點在目前的資料集中已不存在，已被移除：{{endpoints}}"
 }

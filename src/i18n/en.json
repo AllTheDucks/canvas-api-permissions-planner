@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "Read and write grades",
   "help.commonSetups.sis.name": "SIS integration",
   "help.commonSetups.sis.description": "SIS imports, user sync",
-  "help.commonSetups.optional": "optional"
+  "help.commonSetups.optional": "optional",
+
+  "share.copyLink": "Copy shareable link",
+  "share.copied": "Link copied to clipboard",
+  "share.staleLink": "Outdated link",
+  "share.staleLinkMessage": "This link was created with an older dataset and can't be resolved.",
+  "share.endpointsDropped": "Some endpoints not found",
+  "share.endpointsDroppedMessage": "{{count}} endpoint(s) from this link no longer exist in the current dataset and were removed: {{endpoints}}"
 }

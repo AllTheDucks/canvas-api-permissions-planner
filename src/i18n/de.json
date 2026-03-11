@@ -74,5 +74,12 @@
   "help.commonSetups.gradebook.description": "Noten lesen und schreiben",
   "help.commonSetups.sis.name": "SIS-Integration",
   "help.commonSetups.sis.description": "SIS-Importe, Benutzersynchronisierung",
-  "help.commonSetups.optional": "optional"
+  "help.commonSetups.optional": "optional",
+
+  "share.copyLink": "Teilbaren Link kopieren",
+  "share.copied": "Link in die Zwischenablage kopiert",
+  "share.staleLink": "Veralteter Link",
+  "share.staleLinkMessage": "Dieser Link wurde mit einem älteren Datensatz erstellt und kann nicht aufgelöst werden.",
+  "share.endpointsDropped": "Einige Endpunkte nicht gefunden",
+  "share.endpointsDroppedMessage": "{{count}} Endpunkt(e) aus diesem Link existieren nicht mehr im aktuellen Datensatz und wurden entfernt: {{endpoints}}"
 }
