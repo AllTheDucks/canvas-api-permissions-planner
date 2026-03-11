@@ -1,8 +1,8 @@
 export const SUPPORTED_LOCALES = [
   'en',
-  'ar', 'cs', 'cy', 'da', 'de', 'el', 'es', 'es-ES', 'fa', 'fi', 'fr',
-  'he', 'hr', 'hu', 'hy', 'ja', 'ko', 'mi', 'nb', 'nl', 'pl', 'pt', 'pt-BR',
-  'ro', 'ru', 'sk', 'sl', 'sv', 'th', 'tr', 'uk', 'vi', 'zh-Hans', 'zh-Hant',
+  'ar', 'cy', 'da', 'de', 'el', 'es', 'es-ES', 'fa', 'fi', 'fr',
+  'he', 'hu', 'hy', 'ja', 'ko', 'mi', 'nb', 'nl', 'pl', 'pt', 'pt-BR',
+  'ru', 'sl', 'sv', 'th', 'tr', 'uk', 'vi', 'zh-Hans', 'zh-Hant',
 ] as const;
 
 export type SupportedLocale = typeof SUPPORTED_LOCALES[number];
@@ -16,7 +16,6 @@ export const RTL_LOCALES = ['ar', 'fa', 'he'] as const;
 export const LOCALE_NAMES = {
   en:        'English',
   ar:        'العربية',
-  cs:        'Čeština',
   cy:        'Cymraeg',
   da:        'Dansk',
   de:        'Deutsch',
@@ -27,7 +26,6 @@ export const LOCALE_NAMES = {
   fi:        'Suomi',
   fr:        'Français',
   he:        'עברית',
-  hr:        'Hrvatski',
   hu:        'Magyar',
   hy:        'Հայերեն',
   ja:        '日本語',
@@ -38,9 +36,7 @@ export const LOCALE_NAMES = {
   pl:        'Polski',
   pt:        'Português',
   'pt-BR':   'Português (Brasil)',
-  ro:        'Română',
   ru:        'Русский',
-  sk:        'Slovenčina',
   sl:        'Slovenščina',
   sv:        'Svenska',
   th:        'ภาษาไทย',

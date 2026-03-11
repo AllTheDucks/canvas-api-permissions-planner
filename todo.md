@@ -76,7 +76,7 @@
 ## Localisation
 
 ### Canvas permission labels (runtime YAML fetch)
-- [ ] `src/hooks/useLocale.ts` — fetch + parse + cache Canvas locale YAML files from GitHub
+- [x] `src/hooks/useLocale.ts` — fetch + parse + cache Canvas locale YAML files from GitHub
   - Signature: `useLocale(locale, allPermissions, dataVersion) → { localeLabels: Record<string, string>, isLoading: boolean }`
   - Fetches from `stable/{dataVersion}` branch on GitHub (not `master` or `prod`) to match the exact codebase the permission labels were derived from
   - `locale === 'en'` or cached: returns labels immediately, no fetch
@@ -85,8 +85,8 @@
   - Race condition: `useEffect` creates `AbortController`; cleanup calls `controller.abort()`; `AbortError` silently ignored (not shown as error)
   - In-memory cache per session (`Map<locale, Map<symbol, translatedLabel>>`)
   - Called in `App.tsx` alongside `useEndpoints`; `localeLabels` passed into `aggregatePermissions` via `useMemo`; `isLoading` forwarded to `PermissionsResult` as `isLoadingLocale` prop
-- [ ] Loading state during locale fetch — `PermissionsResult` renders Mantine `Loader` overlay when `isLoadingLocale` is true; sets `aria-busy={isLoadingLocale}` on container; stale permissions remain visible underneath
-- [ ] Error notification on locale fetch failure — `notifications.show({ color: 'red', ... })` with message "Could not load {LOCALE_NAMES[locale]} labels — showing in English"; picker state unchanged; failed locale not cached so re-selecting retries automatically
+- [x] Loading state during locale fetch — `PermissionsResult` renders Mantine `Loader` overlay when `isLoadingLocale` is true; sets `aria-busy={isLoadingLocale}` on container; stale permissions remain visible underneath
+- [x] Error notification on locale fetch failure — `notifications.show({ color: 'red', ... })` with message "Could not load {LOCALE_NAMES[locale]} labels — showing in English"; picker state unchanged; failed locale not cached so re-selecting retries automatically
 
 ### App UI i18n (bundled JSON)
 - [x] `src/i18n/locales.ts` — `SUPPORTED_LOCALES` (with `'en'` as first entry), `RTL_LOCALES`, `LOCALE_NAMES`, and `SUPPLEMENTAL_FONTS` constants (shared by all locale-aware code)
@@ -101,8 +101,8 @@
 - [ ] Write `src/i18n/en.json` with all keys: UI chrome keys (from Translation Key Structure table), `colorScheme.switchToDark/Light`, `selectedEndpoints.remove`, `common.moreInfo`, `endpoints.noResults`, and all `help.*` content keys (tabs 1–3 as defined in Help Modal Content Keys section)
 - [ ] Generate AI translations for all 34 non-English locale JSON files in `src/i18n/` using the prompt in `docs/generate-translations-prompt.md`
 - [x] Update all components to use `t()` from `useAppTranslations()` for all hardcoded UI strings
-- [ ] `src/utils/supplementalFont.ts` — idempotent loader: injects Google Fonts `<link>` for non-Latin locales (module-level `Set` prevents double-loading); returns the font family name
-- [ ] `App.tsx` locale sync: three `useEffect` calls — (1) `document.documentElement.dir` from `isRtl`, (2) `document.documentElement.lang` to active locale code, (3) call `loadSupplementalFont(locale)` and set/remove `--mantine-font-family` + `--mantine-font-family-headings` CSS custom properties
+- [x] `src/utils/supplementalFont.ts` — idempotent loader: injects Google Fonts `<link>` for non-Latin locales (module-level `Set` prevents double-loading); returns the font family name
+- [x] `App.tsx` locale sync: three `useEffect` calls — (1) `document.documentElement.dir` from `isRtl`, (2) `document.documentElement.lang` to active locale code, (3) call `loadSupplementalFont(locale)` and set/remove `--mantine-font-family` + `--mantine-font-family-headings` CSS custom properties
 - [x] AI translation disclosure — Mantine `Text` (`size="xs"`, `c="dimmed"`) rendered below language picker in header; visible only when `locale !== 'en'`; content: `t('aiTranslation.note')`
 
 ### Language picker

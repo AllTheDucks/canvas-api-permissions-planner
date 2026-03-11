@@ -1,7 +1,8 @@
-import { useCallback, useMemo, useRef, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { Center, Container, Grid, Group, Loader, Stack, Text, Title } from '@mantine/core'
 import AtdLogo from './assets/atd-logo.svg?react'
 import { useEndpoints } from './hooks/useEndpoints'
+import { useLocale } from './hooks/useLocale'
 import { EndpointSelector } from './components/EndpointSelector'
 import { EndpointPaste } from './components/EndpointPaste'
 import { SelectedEndpoints } from './components/SelectedEndpoints'
@@ -11,6 +12,7 @@ import { LanguagePicker } from './components/LanguagePicker'
 import { AppTranslationsProvider, useAppTranslations } from './context/AppTranslationsContext'
 import { aggregatePermissions } from './utils/permissionAggregator'
 import { detectLocale } from './utils/detectLocale'
+import { loadSupplementalFont } from './utils/supplementalFont'
 import { SUPPORTED_LOCALES, isSupportedLocale } from './i18n/locales'
 import type { Endpoint, PermissionRef } from './types'
 
@@ -21,14 +23,17 @@ type ReadyContentProps = {
   onToggle: (endpoint: Endpoint) => void
   onAddMany: (endpoints: Endpoint[]) => void
   searchInputRef: React.RefObject<HTMLInputElement | null>
+  locale: string
+  dataVersion: string
 }
 
-function ReadyContent({ allPermissions, endpointList, selectedEndpoints, onToggle, onAddMany, searchInputRef }: ReadyContentProps) {
+function ReadyContent({ allPermissions, endpointList, selectedEndpoints, onToggle, onAddMany, searchInputRef, locale, dataVersion }: ReadyContentProps) {
   const { t } = useAppTranslations()
+  const { localeLabels, isLoading: localeLoading } = useLocale(locale, allPermissions, dataVersion)
 
   const aggregated = useMemo(
-    () => aggregatePermissions(selectedEndpoints, allPermissions, {}),
-    [selectedEndpoints, allPermissions],
+    () => aggregatePermissions(selectedEndpoints, allPermissions, localeLabels),
+    [selectedEndpoints, allPermissions, localeLabels],
   )
 
   return (
@@ -50,7 +55,7 @@ function ReadyContent({ allPermissions, endpointList, selectedEndpoints, onToggl
       </Grid.Col>
       <Grid.Col span={{ base: 12, sm: 7 }}>
         <Title order={2} size="h4" mb="sm">{t('permissions.heading')}</Title>
-        <PermissionsResult permissions={aggregated} selectedCount={selectedEndpoints.length} />
+        <PermissionsResult permissions={aggregated} selectedCount={selectedEndpoints.length} isLoadingLocale={localeLoading} />
       </Grid.Col>
     </Grid>
   )
@@ -66,7 +71,32 @@ function AppContent({
   const endpoints = useEndpoints()
   const [selectedEndpoints, setSelectedEndpoints] = useState<Endpoint[]>([])
   const searchInputRef = useRef<HTMLInputElement>(null)
-  const { t } = useAppTranslations()
+  const { t, isRtl } = useAppTranslations()
+
+  useEffect(() => {
+    document.documentElement.dir = isRtl ? 'rtl' : 'ltr'
+  }, [isRtl])
+
+  useEffect(() => {
+    document.documentElement.lang = locale
+  }, [locale])
+
+  useEffect(() => {
+    const family = loadSupplementalFont(locale)
+    if (family) {
+      document.documentElement.style.setProperty(
+        '--mantine-font-family',
+        `'${family}', Poppins, sans-serif`,
+      )
+      document.documentElement.style.setProperty(
+        '--mantine-font-family-headings',
+        `'${family}', 'Source Sans 3', sans-serif`,
+      )
+    } else {
+      document.documentElement.style.removeProperty('--mantine-font-family')
+      document.documentElement.style.removeProperty('--mantine-font-family-headings')
+    }
+  }, [locale])
 
   const handleToggleEndpoint = useCallback((endpoint: Endpoint) => {
     const id = `${endpoint.method} ${endpoint.path}`
@@ -133,6 +163,8 @@ function AppContent({
               onToggle={handleToggleEndpoint}
               onAddMany={handleAddMany}
               searchInputRef={searchInputRef}
+              locale={locale}
+              dataVersion={endpoints.version}
             />
           )}
         </Container>
