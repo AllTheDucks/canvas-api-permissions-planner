@@ -31,7 +31,7 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion }: Rea
   const { t } = useAppTranslations()
   const { localeLabels, isLoading: localeLoading } = useLocale(locale, allPermissions, dataVersion)
   const searchInputRef = useRef<HTMLInputElement>(null)
-  const { selectedEndpoints, handleToggle, handleAddMany } = useUrlSelection(endpointList, dataVersion)
+  const { selectedEndpoints, handleToggle, handleAddMany, handleBulkToggle } = useUrlSelection(endpointList, dataVersion)
   const deferredSelected = useDeferredValue(selectedEndpoints)
 
   const handleCopyLink = useCallback(() => {
@@ -58,6 +58,7 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion }: Rea
               endpoints={endpointList}
               selected={selectedEndpoints}
               onToggle={handleToggle}
+              onBulkToggle={handleBulkToggle}
               inputRef={searchInputRef}
             />
           </Paper>
@@ -67,6 +68,7 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion }: Rea
           <SelectedEndpoints
             selected={deferredSelected}
             onRemove={handleToggle}
+            onRemoveCategory={(endpoints) => handleBulkToggle(endpoints, false)}
             onLastRemoved={() => searchInputRef.current?.focus()}
           />
         </Stack>

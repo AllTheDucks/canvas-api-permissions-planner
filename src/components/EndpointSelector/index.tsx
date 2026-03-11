@@ -18,6 +18,7 @@ type EndpointSelectorProps = {
   endpoints: Endpoint[]
   selected: Endpoint[]
   onToggle: (endpoint: Endpoint) => void
+  onBulkToggle: (endpoints: Endpoint[], select: boolean) => void
   inputRef?: React.Ref<HTMLInputElement>
 }
 
@@ -71,7 +72,42 @@ const EndpointRow = memo(function EndpointRow({ endpoint, checked, onToggle }: E
   )
 })
 
-export function EndpointSelector({ endpoints, selected, onToggle, inputRef }: EndpointSelectorProps) {
+type CategoryHeaderProps = {
+  category: string
+  items: Endpoint[]
+  selectedIds: Set<string>
+  onBulkToggle: (endpoints: Endpoint[], select: boolean) => void
+}
+
+const CategoryHeader = memo(function CategoryHeader({ category, items, selectedIds, onBulkToggle }: CategoryHeaderProps) {
+  const checkedCount = items.filter(ep => selectedIds.has(endpointId(ep))).length
+  const allChecked = checkedCount === items.length
+  const indeterminate = checkedCount > 0 && !allChecked
+
+  const handleChange = useCallback(() => {
+    onBulkToggle(items, !allChecked)
+  }, [items, allChecked, onBulkToggle])
+
+  return (
+    <Checkbox
+      checked={allChecked}
+      indeterminate={indeterminate}
+      onChange={handleChange}
+      mt="sm"
+      mb={4}
+      styles={{
+        label: {
+          fontSize: 'var(--mantine-font-size-xs)',
+          fontWeight: 700,
+          color: 'var(--mantine-color-dimmed)',
+        },
+      }}
+      label={category}
+    />
+  )
+})
+
+export function EndpointSelector({ endpoints, selected, onToggle, onBulkToggle, inputRef }: EndpointSelectorProps) {
   const [search, setSearch] = useState('')
   const { t } = useAppTranslations()
 
@@ -184,18 +220,35 @@ export function EndpointSelector({ endpoints, selected, onToggle, inputRef }: En
           {hasResults ? (
             displayGroups.map(({ category, items }) => (
               <div key={category}>
-                <Text size="xs" fw={700} c="dimmed" mt="sm" mb={4}>
-                  {category}
-                </Text>
-                {items.map((ep) => (
-                  <div key={endpointId(ep)} style={{ paddingBottom: 4 }}>
-                    <EndpointRow
-                      endpoint={ep}
-                      checked={optimisticIds.has(endpointId(ep))}
-                      onToggle={handleToggle}
-                    />
-                  </div>
-                ))}
+                <CategoryHeader
+                  category={category}
+                  items={items}
+                  selectedIds={optimisticIds}
+                  onBulkToggle={onBulkToggle}
+                />
+                <div
+                  style={{
+                    marginInlineStart: 10,
+                    paddingInlineStart: 14,
+                    borderInlineStart: '2px solid var(--mantine-color-default-border)',
+                  }}
+                >
+                  {items.map((ep, i) => (
+                    <div
+                      key={endpointId(ep)}
+                      style={{
+                        paddingBlock: 4,
+                        borderBottom: i < items.length - 1 ? '1px solid var(--mantine-color-default-border)' : undefined,
+                      }}
+                    >
+                      <EndpointRow
+                        endpoint={ep}
+                        checked={optimisticIds.has(endpointId(ep))}
+                        onToggle={handleToggle}
+                      />
+                    </div>
+                  ))}
+                </div>
               </div>
             ))
           ) : (

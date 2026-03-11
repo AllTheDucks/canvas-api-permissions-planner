@@ -124,5 +124,17 @@ export function useUrlSelection(endpointList: Endpoint[], dataVersion: string) {
     })
   }, [])
 
-  return { selectedEndpoints, handleToggle, handleAddMany }
+  const handleBulkToggle = useCallback((endpoints: Endpoint[], select: boolean) => {
+    const ids = new Set(endpoints.map(e => `${e.method} ${e.path}`))
+    setSelectedEndpoints(prev => {
+      if (select) {
+        const existing = new Set(prev.map(e => `${e.method} ${e.path}`))
+        const toAdd = endpoints.filter(e => !existing.has(`${e.method} ${e.path}`))
+        return toAdd.length > 0 ? [...prev, ...toAdd] : prev
+      }
+      return prev.filter(e => !ids.has(`${e.method} ${e.path}`))
+    })
+  }, [])
+
+  return { selectedEndpoints, handleToggle, handleAddMany, handleBulkToggle }
 }
