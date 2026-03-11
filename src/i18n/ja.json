@@ -1,24 +1,16 @@
 {
   "app.title": "Canvas API 権限プランナー",
-
   "header.help": "ヘルプ",
   "language.label": "言語",
   "language.tooltip": "言語を選択してください。Canvasの権限ラベルはCanvasコミュニティによって翻訳されています。アプリのインターフェースラベルはAIによって翻訳されています。",
-
   "permissions.heading": "必須権限",
   "permissions.optionalHeading": "オプション権限",
   "permissions.optionalDescription": "これらの権限はエンドポイントの呼び出しには必要ありませんが、レスポンスで追加データを利用できるようになります。",
   "permissions.empty": "エンドポイントを追加して必須権限を確認してください",
   "permissions.noAdditional": "選択したエンドポイントに追加の権限は不要です",
-  "permissions.scopeCourse": "コース",
-  "permissions.scopeAccount": "アカウント",
-  "permissions.scopeBoth": "コースまたはアカウント",
   "permissions.anyOf": "いずれか1つ：",
   "permissions.anyOfTooltip": "APIユーザーにはこれらの権限のうち少なくとも1つが必要です。いずれか1つで要件を満たします。",
-  "permissions.scopeCourseTooltip": "関連するコースのコースレベルのロール（例：教師、カスタムコースロール）で有効にする必要があります。",
-  "permissions.scopeAccountTooltip": "アカウントレベルのロール（例：アカウント管理者、カスタムアカウントロール）で有効にする必要があります。アカウントレベルの権限は、そのアカウント下のすべてのコースに適用されます。",
   "permissions.optionalNote": "これらの権限は追加のデータフィールドを利用可能にします。ノートを確認して、統合に必要かどうかを判断してください。",
-
   "endpoints.heading": "エンドポイントの追加",
   "endpoints.searchPlaceholder": "エンドポイントを検索…",
   "endpoints.pasteLabel": "エンドポイントを貼り付け",
@@ -27,45 +19,32 @@
   "endpoints.pastePlaceholder": "1行に1エンドポイント、例 GET /api/v1/courses/:id",
   "endpoints.unmatched": "認識されないエンドポイント：",
   "endpoints.noResults": "エンドポイントが見つかりません",
-
   "selectedEndpoints.heading": "選択済みエンドポイント",
   "selectedEndpoints.remove": "削除",
   "common.moreInfo": "詳細情報",
-
   "colorScheme.switchToDark": "ダークモードに切り替え",
   "colorScheme.switchToLight": "ライトモードに切り替え",
   "colorScheme.switchToSystem": "システムモードに切り替え",
-
   "footer.dataVersion": "Canvasデータ：{{version}}",
   "footer.dataNotLoaded": "Canvasデータ：（未読み込み）",
   "footer.credit": "提供元：",
-
   "error.loadFailed": "権限データの読み込みに失敗しました",
-
   "aiTranslation.note": "アプリのインターフェースはAIによって翻訳されています",
-
   "help.tab.howToUse": "使い方",
   "help.tab.permissions": "Canvas権限",
   "help.tab.commonSetups": "一般的な設定",
-
   "help.howToUse.step1": "統合が呼び出すAPIエンドポイントパスを選択または貼り付けてください。",
   "help.howToUse.step2": "必須権限パネルには、APIユーザーに必要なすべてのCanvasロール権限が表示されます。",
   "help.howToUse.step3": "オプション権限セクションを確認してください — これらはAPIレスポンスで追加データを利用可能にします（例：SIS ID、メールアドレス、未公開コンテンツ）。",
   "help.howToUse.step4": "カスタムCanvasロールを作成する（または既存のものを編集する）際に、これらの権限を正確に有効にしてください。",
-
   "help.permissions.rbac.heading": "ロールベースのアクセス制御",
   "help.permissions.rbac.body": "権限はユーザーではなくロールに付与されます。ユーザーは登録（コースロール）またはアカウントメンバーシップ（アカウントロール）を通じて権限を継承します。",
-  "help.permissions.scope.heading": "コースとアカウントのスコープ",
-  "help.permissions.scope.body": "コーススコープの権限はコースレベルのロールで有効にする必要があります。アカウントスコープの権限はアカウントレベルの管理者ロールに設定する必要があります。一部の権限は両方のレベルに存在します — アカウントの権限付与は、そのアカウント下のすべてのコースに適用されます。",
-  "help.permissions.inheritance.heading": "権限の継承",
-  "help.permissions.inheritance.body": "権限を持つアカウントレベルのロールは、そのアカウント下のすべてのコースに対して自動的にその権限を持ちます。",
   "help.permissions.orGroups.heading": "ORグループ",
   "help.permissions.orGroups.body": "ツールが「いずれか1つ：A · B · C」と表示する場合、リスト内のいずれか1つの権限で十分です。すべては必要ありません。",
   "help.permissions.optional.heading": "オプション権限",
   "help.permissions.optional.body": "一部のエンドポイントは、呼び出し元が追加の権限を持っている場合に追加データを返します。これらはオプション権限として別途表示され、何が利用可能になるかを説明するノートが付きます — 例えば、SIS IDフィールド、メールアドレス、ログインID、未公開コンテンツなど。エンドポイントはそれらなしでも動作しますが、返されるフィールドやレコードが少なくなります。",
   "help.permissions.featureFlags.heading": "機能フラグ",
   "help.permissions.featureFlags.body": "少数の権限は、権限UIに表示される前にCanvas機能フラグを有効にする必要があります。これは個々のエンドポイントに記載されています。",
-
   "help.commonSetups.intro": "一般的な統合タイプの3つの設定例：",
   "help.commonSetups.col.type": "統合タイプ",
   "help.commonSetups.col.permissions": "最小権限",
@@ -76,7 +55,6 @@
   "help.commonSetups.sis.name": "SIS統合",
   "help.commonSetups.sis.description": "SISインポート、ユーザー同期",
   "help.commonSetups.optional": "オプション",
-
   "share.copyLink": "共有リンクをコピー",
   "share.copied": "リンクをクリップボードにコピーしました",
   "share.staleLink": "古いリンク",

@@ -1,24 +1,16 @@
 {
   "app.title": "Cynlluniwr Caniatadau Canvas API",
-
   "header.help": "Cymorth",
   "language.label": "Iaith",
   "language.tooltip": "Dewiswch iaith. Mae labeli caniatadau Canvas yn cael eu cyfieithu gan gymuned Canvas; mae labeli rhyngwyneb yr ap yn cael eu cyfieithu gan AI.",
-
   "permissions.heading": "Caniatadau Gofynnol",
   "permissions.optionalHeading": "Caniatadau Dewisol",
   "permissions.optionalDescription": "Nid yw'r caniatadau hyn yn ofynnol i alw'r endpoints, ond maent yn datgloi data ychwanegol mewn ymatebion.",
   "permissions.empty": "Ychwanegwch endpoints i weld y caniatadau gofynnol",
   "permissions.noAdditional": "Nid oes angen caniatadau ychwanegol ar gyfer yr endpoints a ddewiswyd",
-  "permissions.scopeCourse": "Cwrs",
-  "permissions.scopeAccount": "Cyfrif",
-  "permissions.scopeBoth": "Cwrs neu Gyfrif",
   "permissions.anyOf": "Unrhyw un o:",
   "permissions.anyOfTooltip": "Mae angen o leiaf un o'r caniatadau hyn ar eich defnyddiwr API. Mae unrhyw un yn ddigonol i fodloni'r gofyniad hwn.",
-  "permissions.scopeCourseTooltip": "Rhaid ei alluogi ar rôl lefel cwrs (e.e. Athro, Rôl Cwrs Personol) ar gyfer y cwrs perthnasol.",
-  "permissions.scopeAccountTooltip": "Rhaid ei alluogi ar rôl lefel cyfrif (e.e. Gweinyddwr Cyfrif, Rôl Cyfrif Personol). Mae grantiau lefel cyfrif yn cwmpasu pob cwrs o dan y cyfrif hwnnw.",
   "permissions.optionalNote": "Mae'r caniatadau hyn yn datgloi meysydd data ychwanegol. Adolygwch y nodiadau i benderfynu a oes angen y rhain ar eich integreiddiad.",
-
   "endpoints.heading": "Ychwanegu Endpoints",
   "endpoints.searchPlaceholder": "Chwilio endpoints…",
   "endpoints.pasteLabel": "Gludo Pwyntiau Terfyn",
@@ -27,45 +19,32 @@
   "endpoints.pastePlaceholder": "Un endpoint fesul llinell, e.e. GET /api/v1/courses/:id",
   "endpoints.unmatched": "Endpoints nas adnabuwyd:",
   "endpoints.noResults": "Ni chanfuwyd unrhyw endpoints",
-
   "selectedEndpoints.heading": "Pwyntiau Terfyn Dewisol",
   "selectedEndpoints.remove": "Dileu",
   "common.moreInfo": "Rhagor o wybodaeth",
-
   "colorScheme.switchToDark": "Newid i'r modd tywyll",
   "colorScheme.switchToLight": "Newid i'r modd golau",
   "colorScheme.switchToSystem": "Newid i fodd y system",
-
   "footer.dataVersion": "Data Canvas: {{version}}",
   "footer.dataNotLoaded": "Data Canvas: (heb ei lwytho)",
   "footer.credit": "Offeryn am ddim gan",
-
   "error.loadFailed": "Methwyd â llwytho data caniatadau",
-
   "aiTranslation.note": "Rhyngwyneb yr ap wedi'i gyfieithu gan AI",
-
   "help.tab.howToUse": "Sut i'w ddefnyddio",
   "help.tab.permissions": "Caniatadau Canvas",
   "help.tab.commonSetups": "Gosodiadau cyffredin",
-
   "help.howToUse.step1": "Dewiswch neu gludwch y llwybrau endpoint API mae eich integreiddiad yn eu galw.",
   "help.howToUse.step2": "Mae'r panel Caniatadau Gofynnol yn rhestru pob caniatâd rôl Canvas sydd ei angen ar eich defnyddiwr API.",
   "help.howToUse.step3": "Adolygwch yr adran Caniatadau Dewisol — mae'r rhain yn datgloi data ychwanegol mewn ymatebion API (e.e. IDs SIS, cyfeiriadau e-bost, cynnwys heb ei gyhoeddi).",
   "help.howToUse.step4": "Sefydlwch rôl Canvas personol (neu golygwch un sy'n bodoli) gyda'r caniatadau hyn yn unig wedi'u galluogi.",
-
   "help.permissions.rbac.heading": "Rheoli Mynediad yn Seiliedig ar Rolau",
   "help.permissions.rbac.body": "Mae caniatadau'n cael eu rhoi i rolau, nid defnyddwyr. Mae defnyddwyr yn etifeddu caniatadau drwy gofrestriad (rôl cwrs) neu aelodaeth cyfrif (rôl cyfrif).",
-  "help.permissions.scope.heading": "Cwmpas Cwrs vs. Cyfrif",
-  "help.permissions.scope.body": "Rhaid galluogi caniatâd â chwmpas Cwrs ar rôl lefel cwrs. Rhaid i ganiatâd â chwmpas Cyfrif fod ar rôl gweinyddwr lefel cyfrif. Mae rhai caniatadau'n bodoli ar y ddwy lefel — mae'r grant Cyfrif yn cwmpasu pob cwrs o dan y cyfrif hwnnw.",
-  "help.permissions.inheritance.heading": "Etifeddiaeth caniatadau",
-  "help.permissions.inheritance.body": "Mae rôl lefel cyfrif â chaniatâd yn awtomatig yn cael y caniatâd hwnnw ar gyfer pob cwrs o dan y cyfrif.",
   "help.permissions.orGroups.heading": "Grwpiau OR",
   "help.permissions.orGroups.body": "Pan fydd yr offeryn yn dangos \"Unrhyw un o: A · B · C\", mae unrhyw ganiatâd sengl o'r rhestr honno'n ddigonol. Nid oes angen pob un arnoch.",
   "help.permissions.optional.heading": "Caniatadau dewisol",
   "help.permissions.optional.body": "Mae rhai endpoints yn dychwelyd data ychwanegol pan fydd gan yr alwad ganiatadau ychwanegol. Dangosir y rhain ar wahân fel Caniatadau Dewisol gyda nodyn yn egluro beth maent yn ei ddatgloi — er enghraifft, meysydd ID SIS, cyfeiriadau e-bost, IDs mewngofnodi, neu gynnwys heb ei gyhoeddi. Mae'r endpoint yn gweithio hebddynt; dim ond llai o feysydd neu gofnodion a gewch.",
   "help.permissions.featureFlags.heading": "Baneri nodweddion",
   "help.permissions.featureFlags.body": "Mae nifer bach o ganiatadau angen baner nodwedd Canvas i'w galluogi cyn iddynt ymddangos yn y rhyngwyneb Caniatadau. Nodir hyn ar endpoints unigol.",
-
   "help.commonSetups.intro": "Tair enghraifft o ffurfweddiad ar gyfer mathau cyffredin o integreiddiad:",
   "help.commonSetups.col.type": "Math o integreiddiad",
   "help.commonSetups.col.permissions": "Caniatadau lleiaf",
@@ -76,7 +55,6 @@
   "help.commonSetups.sis.name": "Integreiddiad SIS",
   "help.commonSetups.sis.description": "Mewnforion SIS, cysoni defnyddwyr",
   "help.commonSetups.optional": "dewisol",
-
   "share.copyLink": "Copïo dolen y gellir ei rhannu",
   "share.copied": "Dolen wedi'i chopïo i'r clipfwrdd",
   "share.staleLink": "Dolen hen",

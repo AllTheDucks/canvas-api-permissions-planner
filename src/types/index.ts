@@ -1,8 +1,5 @@
-export type Scope = "Account" | "Course";
-
 export type PermissionRef = {
   label: string;
-  scope: Set<Scope>;
 };
 
 export type SinglePermission = {
@@ -39,7 +36,6 @@ export type SingleAggregated = {
   kind: "single";
   symbol: string;
   label: string;
-  scope: Set<Scope>;
   requiredBy: string[];
   optional: boolean;
   notes: string[];
@@ -47,7 +43,7 @@ export type SingleAggregated = {
 
 export type AnyOfAggregated = {
   kind: "anyOf";
-  options: Array<{ symbol: string; label: string; scope: Set<Scope> }>;
+  options: Array<{ symbol: string; label: string }>;
   requiredBy: string[];
   optional: boolean;
   notes: string[];

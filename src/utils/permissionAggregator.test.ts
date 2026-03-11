@@ -3,21 +3,21 @@ import { aggregatePermissions } from './permissionAggregator';
 import type { Endpoint, PermissionRef, AggregatedPermission, SingleAggregated, AnyOfAggregated } from '../types';
 
 const perms: Record<string, PermissionRef> = {
-  manage_grades: { label: 'Grades - edit', scope: new Set(['Course']) },
-  read_course_content: { label: 'Course Content - view', scope: new Set(['Course']) },
-  manage_sis: { label: 'SIS Data - manage', scope: new Set(['Account']) },
-  read_sis: { label: 'SIS Data - read', scope: new Set(['Account']) },
-  manage_assignments_add: { label: 'Assignments - add', scope: new Set(['Course']) },
-  manage_assignments_edit: { label: 'Assignments - edit', scope: new Set(['Course']) },
-  manage_assignments_delete: { label: 'Assignments - delete', scope: new Set(['Course']) },
-  view_all_grades: { label: 'Grades - view all', scope: new Set(['Course']) },
-  manage_wiki_update: { label: 'Pages - update', scope: new Set(['Course']) },
-  read_email_addresses: { label: 'Email addresses - view', scope: new Set(['Account']) },
-  view_user_logins: { label: 'Users - view login IDs', scope: new Set(['Account']) },
-  manage_course_content_add: { label: 'Course Content - add', scope: new Set(['Course']) },
-  manage_course_content_edit: { label: 'Course Content - edit', scope: new Set(['Course']) },
-  manage_course_content_delete: { label: 'Course Content - delete', scope: new Set(['Course']) },
-  manage_students: { label: 'Students - manage', scope: new Set(['Course', 'Account']) },
+  manage_grades: { label: 'Grades - edit' },
+  read_course_content: { label: 'Course Content - view' },
+  manage_sis: { label: 'SIS Data - manage' },
+  read_sis: { label: 'SIS Data - read' },
+  manage_assignments_add: { label: 'Assignments - add' },
+  manage_assignments_edit: { label: 'Assignments - edit' },
+  manage_assignments_delete: { label: 'Assignments - delete' },
+  view_all_grades: { label: 'Grades - view all' },
+  manage_wiki_update: { label: 'Pages - update' },
+  read_email_addresses: { label: 'Email addresses - view' },
+  view_user_logins: { label: 'Users - view login IDs' },
+  manage_course_content_add: { label: 'Course Content - add' },
+  manage_course_content_edit: { label: 'Course Content - edit' },
+  manage_course_content_delete: { label: 'Course Content - delete' },
+  manage_students: { label: 'Students - manage' },
 };
 
 function makeEndpoint(
@@ -55,7 +55,6 @@ describe('aggregatePermissions', () => {
         optional: false,
         notes: [],
       });
-      expect(result[0].kind === 'single' && result[0].scope).toEqual(new Set(['Course']));
     });
 
     it('deduplicates the same symbol from multiple endpoints', () => {
@@ -81,7 +80,7 @@ describe('aggregatePermissions', () => {
       expect(symbols).toContain('read_course_content');
     });
 
-    it('sorts by scope: Course-only first, then Account-only, then both', () => {
+    it('sorts alphabetically by label', () => {
       const eps = [makeEndpoint('GET', '/api/v1/test', [
         { symbol: 'manage_students' },
         { symbol: 'manage_sis' },
@@ -89,20 +88,9 @@ describe('aggregatePermissions', () => {
       ])];
       const result = aggregatePermissions(eps, perms, {});
       const sorted = singles(result);
-      expect(sorted[0].symbol).toBe('manage_grades'); // Course
-      expect(sorted[1].symbol).toBe('manage_sis'); // Account
-      expect(sorted[2].symbol).toBe('manage_students'); // Course + Account
-    });
-
-    it('sorts alphabetically within same scope', () => {
-      const eps = [makeEndpoint('GET', '/api/v1/test', [
-        { symbol: 'read_course_content' },
-        { symbol: 'manage_grades' },
-      ])];
-      const result = aggregatePermissions(eps, perms, {});
-      const sorted = singles(result).filter((s) => !s.optional);
-      expect(sorted[0].label).toBe('Course Content - view');
-      expect(sorted[1].label).toBe('Grades - edit');
+      expect(sorted[0].label).toBe('Grades - edit');
+      expect(sorted[1].label).toBe('SIS Data - manage');
+      expect(sorted[2].label).toBe('Students - manage');
     });
   });
 
@@ -325,7 +313,7 @@ describe('aggregatePermissions', () => {
       const resultC = aggregatePermissions([ep2, ep3, ep1], perms, {});
 
       const normalize = (r: AggregatedPermission[]) =>
-        JSON.stringify(r, (_, v) => (v instanceof Set ? [...v].sort() : v));
+        JSON.stringify(r);
 
       expect(normalize(resultA)).toBe(normalize(resultB));
       expect(normalize(resultA)).toBe(normalize(resultC));

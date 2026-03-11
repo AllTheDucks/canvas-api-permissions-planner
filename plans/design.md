@@ -146,7 +146,6 @@ The conversion from Canvas source to JSON requires human (or AI) interpretation 
 
 **Permission Reference Table → `permissions` map:**
 - Strip the leading `:` from each symbol (`:manage_grades` → `manage_grades`).
-- Map the Scope column: `"Account"` → `["Account"]`, `"Course"` → `["Course"]`, `"Course / Account"` → `["Course", "Account"]`.
 
 **Endpoint table → `endpoints` array:**
 
@@ -211,10 +210,10 @@ The `version` field is the date of the Canvas LMS stable release the data was de
 {
   "version": "2026-02-11",
   "permissions": {
-    "manage_grades": { "label": "Grades - edit",    "scope": ["Course", "Account"] },
-    "read_sis":      { "label": "SIS Data - view",  "scope": ["Course", "Account"] },
-    "manage_sis":    { "label": "SIS Data - manage","scope": ["Account"] },
-    "read_rubrics":  { "label": "Rubrics - read",   "scope": ["Course"] }
+    "manage_grades": { "label": "Grades - edit" },
+    "read_sis":      { "label": "SIS Data - view" },
+    "manage_sis":    { "label": "SIS Data - manage" },
+    "read_rubrics":  { "label": "Rubrics - read" }
     // ... all ~100 permissions from the Permission Reference Table
   },
   "endpoints": [
@@ -275,20 +274,8 @@ This preserves the order categories appear in `endpoints.json` (which should mat
 Validates `endpoints.json` at startup — fail loudly if the file is malformed.
 
 ```typescript
-const ScopeSchema = z.enum(["Account", "Course"]);
-
-// at least one entry, no duplicates, transformed to a Set for ergonomic membership checks
-const ScopeArraySchema = z
-  .array(ScopeSchema)
-  .min(1)
-  .refine((arr) => new Set(arr).size === arr.length, {
-    message: "Scope values must be distinct",
-  })
-  .transform((arr) => new Set(arr));
-
 const PermissionRefSchema = z.object({
   label: z.string(),      // English label; i18nKey is derived from this at runtime
-  scope: ScopeArraySchema,
 });
 
 // A single named permission — required to call the endpoint, or conditional (required: false)
@@ -841,9 +828,6 @@ Keys follow dot-notation grouping. `src/i18n/en.json` is the authoritative key c
 | `permissions.optionalHeading` | "Optional Permissions" |
 | `permissions.optionalDescription` | "These permissions are not required to call the endpoints, but unlock additional data in responses." |
 | `permissions.empty` | "Add endpoints to see required permissions" |
-| `permissions.scopeCourse` | "Course" |
-| `permissions.scopeAccount` | "Account" |
-| `permissions.scopeBoth` | "Course or Account" |
 | `permissions.anyOf` | "Any one of:" |
 | `endpoints.heading` | "Add Endpoints" |
 | `endpoints.searchPlaceholder` | "Search endpoints…" |
@@ -885,8 +869,6 @@ The Help modal's three tabs contain rich content — numbered lists, definition-
 |-----|---------------|
 | `help.permissions.rbac.heading` | "Role-Based Access Control" |
 | `help.permissions.rbac.body` | "Permissions are granted to roles, not users. Users inherit permissions via enrollment (course role) or account membership (account role)." |
-| `help.permissions.scope.heading` | "Course vs. Account scope" |
-| `help.permissions.scope.body` | "A permission scoped to Course must be enabled on a course-level role. A permission scoped to Account must be on an account-level admin role. Some permissions exist at both levels — the Account grant covers all courses under that account." |
 | `help.permissions.inheritance.heading` | "Permission inheritance" |
 | `help.permissions.inheritance.body` | "An account-level role with a permission automatically has that permission for all courses under the account." |
 | `help.permissions.orGroups.heading` | "OR groups" |
@@ -1120,7 +1102,6 @@ type SingleAggregated = {
   kind: "single";
   symbol: string;
   label: string;                    // in current locale
-  scope: Set<"Account" | "Course">;
   requiredBy: string[];             // endpoint paths that contribute this permission
   optional: boolean;                // true for required: false permissions
   notes: string[];                  // collected unique notes (from required: false entries)
@@ -1129,7 +1110,7 @@ type SingleAggregated = {
 // An OR group (required or optional)
 type AnyOfAggregated = {
   kind: "anyOf";
-  options: Array<{ symbol: string; label: string; scope: Set<"Account" | "Course"> }>;
+  options: Array<{ symbol: string; label: string }>;
   requiredBy: string[];             // endpoint paths that introduce this OR group
   optional: boolean;                // true for required: false OR groups
   notes: string[];                  // collected unique notes (from required: false entries)
@@ -1182,11 +1163,11 @@ Partially overlapping groups (e.g. `{A, B}` and `{B, C}`) have no subsumption re
 **Cross-category subsumption:** Additionally, check whether optional OR groups are subsumed by required OR groups (same canonical key or subset relationship). If an optional group's key matches a required group, the optional is redundant and should be dropped.
 
 **Result assembly:**
-- Required singles: for each symbol in `requiredSymbols`, emit `{ kind: "single", symbol, label, scope, requiredBy, optional: false, notes: [] }`.
+- Required singles: for each symbol in `requiredSymbols`, emit `{ kind: "single", symbol, label, requiredBy, optional: false, notes: [] }`.
 - Required OR groups: for each surviving required group, emit `{ kind: "anyOf", options: [...], requiredBy, optional: false, notes: [] }`.
 - Optional singles: for each symbol in `optionalSymbols`, emit `{ kind: "single", ..., optional: true, notes }`.
 - Optional OR groups: for each surviving optional group, emit `{ kind: "anyOf", ..., optional: true, notes }`.
-- Sort within each category: singles sorted by scope (Course-only first, then Account-only, then both), then alphabetically. OR groups in order of first appearance.
+- Sort within each category: singles sorted alphabetically by label. OR groups sorted alphabetically by the label of their first option.
 - Final output order: required singles → required OR groups → optional singles → optional OR groups.
 
 ### Why this is fully order-independent
@@ -1203,21 +1184,18 @@ All passes scan the complete endpoint set before emitting any output. Pass 1 bui
 ├────────────────────────┬─────────────────────────────────────┤
 │  Add Endpoints         │  Required Permissions                │
 │  ─────────────────     │  ──────────────────────             │
-│  [Search/Select list]  │  Course scope:                      │
+│  [Search/Select list]  │  ✓ Course Content - view            │
 │                        │  ✓ Grades - edit                    │
-│  ─────────────────     │  ✓ Course Content - view            │
+│  ─────────────────     │  ✓ SIS Data - manage                │
 │  Or paste a list:      │                                     │
-│  [Textarea]  [Add]     │  Account scope:                     │
-│                        │  ✓ SIS Data - manage                │
-│  Selected:             │                                     │
-│  [GET /api/v1/... ×]   │  ───────────────────                │
-│  [POST /api/v1/... ×]  │                                     │
-│                        │  Optional Permissions                │
-│                        │  (unlock additional response data)   │
+│  [Textarea]  [Add]     │  ───────────────────                │
 │                        │                                     │
-│                        │  SIS Data - view [Course]            │
+│  Selected:             │  Optional Permissions                │
+│  [GET /api/v1/... ×]   │  (unlock additional response data)   │
+│  [POST /api/v1/... ×]  │                                     │
+│                        │  SIS Data - view                     │
 │                        │    Required to receive SIS ID fields │
-│                        │  Users - view login IDs [Account]    │
+│                        │  Users - view login IDs              │
 │                        │    Required to receive login_id      │
 ├────────────────────────┴─────────────────────────────────────┤
 │  A free tool by [ATD Logo → alltheducks.com]                 │
@@ -1229,7 +1207,7 @@ Mantine components to use:
 - `ScrollArea` + `Checkbox.Group` for endpoint list grouped by category
 - `Textarea` + `Button` for paste input
 - `Badge` / `CloseButton` for selected endpoints
-- `Table` or `List` for permissions output, with OR groups rendered as a distinct row: *"Any one of: A · B · C"* (each option shows its label and a scope badge)
+- `Table` or `List` for permissions output, with OR groups rendered as a distinct row: *"Any one of: A · B · C"* (each option shows its label)
 - `Select` for language picker
 - `Loader` / `Notification` for locale loading state
 
@@ -1358,14 +1336,8 @@ The permissions result panel has two top-level sections: **Required Permissions*
 Required Permissions
 ────────────────────
 
-[Course] heading       ← only rendered if any course-only singles exist
+  single row           ← alphabetical by label
   single row
-  single row
-
-[Account] heading      ← only rendered if any account-only singles exist
-  single row
-
-[Course or Account] heading  ← only rendered if any both-scope singles exist
   single row
 
 <Divider />            ← only rendered if there are both singles AND OR groups
@@ -1391,11 +1363,8 @@ t('permissions.optionalDescription')   ← brief explanation in dimmed text
 The optional section is suppressed entirely when no optional permissions exist. The `<Divider />` between the two sections renders only when both are present.
 
 Each optional permission row shows:
-- The same label/scope badge rendering as required permissions
+- The permission label
 - Below the label: the note(s) from the `notes[]` array, rendered as `Text size="xs" c="dimmed"` — one line per unique note
-- No scope section headings within the optional section (optional permissions are listed flat, since there are typically few of them)
-
-Section headings use the `t('permissions.scopeCourse')`, `t('permissions.scopeAccount')`, and a third key `t('permissions.scopeBoth')` (e.g. `"Course or Account"`) translation keys. A heading is suppressed entirely if no permissions fall in that category — so a result set with only Account-scope singles renders only the Account heading.
 
 The `<Divider />` between singles and OR groups within the required section is rendered only when both are present — if the result is OR groups only, no divider is shown.
 
@@ -1404,32 +1373,12 @@ The `<Divider />` between singles and OR groups within the required section is r
 Each OR group row renders as:
 
 ```
-[ⓘ]  Any one of:  Label A [scope badge]  ·  Label B [scope badge]  ·  Label C [scope badge]
+[ⓘ]  Any one of:  Label A  ·  Label B  ·  Label C
 ```
 
 - The `[ⓘ]` is an `IconInfoCircle` `ActionIcon` whose tooltip reads: *"Your API user needs at least one of these permissions. Any single one is sufficient to satisfy this requirement."*
 - `t('permissions.anyOf')` provides the "Any one of:" prefix.
-- Each option is its label followed by its scope badge(s), separated by a `·` character.
-- **Scope is per-option, not per-row.** There is no scope section heading for OR group rows and no top-level scope badge on the row itself — only on each individual option.
-
-### Mixed-scope OR group example
-
-An OR group with one Course-only and one Account-only option renders as:
-
-```
-[ⓘ]  Any one of:  Grades - edit [Course]  ·  SIS Data - view [Account]
-```
-
-This accurately communicates that the user needs *either* a course-level Grades permission *or* an account-level SIS permission — which are genuinely different role configurations. Placing this row under a single scope section would be misleading.
-
-### Scope badge rendering
-
-Scope badges are Mantine `Badge` components:
-- `scope = {"Course"}` → one `[Course]` badge
-- `scope = {"Account"}` → one `[Account]` badge
-- `scope = {"Course", "Account"}` → two badges: `[Course]` `[Account]`
-
-Each badge has a `Tooltip` with the scope explanation (see Contextual Tooltips section).
+- Each option shows its label, separated by a `·` character.
 
 ---
 
@@ -1567,14 +1516,13 @@ Test files are co-located with source: `src/utils/i18nKey.test.ts`, etc.
 - Required OR group appears when unsatisfied
 - Required OR group is suppressed when a member is already a definite single (order-independent: test both selection orders)
 - Pass 2.5 subsumption: `{A,B,C}` is dropped when `{A,B}` is also present; `{A,B}` and `{B,C}` both survive (applied to both required and optional groups separately)
-- Result sort order: required singles (scope order) → required OR groups → optional singles (scope order) → optional OR groups
+- Result sort order: required singles (alphabetical) → required OR groups (alphabetical) → optional singles (alphabetical) → optional OR groups (alphabetical)
 
 **`src/schemas/endpoints.ts`** — validate the Zod schema logic.
 - Valid full data object passes
 - Missing required fields fail
 - `AnyOfPermissionSchema` with fewer than 2 options fails
 - `SinglePermissionSchema` with `required: false` and `note` passes
-- `ScopeArraySchema` with duplicates fails
 
 **`src/schemas/canvasLocale.ts`** — validate schema and `getTranslation` helper.
 - `canvasLocaleSchema('es')` passes when outer key is `'es'`
@@ -1664,7 +1612,7 @@ Story files live alongside the component: `src/components/{Component}/{Component
 - `Empty` — no endpoints selected
 - `SinglesOnly` — only definite single permissions
 - `WithAnyOfGroup` — at least one OR group row
-- `Mixed` — singles + OR groups, multiple scope groups
+- `Mixed` — singles + OR groups
 
 **`HelpModal`**
 - `Default` — button visible, modal closed
@@ -1693,7 +1641,6 @@ Step-by-step guide written for this tool:
 Drawn from the "Understanding Canvas Permissions" and "Authorization Patterns Explained" sections of `canvas_api_permissions.md`:
 
 - **Role-based access control:** Permissions are granted to roles, not users. Users inherit permissions via enrollment (course role) or account membership (account role).
-- **Course vs. Account scope:** A permission scoped to *Course* must be enabled on a course-level role. A permission scoped to *Account* must be enabled on an account-level admin role. Some permissions exist at both levels — the Account grant covers courses under that account.
 - **Permission inheritance:** An account-level role with a permission automatically has that permission for all courses under the account.
 - **OR groups:** When the tool shows "Any one of: A · B · C", holding any single permission from that list is sufficient. You don't need all of them.
 - **Feature flags:** A small number of permissions require a Canvas feature flag to be enabled before they appear in the Permissions UI. These are noted on individual endpoints.
@@ -1719,8 +1666,6 @@ All tooltips use Mantine `Tooltip` with `multiline` and a `maw` (max-width) of ~
 
 | Element | Tooltip content |
 |---|---|
-| **Course** scope badge | *"Must be enabled on a course-level role (e.g. Teacher, Custom Course Role) for the relevant course."* |
-| **Account** scope badge | *"Must be enabled on an account-level role (e.g. Account Admin, Custom Account Role). Account-level grants cover all courses under that account."* |
 | OR group row info icon | *"Your API user needs at least one of these permissions. Any single one is sufficient to satisfy this requirement."* |
 | "Required by" column / tooltip on permission row | Lists the endpoint paths that require this permission (the `requiredBy` array from the aggregator). Rendered as a `Tooltip` on the permission label itself, or as a collapsed detail row. |
 
@@ -2196,7 +2141,6 @@ Developers may want to print the permissions result for documentation or to atta
 
 - Force light color scheme (`color-scheme: light; color: black; background: white`)
 - Remove decorative shadows, borders, and background colours that waste ink
-- Scope badges render as bordered outlines instead of filled backgrounds
 - `break-inside: avoid` on permission rows and OR group rows to prevent mid-item page breaks
 
 ### Implementation

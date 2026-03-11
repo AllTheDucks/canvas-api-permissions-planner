@@ -1,24 +1,16 @@
 {
   "app.title": "Σχεδιαστής Δικαιωμάτων Canvas API",
-
   "header.help": "Βοήθεια",
   "language.label": "Γλώσσα",
   "language.tooltip": "Επιλέξτε γλώσσα. Οι ετικέτες δικαιωμάτων Canvas μεταφράζονται από την κοινότητα Canvas· οι ετικέτες διεπαφής της εφαρμογής μεταφράζονται από AI.",
-
   "permissions.heading": "Απαιτούμενα Δικαιώματα",
   "permissions.optionalHeading": "Προαιρετικά Δικαιώματα",
   "permissions.optionalDescription": "Αυτά τα δικαιώματα δεν απαιτούνται για την κλήση των endpoints, αλλά ξεκλειδώνουν επιπλέον δεδομένα στις απαντήσεις.",
   "permissions.empty": "Προσθέστε endpoints για να δείτε τα απαιτούμενα δικαιώματα",
   "permissions.noAdditional": "Δεν απαιτούνται επιπλέον δικαιώματα για τα επιλεγμένα endpoints",
-  "permissions.scopeCourse": "Μάθημα",
-  "permissions.scopeAccount": "Λογαριασμός",
-  "permissions.scopeBoth": "Μάθημα ή Λογαριασμός",
   "permissions.anyOf": "Οποιοδήποτε από:",
   "permissions.anyOfTooltip": "Ο χρήστης API σας χρειάζεται τουλάχιστον ένα από αυτά τα δικαιώματα. Ένα μόνο αρκεί για να ικανοποιηθεί αυτή η απαίτηση.",
-  "permissions.scopeCourseTooltip": "Πρέπει να ενεργοποιηθεί σε ρόλο επιπέδου μαθήματος (π.χ. Εκπαιδευτής, Προσαρμοσμένος Ρόλος Μαθήματος) για το σχετικό μάθημα.",
-  "permissions.scopeAccountTooltip": "Πρέπει να ενεργοποιηθεί σε ρόλο επιπέδου λογαριασμού (π.χ. Διαχειριστής Λογαριασμού, Προσαρμοσμένος Ρόλος Λογαριασμού). Τα δικαιώματα επιπέδου λογαριασμού καλύπτουν όλα τα μαθήματα υπό αυτόν τον λογαριασμό.",
   "permissions.optionalNote": "Αυτά τα δικαιώματα ξεκλειδώνουν επιπλέον πεδία δεδομένων. Ελέγξτε τις σημειώσεις για να αποφασίσετε αν τα χρειάζεται η ενσωμάτωσή σας.",
-
   "endpoints.heading": "Προσθήκη Endpoints",
   "endpoints.searchPlaceholder": "Αναζήτηση endpoints…",
   "endpoints.pasteLabel": "Επικόλληση τελικών σημείων",
@@ -27,45 +19,32 @@
   "endpoints.pastePlaceholder": "Ένα endpoint ανά γραμμή, π.χ. GET /api/v1/courses/:id",
   "endpoints.unmatched": "Μη αναγνωρισμένα endpoints:",
   "endpoints.noResults": "Δεν βρέθηκαν endpoints",
-
   "selectedEndpoints.heading": "Επιλεγμένα Endpoints",
   "selectedEndpoints.remove": "Αφαίρεση",
   "common.moreInfo": "Περισσότερες πληροφορίες",
-
   "colorScheme.switchToDark": "Εναλλαγή σε σκοτεινή λειτουργία",
   "colorScheme.switchToLight": "Εναλλαγή σε φωτεινή λειτουργία",
   "colorScheme.switchToSystem": "Εναλλαγή σε λειτουργία συστήματος",
-
   "footer.dataVersion": "Δεδομένα Canvas: {{version}}",
   "footer.dataNotLoaded": "Δεδομένα Canvas: (δεν φορτώθηκαν)",
   "footer.credit": "Ένα δωρεάν εργαλείο από",
-
   "error.loadFailed": "Αποτυχία φόρτωσης δεδομένων δικαιωμάτων",
-
   "aiTranslation.note": "Η διεπαφή της εφαρμογής μεταφράστηκε από AI",
-
   "help.tab.howToUse": "Πώς να το χρησιμοποιήσετε",
   "help.tab.permissions": "Δικαιώματα Canvas",
   "help.tab.commonSetups": "Συνήθεις ρυθμίσεις",
-
   "help.howToUse.step1": "Επιλέξτε ή επικολλήστε τις διαδρομές endpoint API που καλεί η ενσωμάτωσή σας.",
   "help.howToUse.step2": "Το πάνελ Απαιτούμενα Δικαιώματα εμφανίζει κάθε δικαίωμα ρόλου Canvas που χρειάζεται ο χρήστης API σας.",
   "help.howToUse.step3": "Ελέγξτε την ενότητα Προαιρετικά Δικαιώματα — αυτά ξεκλειδώνουν επιπλέον δεδομένα στις απαντήσεις API (π.χ. SIS IDs, διευθύνσεις email, αδημοσίευτο περιεχόμενο).",
   "help.howToUse.step4": "Δημιουργήστε έναν προσαρμοσμένο ρόλο Canvas (ή επεξεργαστείτε έναν υπάρχοντα) με ακριβώς αυτά τα δικαιώματα ενεργοποιημένα.",
-
   "help.permissions.rbac.heading": "Έλεγχος Πρόσβασης Βάσει Ρόλων",
   "help.permissions.rbac.body": "Τα δικαιώματα χορηγούνται σε ρόλους, όχι σε χρήστες. Οι χρήστες κληρονομούν δικαιώματα μέσω εγγραφής (ρόλος μαθήματος) ή συμμετοχής σε λογαριασμό (ρόλος λογαριασμού).",
-  "help.permissions.scope.heading": "Εύρος Μαθήματος vs. Λογαριασμού",
-  "help.permissions.scope.body": "Ένα δικαίωμα με εύρος Μαθήματος πρέπει να ενεργοποιηθεί σε ρόλο επιπέδου μαθήματος. Ένα δικαίωμα με εύρος Λογαριασμού πρέπει να βρίσκεται σε ρόλο διαχειριστή λογαριασμού. Ορισμένα δικαιώματα υπάρχουν και στα δύο επίπεδα — η χορήγηση Λογαριασμού καλύπτει όλα τα μαθήματα υπό τον λογαριασμό.",
-  "help.permissions.inheritance.heading": "Κληρονομικότητα δικαιωμάτων",
-  "help.permissions.inheritance.body": "Ένας ρόλος επιπέδου λογαριασμού με ένα δικαίωμα έχει αυτόματα αυτό το δικαίωμα για όλα τα μαθήματα υπό τον λογαριασμό.",
   "help.permissions.orGroups.heading": "Ομάδες OR",
   "help.permissions.orGroups.body": "Όταν το εργαλείο εμφανίζει \"Οποιοδήποτε από: Α · Β · Γ\", οποιοδήποτε μεμονωμένο δικαίωμα από τη λίστα αρκεί. Δεν χρειάζεστε όλα.",
   "help.permissions.optional.heading": "Προαιρετικά δικαιώματα",
   "help.permissions.optional.body": "Ορισμένα endpoints επιστρέφουν επιπλέον δεδομένα όταν ο καλών έχει πρόσθετα δικαιώματα. Αυτά εμφανίζονται ξεχωριστά ως Προαιρετικά Δικαιώματα με σημείωση που εξηγεί τι ξεκλειδώνουν — π.χ. πεδία SIS ID, διευθύνσεις email, login IDs ή αδημοσίευτο περιεχόμενο. Το endpoint λειτουργεί χωρίς αυτά· απλά λαμβάνετε λιγότερα πεδία ή εγγραφές.",
   "help.permissions.featureFlags.heading": "Σημαίες χαρακτηριστικών",
   "help.permissions.featureFlags.body": "Ένας μικρός αριθμός δικαιωμάτων απαιτεί την ενεργοποίηση μιας σημαίας χαρακτηριστικού Canvas πριν εμφανιστούν στη διεπαφή Δικαιωμάτων. Αυτό σημειώνεται στα μεμονωμένα endpoints.",
-
   "help.commonSetups.intro": "Τρία παραδείγματα ρυθμίσεων για συνήθεις τύπους ενσωμάτωσης:",
   "help.commonSetups.col.type": "Τύπος ενσωμάτωσης",
   "help.commonSetups.col.permissions": "Ελάχιστα δικαιώματα",
@@ -76,7 +55,6 @@
   "help.commonSetups.sis.name": "Ενσωμάτωση SIS",
   "help.commonSetups.sis.description": "Εισαγωγές SIS, συγχρονισμός χρηστών",
   "help.commonSetups.optional": "προαιρετικό",
-
   "share.copyLink": "Αντιγραφή κοινοποιήσιμου συνδέσμου",
   "share.copied": "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο",
   "share.staleLink": "Παλαιός σύνδεσμος",

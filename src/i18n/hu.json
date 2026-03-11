@@ -1,24 +1,16 @@
 {
   "app.title": "Canvas API Jogosultságtervező",
-
   "header.help": "Súgó",
   "language.label": "Nyelv",
   "language.tooltip": "Válasszon nyelvet. A Canvas jogosultságcímkéket a Canvas közösség fordítja; az alkalmazás felületi címkéit AI fordítja.",
-
   "permissions.heading": "Szükséges jogosultságok",
   "permissions.optionalHeading": "Opcionális jogosultságok",
   "permissions.optionalDescription": "Ezek a jogosultságok nem szükségesek a végpontok hívásához, de további adatokat tesznek elérhetővé a válaszokban.",
   "permissions.empty": "Adjon hozzá végpontokat a szükséges jogosultságok megtekintéséhez",
   "permissions.noAdditional": "Nincs szükség további jogosultságokra a kiválasztott végpontokhoz",
-  "permissions.scopeCourse": "Kurzus",
-  "permissions.scopeAccount": "Fiók",
-  "permissions.scopeBoth": "Kurzus vagy Fiók",
   "permissions.anyOf": "Bármelyik a következők közül:",
   "permissions.anyOfTooltip": "Az API-felhasználónak legalább egyre szüksége van ezek közül a jogosultságok közül. Bármelyik egyetlen jogosultság elegendő ennek a követelménynek a teljesítéséhez.",
-  "permissions.scopeCourseTooltip": "Kurzusszintű szerepkörön kell engedélyezni (pl. Oktató, Egyéni kurzusszerepkör) a vonatkozó kurzushoz.",
-  "permissions.scopeAccountTooltip": "Fiókszintű szerepkörön kell engedélyezni (pl. Fiókadminisztrátor, Egyéni fiókszerepkör). A fiókszintű jogosultságok a fiók alatti összes kurzusra vonatkoznak.",
   "permissions.optionalNote": "Ezek a jogosultságok további adatmezőket tesznek elérhetővé. Tekintse át a megjegyzéseket, hogy eldöntse, szüksége van-e rájuk az integrációjának.",
-
   "endpoints.heading": "Végpontok hozzáadása",
   "endpoints.searchPlaceholder": "Végpontok keresése…",
   "endpoints.pasteLabel": "Végpontok beillesztése",
@@ -27,45 +19,32 @@
   "endpoints.pastePlaceholder": "Egy végpont soronként, pl. GET /api/v1/courses/:id",
   "endpoints.unmatched": "Nem felismert végpontok:",
   "endpoints.noResults": "Nem található végpont",
-
   "selectedEndpoints.heading": "Kiválasztott végpontok",
   "selectedEndpoints.remove": "Eltávolítás",
   "common.moreInfo": "További információ",
-
   "colorScheme.switchToDark": "Váltás sötét módra",
   "colorScheme.switchToLight": "Váltás világos módra",
   "colorScheme.switchToSystem": "Váltás rendszer módra",
-
   "footer.dataVersion": "Canvas-adatok: {{version}}",
   "footer.dataNotLoaded": "Canvas-adatok: (nincs betöltve)",
   "footer.credit": "Ingyenes eszköz a következőtől:",
-
   "error.loadFailed": "A jogosultsági adatok betöltése sikertelen",
-
   "aiTranslation.note": "Az alkalmazás felületét AI fordította",
-
   "help.tab.howToUse": "Használati útmutató",
   "help.tab.permissions": "Canvas jogosultságok",
   "help.tab.commonSetups": "Gyakori beállítások",
-
   "help.howToUse.step1": "Válassza ki vagy illessze be az API végpont útvonalakat, amelyeket az integrációja hív.",
   "help.howToUse.step2": "A Szükséges jogosultságok panel felsorolja az összes Canvas szerepkör-jogosultságot, amelyre az API-felhasználónak szüksége van.",
   "help.howToUse.step3": "Tekintse át az Opcionális jogosultságok részt — ezek további adatokat tesznek elérhetővé az API-válaszokban (pl. SIS-azonosítók, e-mail címek, nem publikált tartalom).",
   "help.howToUse.step4": "Állítson be egy egyéni Canvas szerepkört (vagy szerkesszen egy meglévőt) pontosan ezekkel az engedélyezett jogosultságokkal.",
-
   "help.permissions.rbac.heading": "Szerepkör-alapú hozzáférés-vezérlés",
   "help.permissions.rbac.body": "A jogosultságok szerepköröknek vannak kiosztva, nem felhasználóknak. A felhasználók jogosultságokat örökölnek beiratkozás (kurzusszerepkör) vagy fióktagság (fiókszerepkör) révén.",
-  "help.permissions.scope.heading": "Kurzus vs. Fiók hatókör",
-  "help.permissions.scope.body": "A Kurzus hatókörű jogosultságot kurzusszintű szerepkörön kell engedélyezni. A Fiók hatókörű jogosultságnak fiókszintű adminisztrátori szerepkörön kell lennie. Egyes jogosultságok mindkét szinten léteznek — a Fiók jogosultság a fiók alatti összes kurzusra vonatkozik.",
-  "help.permissions.inheritance.heading": "Jogosultság-öröklés",
-  "help.permissions.inheritance.body": "Egy fiókszintű szerepkör jogosultsággal automatikusan rendelkezik azzal a jogosultsággal a fiók alatti összes kurzusra.",
   "help.permissions.orGroups.heading": "VAGY csoportok",
   "help.permissions.orGroups.body": "Amikor az eszköz azt mutatja: \"Bármelyik a következők közül: A · B · C\", bármelyik egyetlen jogosultság a listáról elegendő. Nincs szükség mindegyikre.",
   "help.permissions.optional.heading": "Opcionális jogosultságok",
   "help.permissions.optional.body": "Egyes végpontok további adatokat adnak vissza, ha a hívónak további jogosultságai vannak. Ezek külön jelennek meg Opcionális jogosultságokként egy megjegyzéssel, ami elmagyarázza, mit tesznek elérhetővé — például SIS-azonosító mezők, e-mail címek, bejelentkezési azonosítók vagy nem publikált tartalom. A végpont ezek nélkül is működik; csak kevesebb mezőt vagy rekordot kap.",
   "help.permissions.featureFlags.heading": "Funkciózászlók",
   "help.permissions.featureFlags.body": "Kis számú jogosultsághoz szükséges, hogy egy Canvas funkciózászló engedélyezve legyen, mielőtt megjelennének a Jogosultságok felületen. Ez az egyes végpontoknál van jelezve.",
-
   "help.commonSetups.intro": "Három példa konfiguráció gyakori integrációtípusokhoz:",
   "help.commonSetups.col.type": "Integrációtípus",
   "help.commonSetups.col.permissions": "Minimális jogosultságok",
@@ -76,7 +55,6 @@
   "help.commonSetups.sis.name": "SIS integráció",
   "help.commonSetups.sis.description": "SIS importok, felhasználó-szinkronizálás",
   "help.commonSetups.optional": "opcionális",
-
   "share.copyLink": "Megosztható link másolása",
   "share.copied": "Link vágólapra másolva",
   "share.staleLink": "Elavult link",

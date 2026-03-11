@@ -1,24 +1,16 @@
 {
   "app.title": "Canvas API-machtigingenplanner",
-
   "header.help": "Help",
   "language.label": "Taal",
   "language.tooltip": "Kies een taal. Canvas-machtigingslabels worden vertaald door de Canvas-community; labels van de app-interface worden vertaald door AI.",
-
   "permissions.heading": "Vereiste machtigingen",
   "permissions.optionalHeading": "Optionele machtigingen",
   "permissions.optionalDescription": "Deze machtigingen zijn niet vereist om de endpoints aan te roepen, maar ontgrendelen extra gegevens in de antwoorden.",
   "permissions.empty": "Voeg endpoints toe om vereiste machtigingen te zien",
   "permissions.noAdditional": "Geen extra machtigingen vereist voor de geselecteerde endpoints",
-  "permissions.scopeCourse": "Cursus",
-  "permissions.scopeAccount": "Account",
-  "permissions.scopeBoth": "Cursus of Account",
   "permissions.anyOf": "Een van de volgende:",
   "permissions.anyOfTooltip": "Uw API-gebruiker heeft minstens een van deze machtigingen nodig. Een enkele is voldoende om aan deze vereiste te voldoen.",
-  "permissions.scopeCourseTooltip": "Moet ingeschakeld worden op een cursusniveaurol (bijv. Docent, Aangepaste cursusrol) voor de betreffende cursus.",
-  "permissions.scopeAccountTooltip": "Moet ingeschakeld worden op een accountniveaurol (bijv. Accountbeheerder, Aangepaste accountrol). Accountmachtigingen gelden voor alle cursussen onder dat account.",
   "permissions.optionalNote": "Deze machtigingen ontgrendelen extra gegevensvelden. Bekijk de notities om te bepalen of uw integratie ze nodig heeft.",
-
   "endpoints.heading": "Endpoints toevoegen",
   "endpoints.searchPlaceholder": "Endpoints zoeken…",
   "endpoints.pasteLabel": "Eindpunten plakken",
@@ -27,45 +19,32 @@
   "endpoints.pastePlaceholder": "Een endpoint per regel, bijv. GET /api/v1/courses/:id",
   "endpoints.unmatched": "Niet-herkende endpoints:",
   "endpoints.noResults": "Geen endpoints gevonden",
-
   "selectedEndpoints.heading": "Geselecteerde endpoints",
   "selectedEndpoints.remove": "Verwijderen",
   "common.moreInfo": "Meer informatie",
-
   "colorScheme.switchToDark": "Overschakelen naar donkere modus",
   "colorScheme.switchToLight": "Overschakelen naar lichte modus",
   "colorScheme.switchToSystem": "Overschakelen naar systeemmodus",
-
   "footer.dataVersion": "Canvas-gegevens: {{version}}",
   "footer.dataNotLoaded": "Canvas-gegevens: (niet geladen)",
   "footer.credit": "Een gratis tool van",
-
   "error.loadFailed": "Kon machtigingsgegevens niet laden",
-
   "aiTranslation.note": "App-interface vertaald door AI",
-
   "help.tab.howToUse": "Hoe te gebruiken",
   "help.tab.permissions": "Canvas-machtigingen",
   "help.tab.commonSetups": "Veelvoorkomende configuraties",
-
   "help.howToUse.step1": "Selecteer of plak de API-endpointpaden die uw integratie aanroept.",
   "help.howToUse.step2": "Het paneel Vereiste machtigingen toont alle Canvas-rolmachtigingen die uw API-gebruiker nodig heeft.",
   "help.howToUse.step3": "Bekijk de sectie Optionele machtigingen — deze ontgrendelen extra gegevens in API-antwoorden (bijv. SIS-ID's, e-mailadressen, ongepubliceerde inhoud).",
   "help.howToUse.step4": "Stel een aangepaste Canvas-rol in (of bewerk een bestaande) met precies deze machtigingen ingeschakeld.",
-
   "help.permissions.rbac.heading": "Rolgebaseerde toegangscontrole",
   "help.permissions.rbac.body": "Machtigingen worden toegekend aan rollen, niet aan gebruikers. Gebruikers erven machtigingen via inschrijving (cursusrol) of accountlidmaatschap (accountrol).",
-  "help.permissions.scope.heading": "Cursus- vs. accountbereik",
-  "help.permissions.scope.body": "Een machtiging met cursusbereik moet ingeschakeld worden op een cursusniveaurol. Een machtiging met accountbereik moet op een accountbeheerdersrol staan. Sommige machtigingen bestaan op beide niveaus — de accountmachtiging geldt voor alle cursussen onder dat account.",
-  "help.permissions.inheritance.heading": "Machtigingsovererving",
-  "help.permissions.inheritance.body": "Een accountniveaurol met een machtiging heeft automatisch die machtiging voor alle cursussen onder het account.",
   "help.permissions.orGroups.heading": "OF-groepen",
   "help.permissions.orGroups.body": "Wanneer de tool \"Een van de volgende: A · B · C\" toont, is een enkele machtiging uit de lijst voldoende. U heeft niet alle nodig.",
   "help.permissions.optional.heading": "Optionele machtigingen",
   "help.permissions.optional.body": "Sommige endpoints retourneren extra gegevens wanneer de aanroeper extra machtigingen heeft. Deze worden apart weergegeven als Optionele machtigingen met een notitie die uitlegt wat ze ontgrendelen — bijv. SIS-ID-velden, e-mailadressen, inlog-ID's of ongepubliceerde inhoud. Het endpoint werkt zonder; u krijgt alleen minder velden of records.",
   "help.permissions.featureFlags.heading": "Functievlaggen",
   "help.permissions.featureFlags.body": "Een klein aantal machtigingen vereist dat een Canvas-functievlag is ingeschakeld voordat ze verschijnen in de machtigingsinterface. Dit wordt vermeld bij de individuele endpoints.",
-
   "help.commonSetups.intro": "Drie voorbeeldconfiguraties voor veelvoorkomende integratietypes:",
   "help.commonSetups.col.type": "Integratietype",
   "help.commonSetups.col.permissions": "Minimale machtigingen",
@@ -76,7 +55,6 @@
   "help.commonSetups.sis.name": "SIS-integratie",
   "help.commonSetups.sis.description": "SIS-imports, gebruikerssynchronisatie",
   "help.commonSetups.optional": "optioneel",
-
   "share.copyLink": "Deelbare link kopiëren",
   "share.copied": "Link gekopieerd naar klembord",
   "share.staleLink": "Verouderde link",

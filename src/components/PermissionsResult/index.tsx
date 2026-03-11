@@ -12,7 +12,7 @@ import {
 } from '@mantine/core'
 import { IconInfoCircle } from '@tabler/icons-react'
 import { useAppTranslations } from '../../context/AppTranslationsContext'
-import type { AggregatedPermission, AnyOfAggregated, Scope, SingleAggregated } from '../../types'
+import type { AggregatedPermission, AnyOfAggregated, SingleAggregated } from '../../types'
 import classes from './PermissionsResult.module.css'
 
 type PermissionsResultProps = {
@@ -94,39 +94,11 @@ function AnyOfRow({ perm }: { perm: AnyOfAggregated }) {
   )
 }
 
-function scopeCategory(scope: Set<Scope>): 'course' | 'account' | 'both' {
-  const hasCourse = scope.has('Course')
-  const hasAccount = scope.has('Account')
-  if (hasCourse && !hasAccount) return 'course'
-  if (!hasCourse && hasAccount) return 'account'
-  return 'both'
-}
-
 export function PermissionsResult({ permissions, selectedCount, isLoadingLocale = false }: PermissionsResultProps) {
   const { t } = useAppTranslations()
 
   const required = permissions.filter((p) => !p.optional)
   const optional = permissions.filter((p) => p.optional)
-
-  const requiredSingles = required.filter((p): p is SingleAggregated => p.kind === 'single')
-  const requiredGroups = required.filter((p): p is AnyOfAggregated => p.kind === 'anyOf')
-
-  const singlesByScope = new Map<string, SingleAggregated[]>()
-  for (const s of requiredSingles) {
-    const cat = scopeCategory(s.scope)
-    let list = singlesByScope.get(cat)
-    if (!list) {
-      list = []
-      singlesByScope.set(cat, list)
-    }
-    list.push(s)
-  }
-
-  const scopeHeadings = {
-    course: t('permissions.scopeCourse'),
-    account: t('permissions.scopeAccount'),
-    both: t('permissions.scopeBoth'),
-  } as const
 
   const hasRequired = required.length > 0
   const hasOptional = optional.length > 0
@@ -159,32 +131,15 @@ export function PermissionsResult({ permissions, selectedCount, isLoadingLocale 
 
       {hasRequired && (
         <section>
-          {(['course', 'account', 'both'] as const).map((cat) => {
-            const singles = singlesByScope.get(cat)
-            if (!singles || singles.length === 0) return null
-            return (
-              <Box key={cat} mb="sm">
-                <Text size="xs" fw={700} c="dimmed" mb={4}>
-                  {scopeHeadings[cat]}
-                </Text>
-                <ul className={classes.permissionList}>
-                  {singles.map((perm) => (
-                    <SingleRow key={perm.symbol} perm={perm} />
-                  ))}
-                </ul>
-              </Box>
-            )
-          })}
-
-          {requiredSingles.length > 0 && requiredGroups.length > 0 && <Divider my="sm" />}
-
-          {requiredGroups.length > 0 && (
-            <ul className={classes.permissionList}>
-              {requiredGroups.map((perm, i) => (
+          <ul className={classes.permissionList}>
+            {required.map((perm, i) =>
+              perm.kind === 'single' ? (
+                <SingleRow key={perm.symbol} perm={perm} />
+              ) : (
                 <AnyOfRow key={i} perm={perm} />
-              ))}
-            </ul>
-          )}
+              ),
+            )}
+          </ul>
         </section>
       )}
 

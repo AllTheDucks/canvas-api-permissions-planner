@@ -4,7 +4,6 @@ import type {
   AggregatedPermission,
   SingleAggregated,
   AnyOfAggregated,
-  Scope,
 } from '../types';
 
 function endpointKey(e: Endpoint): string {
@@ -13,14 +12,6 @@ function endpointKey(e: Endpoint): string {
 
 function canonicalKey(symbols: string[]): string {
   return [...symbols].sort().join('|');
-}
-
-function scopeSortOrder(scope: Set<Scope>): number {
-  const hasCourse = scope.has('Course');
-  const hasAccount = scope.has('Account');
-  if (hasCourse && !hasAccount) return 0;
-  if (!hasCourse && hasAccount) return 1;
-  return 2;
 }
 
 function isSubset(sub: string[], sup: string[]): boolean {
@@ -160,10 +151,6 @@ export function aggregatePermissions(
     return localeLabels[symbol] ?? allPermissions[symbol]?.label ?? symbol;
   }
 
-  function getScope(symbol: string): Set<Scope> {
-    return allPermissions[symbol]?.scope ?? new Set<Scope>();
-  }
-
   function buildSingles(map: Map<string, Collected>, kind: 'required' | 'optional'): SingleAggregated[] {
     const result: SingleAggregated[] = [];
     for (const [symbol, data] of map) {
@@ -171,17 +158,12 @@ export function aggregatePermissions(
         kind: 'single',
         symbol,
         label: getLabel(symbol),
-        scope: getScope(symbol),
         requiredBy: data.requiredBy,
         optional: kind === 'optional',
         notes: data.notes,
       });
     }
-    result.sort((a, b) => {
-      const scopeOrder = scopeSortOrder(a.scope) - scopeSortOrder(b.scope);
-      if (scopeOrder !== 0) return scopeOrder;
-      return a.label.localeCompare(b.label);
-    });
+    result.sort((a, b) => a.label.localeCompare(b.label));
     return result;
   }
 
@@ -193,7 +175,6 @@ export function aggregatePermissions(
         options: group.options.map((symbol) => ({
           symbol,
           label: getLabel(symbol),
-          scope: getScope(symbol),
         })),
         requiredBy: group.requiredBy,
         optional: kind === 'optional',

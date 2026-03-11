@@ -4,8 +4,8 @@ import { EndpointsDataSchema } from "./endpoints";
 const validData = {
   version: "2026-02-11",
   permissions: {
-    manage_grades: { label: "Grades - edit", scope: ["Course", "Account"] },
-    read_sis: { label: "SIS Data - view", scope: ["Course", "Account"] },
+    manage_grades: { label: "Grades - edit" },
+    read_sis: { label: "SIS Data - view" },
   },
   endpoints: [
     {
@@ -31,13 +31,6 @@ describe("EndpointsDataSchema", () => {
   it("accepts valid data", () => {
     const result = EndpointsDataSchema.safeParse(validData);
     expect(result.success).toBe(true);
-  });
-
-  it("transforms scope arrays into Sets", () => {
-    const result = EndpointsDataSchema.parse(validData);
-    expect(result.permissions.manage_grades.scope).toBeInstanceOf(Set);
-    expect(result.permissions.manage_grades.scope.has("Course")).toBe(true);
-    expect(result.permissions.manage_grades.scope.has("Account")).toBe(true);
   });
 
   it("rejects missing version", () => {
@@ -109,36 +102,6 @@ describe("EndpointsDataSchema", () => {
           permissions: [{ anyOf: ["only_one"] }],
         },
       ],
-    };
-    expect(EndpointsDataSchema.safeParse(data).success).toBe(false);
-  });
-
-  it("rejects duplicate scope values", () => {
-    const data = {
-      ...validData,
-      permissions: {
-        dupe: { label: "Dupe", scope: ["Course", "Course"] },
-      },
-    };
-    expect(EndpointsDataSchema.safeParse(data).success).toBe(false);
-  });
-
-  it("rejects invalid scope value", () => {
-    const data = {
-      ...validData,
-      permissions: {
-        bad: { label: "Bad", scope: ["Global"] },
-      },
-    };
-    expect(EndpointsDataSchema.safeParse(data).success).toBe(false);
-  });
-
-  it("rejects empty scope array", () => {
-    const data = {
-      ...validData,
-      permissions: {
-        empty: { label: "Empty", scope: [] },
-      },
     };
     expect(EndpointsDataSchema.safeParse(data).success).toBe(false);
   });

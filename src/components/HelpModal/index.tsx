@@ -47,12 +47,6 @@ export function HelpModal() {
             <Title order={4} mb="xs">{t('help.permissions.rbac.heading')}</Title>
             <Text mb="md">{t('help.permissions.rbac.body')}</Text>
 
-            <Title order={4} mb="xs">{t('help.permissions.scope.heading')}</Title>
-            <Text mb="md">{t('help.permissions.scope.body')}</Text>
-
-            <Title order={4} mb="xs">{t('help.permissions.inheritance.heading')}</Title>
-            <Text mb="md">{t('help.permissions.inheritance.body')}</Text>
-
             <Title order={4} mb="xs">{t('help.permissions.orGroups.heading')}</Title>
             <Text mb="md">{t('help.permissions.orGroups.body')}</Text>
 

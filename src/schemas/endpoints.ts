@@ -1,18 +1,7 @@
 import { z } from "zod";
 
-const ScopeSchema = z.enum(["Account", "Course"]);
-
-const ScopeArraySchema = z
-  .array(ScopeSchema)
-  .min(1)
-  .refine((arr) => new Set(arr).size === arr.length, {
-    message: "Scope values must be distinct",
-  })
-  .transform((arr) => new Set(arr));
-
 const PermissionRefSchema = z.object({
   label: z.string(),
-  scope: ScopeArraySchema,
 });
 
 const SinglePermissionSchema = z.object({

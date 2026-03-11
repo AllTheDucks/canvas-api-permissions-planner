@@ -69,7 +69,7 @@
 - [ ] `src/components/EndpointPaste/EndpointPaste.stories.tsx` — Default, WithUnmatched, WithMultipleMethodMatches
 - [x] `src/components/SelectedEndpoints/index.tsx` — props: `{ selected, onRemove: (endpoint) => void, onLastRemoved?: () => void }`; display selected endpoints with remove controls; badge text truncated at `max-width: 280px` with ellipsis, full path shown in `Tooltip`; endpoints with a `notes` field show an `IconInfoCircle` + Mantine `Tooltip` on the badge; each remove button needs `aria-label="${t('selectedEndpoints.remove')} METHOD /path"`; on removal focus moves to: next badge → previous badge → calls `onLastRemoved` (App.tsx then focuses EndpointSelector search input); renders nothing when `selected` is empty
 - [ ] `src/components/SelectedEndpoints/SelectedEndpoints.stories.tsx` — Empty, WithItems, WithNotes
-- [x] `src/components/PermissionsResult/index.tsx` — two sections: Required Permissions (singles in three scope sections + OR groups) and Optional Permissions (flat list with notes in dimmed text); each section suppressed when empty; `<Divider />` between sections when both present; each OR group row: `[ⓘ] Any one of: Label [scope] · Label [scope]` with scope badge per option (not per row); optional permission rows show `notes[]` below label as `Text size="xs" c="dimmed"`; add `aria-live="polite"` `aria-atomic="false"` on the container; add `aria-busy="true"` during locale fetch
+- [x] `src/components/PermissionsResult/index.tsx` — two sections: Required Permissions (singles alphabetically + OR groups) and Optional Permissions (flat list with notes in dimmed text); each section suppressed when empty; `<Divider />` between sections when both present; each OR group row: `[ⓘ] Any one of: Label · Label` per option; optional permission rows show `notes[]` below label as `Text size="xs" c="dimmed"`; add `aria-live="polite"` `aria-atomic="false"` on the container; add `aria-busy="true"` during locale fetch; scope field removed (Canvas permissions are either account-only or available at both levels — no course-only category exists)
 - [ ] `src/components/PermissionsResult/PermissionsResult.stories.tsx` — Empty, SinglesOnly, WithAnyOfGroup, Mixed, WithOptionalPermissions
 - [x] `src/App.tsx` — wire all components into the two-panel layout; use `<header>`, `<main>`, `<footer>` landmarks; heading hierarchy: `<h1>` app title, `<h2>` panel headings, `<h3>` subsections; implement `handleToggleEndpoint` (single handler passed to `EndpointSelector` as `onToggle` and `SelectedEndpoints` as `onRemove`); pass `aggregatePermissions(selectedEndpoints, allPermissions, localeLabels)` result to `<PermissionsResult>`
 
@@ -119,8 +119,6 @@
 - [ ] `src/components/HelpModal/HelpModal.stories.tsx` — Closed (default), Open
 - [x] Add `[?]` HelpModal trigger to the `App.tsx` header (next to LanguagePicker)
 - [ ] `PermissionsResult` contextual tooltips:
-  - **Course** scope badge tooltip: course-level role explanation
-  - **Account** scope badge tooltip: account-level role explanation
   - OR group row info icon: "any one is sufficient" explanation
   - Permission label tooltip listing contributing endpoints (`requiredBy` array)
 - [ ] `EndpointPaste` info icon tooltip explaining accepted input formats

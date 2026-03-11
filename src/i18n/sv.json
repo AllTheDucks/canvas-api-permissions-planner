@@ -1,24 +1,16 @@
 {
   "app.title": "Canvas API-behoerighetsplanerare",
-
   "header.help": "Hjalp",
   "language.label": "Sprak",
   "language.tooltip": "Valj ett sprak. Canvas-behoerighetsetiketter oversatts av Canvas-gemenskapen; appens granssnittsetiketter oversatts av AI.",
-
   "permissions.heading": "Noedvaendiga behorigheter",
   "permissions.optionalHeading": "Valfria behorigheter",
   "permissions.optionalDescription": "Dessa behorigheter kravs inte foer att anropa endpunkterna, men de laaser upp ytterligare data i svaren.",
   "permissions.empty": "Laegg till endpunkter foer att se noedvaendiga behorigheter",
   "permissions.noAdditional": "Inga ytterligare behorigheter kravs foer de valda endpunkterna",
-  "permissions.scopeCourse": "Kurs",
-  "permissions.scopeAccount": "Konto",
-  "permissions.scopeBoth": "Kurs eller Konto",
   "permissions.anyOf": "Nagon av foeljande:",
   "permissions.anyOfTooltip": "Din API-anvandare behoever minst en av dessa behorigheter. En enda raecker foer att uppfylla detta krav.",
-  "permissions.scopeCourseTooltip": "Maaste aktiveras paa en kursnivaaroll (t.ex. Laerare, Anpassad kursroll) foer den aktuella kursen.",
-  "permissions.scopeAccountTooltip": "Maaste aktiveras paa en kontonivaaroll (t.ex. Kontoadministratoer, Anpassad kontoroll). Kontobehorigheter taecker alla kurser under det kontot.",
   "permissions.optionalNote": "Dessa behorigheter laaser upp ytterligare datafaelt. Granska anteckningarna foer att avgora om din integration behoever dem.",
-
   "endpoints.heading": "Laegg till endpunkter",
   "endpoints.searchPlaceholder": "Soek endpunkter…",
   "endpoints.pasteLabel": "Klistra in slutpunkter",
@@ -27,45 +19,32 @@
   "endpoints.pastePlaceholder": "En endpunkt per rad, t.ex. GET /api/v1/courses/:id",
   "endpoints.unmatched": "Okaenda endpunkter:",
   "endpoints.noResults": "Inga endpunkter hittades",
-
   "selectedEndpoints.heading": "Valda endpoints",
   "selectedEndpoints.remove": "Ta bort",
   "common.moreInfo": "Mer information",
-
   "colorScheme.switchToDark": "Byt till moerkt laege",
   "colorScheme.switchToLight": "Byt till ljust laege",
   "colorScheme.switchToSystem": "Byt till systemlaege",
-
   "footer.dataVersion": "Canvas-data: {{version}}",
   "footer.dataNotLoaded": "Canvas-data: (inte laddad)",
   "footer.credit": "Ett gratis verktyg fran",
-
   "error.loadFailed": "Kunde inte ladda behorighetsdata",
-
   "aiTranslation.note": "Appens graenssnitt oversatt av AI",
-
   "help.tab.howToUse": "Hur man anvaender",
   "help.tab.permissions": "Canvas-behorigheter",
   "help.tab.commonSetups": "Vanliga konfigurationer",
-
   "help.howToUse.step1": "Vaelj eller klistra in API-endpunktsoekvaegarna som din integration anropar.",
   "help.howToUse.step2": "Panelen Noedvaendiga behorigheter listar alla Canvas-rollbehorigheter som din API-anvandare behoever.",
   "help.howToUse.step3": "Granska avsnittet Valfria behorigheter — dessa laaser upp ytterligare data i API-svar (t.ex. SIS-ID:n, e-postadresser, opublicerat innehaall).",
   "help.howToUse.step4": "Konfigurera en anpassad Canvas-roll (eller redigera en befintlig) med exakt dessa behorigheter aktiverade.",
-
   "help.permissions.rbac.heading": "Rollbaserad aatkomstkontroll",
   "help.permissions.rbac.body": "Behorigheter tilldelas roller, inte anvaendare. Anvaendare aervet behorigheter via registrering (kursroll) eller kontomedlemskap (kontoroll).",
-  "help.permissions.scope.heading": "Kurs- vs. kontoomfaang",
-  "help.permissions.scope.body": "En behorighet med kursomfaang maaste aktiveras paa en kursnivaaroll. En behorighet med kontoomfaang maaste finnas paa en kontoadministratoersroll. Vissa behorigheter finns paa baada nivaerna — kontobehoerigheten taecker alla kurser under det kontot.",
-  "help.permissions.inheritance.heading": "Behorighetsarv",
-  "help.permissions.inheritance.body": "En kontonivaaroll med en behorighet har automatiskt den behoerigheten foer alla kurser under kontot.",
   "help.permissions.orGroups.heading": "ELLER-grupper",
   "help.permissions.orGroups.body": "Naer verktyget visar \"Nagon av foeljande: A · B · C\" raecker en enda behorighet fran listan. Du behoever inte alla.",
   "help.permissions.optional.heading": "Valfria behorigheter",
   "help.permissions.optional.body": "Vissa endpunkter returnerar extra data naer anroparen har ytterligare behorigheter. Dessa visas separat som Valfria behorigheter med en anteckning som foerklarar vad de laaser upp — t.ex. SIS-ID-faelt, e-postadresser, inloggnings-ID:n eller opublicerat innehaall. Endpunkten fungerar utan dem; du faar bara faerre faelt eller poster.",
   "help.permissions.featureFlags.heading": "Funktionsflaggor",
   "help.permissions.featureFlags.body": "Ett litet antal behorigheter kraever att en Canvas-funktionsflagga aer aktiverad innan de visas i behorighetsgraenssnittet. Detta noteras paa de enskilda endpunkterna.",
-
   "help.commonSetups.intro": "Tre exempelkonfigurationer foer vanliga integrationstyper:",
   "help.commonSetups.col.type": "Integrationstyp",
   "help.commonSetups.col.permissions": "Minimibehorigheter",
@@ -76,7 +55,6 @@
   "help.commonSetups.sis.name": "SIS-integration",
   "help.commonSetups.sis.description": "SIS-import, anvaendarsynkronisering",
   "help.commonSetups.optional": "valfri",
-
   "share.copyLink": "Kopiera delbar länk",
   "share.copied": "Länk kopierad till urklipp",
   "share.staleLink": "Föråldrad länk",

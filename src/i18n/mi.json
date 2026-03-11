@@ -1,24 +1,16 @@
 {
   "app.title": "Canvas API Kaiwhakamahere Whakaaetanga",
-
   "header.help": "Awhina",
   "language.label": "Reo",
   "language.tooltip": "Kwhiria he reo. Ko nga tapanga whakaaetanga Canvas ka whakamaoritia e te hapori Canvas; ko nga tapanga atanga o te taupanga ka whakamaoritia e te AI.",
-
   "permissions.heading": "Nga Whakaaetanga E Hiahiatia Ana",
   "permissions.optionalHeading": "Nga Whakaaetanga Whiringa",
   "permissions.optionalDescription": "Kaore enei whakaaetanga e hiahiatia ana mo te karanga i nga pito mutunga, engari ka whakatuwhera i nga raraunga taapiri i roto i nga whakautu.",
   "permissions.empty": "Tapirihia nga pito mutunga kia kitea nga whakaaetanga e hiahiatia ana",
   "permissions.noAdditional": "Kaore he whakaaetanga taapiri e hiahiatia ana mo nga pito mutunga kua tohua",
-  "permissions.scopeCourse": "Akoranga",
-  "permissions.scopeAccount": "Putea",
-  "permissions.scopeBoth": "Akoranga, Putea ranei",
   "permissions.anyOf": "Tetahi o enei:",
   "permissions.anyOfTooltip": "Me whai to kaiwhakamahi API i tetahi o enei whakaaetanga. Kotahi noa te whakaaetanga e rawaka ana hei whakatutuki i tenei whakaritenga.",
-  "permissions.scopeCourseTooltip": "Me whakahohe i runga i tetahi mahi taumata akoranga (hei tauira Kaiako, Mahi Akoranga Ritenga) mo te akoranga e pa ana.",
-  "permissions.scopeAccountTooltip": "Me whakahohe i runga i tetahi mahi taumata putea (hei tauira Kaiwhakahaere Putea, Mahi Putea Ritenga). Ka kapi nga tuku taumata putea i nga akoranga katoa i raro i taua putea.",
   "permissions.optionalNote": "Ka whakatuwhera enei whakaaetanga i nga papa raraunga taapiri. Tirohia nga tuhipoka kia mohio ai mehemea e hiahiatia ana e to hononga.",
-
   "endpoints.heading": "Tapiri Pito Mutunga",
   "endpoints.searchPlaceholder": "Rapu pito mutunga…",
   "endpoints.pasteLabel": "Whakapiri Tūmutumu",
@@ -27,45 +19,32 @@
   "endpoints.pastePlaceholder": "Kotahi pito mutunga ia raina, hei tauira GET /api/v1/courses/:id",
   "endpoints.unmatched": "Nga pito mutunga kaore i mohiotia:",
   "endpoints.noResults": "Kaore he pito mutunga i kitea",
-
   "selectedEndpoints.heading": "Ngā mutunga kua tīpakohia",
   "selectedEndpoints.remove": "Tangohia",
   "common.moreInfo": "Korero taapiri",
-
   "colorScheme.switchToDark": "Huri ki te ahua pouri",
   "colorScheme.switchToLight": "Huri ki te ahua marama",
   "colorScheme.switchToSystem": "Huri ki te ahua punaha",
-
   "footer.dataVersion": "Raraunga Canvas: {{version}}",
   "footer.dataNotLoaded": "Raraunga Canvas: (kaore i utaina)",
   "footer.credit": "He taputapu koreutu na",
-
   "error.loadFailed": "I rahua te uta i nga raraunga whakaaetanga",
-
   "aiTranslation.note": "Ko te atanga o te taupanga i whakamaoritia e te AI",
-
   "help.tab.howToUse": "Me pehea te whakamahi",
   "help.tab.permissions": "Nga whakaaetanga Canvas",
   "help.tab.commonSetups": "Nga whakaritenga noa",
-
   "help.howToUse.step1": "Kwhiria, whakapiri ranei i nga ara pito mutunga API e karangahia ana e to hononga.",
   "help.howToUse.step2": "Ka whakaatu te paanui Whakaaetanga E Hiahiatia Ana i nga whakaaetanga mahi Canvas katoa e hiahiatia ana e to kaiwhakamahi API.",
   "help.howToUse.step3": "Tirohia te wahanga Whakaaetanga Whiringa — ka whakatuwhera enei i nga raraunga taapiri i roto i nga whakautu API (hei tauira SIS ID, wahitau imeera, ihirangi kaore ano kia tukuna).",
   "help.howToUse.step4": "Whakaritea he mahi Canvas ritenga (whakatikahia ranei tetahi e noho ana) me enei whakaaetanga e whakahohengia ana.",
-
   "help.permissions.rbac.heading": "Te Whakahaere Urunga I Runga I Nga Mahi",
   "help.permissions.rbac.body": "Ka tukuna nga whakaaetanga ki nga mahi, ehara ki nga kaiwhakamahi. Ka whiwhi nga kaiwhakamahi i nga whakaaetanga ma te rehitatanga (mahi akoranga) me te mema putea (mahi putea).",
-  "help.permissions.scope.heading": "Te horahanga Akoranga vs. Putea",
-  "help.permissions.scope.body": "Me whakahohe te whakaaetanga horahanga Akoranga i runga i tetahi mahi taumata akoranga. Me noho te whakaaetanga horahanga Putea i runga i tetahi mahi kaiwhakahaere taumata putea. Ko etahi whakaaetanga e noho ana i nga taumata e rua — ka kapi te tuku Putea i nga akoranga katoa i raro i taua putea.",
-  "help.permissions.inheritance.heading": "Te tuku iho o nga whakaaetanga",
-  "help.permissions.inheritance.body": "Ko te mahi taumata putea me te whakaaetanga ka whai aunoa i taua whakaaetanga mo nga akoranga katoa i raro i te putea.",
   "help.permissions.orGroups.heading": "Nga ropu OR",
   "help.permissions.orGroups.body": "Ina whakaatu te taputapu i te \"Tetahi o enei: A · B · C\", ka rawaka tetahi whakaaetanga kotahi mai i taua rarangi. Kaore e hiahiatia katoa.",
   "help.permissions.optional.heading": "Nga whakaaetanga whiringa",
   "help.permissions.optional.body": "Ka whakahoki etahi pito mutunga i nga raraunga taapiri ina whai whakaaetanga taapiri te kaikaranga. Ka whakaaturia enei motuhake hei Whakaaetanga Whiringa me tetahi tuhipoka e whakamarama ana i te mea e whakatuwheratia ana — hei tauira, nga papa SIS ID, nga wahitau imeera, nga ID takiuru, nga ihirangi kaore ano kia tukuna ranei. Ka mahi te pito mutunga me te kore o enei; ka iti noa iho nga papa me nga rekoata e whiwhi ana.",
   "help.permissions.featureFlags.heading": "Nga haki ahuatanga",
   "help.permissions.featureFlags.body": "He iti noa nga whakaaetanga e hiahia ana kia whakahohengia te haki ahuatanga Canvas i mua i to ratou putanga i te atanga Whakaaetanga. Ka tuhia tenei i nga pito mutunga takitahi.",
-
   "help.commonSetups.intro": "E toru nga tauira whakaritenga mo nga momo hononga noa:",
   "help.commonSetups.col.type": "Momo hononga",
   "help.commonSetups.col.permissions": "Nga whakaaetanga iti rawa",
@@ -76,7 +55,6 @@
   "help.commonSetups.sis.name": "Hononga SIS",
   "help.commonSetups.sis.description": "Kawemai SIS, tukutahi kaiwhakamahi",
   "help.commonSetups.optional": "whiringa",
-
   "share.copyLink": "Tāruatia te hononga tiritahi",
   "share.copied": "Kua tāruatia te hononga ki te papatopenga",
   "share.staleLink": "Hononga tawhito",

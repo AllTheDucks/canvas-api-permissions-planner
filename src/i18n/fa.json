@@ -1,24 +1,16 @@
 {
   "app.title": "برنامه‌ریز مجوزهای Canvas API",
-
   "header.help": "راهنما",
   "language.label": "زبان",
   "language.tooltip": "یک زبان انتخاب کنید. برچسب‌های مجوز Canvas توسط جامعه Canvas ترجمه می‌شوند؛ برچسب‌های رابط برنامه توسط هوش مصنوعی ترجمه می‌شوند.",
-
   "permissions.heading": "مجوزهای الزامی",
   "permissions.optionalHeading": "مجوزهای اختیاری",
   "permissions.optionalDescription": "این مجوزها برای فراخوانی endpointها الزامی نیستند، اما داده‌های اضافی را در پاسخ‌ها فعال می‌کنند.",
   "permissions.empty": "endpointها را اضافه کنید تا مجوزهای الزامی نمایش داده شوند",
   "permissions.noAdditional": "مجوز اضافی برای endpointهای انتخاب‌شده لازم نیست",
-  "permissions.scopeCourse": "درس",
-  "permissions.scopeAccount": "حساب",
-  "permissions.scopeBoth": "درس یا حساب",
   "permissions.anyOf": "هر یک از:",
   "permissions.anyOfTooltip": "کاربر API شما حداقل به یکی از این مجوزها نیاز دارد. هر کدام به تنهایی برای برآورده کردن این نیاز کافی است.",
-  "permissions.scopeCourseTooltip": "باید در یک نقش سطح درس (مثلاً مدرس، نقش سفارشی درس) برای درس مربوطه فعال شود.",
-  "permissions.scopeAccountTooltip": "باید در یک نقش سطح حساب (مثلاً مدیر حساب، نقش سفارشی حساب) فعال شود. مجوزهای سطح حساب تمام درس‌های زیرمجموعه آن حساب را پوشش می‌دهند.",
   "permissions.optionalNote": "این مجوزها فیلدهای داده اضافی را فعال می‌کنند. یادداشت‌ها را بررسی کنید تا تصمیم بگیرید آیا یکپارچه‌سازی شما به آنها نیاز دارد.",
-
   "endpoints.heading": "افزودن Endpointها",
   "endpoints.searchPlaceholder": "جستجوی endpointها…",
   "endpoints.pasteLabel": "چسباندن نقاط پایانی",
@@ -27,45 +19,32 @@
   "endpoints.pastePlaceholder": "یک endpoint در هر خط، مثال GET /api/v1/courses/:id",
   "endpoints.unmatched": "endpointهای ناشناخته:",
   "endpoints.noResults": "هیچ endpointی یافت نشد",
-
   "selectedEndpoints.heading": "نقاط پایانی انتخاب‌شده",
   "selectedEndpoints.remove": "حذف",
   "common.moreInfo": "اطلاعات بیشتر",
-
   "colorScheme.switchToDark": "تغییر به حالت تاریک",
   "colorScheme.switchToLight": "تغییر به حالت روشن",
   "colorScheme.switchToSystem": "تغییر به حالت سیستم",
-
   "footer.dataVersion": "داده‌های Canvas: {{version}}",
   "footer.dataNotLoaded": "داده‌های Canvas: (بارگذاری نشده)",
   "footer.credit": "یک ابزار رایگان از",
-
   "error.loadFailed": "بارگذاری داده‌های مجوز ناموفق بود",
-
   "aiTranslation.note": "رابط برنامه توسط هوش مصنوعی ترجمه شده است",
-
   "help.tab.howToUse": "نحوه استفاده",
   "help.tab.permissions": "مجوزهای Canvas",
   "help.tab.commonSetups": "تنظیمات رایج",
-
   "help.howToUse.step1": "مسیرهای endpoint API که یکپارچه‌سازی شما فراخوانی می‌کند را انتخاب یا بچسبانید.",
   "help.howToUse.step2": "پنل مجوزهای الزامی تمام مجوزهای نقش Canvas را که کاربر API شما نیاز دارد فهرست می‌کند.",
   "help.howToUse.step3": "بخش مجوزهای اختیاری را بررسی کنید — اینها داده‌های اضافی را در پاسخ‌های API فعال می‌کنند (مثلاً شناسه‌های SIS، آدرس‌های ایمیل، محتوای منتشرنشده).",
   "help.howToUse.step4": "یک نقش سفارشی Canvas ایجاد کنید (یا یک نقش موجود را ویرایش کنید) با دقیقاً همین مجوزها فعال‌شده.",
-
   "help.permissions.rbac.heading": "کنترل دسترسی مبتنی بر نقش",
   "help.permissions.rbac.body": "مجوزها به نقش‌ها اعطا می‌شوند، نه به کاربران. کاربران مجوزها را از طریق ثبت‌نام (نقش درس) یا عضویت حساب (نقش حساب) به ارث می‌برند.",
-  "help.permissions.scope.heading": "محدوده درس در مقابل حساب",
-  "help.permissions.scope.body": "یک مجوز با محدوده درس باید در یک نقش سطح درس فعال شود. یک مجوز با محدوده حساب باید در یک نقش مدیر سطح حساب باشد. برخی مجوزها در هر دو سطح وجود دارند — اعطای حساب تمام درس‌های زیرمجموعه آن حساب را پوشش می‌دهد.",
-  "help.permissions.inheritance.heading": "وراثت مجوزها",
-  "help.permissions.inheritance.body": "یک نقش سطح حساب با یک مجوز به‌طور خودکار آن مجوز را برای تمام درس‌های زیرمجموعه حساب دارد.",
   "help.permissions.orGroups.heading": "گروه‌های OR",
   "help.permissions.orGroups.body": "وقتی ابزار \"هر یک از: الف · ب · پ\" را نشان می‌دهد، هر مجوز واحدی از آن لیست کافی است. به همه آنها نیاز ندارید.",
   "help.permissions.optional.heading": "مجوزهای اختیاری",
   "help.permissions.optional.body": "برخی endpointها داده‌های اضافی برمی‌گردانند وقتی فراخوان‌کننده مجوزهای بیشتری داشته باشد. اینها به‌طور جداگانه به‌عنوان مجوزهای اختیاری با یادداشتی نشان داده می‌شوند که توضیح می‌دهد چه چیزی را فعال می‌کنند — مثلاً فیلدهای شناسه SIS، آدرس‌های ایمیل، شناسه‌های ورود، یا محتوای منتشرنشده. endpoint بدون آنها کار می‌کند؛ فقط فیلدها یا رکوردهای کمتری دریافت می‌کنید.",
   "help.permissions.featureFlags.heading": "پرچم‌های ویژگی",
   "help.permissions.featureFlags.body": "تعداد کمی از مجوزها نیاز دارند که یک پرچم ویژگی Canvas قبل از نمایش در رابط مجوزها فعال شود. این موضوع در endpointهای مربوطه ذکر شده است.",
-
   "help.commonSetups.intro": "سه نمونه پیکربندی برای انواع رایج یکپارچه‌سازی:",
   "help.commonSetups.col.type": "نوع یکپارچه‌سازی",
   "help.commonSetups.col.permissions": "حداقل مجوزها",
@@ -76,7 +55,6 @@
   "help.commonSetups.sis.name": "یکپارچه‌سازی SIS",
   "help.commonSetups.sis.description": "واردات SIS، همگام‌سازی کاربران",
   "help.commonSetups.optional": "اختیاری",
-
   "share.copyLink": "کپی لینک اشتراک‌گذاری",
   "share.copied": "لینک در کلیپ‌بورد کپی شد",
   "share.staleLink": "لینک قدیمی",

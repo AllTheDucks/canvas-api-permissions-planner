@@ -1,24 +1,16 @@
 {
   "app.title": "Planejador de Permissoes Canvas API",
-
   "header.help": "Ajuda",
   "language.label": "Idioma",
   "language.tooltip": "Escolha um idioma. Os rotulos de permissoes do Canvas sao traduzidos pela comunidade Canvas; os rotulos da interface do app sao traduzidos por IA.",
-
   "permissions.heading": "Permissoes Obrigatorias",
   "permissions.optionalHeading": "Permissoes Opcionais",
   "permissions.optionalDescription": "Essas permissoes nao sao obrigatorias para chamar os endpoints, mas desbloqueiam dados adicionais nas respostas.",
   "permissions.empty": "Adicione endpoints para ver as permissoes obrigatorias",
   "permissions.noAdditional": "Nenhuma permissao adicional necessaria para os endpoints selecionados",
-  "permissions.scopeCourse": "Curso",
-  "permissions.scopeAccount": "Conta",
-  "permissions.scopeBoth": "Curso ou Conta",
   "permissions.anyOf": "Qualquer uma de:",
   "permissions.anyOfTooltip": "Seu usuario da API precisa de pelo menos uma dessas permissoes. Qualquer uma e suficiente para atender a esse requisito.",
-  "permissions.scopeCourseTooltip": "Deve ser ativada em um papel no nivel do curso (ex: Professor, Papel de Curso Personalizado) para o curso relevante.",
-  "permissions.scopeAccountTooltip": "Deve ser ativada em um papel no nivel da conta (ex: Administrador da Conta, Papel de Conta Personalizado). Permissoes no nivel da conta cobrem todos os cursos dessa conta.",
   "permissions.optionalNote": "Essas permissoes desbloqueiam campos de dados adicionais. Confira as notas para decidir se sua integracao precisa delas.",
-
   "endpoints.heading": "Adicionar Endpoints",
   "endpoints.searchPlaceholder": "Buscar endpoints…",
   "endpoints.pasteLabel": "Colar endpoints",
@@ -27,45 +19,32 @@
   "endpoints.pastePlaceholder": "Um endpoint por linha, ex: GET /api/v1/courses/:id",
   "endpoints.unmatched": "Endpoints nao reconhecidos:",
   "endpoints.noResults": "Nenhum endpoint encontrado",
-
   "selectedEndpoints.heading": "Endpoints selecionados",
   "selectedEndpoints.remove": "Remover",
   "common.moreInfo": "Mais informacoes",
-
   "colorScheme.switchToDark": "Mudar para modo escuro",
   "colorScheme.switchToLight": "Mudar para modo claro",
   "colorScheme.switchToSystem": "Mudar para modo do sistema",
-
   "footer.dataVersion": "Dados do Canvas: {{version}}",
   "footer.dataNotLoaded": "Dados do Canvas: (nao carregados)",
   "footer.credit": "Uma ferramenta gratuita de",
-
   "error.loadFailed": "Falha ao carregar dados de permissoes",
-
   "aiTranslation.note": "Interface do app traduzida por IA",
-
   "help.tab.howToUse": "Como usar",
   "help.tab.permissions": "Permissoes do Canvas",
   "help.tab.commonSetups": "Configuracoes comuns",
-
   "help.howToUse.step1": "Selecione ou cole os caminhos dos endpoints de API que sua integracao chama.",
   "help.howToUse.step2": "O painel de Permissoes Obrigatorias lista todas as permissoes de papel do Canvas que seu usuario de API precisa.",
   "help.howToUse.step3": "Confira a secao de Permissoes Opcionais — elas desbloqueiam dados adicionais nas respostas da API (ex: IDs SIS, enderecos de e-mail, conteudo nao publicado).",
   "help.howToUse.step4": "Configure um papel personalizado no Canvas (ou edite um existente) com exatamente essas permissoes ativadas.",
-
   "help.permissions.rbac.heading": "Controle de Acesso Baseado em Papeis",
   "help.permissions.rbac.body": "Permissoes sao concedidas a papeis, nao a usuarios. Usuarios herdam permissoes por meio de inscricao (papel de curso) ou associacao a conta (papel de conta).",
-  "help.permissions.scope.heading": "Escopo de Curso vs. Conta",
-  "help.permissions.scope.body": "Uma permissao com escopo de Curso deve ser ativada em um papel no nivel do curso. Uma permissao com escopo de Conta deve estar em um papel de administrador no nivel da conta. Algumas permissoes existem em ambos os niveis — a concessao de Conta cobre todos os cursos dessa conta.",
-  "help.permissions.inheritance.heading": "Heranca de permissoes",
-  "help.permissions.inheritance.body": "Um papel no nivel da conta com uma permissao automaticamente tem essa permissao para todos os cursos da conta.",
   "help.permissions.orGroups.heading": "Grupos OU",
   "help.permissions.orGroups.body": "Quando a ferramenta mostra \"Qualquer uma de: A · B · C\", qualquer permissao individual da lista e suficiente. Voce nao precisa de todas.",
   "help.permissions.optional.heading": "Permissoes opcionais",
   "help.permissions.optional.body": "Alguns endpoints retornam dados extras quando o chamador tem permissoes adicionais. Elas sao exibidas separadamente como Permissoes Opcionais com uma nota explicando o que desbloqueiam — por exemplo, campos de ID SIS, enderecos de e-mail, IDs de login ou conteudo nao publicado. O endpoint funciona sem elas; voce so recebe menos campos ou registros.",
   "help.permissions.featureFlags.heading": "Flags de funcionalidades",
   "help.permissions.featureFlags.body": "Um pequeno numero de permissoes requer que uma flag de funcionalidade do Canvas esteja ativada antes de aparecerem na interface de Permissoes. Isso e indicado nos endpoints individuais.",
-
   "help.commonSetups.intro": "Tres exemplos de configuracao para tipos de integracao comuns:",
   "help.commonSetups.col.type": "Tipo de integracao",
   "help.commonSetups.col.permissions": "Permissoes minimas",
@@ -76,7 +55,6 @@
   "help.commonSetups.sis.name": "Integracao SIS",
   "help.commonSetups.sis.description": "Importacoes SIS, sincronizacao de usuarios",
   "help.commonSetups.optional": "opcional",
-
   "share.copyLink": "Copiar link compartilhável",
   "share.copied": "Link copiado para a área de transferência",
   "share.staleLink": "Link desatualizado",

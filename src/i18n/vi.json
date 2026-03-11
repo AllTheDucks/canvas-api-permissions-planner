@@ -1,24 +1,16 @@
 {
   "app.title": "Cong cu lap ke hoach quyen Canvas API",
-
   "header.help": "Tro giup",
   "language.label": "Ngon ngu",
   "language.tooltip": "Chon ngon ngu. Nhan quyen Canvas duoc dich boi cong dong Canvas; nhan giao dien ung dung duoc dich boi AI.",
-
   "permissions.heading": "Quyen bat buoc",
   "permissions.optionalHeading": "Quyen tuy chon",
   "permissions.optionalDescription": "Cac quyen nay khong bat buoc de goi endpoint, nhung mo khoa du lieu bo sung trong cac phan hoi.",
   "permissions.empty": "Them endpoint de xem cac quyen bat buoc",
   "permissions.noAdditional": "Khong can quyen bo sung cho cac endpoint da chon",
-  "permissions.scopeCourse": "Khoa hoc",
-  "permissions.scopeAccount": "Tai khoan",
-  "permissions.scopeBoth": "Khoa hoc hoac Tai khoan",
   "permissions.anyOf": "Bat ky quyen nao:",
   "permissions.anyOfTooltip": "Nguoi dung API cua ban can it nhat mot trong cac quyen nay. Bat ky quyen don le nao cung du de dap ung yeu cau nay.",
-  "permissions.scopeCourseTooltip": "Phai duoc bat tren vai tro cap khoa hoc (vd: Giao vien, Vai tro khoa hoc tuy chinh) cho khoa hoc lien quan.",
-  "permissions.scopeAccountTooltip": "Phai duoc bat tren vai tro cap tai khoan (vd: Quan tri vien tai khoan, Vai tro tai khoan tuy chinh). Quyen cap tai khoan ap dung cho tat ca khoa hoc duoi tai khoan do.",
   "permissions.optionalNote": "Cac quyen nay mo khoa cac truong du lieu bo sung. Xem xet cac ghi chu de quyet dinh tich hop cua ban co can chung khong.",
-
   "endpoints.heading": "Them Endpoint",
   "endpoints.searchPlaceholder": "Tim kiem endpoint…",
   "endpoints.pasteLabel": "Dán điểm cuối",
@@ -27,45 +19,32 @@
   "endpoints.pastePlaceholder": "Mot endpoint moi dong, vd: GET /api/v1/courses/:id",
   "endpoints.unmatched": "Endpoint khong nhan dang:",
   "endpoints.noResults": "Khong tim thay endpoint",
-
   "selectedEndpoints.heading": "Endpoint đã chọn",
   "selectedEndpoints.remove": "Xoa",
   "common.moreInfo": "Them thong tin",
-
   "colorScheme.switchToDark": "Chuyen sang che do toi",
   "colorScheme.switchToLight": "Chuyen sang che do sang",
   "colorScheme.switchToSystem": "Chuyen sang che do he thong",
-
   "footer.dataVersion": "Du lieu Canvas: {{version}}",
   "footer.dataNotLoaded": "Du lieu Canvas: (chua tai)",
   "footer.credit": "Cong cu mien phi tu",
-
   "error.loadFailed": "Khong the tai du lieu quyen",
-
   "aiTranslation.note": "Giao dien ung dung duoc dich boi AI",
-
   "help.tab.howToUse": "Cach su dung",
   "help.tab.permissions": "Quyen Canvas",
   "help.tab.commonSetups": "Cau hinh pho bien",
-
   "help.howToUse.step1": "Chon hoac dan cac duong dan endpoint API ma tich hop cua ban goi.",
   "help.howToUse.step2": "Bang Quyen bat buoc liet ke tat ca quyen vai tro Canvas ma nguoi dung API cua ban can.",
   "help.howToUse.step3": "Xem xet phan Quyen tuy chon — cac quyen nay mo khoa du lieu bo sung trong phan hoi API (vd: SIS ID, dia chi email, noi dung chua xuat ban).",
   "help.howToUse.step4": "Thiet lap vai tro Canvas tuy chinh (hoac chinh sua vai tro hien co) voi chinh xac cac quyen nay duoc bat.",
-
   "help.permissions.rbac.heading": "Kiem soat truy cap dua tren vai tro",
   "help.permissions.rbac.body": "Quyen duoc cap cho vai tro, khong phai nguoi dung. Nguoi dung thua ke quyen thong qua ghi danh (vai tro khoa hoc) hoac thanh vien tai khoan (vai tro tai khoan).",
-  "help.permissions.scope.heading": "Pham vi Khoa hoc va Tai khoan",
-  "help.permissions.scope.body": "Quyen pham vi Khoa hoc phai duoc bat tren vai tro cap khoa hoc. Quyen pham vi Tai khoan phai tren vai tro quan tri vien cap tai khoan. Mot so quyen ton tai o ca hai cap — cap Tai khoan ap dung cho tat ca khoa hoc duoi tai khoan do.",
-  "help.permissions.inheritance.heading": "Thua ke quyen",
-  "help.permissions.inheritance.body": "Vai tro cap tai khoan co quyen tu dong co quyen do cho tat ca khoa hoc duoi tai khoan.",
   "help.permissions.orGroups.heading": "Nhom OR",
   "help.permissions.orGroups.body": "Khi cong cu hien thi \"Bat ky quyen nao: A · B · C\", bat ky quyen don le nao tu danh sach cung du. Ban khong can tat ca.",
   "help.permissions.optional.heading": "Quyen tuy chon",
   "help.permissions.optional.body": "Mot so endpoint tra ve du lieu bo sung khi nguoi goi co quyen bo sung. Cac quyen nay duoc hien thi rieng biet la Quyen tuy chon voi ghi chu giai thich chung mo khoa gi — vi du: truong SIS ID, dia chi email, ID dang nhap, hoac noi dung chua xuat ban. Endpoint van hoat dong ma khong co chung; ban chi nhan duoc it truong hoac ban ghi hon.",
   "help.permissions.featureFlags.heading": "Co tinh nang",
   "help.permissions.featureFlags.body": "Mot so it quyen yeu cau co tinh nang Canvas duoc bat truoc khi chung xuat hien trong giao dien Quyen. Dieu nay duoc ghi chu tren cac endpoint rieng le.",
-
   "help.commonSetups.intro": "Ba vi du cau hinh cho cac loai tich hop pho bien:",
   "help.commonSetups.col.type": "Loai tich hop",
   "help.commonSetups.col.permissions": "Quyen toi thieu",
@@ -76,7 +55,6 @@
   "help.commonSetups.sis.name": "Tich hop SIS",
   "help.commonSetups.sis.description": "Nhap SIS, dong bo nguoi dung",
   "help.commonSetups.optional": "tuy chon",
-
   "share.copyLink": "Sao chép liên kết chia sẻ",
   "share.copied": "Đã sao chép liên kết vào bộ nhớ tạm",
   "share.staleLink": "Liên kết lỗi thời",

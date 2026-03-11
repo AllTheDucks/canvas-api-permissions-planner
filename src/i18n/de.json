@@ -1,24 +1,16 @@
 {
   "app.title": "Canvas API-Berechtigungsplaner",
-
   "header.help": "Hilfe",
   "language.label": "Sprache",
   "language.tooltip": "Wählen Sie eine Sprache. Canvas-Berechtigungsbezeichnungen werden von der Canvas-Community übersetzt; App-Oberflächenbezeichnungen werden von KI übersetzt.",
-
   "permissions.heading": "Erforderliche Berechtigungen",
   "permissions.optionalHeading": "Optionale Berechtigungen",
   "permissions.optionalDescription": "Diese Berechtigungen sind für den Aufruf der Endpunkte nicht erforderlich, schalten aber zusätzliche Daten in den Antworten frei.",
   "permissions.empty": "Endpunkte hinzufügen, um erforderliche Berechtigungen anzuzeigen",
   "permissions.noAdditional": "Keine zusätzlichen Berechtigungen für die ausgewählten Endpunkte erforderlich",
-  "permissions.scopeCourse": "Kurs",
-  "permissions.scopeAccount": "Konto",
-  "permissions.scopeBoth": "Kurs oder Konto",
   "permissions.anyOf": "Eine der folgenden:",
   "permissions.anyOfTooltip": "Ihr API-Benutzer benötigt mindestens eine dieser Berechtigungen. Eine einzelne reicht aus, um diese Anforderung zu erfüllen.",
-  "permissions.scopeCourseTooltip": "Muss für eine Kursrolle (z. B. Lehrkraft, Benutzerdefinierte Kursrolle) für den entsprechenden Kurs aktiviert werden.",
-  "permissions.scopeAccountTooltip": "Muss für eine Kontorolle (z. B. Kontoadministrator, Benutzerdefinierte Kontorolle) aktiviert werden. Kontoberechtigungen gelten für alle Kurse unter diesem Konto.",
   "permissions.optionalNote": "Diese Berechtigungen schalten zusätzliche Datenfelder frei. Lesen Sie die Hinweise, um zu entscheiden, ob Ihre Integration sie benötigt.",
-
   "endpoints.heading": "Endpunkte hinzufügen",
   "endpoints.searchPlaceholder": "Endpunkte suchen…",
   "endpoints.pasteLabel": "Endpunkte einfügen",
@@ -27,45 +19,32 @@
   "endpoints.pastePlaceholder": "Ein Endpunkt pro Zeile, z. B. GET /api/v1/courses/:id",
   "endpoints.unmatched": "Nicht erkannte Endpunkte:",
   "endpoints.noResults": "Keine Endpunkte gefunden",
-
   "selectedEndpoints.heading": "Ausgewählte Endpoints",
   "selectedEndpoints.remove": "Entfernen",
   "common.moreInfo": "Weitere Informationen",
-
   "colorScheme.switchToDark": "Zum dunklen Modus wechseln",
   "colorScheme.switchToLight": "Zum hellen Modus wechseln",
   "colorScheme.switchToSystem": "Zum Systemmodus wechseln",
-
   "footer.dataVersion": "Canvas-Daten: {{version}}",
   "footer.dataNotLoaded": "Canvas-Daten: (nicht geladen)",
   "footer.credit": "Ein kostenloses Werkzeug von",
-
   "error.loadFailed": "Berechtigungsdaten konnten nicht geladen werden",
-
   "aiTranslation.note": "App-Oberfläche von KI übersetzt",
-
   "help.tab.howToUse": "Anleitung",
   "help.tab.permissions": "Canvas-Berechtigungen",
   "help.tab.commonSetups": "Gängige Konfigurationen",
-
   "help.howToUse.step1": "Wählen oder fügen Sie die API-Endpunktpfade ein, die Ihre Integration aufruft.",
   "help.howToUse.step2": "Das Panel Erforderliche Berechtigungen listet alle Canvas-Rollenberechtigungen auf, die Ihr API-Benutzer benötigt.",
   "help.howToUse.step3": "Prüfen Sie den Abschnitt Optionale Berechtigungen — diese schalten zusätzliche Daten in API-Antworten frei (z. B. SIS-IDs, E-Mail-Adressen, unveröffentlichte Inhalte).",
   "help.howToUse.step4": "Richten Sie eine benutzerdefinierte Canvas-Rolle ein (oder bearbeiten Sie eine vorhandene) mit genau diesen aktivierten Berechtigungen.",
-
   "help.permissions.rbac.heading": "Rollenbasierte Zugriffskontrolle",
   "help.permissions.rbac.body": "Berechtigungen werden Rollen zugewiesen, nicht Benutzern. Benutzer erben Berechtigungen über die Einschreibung (Kursrolle) oder Kontomitgliedschaft (Kontorolle).",
-  "help.permissions.scope.heading": "Kurs- vs. Kontobereich",
-  "help.permissions.scope.body": "Eine Berechtigung mit Kursbereich muss auf einer Kursrolle aktiviert werden. Eine Berechtigung mit Kontobereich muss auf einer Kontoadministratorrolle liegen. Einige Berechtigungen existieren auf beiden Ebenen — die Kontoberechtigung gilt für alle Kurse unter diesem Konto.",
-  "help.permissions.inheritance.heading": "Berechtigungsvererbung",
-  "help.permissions.inheritance.body": "Eine Kontorolle mit einer Berechtigung hat diese automatisch für alle Kurse unter dem Konto.",
   "help.permissions.orGroups.heading": "ODER-Gruppen",
   "help.permissions.orGroups.body": "Wenn das Werkzeug \"Eine der folgenden: A · B · C\" anzeigt, reicht eine einzelne Berechtigung aus der Liste. Sie benötigen nicht alle.",
   "help.permissions.optional.heading": "Optionale Berechtigungen",
   "help.permissions.optional.body": "Einige Endpunkte liefern zusätzliche Daten, wenn der Aufrufer weitere Berechtigungen hat. Diese werden separat als Optionale Berechtigungen mit einem Hinweis angezeigt, der erklärt, was sie freischalten — z. B. SIS-ID-Felder, E-Mail-Adressen, Login-IDs oder unveröffentlichte Inhalte. Der Endpunkt funktioniert ohne sie; es werden nur weniger Felder oder Datensätze zurückgegeben.",
   "help.permissions.featureFlags.heading": "Feature-Flags",
   "help.permissions.featureFlags.body": "Eine kleine Anzahl von Berechtigungen erfordert die Aktivierung eines Canvas-Feature-Flags, bevor sie in der Berechtigungsoberfläche erscheinen. Dies ist bei den einzelnen Endpunkten vermerkt.",
-
   "help.commonSetups.intro": "Drei Beispielkonfigurationen für gängige Integrationstypen:",
   "help.commonSetups.col.type": "Integrationstyp",
   "help.commonSetups.col.permissions": "Mindestberechtigungen",
@@ -76,7 +55,6 @@
   "help.commonSetups.sis.name": "SIS-Integration",
   "help.commonSetups.sis.description": "SIS-Importe, Benutzersynchronisierung",
   "help.commonSetups.optional": "optional",
-
   "share.copyLink": "Teilbaren Link kopieren",
   "share.copied": "Link in die Zwischenablage kopiert",
   "share.staleLink": "Veralteter Link",
