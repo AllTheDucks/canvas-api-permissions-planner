@@ -69,7 +69,6 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion }: Rea
             selected={deferredSelected}
             onRemove={handleToggle}
             onRemoveCategory={(endpoints) => handleBulkToggle(endpoints, false)}
-            onLastRemoved={() => searchInputRef.current?.focus()}
           />
         </Stack>
       </Grid.Col>

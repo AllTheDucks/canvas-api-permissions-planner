@@ -10,14 +10,13 @@ type SelectedEndpointsProps = {
   selected: Endpoint[]
   onRemove: (endpoint: Endpoint) => void
   onRemoveCategory: (endpoints: Endpoint[]) => void
-  onLastRemoved?: () => void
 }
 
 function endpointId(e: Endpoint): string {
   return `${e.method} ${e.path}`
 }
 
-export function SelectedEndpoints({ selected, onRemove, onRemoveCategory, onLastRemoved }: SelectedEndpointsProps) {
+export function SelectedEndpoints({ selected, onRemove, onRemoveCategory }: SelectedEndpointsProps) {
   const removeRefs = useRef<Map<string, HTMLButtonElement>>(new Map())
   const focusTargetRef = useRef<string | null>(null)
   const { t } = useAppTranslations()
@@ -58,7 +57,6 @@ export function SelectedEndpoints({ selected, onRemove, onRemoveCategory, onLast
 
     if (remaining === 0) {
       onRemove(endpoint)
-      onLastRemoved?.()
       return
     }
 
@@ -90,12 +88,7 @@ export function SelectedEndpoints({ selected, onRemove, onRemoveCategory, onLast
                 variant="subtle"
                 c="dimmed"
                 aria-label={`${t('selectedEndpoints.remove')} ${category}`}
-                onClick={() => {
-                  if (items.length === selected.length) {
-                    onLastRemoved?.()
-                  }
-                  onRemoveCategory(items.map(({ endpoint }) => endpoint))
-                }}
+                onClick={() => onRemoveCategory(items.map(({ endpoint }) => endpoint))}
               />
             </Group>
             {items.map(({ endpoint: ep, originalIndex }, i) => {
