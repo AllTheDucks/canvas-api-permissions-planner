@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useMemo, useState } from 'react'
 import { notifications } from '@mantine/notifications'
 import { useAppTranslations } from '../context/AppTranslationsContext'
+import { trackEvent } from '../utils/analytics'
 import { encodeSelection, decodeSelection, readUrlParams } from '../utils/urlState'
 import { EndpointsDataSchema } from '../schemas/endpoints'
 import type { Endpoint } from '../types'
@@ -14,6 +15,17 @@ export function useUrlSelection(endpointList: Endpoint[], dataVersion: string) {
     const indices = decodeSelection(urlState.selectionEncoded)
     return indices.map(i => endpointList[i]).filter((e): e is Endpoint => e !== undefined)
   })
+
+  // Fire shared_link_opened analytics event on mount
+  useEffect(() => {
+    if (!urlState) return
+    const indices = decodeSelection(urlState.selectionEncoded)
+    trackEvent('shared_link_opened', {
+      endpoint_count: indices.length,
+      version_match: urlState.version === dataVersion ? 'yes' : 'no',
+    })
+  // eslint-disable-next-line react-hooks/exhaustive-deps
+  }, [])
 
   // Async resolution for version mismatch
   useEffect(() => {

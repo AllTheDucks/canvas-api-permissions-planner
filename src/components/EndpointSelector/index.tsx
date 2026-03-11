@@ -10,6 +10,7 @@ import {
 } from '@mantine/core'
 import { IconInfoCircle, IconSearch } from '@tabler/icons-react'
 import { useAppTranslations } from '../../context/AppTranslationsContext'
+import { trackEvent } from '../../utils/analytics'
 import type { Endpoint } from '../../types'
 
 type EndpointSelectorProps = {
@@ -72,6 +73,9 @@ export function EndpointSelector({ endpoints, selected, onToggle, inputRef }: En
       const wasSelected = selectedIds.has(id)
       const isNowSelected = valueSet.has(id)
       if (wasSelected !== isNowSelected) {
+        if (!wasSelected && isNowSelected) {
+          trackEvent('endpoint_selected', { category: ep.category })
+        }
         onToggle(ep)
       }
     }

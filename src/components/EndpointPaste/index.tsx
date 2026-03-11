@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { Alert, Button, Code, Stack, Textarea } from '@mantine/core'
 import { IconAlertCircle } from '@tabler/icons-react'
 import { useAppTranslations } from '../../context/AppTranslationsContext'
+import { trackEvent } from '../../utils/analytics'
 import { matchEndpoints } from '../../utils/endpointMatcher'
 import type { Endpoint } from '../../types'
 
@@ -34,6 +35,8 @@ export function EndpointPaste({ endpoints, onAdd }: EndpointPasteProps) {
         failed.push(line)
       }
     }
+
+    trackEvent('endpoints_pasted', { count: lines.length, matched: matched.length })
 
     if (matched.length > 0) {
       onAdd(matched)

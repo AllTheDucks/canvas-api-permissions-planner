@@ -2,6 +2,7 @@ import { useState } from 'react'
 import { ActionIcon, Code, List, Modal, Table, Tabs, Text, Title, Tooltip } from '@mantine/core'
 import { IconQuestionMark } from '@tabler/icons-react'
 import { useAppTranslations } from '../../context/AppTranslationsContext'
+import { trackEvent } from '../../utils/analytics'
 
 export function HelpModal() {
   const [opened, setOpened] = useState(false)
@@ -14,7 +15,7 @@ export function HelpModal() {
           variant="default"
           size="lg"
           aria-label={t('header.help')}
-          onClick={() => setOpened(true)}
+          onClick={() => { trackEvent('help_opened'); setOpened(true) }}
         >
           <IconQuestionMark size={18} />
         </ActionIcon>

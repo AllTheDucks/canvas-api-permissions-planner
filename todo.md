@@ -157,15 +157,15 @@
 - [x] "Copy link" `ActionIcon` (`IconLink`) in permissions panel header — copies `window.location.href` to clipboard; Mantine notification confirms; only shown when ≥1 endpoint selected
 - [ ] Data update workflow: before updating `endpoints.json`, copy it to `public/data/endpoints.{version}.json` to preserve old link resolution
 - [x] Add `share.*` translation keys to `src/i18n/en.json` (and all locale files): `copyLink`, `copied`, `staleLink`, `staleLinkMessage`, `endpointsDropped`, `endpointsDroppedMessage`
-- [ ] Analytics: fire `shared_link_opened` event (with `endpoint_count` and `version_match`) when page loads from a shared URL
+- [x] Analytics: fire `shared_link_opened` event (with `endpoint_count` and `version_match`) when page loads from a shared URL
 
 ## Analytics (Google Analytics 4)
 
 - [ ] Create GA4 property and obtain measurement ID (`G-XXXXXXXXXX`)
-- [ ] Add GA4 script tag to `index.html` `<head>` with cookieless consent mode (`analytics_storage: 'denied'`)
-- [ ] `src/utils/analytics.ts` — `trackEvent(name, params?)` wrapper around global `gtag()`; no-op if `gtag` is unavailable (ad blockers, dev without GA)
-- [ ] Add `gtag` type declaration to `src/vite-env.d.ts`
-- [ ] Wire custom events into components:
+- [x] Add GA4 script tag to `index.html` `<head>` with cookieless consent mode (`analytics_storage: 'denied'`)
+- [x] `src/utils/analytics.ts` — `trackEvent(name, params?)` wrapper around global `gtag()`; no-op if `gtag` is unavailable (ad blockers, dev without GA)
+- [x] Add `gtag` type declaration to `src/vite-env.d.ts`
+- [x] Wire custom events into components:
   - `EndpointSelector` → `endpoint_selected` (category only, on add)
   - `EndpointPaste` → `endpoints_pasted` (count + matched)
   - `LanguagePicker` → `locale_changed` (locale code)

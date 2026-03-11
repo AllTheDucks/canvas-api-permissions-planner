@@ -2,6 +2,7 @@ import { Select } from '@mantine/core'
 import { SUPPORTED_LOCALES, LOCALE_NAMES } from '../../i18n/locales'
 import type { SupportedLocale } from '../../i18n/locales'
 import { useAppTranslations } from '../../context/AppTranslationsContext'
+import { trackEvent } from '../../utils/analytics'
 
 type LanguagePickerProps = {
   value: string
@@ -21,7 +22,7 @@ export function LanguagePicker({ value, onChange }: LanguagePickerProps) {
       aria-label={t('language.label')}
       data={options}
       value={value}
-      onChange={(val) => { if (val) onChange(val) }}
+      onChange={(val) => { if (val) { trackEvent('locale_changed', { locale: val }); onChange(val) } }}
       w={180}
       size="xs"
       allowDeselect={false}
