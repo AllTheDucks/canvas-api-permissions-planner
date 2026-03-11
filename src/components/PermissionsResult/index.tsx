@@ -13,6 +13,7 @@ import {
 import { IconInfoCircle } from '@tabler/icons-react'
 import { useAppTranslations } from '../../context/AppTranslationsContext'
 import type { AggregatedPermission, AnyOfAggregated, SingleAggregated } from '../../types'
+import { StyledPath } from '../StyledPath'
 import classes from './PermissionsResult.module.css'
 
 type PermissionsResultProps = {
@@ -25,11 +26,26 @@ function RequiredByTooltip({ requiredBy, children }: { requiredBy: string[]; chi
   if (requiredBy.length === 0) return <>{children}</>
   return (
     <Tooltip
-      label={requiredBy.join('\n')}
+      label={
+        <Stack gap={2}>
+          {requiredBy.map((ep) => {
+            const spaceIdx = ep.indexOf(' ')
+            const method = ep.slice(0, spaceIdx)
+            const path = ep.slice(spaceIdx + 1)
+            return (
+              <Text key={ep} size="xs" ff="monospace" style={{ display: 'flex', overflow: 'hidden' }}>
+                <Text span fw={700} size="xs" ff="monospace" style={{ flexShrink: 0 }}>{method}&nbsp;</Text>
+                <span style={{ direction: 'rtl', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+                  <bdo dir="ltr"><StyledPath path={path} /></bdo>
+                </span>
+              </Text>
+            )
+          })}
+        </Stack>
+      }
       multiline
-      maw={400}
+      maw="min(90vw, 600px)"
       withArrow
-      style={{ whiteSpace: 'pre-line' }}
     >
       <span>{children}</span>
     </Tooltip>

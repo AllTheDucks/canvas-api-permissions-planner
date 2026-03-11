@@ -121,7 +121,7 @@ function AppContent({
   useLocaleSync(locale, isRtl)
 
   return (
-    <>
+    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
       <header>
         <Container size="xl" py="sm">
           <Group justify="space-between">
@@ -144,7 +144,7 @@ function AppContent({
         <Divider />
       </header>
 
-      <main aria-label={t('app.title')}>
+      <main aria-label={t('app.title')} style={{ flex: 1 }}>
         <Container size="xl" py="md">
           {endpoints.status === 'loading' && (
             <Center h="60vh"><Loader /></Center>
@@ -190,7 +190,7 @@ function AppContent({
           </Group>
         </Container>
       </footer>
-    </>
+    </div>
   )
 }
 
