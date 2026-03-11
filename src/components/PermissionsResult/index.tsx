@@ -13,6 +13,7 @@ import {
 import { IconInfoCircle } from '@tabler/icons-react'
 import { useAppTranslations } from '../../context/AppTranslationsContext'
 import type { AggregatedPermission, AnyOfAggregated, Scope, SingleAggregated } from '../../types'
+import classes from './PermissionsResult.module.css'
 
 type PermissionsResultProps = {
   permissions: AggregatedPermission[]
@@ -37,7 +38,7 @@ function RequiredByTooltip({ requiredBy, children }: { requiredBy: string[]; chi
 
 function SingleRow({ perm }: { perm: SingleAggregated }) {
   return (
-    <Box mb="xs" data-print-no-break>
+    <li data-print-no-break>
       <Group gap="xs" wrap="nowrap">
         <RequiredByTooltip requiredBy={perm.requiredBy}>
           <Text size="sm">{perm.label}</Text>
@@ -50,7 +51,7 @@ function SingleRow({ perm }: { perm: SingleAggregated }) {
           ))}
         </Stack>
       )}
-    </Box>
+    </li>
   )
 }
 
@@ -58,7 +59,7 @@ function AnyOfRow({ perm }: { perm: AnyOfAggregated }) {
   const { t } = useAppTranslations()
 
   return (
-    <Box mb="xs" data-print-no-break>
+    <li data-print-no-break>
       <Group gap="xs" wrap="nowrap" align="flex-start">
         <Tooltip
           label={t('permissions.anyOfTooltip')}
@@ -89,7 +90,7 @@ function AnyOfRow({ perm }: { perm: AnyOfAggregated }) {
           ))}
         </Stack>
       )}
-    </Box>
+    </li>
   )
 }
 
@@ -166,18 +167,24 @@ export function PermissionsResult({ permissions, selectedCount, isLoadingLocale 
                 <Text size="xs" fw={700} c="dimmed" mb={4}>
                   {scopeHeadings[cat]}
                 </Text>
-                {singles.map((perm) => (
-                  <SingleRow key={perm.symbol} perm={perm} />
-                ))}
+                <ul className={classes.permissionList}>
+                  {singles.map((perm) => (
+                    <SingleRow key={perm.symbol} perm={perm} />
+                  ))}
+                </ul>
               </Box>
             )
           })}
 
           {requiredSingles.length > 0 && requiredGroups.length > 0 && <Divider my="sm" />}
 
-          {requiredGroups.map((perm, i) => (
-            <AnyOfRow key={i} perm={perm} />
-          ))}
+          {requiredGroups.length > 0 && (
+            <ul className={classes.permissionList}>
+              {requiredGroups.map((perm, i) => (
+                <AnyOfRow key={i} perm={perm} />
+              ))}
+            </ul>
+          )}
         </section>
       )}
 
@@ -189,13 +196,15 @@ export function PermissionsResult({ permissions, selectedCount, isLoadingLocale 
           <Text size="xs" c="dimmed" mb="sm">
             {t('permissions.optionalNote')}
           </Text>
-          {optional.map((perm, i) =>
-            perm.kind === 'single' ? (
-              <SingleRow key={perm.symbol} perm={perm} />
-            ) : (
-              <AnyOfRow key={i} perm={perm} />
-            ),
-          )}
+          <ul className={classes.permissionList}>
+            {optional.map((perm, i) =>
+              perm.kind === 'single' ? (
+                <SingleRow key={perm.symbol} perm={perm} />
+              ) : (
+                <AnyOfRow key={i} perm={perm} />
+              ),
+            )}
+          </ul>
         </section>
       )}
     </Box>

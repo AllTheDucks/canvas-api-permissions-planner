@@ -1,0 +1,19 @@
+.permissionList {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+
+  & > li {
+    position: relative;
+    padding-left: 1rem;
+    margin-bottom: var(--mantine-spacing-xs);
+
+    &::before {
+      content: '\2022';
+      position: absolute;
+      left: 0;
+      color: var(--mantine-color-dimmed);
+      opacity: 0.5;
+    }
+  }
+}
