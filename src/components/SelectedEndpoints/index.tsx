@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useRef } from 'react'
+import { useCallback, useEffect, useMemo, useRef } from 'react'
 import { ActionIcon, CloseButton, Group, Paper, Stack, Text, Title, Tooltip } from '@mantine/core'
 import { IconInfoCircle } from '@tabler/icons-react'
 import { useAppTranslations } from '../../context/AppTranslationsContext'
@@ -34,9 +34,23 @@ export function SelectedEndpoints({ selected, onRemove, onLastRemoved }: Selecte
     }
   }, [selected])
 
+  const grouped = useMemo(() => {
+    const map = new Map<string, Array<{ endpoint: Endpoint; originalIndex: number }>>()
+    for (let i = 0; i < selected.length; i++) {
+      const ep = selected[i]
+      let list = map.get(ep.category)
+      if (!list) {
+        list = []
+        map.set(ep.category, list)
+      }
+      list.push({ endpoint: ep, originalIndex: i })
+    }
+    return map
+  }, [selected])
+
   if (selected.length === 0) return null
 
-  function handleRemove(endpoint: Endpoint, index: number) {
+  function handleRemove(endpoint: Endpoint, flatIndex: number) {
     const remaining = selected.length - 1
 
     if (remaining === 0) {
@@ -46,11 +60,11 @@ export function SelectedEndpoints({ selected, onRemove, onLastRemoved }: Selecte
     }
 
     const ids = selected
-      .filter((_, i) => i !== index)
+      .filter((_, i) => i !== flatIndex)
       .map(endpointId)
 
-    if (index < ids.length) {
-      focusTargetRef.current = ids[index]
+    if (flatIndex < ids.length) {
+      focusTargetRef.current = ids[flatIndex]
     } else {
       focusTargetRef.current = ids[ids.length - 1]
     }
@@ -62,45 +76,52 @@ export function SelectedEndpoints({ selected, onRemove, onLastRemoved }: Selecte
     <Paper shadow="xs" radius="md" p="md" withBorder>
       <Title order={3} size="h6" mb="xs">{t('selectedEndpoints.heading')}</Title>
       <Stack gap={0}>
-        {selected.map((ep, index) => {
-          const id = endpointId(ep)
-          const isLast = index === selected.length - 1
-          return (
-            <Group
-              key={id}
-              gap="xs"
-              wrap="nowrap"
-              justify="space-between"
-              py={6}
-              style={isLast ? undefined : { borderBottom: '1px solid var(--mantine-color-default-border)' }}
-            >
-              <Text size="xs" ff="monospace" style={{ wordBreak: 'break-all' }}>
-                <Text span fw={700} size="xs" ff="monospace">{ep.method}</Text>{' '}
-                {ep.path.replace(/^\/api\/v1/, '')}
-              </Text>
-              <Group gap={4} wrap="nowrap" style={{ flexShrink: 0 }}>
-                {ep.notes && (
-                  <Tooltip label={ep.notes} multiline maw={300} withArrow>
-                    <ActionIcon
+        {Array.from(grouped, ([category, items]) => (
+          <div key={category}>
+            <Text size="xs" fw={700} c="dimmed" mt="sm" mb={4}>
+              {category}
+            </Text>
+            {items.map(({ endpoint: ep, originalIndex }, i) => {
+              const id = endpointId(ep)
+              const isLastInGroup = i === items.length - 1
+              return (
+                <Group
+                  key={id}
+                  gap="xs"
+                  wrap="nowrap"
+                  justify="space-between"
+                  py={6}
+                  style={isLastInGroup ? undefined : { borderBottom: '1px solid var(--mantine-color-default-border)' }}
+                >
+                  <Text size="xs" ff="monospace" style={{ wordBreak: 'break-all' }}>
+                    <Text span fw={700} size="xs" ff="monospace">{ep.method}</Text>{' '}
+                    {ep.path.replace(/^\/api\/v1/, '')}
+                  </Text>
+                  <Group gap={4} wrap="nowrap" style={{ flexShrink: 0 }}>
+                    {ep.notes && (
+                      <Tooltip label={ep.notes} multiline maw={300} withArrow>
+                        <ActionIcon
+                          size="sm"
+                          variant="transparent"
+                          component="span"
+                          tabIndex={-1}
+                        >
+                          <IconInfoCircle size={14} />
+                        </ActionIcon>
+                      </Tooltip>
+                    )}
+                    <CloseButton
                       size="sm"
-                      variant="transparent"
-                      component="span"
-                      tabIndex={-1}
-                    >
-                      <IconInfoCircle size={14} />
-                    </ActionIcon>
-                  </Tooltip>
-                )}
-                <CloseButton
-                  size="sm"
-                  ref={(el) => setRef(id, el)}
-                  aria-label={`${t('selectedEndpoints.remove')} ${ep.method} ${ep.path}`}
-                  onClick={() => handleRemove(ep, index)}
-                />
-              </Group>
-            </Group>
-          )
-        })}
+                      ref={(el) => setRef(id, el)}
+                      aria-label={`${t('selectedEndpoints.remove')} ${ep.method} ${ep.path}`}
+                      onClick={() => handleRemove(ep, originalIndex)}
+                    />
+                  </Group>
+                </Group>
+              )
+            })}
+          </div>
+        ))}
       </Stack>
     </Paper>
   )
