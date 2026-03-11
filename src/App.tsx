@@ -1,4 +1,4 @@
-import { useCallback, useMemo, useRef, useState } from 'react'
+import { useCallback, useDeferredValue, useMemo, useRef, useState } from 'react'
 import { ActionIcon, Center, Container, Grid, Group, Loader, Stack, Text, Title, Tooltip } from '@mantine/core'
 import { notifications } from '@mantine/notifications'
 import { IconLink } from '@tabler/icons-react'
@@ -32,6 +32,7 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion }: Rea
   const { localeLabels, isLoading: localeLoading } = useLocale(locale, allPermissions, dataVersion)
   const searchInputRef = useRef<HTMLInputElement>(null)
   const { selectedEndpoints, handleToggle, handleAddMany } = useUrlSelection(endpointList, dataVersion)
+  const deferredSelected = useDeferredValue(selectedEndpoints)
 
   const handleCopyLink = useCallback(() => {
     navigator.clipboard.writeText(window.location.href).then(() => {
@@ -43,8 +44,8 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion }: Rea
   }, [t])
 
   const aggregated = useMemo(
-    () => aggregatePermissions(selectedEndpoints, allPermissions, localeLabels),
-    [selectedEndpoints, allPermissions, localeLabels],
+    () => aggregatePermissions(deferredSelected, allPermissions, localeLabels),
+    [deferredSelected, allPermissions, localeLabels],
   )
 
   return (
@@ -59,7 +60,7 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion }: Rea
         />
         <EndpointPaste endpoints={endpointList} onAdd={handleAddMany} />
         <SelectedEndpoints
-          selected={selectedEndpoints}
+          selected={deferredSelected}
           onRemove={handleToggle}
           onLastRemoved={() => searchInputRef.current?.focus()}
         />
@@ -68,9 +69,9 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion }: Rea
         <div data-print-only>
           <Text fw={700} size="lg" mb={2}>{t('app.title')}</Text>
           <Text data-print-date size="xs" c="dimmed" mb="md">{new Date().toLocaleDateString()}</Text>
-          {selectedEndpoints.length > 0 && (
+          {deferredSelected.length > 0 && (
             <Stack gap={0} mb="md">
-              {selectedEndpoints.map(e => (
+              {deferredSelected.map(e => (
                 <Text key={`${e.method} ${e.path}`} size="sm" c="dimmed">
                   {e.method} {e.path}
                 </Text>
@@ -80,7 +81,7 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion }: Rea
         </div>
         <Group justify="space-between" mb="sm">
           <Title order={2} size="h4">{t('permissions.heading')}</Title>
-          {selectedEndpoints.length > 0 && (
+          {deferredSelected.length > 0 && (
             <Tooltip label={t('share.copyLink')} withArrow>
               <ActionIcon
                 onClick={handleCopyLink}
@@ -92,7 +93,7 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion }: Rea
             </Tooltip>
           )}
         </Group>
-        <PermissionsResult permissions={aggregated} selectedCount={selectedEndpoints.length} isLoadingLocale={localeLoading} />
+        <PermissionsResult permissions={aggregated} selectedCount={deferredSelected.length} isLoadingLocale={localeLoading} />
       </Grid.Col>
     </Grid>
   )
