@@ -89,15 +89,15 @@
 - [ ] Error notification on locale fetch failure — `notifications.show({ color: 'red', ... })` with message "Could not load {LOCALE_NAMES[locale]} labels — showing in English"; picker state unchanged; failed locale not cached so re-selecting retries automatically
 
 ### App UI i18n (bundled JSON)
-- [ ] `src/i18n/locales.ts` — `SUPPORTED_LOCALES` (with `'en'` as first entry), `RTL_LOCALES`, `LOCALE_NAMES`, and `SUPPLEMENTAL_FONTS` constants (shared by all locale-aware code)
-- [ ] Create `src/i18n/en.json` — all app UI string keys; English source of truth
-- [ ] `src/context/AppTranslationsContext.tsx` — context + `AppTranslationsProvider` + `useAppTranslations` hook
+- [x] `src/i18n/locales.ts` — `SUPPORTED_LOCALES` (with `'en'` as first entry), `RTL_LOCALES`, `LOCALE_NAMES`, and `SUPPLEMENTAL_FONTS` constants (shared by all locale-aware code)
+- [x] Create `src/i18n/en.json` — all app UI string keys; English source of truth
+- [x] `src/context/AppTranslationsContext.tsx` — context + `AppTranslationsProvider` + `useAppTranslations` hook
   - Static import of `en.json` as baseline fallback
   - Dynamic `import()` for non-English locales (Vite code splits them; module-level `Map` cache)
   - Returns `{ t: (key) => string, isRtl: boolean }`
-- [ ] `src/utils/detectLocale.ts` — `detectLocale(supportedLocales)`: iterates `navigator.languages`, strips subtags iteratively, returns first match or `'en'`
-- [ ] `src/utils/detectLocale.test.ts` — exact match, prefix match (`es-MX` → `es`), multi-subtag (`zh-Hans-CN` → `zh-Hans`), fallback to `'en'`
-- [ ] `App.tsx` locale state: init with a `useState` lazy initializer — read `localStorage.getItem('locale')`, validate against `SUPPORTED_LOCALES` (if invalid/missing, call `localStorage.removeItem` and fall back to `detectLocale(SUPPORTED_LOCALES)`); `handleLocaleChange` saves to localStorage, but calls `localStorage.removeItem('locale')` when the selected locale matches the auto-detected value (clears unnecessary pin; browser-language changes are picked up again automatically)
+- [x] `src/utils/detectLocale.ts` — `detectLocale(supportedLocales)`: iterates `navigator.languages`, strips subtags iteratively, returns first match or `'en'`
+- [x] `src/utils/detectLocale.test.ts` — exact match, prefix match (`es-MX` → `es`), multi-subtag (`zh-Hans-CN` → `zh-Hans`), fallback to `'en'`
+- [x] `App.tsx` locale state: init with a `useState` lazy initializer — read `localStorage.getItem('locale')`, validate against `SUPPORTED_LOCALES` (if invalid/missing, call `localStorage.removeItem` and fall back to `detectLocale(SUPPORTED_LOCALES)`); `handleLocaleChange` saves to localStorage, but calls `localStorage.removeItem('locale')` when the selected locale matches the auto-detected value (clears unnecessary pin; browser-language changes are picked up again automatically)
 - [ ] Write `src/i18n/en.json` with all keys: UI chrome keys (from Translation Key Structure table), `colorScheme.switchToDark/Light`, `selectedEndpoints.remove`, `common.moreInfo`, `endpoints.noResults`, and all `help.*` content keys (tabs 1–3 as defined in Help Modal Content Keys section)
 - [ ] Generate AI translations for all 34 non-English locale JSON files in `src/i18n/` using the prompt in `docs/generate-translations-prompt.md`
 - [ ] Update all components to use `t()` from `useAppTranslations()` for all hardcoded UI strings

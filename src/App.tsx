@@ -7,7 +7,10 @@ import { EndpointPaste } from './components/EndpointPaste'
 import { SelectedEndpoints } from './components/SelectedEndpoints'
 import { PermissionsResult } from './components/PermissionsResult'
 import { ColorSchemeToggle } from './components/ColorSchemeToggle'
+import { AppTranslationsProvider } from './context/AppTranslationsContext'
 import { aggregatePermissions } from './utils/permissionAggregator'
+import { detectLocale } from './utils/detectLocale'
+import { SUPPORTED_LOCALES, isSupportedLocale } from './i18n/locales'
 import type { Endpoint, PermissionRef } from './types'
 
 type ReadyContentProps = {
@@ -55,6 +58,22 @@ function App() {
   const [selectedEndpoints, setSelectedEndpoints] = useState<Endpoint[]>([])
   const searchInputRef = useRef<HTMLInputElement>(null)
 
+  const [locale, setLocale] = useState(() => {
+    const stored = localStorage.getItem('locale')
+    if (stored && isSupportedLocale(stored)) return stored
+    if (stored) localStorage.removeItem('locale')
+    return detectLocale(SUPPORTED_LOCALES)
+  })
+
+  const handleLocaleChange = useCallback((newLocale: string) => {
+    if (newLocale === detectLocale(SUPPORTED_LOCALES)) {
+      localStorage.removeItem('locale')
+    } else {
+      localStorage.setItem('locale', newLocale)
+    }
+    setLocale(newLocale)
+  }, [])
+
   const handleToggleEndpoint = useCallback((endpoint: Endpoint) => {
     const id = `${endpoint.method} ${endpoint.path}`
     setSelectedEndpoints(prev =>
@@ -72,8 +91,11 @@ function App() {
     })
   }, [])
 
+  // handleLocaleChange will be passed to LanguagePicker in Step 14
+  void handleLocaleChange
+
   return (
-    <>
+    <AppTranslationsProvider locale={locale}>
       <header>
         <Container size="xl" py="sm">
           <Group justify="space-between">
@@ -139,7 +161,7 @@ function App() {
           </Group>
         </Container>
       </footer>
-    </>
+    </AppTranslationsProvider>
   )
 }
 

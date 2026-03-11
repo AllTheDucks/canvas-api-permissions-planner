@@ -1,0 +1,68 @@
+{
+  "app.title": "Canvas API Permissions Planner",
+
+  "header.help": "Help",
+  "language.label": "Language",
+  "language.tooltip": "Choose a language. Canvas permission labels are translated by the Canvas community; app interface labels are translated by AI.",
+
+  "permissions.heading": "Required Permissions",
+  "permissions.optionalHeading": "Optional Permissions",
+  "permissions.optionalDescription": "These permissions are not required to call the endpoints, but unlock additional data in responses.",
+  "permissions.empty": "Add endpoints to see required permissions",
+  "permissions.scopeCourse": "Course",
+  "permissions.scopeAccount": "Account",
+  "permissions.scopeBoth": "Course or Account",
+  "permissions.anyOf": "Any one of:",
+
+  "endpoints.heading": "Add Endpoints",
+  "endpoints.searchPlaceholder": "Search endpoints…",
+  "endpoints.pasteLabel": "Or paste a list:",
+  "endpoints.addButton": "Add",
+  "endpoints.pasteTooltip": "Paste one endpoint per line. Accepted formats: full URL, path only, or METHOD /path. Query strings are ignored. Numeric IDs and SIS IDs (e.g. sis_course_id:ABC) are recognised.",
+  "endpoints.unmatched": "Unrecognised endpoints:",
+  "endpoints.noResults": "No endpoints found",
+
+  "selectedEndpoints.remove": "Remove",
+  "common.moreInfo": "More information",
+
+  "colorScheme.switchToDark": "Switch to dark mode",
+  "colorScheme.switchToLight": "Switch to light mode",
+
+  "footer.dataVersion": "Canvas data: {{version}}",
+  "footer.credit": "A free tool by",
+
+  "aiTranslation.note": "App interface translated by AI",
+
+  "help.tab.howToUse": "How to use",
+  "help.tab.permissions": "Canvas Permissions",
+  "help.tab.commonSetups": "Common setups",
+
+  "help.howToUse.step1": "Select or paste the API endpoint paths your integration calls.",
+  "help.howToUse.step2": "The Required Permissions panel lists every Canvas role permission your API user needs.",
+  "help.howToUse.step3": "Review the Optional Permissions section — these unlock additional data in API responses (e.g. SIS IDs, email addresses, unpublished content).",
+  "help.howToUse.step4": "Set up a custom Canvas role (or edit an existing one) with exactly these permissions enabled.",
+
+  "help.permissions.rbac.heading": "Role-Based Access Control",
+  "help.permissions.rbac.body": "Permissions are granted to roles, not users. Users inherit permissions via enrollment (course role) or account membership (account role).",
+  "help.permissions.scope.heading": "Course vs. Account scope",
+  "help.permissions.scope.body": "A permission scoped to Course must be enabled on a course-level role. A permission scoped to Account must be on an account-level admin role. Some permissions exist at both levels — the Account grant covers all courses under that account.",
+  "help.permissions.inheritance.heading": "Permission inheritance",
+  "help.permissions.inheritance.body": "An account-level role with a permission automatically has that permission for all courses under the account.",
+  "help.permissions.orGroups.heading": "OR groups",
+  "help.permissions.orGroups.body": "When the tool shows \"Any one of: A · B · C\", any single permission from that list is sufficient. You do not need all of them.",
+  "help.permissions.optional.heading": "Optional permissions",
+  "help.permissions.optional.body": "Some endpoints return extra data when the caller has additional permissions. These are shown separately as Optional Permissions with a note explaining what they unlock — for example, SIS ID fields, email addresses, login IDs, or unpublished content. The endpoint works without them; you just get fewer fields or records.",
+  "help.permissions.featureFlags.heading": "Feature flags",
+  "help.permissions.featureFlags.body": "A small number of permissions require a Canvas feature flag to be enabled before they appear in the Permissions UI. These are noted on individual endpoints.",
+
+  "help.commonSetups.intro": "Three example configurations for common integration types:",
+  "help.commonSetups.col.type": "Integration type",
+  "help.commonSetups.col.permissions": "Minimum permissions",
+  "help.commonSetups.readOnly.name": "Read-only",
+  "help.commonSetups.readOnly.description": "Course data, assignments, enrollments",
+  "help.commonSetups.gradebook.name": "Full gradebook",
+  "help.commonSetups.gradebook.description": "Read and write grades",
+  "help.commonSetups.sis.name": "SIS integration",
+  "help.commonSetups.sis.description": "SIS imports, user sync",
+  "help.commonSetups.optional": "optional"
+}
