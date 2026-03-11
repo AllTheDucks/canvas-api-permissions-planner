@@ -1,6 +1,7 @@
 import { useCallback, useEffect, useRef } from 'react'
 import { ActionIcon, CloseButton, Group, Tooltip } from '@mantine/core'
 import { IconInfoCircle } from '@tabler/icons-react'
+import { useAppTranslations } from '../../context/AppTranslationsContext'
 import type { Endpoint } from '../../types'
 
 type SelectedEndpointsProps = {
@@ -16,6 +17,7 @@ function endpointId(e: Endpoint): string {
 export function SelectedEndpoints({ selected, onRemove, onLastRemoved }: SelectedEndpointsProps) {
   const badgeRefs = useRef<Map<string, HTMLButtonElement>>(new Map())
   const focusTargetRef = useRef<string | null>(null)
+  const { t } = useAppTranslations()
 
   const setRef = useCallback((id: string, el: HTMLButtonElement | null) => {
     if (el) {
@@ -100,7 +102,7 @@ export function SelectedEndpoints({ selected, onRemove, onLastRemoved }: Selecte
             <CloseButton
               size="sm"
               ref={(el) => setRef(id, el)}
-              aria-label={`Remove ${ep.method} ${ep.path}`}
+              aria-label={`${t('selectedEndpoints.remove')} ${ep.method} ${ep.path}`}
               onClick={() => handleRemove(ep, index)}
             />
           </Group>

@@ -12,6 +12,7 @@ import {
   Tooltip,
 } from '@mantine/core'
 import { IconInfoCircle } from '@tabler/icons-react'
+import { useAppTranslations } from '../../context/AppTranslationsContext'
 import type { AggregatedPermission, AnyOfAggregated, Scope, SingleAggregated } from '../../types'
 
 type PermissionsResultProps = {
@@ -20,18 +21,15 @@ type PermissionsResultProps = {
   isLoadingLocale?: boolean
 }
 
-const SCOPE_TOOLTIP = {
-  Course:
-    'Must be enabled on a course-level role (e.g. Teacher, Custom Course Role) for the relevant course.',
-  Account:
-    'Must be enabled on an account-level role (e.g. Account Admin, Custom Account Role). Account-level grants cover all courses under that account.',
-} as const
-
 function ScopeBadge({ scope }: { scope: Scope }) {
+  const { t } = useAppTranslations()
+  const tooltipKey = scope === 'Course' ? 'permissions.scopeCourseTooltip' : 'permissions.scopeAccountTooltip'
+  const labelKey = scope === 'Course' ? 'permissions.scopeCourse' : 'permissions.scopeAccount'
+
   return (
-    <Tooltip label={SCOPE_TOOLTIP[scope]} multiline maw={300} withArrow>
+    <Tooltip label={t(tooltipKey)} multiline maw={300} withArrow>
       <Badge size="sm" variant="light" style={{ cursor: 'help' }}>
-        {scope}
+        {t(labelKey)}
       </Badge>
     </Tooltip>
   )
@@ -82,11 +80,13 @@ function SingleRow({ perm }: { perm: SingleAggregated }) {
 }
 
 function AnyOfRow({ perm }: { perm: AnyOfAggregated }) {
+  const { t } = useAppTranslations()
+
   return (
     <Box mb="xs">
       <Group gap="xs" wrap="nowrap" align="flex-start">
         <Tooltip
-          label="Your API user needs at least one of these permissions. Any single one is sufficient to satisfy this requirement."
+          label={t('permissions.anyOfTooltip')}
           multiline
           maw={300}
           withArrow
@@ -96,7 +96,7 @@ function AnyOfRow({ perm }: { perm: AnyOfAggregated }) {
           </ActionIcon>
         </Tooltip>
         <Group gap={4} wrap="wrap">
-          <Text size="sm" fw={600}>Any one of:</Text>
+          <Text size="sm" fw={600}>{t('permissions.anyOf')}</Text>
           {perm.options.map((opt, i) => (
             <Group key={opt.symbol} gap={4} wrap="nowrap">
               {i > 0 && <Text size="sm" c="dimmed">&middot;</Text>}
@@ -127,13 +127,9 @@ function scopeCategory(scope: Set<Scope>): 'course' | 'account' | 'both' {
   return 'both'
 }
 
-const SCOPE_HEADINGS = {
-  course: 'Course',
-  account: 'Account',
-  both: 'Course or Account',
-} as const
-
 export function PermissionsResult({ permissions, selectedCount, isLoadingLocale = false }: PermissionsResultProps) {
+  const { t } = useAppTranslations()
+
   const required = permissions.filter((p) => !p.optional)
   const optional = permissions.filter((p) => p.optional)
 
@@ -150,6 +146,12 @@ export function PermissionsResult({ permissions, selectedCount, isLoadingLocale 
     }
     list.push(s)
   }
+
+  const scopeHeadings = {
+    course: t('permissions.scopeCourse'),
+    account: t('permissions.scopeAccount'),
+    both: t('permissions.scopeBoth'),
+  } as const
 
   const hasRequired = required.length > 0
   const hasOptional = optional.length > 0
@@ -170,19 +172,19 @@ export function PermissionsResult({ permissions, selectedCount, isLoadingLocale 
 
       {isEmpty && selectedCount === 0 && (
         <Text c="dimmed" ta="center" py="xl">
-          Select endpoints to see required permissions
+          {t('permissions.empty')}
         </Text>
       )}
 
       {isEmpty && selectedCount > 0 && (
         <Text c="dimmed" ta="center" py="xl">
-          No additional permissions required for the selected endpoints
+          {t('permissions.noAdditional')}
         </Text>
       )}
 
       {hasRequired && (
         <section>
-          <Title order={3} size="h5" mb="sm">Required Permissions</Title>
+          <Title order={3} size="h5" mb="sm">{t('permissions.heading')}</Title>
 
           {(['course', 'account', 'both'] as const).map((cat) => {
             const singles = singlesByScope.get(cat)
@@ -190,7 +192,7 @@ export function PermissionsResult({ permissions, selectedCount, isLoadingLocale 
             return (
               <Box key={cat} mb="sm">
                 <Text size="xs" fw={700} c="dimmed" mb={4}>
-                  {SCOPE_HEADINGS[cat]}
+                  {scopeHeadings[cat]}
                 </Text>
                 {singles.map((perm) => (
                   <SingleRow key={perm.symbol} perm={perm} />
@@ -211,9 +213,9 @@ export function PermissionsResult({ permissions, selectedCount, isLoadingLocale 
 
       {hasOptional && (
         <section>
-          <Title order={3} size="h5" mb="xs">Optional Permissions</Title>
+          <Title order={3} size="h5" mb="xs">{t('permissions.optionalHeading')}</Title>
           <Text size="xs" c="dimmed" mb="sm">
-            These permissions unlock additional data fields. Review the notes to decide if your integration needs them.
+            {t('permissions.optionalNote')}
           </Text>
           {optional.map((perm, i) =>
             perm.kind === 'single' ? (

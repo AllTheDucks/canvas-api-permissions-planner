@@ -9,16 +9,22 @@
   "permissions.optionalHeading": "Optional Permissions",
   "permissions.optionalDescription": "These permissions are not required to call the endpoints, but unlock additional data in responses.",
   "permissions.empty": "Add endpoints to see required permissions",
+  "permissions.noAdditional": "No additional permissions required for the selected endpoints",
   "permissions.scopeCourse": "Course",
   "permissions.scopeAccount": "Account",
   "permissions.scopeBoth": "Course or Account",
   "permissions.anyOf": "Any one of:",
+  "permissions.anyOfTooltip": "Your API user needs at least one of these permissions. Any single one is sufficient to satisfy this requirement.",
+  "permissions.scopeCourseTooltip": "Must be enabled on a course-level role (e.g. Teacher, Custom Course Role) for the relevant course.",
+  "permissions.scopeAccountTooltip": "Must be enabled on an account-level role (e.g. Account Admin, Custom Account Role). Account-level grants cover all courses under that account.",
+  "permissions.optionalNote": "These permissions unlock additional data fields. Review the notes to decide if your integration needs them.",
 
   "endpoints.heading": "Add Endpoints",
   "endpoints.searchPlaceholder": "Search endpoints…",
   "endpoints.pasteLabel": "Or paste a list:",
   "endpoints.addButton": "Add",
   "endpoints.pasteTooltip": "Paste one endpoint per line. Accepted formats: full URL, path only, or METHOD /path. Query strings are ignored. Numeric IDs and SIS IDs (e.g. sis_course_id:ABC) are recognised.",
+  "endpoints.pastePlaceholder": "One endpoint per line, e.g. GET /api/v1/courses/:id",
   "endpoints.unmatched": "Unrecognised endpoints:",
   "endpoints.noResults": "No endpoints found",
 
@@ -27,9 +33,13 @@
 
   "colorScheme.switchToDark": "Switch to dark mode",
   "colorScheme.switchToLight": "Switch to light mode",
+  "colorScheme.switchToSystem": "Switch to system mode",
 
   "footer.dataVersion": "Canvas data: {{version}}",
+  "footer.dataNotLoaded": "Canvas data: (not loaded)",
   "footer.credit": "A free tool by",
+
+  "error.loadFailed": "Failed to load permission data",
 
   "aiTranslation.note": "App interface translated by AI",
 

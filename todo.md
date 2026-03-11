@@ -100,13 +100,13 @@
 - [x] `App.tsx` locale state: init with a `useState` lazy initializer — read `localStorage.getItem('locale')`, validate against `SUPPORTED_LOCALES` (if invalid/missing, call `localStorage.removeItem` and fall back to `detectLocale(SUPPORTED_LOCALES)`); `handleLocaleChange` saves to localStorage, but calls `localStorage.removeItem('locale')` when the selected locale matches the auto-detected value (clears unnecessary pin; browser-language changes are picked up again automatically)
 - [ ] Write `src/i18n/en.json` with all keys: UI chrome keys (from Translation Key Structure table), `colorScheme.switchToDark/Light`, `selectedEndpoints.remove`, `common.moreInfo`, `endpoints.noResults`, and all `help.*` content keys (tabs 1–3 as defined in Help Modal Content Keys section)
 - [ ] Generate AI translations for all 34 non-English locale JSON files in `src/i18n/` using the prompt in `docs/generate-translations-prompt.md`
-- [ ] Update all components to use `t()` from `useAppTranslations()` for all hardcoded UI strings
+- [x] Update all components to use `t()` from `useAppTranslations()` for all hardcoded UI strings
 - [ ] `src/utils/supplementalFont.ts` — idempotent loader: injects Google Fonts `<link>` for non-Latin locales (module-level `Set` prevents double-loading); returns the font family name
 - [ ] `App.tsx` locale sync: three `useEffect` calls — (1) `document.documentElement.dir` from `isRtl`, (2) `document.documentElement.lang` to active locale code, (3) call `loadSupplementalFont(locale)` and set/remove `--mantine-font-family` + `--mantine-font-family-headings` CSS custom properties
-- [ ] AI translation disclosure — Mantine `Text` (`size="xs"`, `c="dimmed"`) rendered below language picker in header; visible only when `locale !== 'en'`; content: `t('aiTranslation.note')`
+- [x] AI translation disclosure — Mantine `Text` (`size="xs"`, `c="dimmed"`) rendered below language picker in header; visible only when `locale !== 'en'`; content: `t('aiTranslation.note')`
 
 ### Language picker
-- [ ] `src/components/LanguagePicker/index.tsx` — Mantine Select; options built from `SUPPORTED_LOCALES` using `LOCALE_NAMES[code]` as label; value is the locale code
+- [x] `src/components/LanguagePicker/index.tsx` — Mantine Select; options built from `SUPPORTED_LOCALES` using `LOCALE_NAMES[code]` as label; value is the locale code
 - [ ] `src/components/LanguagePicker/LanguagePicker.stories.tsx` — Default, LocaleSelected
 
 ## Help and Documentation

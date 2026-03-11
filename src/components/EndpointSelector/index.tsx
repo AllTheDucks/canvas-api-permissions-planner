@@ -9,6 +9,7 @@ import {
   Tooltip,
 } from '@mantine/core'
 import { IconInfoCircle, IconSearch } from '@tabler/icons-react'
+import { useAppTranslations } from '../../context/AppTranslationsContext'
 import type { Endpoint } from '../../types'
 
 type EndpointSelectorProps = {
@@ -24,6 +25,7 @@ function endpointId(e: Endpoint): string {
 
 export function EndpointSelector({ endpoints, selected, onToggle, inputRef }: EndpointSelectorProps) {
   const [search, setSearch] = useState('')
+  const { t } = useAppTranslations()
 
   const selectedIds = useMemo(
     () => new Set(selected.map(endpointId)),
@@ -79,7 +81,7 @@ export function EndpointSelector({ endpoints, selected, onToggle, inputRef }: En
     <>
       <TextInput
         ref={inputRef}
-        placeholder="Search endpoints..."
+        placeholder={t('endpoints.searchPlaceholder')}
         leftSection={<IconSearch size={16} />}
         rightSection={search ? <CloseButton size="sm" onClick={() => setSearch('')} /> : null}
         value={search}
@@ -129,7 +131,7 @@ export function EndpointSelector({ endpoints, selected, onToggle, inputRef }: En
           </Checkbox.Group>
         ) : (
           <Text c="dimmed" ta="center" py="xl">
-            No endpoints match your search
+            {t('endpoints.noResults')}
           </Text>
         )}
       </ScrollArea>

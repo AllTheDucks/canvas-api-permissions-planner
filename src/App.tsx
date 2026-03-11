@@ -7,7 +7,8 @@ import { EndpointPaste } from './components/EndpointPaste'
 import { SelectedEndpoints } from './components/SelectedEndpoints'
 import { PermissionsResult } from './components/PermissionsResult'
 import { ColorSchemeToggle } from './components/ColorSchemeToggle'
-import { AppTranslationsProvider } from './context/AppTranslationsContext'
+import { LanguagePicker } from './components/LanguagePicker'
+import { AppTranslationsProvider, useAppTranslations } from './context/AppTranslationsContext'
 import { aggregatePermissions } from './utils/permissionAggregator'
 import { detectLocale } from './utils/detectLocale'
 import { SUPPORTED_LOCALES, isSupportedLocale } from './i18n/locales'
@@ -23,6 +24,8 @@ type ReadyContentProps = {
 }
 
 function ReadyContent({ allPermissions, endpointList, selectedEndpoints, onToggle, onAddMany, searchInputRef }: ReadyContentProps) {
+  const { t } = useAppTranslations()
+
   const aggregated = useMemo(
     () => aggregatePermissions(selectedEndpoints, allPermissions, {}),
     [selectedEndpoints, allPermissions],
@@ -31,7 +34,7 @@ function ReadyContent({ allPermissions, endpointList, selectedEndpoints, onToggl
   return (
     <Grid>
       <Grid.Col span={{ base: 12, sm: 5 }}>
-        <Title order={2} size="h4" mb="sm">Add Endpoints</Title>
+        <Title order={2} size="h4" mb="sm">{t('endpoints.heading')}</Title>
         <EndpointSelector
           endpoints={endpointList}
           selected={selectedEndpoints}
@@ -46,33 +49,24 @@ function ReadyContent({ allPermissions, endpointList, selectedEndpoints, onToggl
         />
       </Grid.Col>
       <Grid.Col span={{ base: 12, sm: 7 }}>
-        <Title order={2} size="h4" mb="sm">Required Permissions</Title>
+        <Title order={2} size="h4" mb="sm">{t('permissions.heading')}</Title>
         <PermissionsResult permissions={aggregated} selectedCount={selectedEndpoints.length} />
       </Grid.Col>
     </Grid>
   )
 }
 
-function App() {
+function AppContent({
+  locale,
+  onLocaleChange,
+}: {
+  locale: string
+  onLocaleChange: (locale: string) => void
+}) {
   const endpoints = useEndpoints()
   const [selectedEndpoints, setSelectedEndpoints] = useState<Endpoint[]>([])
   const searchInputRef = useRef<HTMLInputElement>(null)
-
-  const [locale, setLocale] = useState(() => {
-    const stored = localStorage.getItem('locale')
-    if (stored && isSupportedLocale(stored)) return stored
-    if (stored) localStorage.removeItem('locale')
-    return detectLocale(SUPPORTED_LOCALES)
-  })
-
-  const handleLocaleChange = useCallback((newLocale: string) => {
-    if (newLocale === detectLocale(SUPPORTED_LOCALES)) {
-      localStorage.removeItem('locale')
-    } else {
-      localStorage.setItem('locale', newLocale)
-    }
-    setLocale(newLocale)
-  }, [])
+  const { t } = useAppTranslations()
 
   const handleToggleEndpoint = useCallback((endpoint: Endpoint) => {
     const id = `${endpoint.method} ${endpoint.path}`
@@ -91,11 +85,8 @@ function App() {
     })
   }, [])
 
-  // handleLocaleChange will be passed to LanguagePicker in Step 14
-  void handleLocaleChange
-
   return (
-    <AppTranslationsProvider locale={locale}>
+    <>
       <header>
         <Container size="xl" py="sm">
           <Group justify="space-between">
@@ -103,10 +94,13 @@ function App() {
               <a href="https://alltheducks.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
                 <AtdLogo height={32} aria-label="All the Ducks" />
               </a>
-              <Title order={1} size="h3" visibleFrom="sm">Canvas API Permissions Planner</Title>
+              <Title order={1} size="h3" visibleFrom="sm">{t('app.title')}</Title>
             </Group>
             <Group gap="xs">
-              {/* LanguagePicker — wired in Step 14 */}
+              {locale !== 'en' && (
+                <Text size="xs" c="dimmed">{t('aiTranslation.note')}</Text>
+              )}
+              <LanguagePicker value={locale} onChange={onLocaleChange} />
               <ColorSchemeToggle />
               {/* HelpModal — wired in Step 17 */}
             </Group>
@@ -114,7 +108,7 @@ function App() {
         </Container>
       </header>
 
-      <main aria-label="Canvas API Permissions Planner">
+      <main aria-label={t('app.title')}>
         <Container size="xl" py="md">
           {endpoints.status === 'loading' && (
             <Center h="60vh"><Loader /></Center>
@@ -123,7 +117,7 @@ function App() {
           {endpoints.status === 'error' && (
             <Center h="60vh">
               <Stack align="center">
-                <Text c="red" fw={500}>Failed to load permission data</Text>
+                <Text c="red" fw={500}>{t('error.loadFailed')}</Text>
                 <Text size="sm" c="dimmed" maw={400} ta="center">
                   {endpoints.error.message}
                 </Text>
@@ -149,11 +143,11 @@ function App() {
           <Group justify="space-between">
             <Text size="xs" c="dimmed">
               {endpoints.status === 'ready'
-                ? `Canvas data: ${endpoints.version}`
-                : 'Canvas data: (not loaded)'}
+                ? t('footer.dataVersion', { version: endpoints.version })
+                : t('footer.dataNotLoaded')}
             </Text>
             <Group gap="xs" align="center">
-              <Text size="xs" c="dimmed">A free tool by</Text>
+              <Text size="xs" c="dimmed">{t('footer.credit')}</Text>
               <a href="https://alltheducks.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
                 <AtdLogo height={24} aria-label="All the Ducks" />
               </a>
@@ -161,6 +155,30 @@ function App() {
           </Group>
         </Container>
       </footer>
+    </>
+  )
+}
+
+function App() {
+  const [locale, setLocale] = useState(() => {
+    const stored = localStorage.getItem('locale')
+    if (stored && isSupportedLocale(stored)) return stored
+    if (stored) localStorage.removeItem('locale')
+    return detectLocale(SUPPORTED_LOCALES)
+  })
+
+  const handleLocaleChange = useCallback((newLocale: string) => {
+    if (newLocale === detectLocale(SUPPORTED_LOCALES)) {
+      localStorage.removeItem('locale')
+    } else {
+      localStorage.setItem('locale', newLocale)
+    }
+    setLocale(newLocale)
+  }, [])
+
+  return (
+    <AppTranslationsProvider locale={locale}>
+      <AppContent locale={locale} onLocaleChange={handleLocaleChange} />
     </AppTranslationsProvider>
   )
 }

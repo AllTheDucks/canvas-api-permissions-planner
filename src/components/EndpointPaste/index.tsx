@@ -1,6 +1,7 @@
 import { useState } from 'react'
 import { Alert, Button, Code, Stack, Textarea } from '@mantine/core'
 import { IconAlertCircle } from '@tabler/icons-react'
+import { useAppTranslations } from '../../context/AppTranslationsContext'
 import { matchEndpoints } from '../../utils/endpointMatcher'
 import type { Endpoint } from '../../types'
 
@@ -12,6 +13,7 @@ type EndpointPasteProps = {
 export function EndpointPaste({ endpoints, onAdd }: EndpointPasteProps) {
   const [value, setValue] = useState('')
   const [unmatched, setUnmatched] = useState<string[]>([])
+  const { t } = useAppTranslations()
 
   function handleAdd() {
     const lines = value
@@ -44,8 +46,8 @@ export function EndpointPaste({ endpoints, onAdd }: EndpointPasteProps) {
   return (
     <Stack gap="xs" mt="md">
       <Textarea
-        label="Or paste a list:"
-        placeholder="One endpoint per line, e.g. GET /api/v1/courses/:id"
+        label={t('endpoints.pasteLabel')}
+        placeholder={t('endpoints.pastePlaceholder')}
         autosize
         minRows={3}
         maxRows={6}
@@ -53,13 +55,13 @@ export function EndpointPaste({ endpoints, onAdd }: EndpointPasteProps) {
         onChange={e => setValue(e.currentTarget.value)}
       />
       <Button fullWidth onClick={handleAdd} disabled={value.trim().length === 0}>
-        Add
+        {t('endpoints.addButton')}
       </Button>
       {unmatched.length > 0 && (
         <Alert
           icon={<IconAlertCircle />}
           color="red"
-          title="Unrecognised endpoints:"
+          title={t('endpoints.unmatched')}
           role="alert"
           withCloseButton
           onClose={() => setUnmatched([])}
