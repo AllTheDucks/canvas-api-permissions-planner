@@ -1,14 +1,14 @@
-import { memo, useCallback, useMemo, useOptimistic, useRef, useState, startTransition } from 'react'
+import { memo, useCallback, useMemo, useOptimistic, useState, startTransition } from 'react'
 import {
   ActionIcon,
   Checkbox,
   CloseButton,
-  ScrollArea,
+  Combobox,
   Text,
   TextInput,
   Tooltip,
+  useCombobox,
 } from '@mantine/core'
-import { useVirtualizer } from '@tanstack/react-virtual'
 import { IconInfoCircle, IconSearch } from '@tabler/icons-react'
 import { useAppTranslations } from '../../context/AppTranslationsContext'
 import { trackEvent } from '../../utils/analytics'
@@ -32,7 +32,6 @@ type EndpointRowProps = {
 }
 
 const EndpointRow = memo(function EndpointRow({ endpoint, checked, onToggle }: EndpointRowProps) {
-  const id = endpointId(endpoint)
   const handleChange = useCallback(() => {
     if (!checked) {
       trackEvent('endpoint_selected', { category: endpoint.category })
@@ -48,6 +47,7 @@ const EndpointRow = memo(function EndpointRow({ endpoint, checked, onToggle }: E
         label: {
           fontFamily: 'var(--mantine-font-family-monospace)',
           fontSize: 'var(--mantine-font-size-xs)',
+          whiteSpace: 'nowrap',
         },
       }}
       label={
@@ -71,17 +71,15 @@ const EndpointRow = memo(function EndpointRow({ endpoint, checked, onToggle }: E
   )
 })
 
-type FlatRow =
-  | { type: 'header'; category: string }
-  | { type: 'endpoint'; endpoint: Endpoint }
-
-const ROW_HEIGHT = 30
-const HEADER_HEIGHT = 36
-
 export function EndpointSelector({ endpoints, selected, onToggle, inputRef }: EndpointSelectorProps) {
   const [search, setSearch] = useState('')
   const { t } = useAppTranslations()
-  const viewportRef = useRef<HTMLDivElement>(null)
+
+  const combobox = useCombobox({
+    onDropdownClose: () => {
+      combobox.resetSelectedOption()
+    },
+  })
 
   const selectedIds = useMemo(
     () => new Set(selected.map(endpointId)),
@@ -120,94 +118,93 @@ export function EndpointSelector({ endpoints, selected, onToggle, inputRef }: En
 
   const query = search.trim().toLowerCase()
 
-  const filteredGroups = useMemo(() => {
-    if (!query) return null
+  const displayGroups = useMemo(() => {
     const result: Array<{ category: string; items: Endpoint[] }> = []
     for (const [category, items] of grouped) {
-      const filtered = items.filter(
-        (ep) => optimisticIds.has(endpointId(ep)) || endpointId(ep).toLowerCase().includes(query),
-      )
-      if (filtered.length > 0) {
-        result.push({ category, items: filtered })
+      if (!query) {
+        result.push({ category, items })
+      } else {
+        const filtered = items.filter(
+          (ep) => endpointId(ep).toLowerCase().includes(query),
+        )
+        if (filtered.length > 0) {
+          result.push({ category, items: filtered })
+        }
       }
     }
     return result
-  }, [grouped, query, optimisticIds])
-
-  const displayGroups = filteredGroups
-    ?? Array.from(grouped, ([category, items]) => ({ category, items }))
-
-  const flatRows = useMemo(() => {
-    const rows: FlatRow[] = []
-    for (const { category, items } of displayGroups) {
-      rows.push({ type: 'header', category })
-      for (const ep of items) {
-        rows.push({ type: 'endpoint', endpoint: ep })
-      }
-    }
-    return rows
-  }, [displayGroups])
-
-  const virtualizer = useVirtualizer({
-    count: flatRows.length,
-    getScrollElement: () => viewportRef.current,
-    estimateSize: (index) => flatRows[index].type === 'header' ? HEADER_HEIGHT : ROW_HEIGHT,
-    overscan: 10,
-  })
+  }, [grouped, query])
 
   const hasResults = displayGroups.length > 0
 
+  const mergedInputRef = useCallback((node: HTMLInputElement | null) => {
+    if (typeof inputRef === 'function') {
+      inputRef(node)
+    } else if (inputRef && typeof inputRef === 'object') {
+      (inputRef as React.MutableRefObject<HTMLInputElement | null>).current = node
+    }
+  }, [inputRef])
+
   return (
-    <>
-      <TextInput
-        ref={inputRef}
-        placeholder={t('endpoints.searchPlaceholder')}
-        leftSection={<IconSearch size={16} />}
-        rightSection={search ? <CloseButton size="sm" onClick={() => setSearch('')} /> : null}
-        value={search}
-        onChange={(e) => setSearch(e.currentTarget.value)}
-        mb="xs"
-      />
-      <ScrollArea h={{ base: 240, sm: 400 }} viewportRef={viewportRef}>
-        {hasResults ? (
-          <div style={{ height: virtualizer.getTotalSize(), position: 'relative' }}>
-            {virtualizer.getVirtualItems().map((virtualRow) => {
-              const row = flatRows[virtualRow.index]
-              return (
-                <div
-                  key={virtualRow.key}
-                  ref={virtualizer.measureElement}
-                  data-index={virtualRow.index}
-                  style={{
-                    position: 'absolute',
-                    top: 0,
-                    left: 0,
-                    width: '100%',
-                    transform: `translateY(${virtualRow.start}px)`,
-                    paddingBottom: row.type === 'endpoint' ? 4 : undefined,
-                  }}
-                >
-                  {row.type === 'header' ? (
-                    <Text size="xs" fw={700} c="dimmed" mt="sm" mb={4}>
-                      {row.category}
-                    </Text>
-                  ) : (
+    <Combobox
+      store={combobox}
+      onOptionSubmit={() => {}}
+      width="min(780px, 90vw)"
+      position="bottom-start"
+    >
+      <Combobox.Target>
+        <TextInput
+          ref={mergedInputRef}
+          placeholder={t('endpoints.searchPlaceholder')}
+          leftSection={<IconSearch size={16} />}
+          rightSection={search ? <CloseButton size="sm" onClick={() => setSearch('')} /> : null}
+          value={search}
+          onChange={(e) => {
+            setSearch(e.currentTarget.value)
+            if (!combobox.dropdownOpened) {
+              combobox.openDropdown()
+            }
+          }}
+          onFocus={() => combobox.openDropdown()}
+          onClick={() => combobox.openDropdown()}
+        />
+      </Combobox.Target>
+
+      <Combobox.Dropdown>
+        <div
+          style={{
+            maxHeight: 'min(400px, 60vh)',
+            overflowY: 'auto',
+            padding: 'var(--mantine-spacing-xs)',
+          }}
+          onMouseDown={(e) => {
+            e.preventDefault()
+          }}
+        >
+          {hasResults ? (
+            displayGroups.map(({ category, items }) => (
+              <div key={category}>
+                <Text size="xs" fw={700} c="dimmed" mt="sm" mb={4}>
+                  {category}
+                </Text>
+                {items.map((ep) => (
+                  <div key={endpointId(ep)} style={{ paddingBottom: 4 }}>
                     <EndpointRow
-                      endpoint={row.endpoint}
-                      checked={optimisticIds.has(endpointId(row.endpoint))}
+                      endpoint={ep}
+                      checked={optimisticIds.has(endpointId(ep))}
                       onToggle={handleToggle}
                     />
-                  )}
-                </div>
-              )
-            })}
-          </div>
-        ) : (
-          <Text c="dimmed" ta="center" py="xl">
-            {t('endpoints.noResults')}
-          </Text>
-        )}
-      </ScrollArea>
-    </>
+                  </div>
+                ))}
+              </div>
+            ))
+          ) : (
+            <Text c="dimmed" ta="center" py="xl">
+              {t('endpoints.noResults')}
+            </Text>
+          )}
+        </div>
+      </Combobox.Dropdown>
+    </Combobox>
   )
 }
