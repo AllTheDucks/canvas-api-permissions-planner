@@ -1,7 +1,8 @@
-import { useCallback, useEffect, useMemo, useRef } from 'react'
+import { useMemo } from 'react'
 import { ActionIcon, CloseButton, Group, Paper, Stack, Text, Title, Tooltip } from '@mantine/core'
 import { IconInfoCircle } from '@tabler/icons-react'
 import { useAppTranslations } from '../../context/AppTranslationsContext'
+import { useListRemovalFocus } from '../../hooks/useListRemovalFocus'
 import type { Endpoint } from '../../types'
 import { StyledPath } from '../StyledPath'
 import classes from './SelectedEndpoints.module.css'
@@ -17,24 +18,8 @@ function endpointId(e: Endpoint): string {
 }
 
 export function SelectedEndpoints({ selected, onRemove, onRemoveCategory }: SelectedEndpointsProps) {
-  const removeRefs = useRef<Map<string, HTMLButtonElement>>(new Map())
-  const focusTargetRef = useRef<string | null>(null)
   const { t } = useAppTranslations()
-
-  const setRef = useCallback((id: string, el: HTMLButtonElement | null) => {
-    if (el) {
-      removeRefs.current.set(id, el)
-    } else {
-      removeRefs.current.delete(id)
-    }
-  }, [])
-
-  useEffect(() => {
-    if (focusTargetRef.current) {
-      removeRefs.current.get(focusTargetRef.current)?.focus()
-      focusTargetRef.current = null
-    }
-  }, [selected])
+  const { setRef, scheduleRemovalFocus } = useListRemovalFocus(selected, endpointId)
 
   const grouped = useMemo(() => {
     const map = new Map<string, Array<{ endpoint: Endpoint; originalIndex: number }>>()
@@ -53,23 +38,7 @@ export function SelectedEndpoints({ selected, onRemove, onRemoveCategory }: Sele
   if (selected.length === 0) return null
 
   function handleRemove(endpoint: Endpoint, flatIndex: number) {
-    const remaining = selected.length - 1
-
-    if (remaining === 0) {
-      onRemove(endpoint)
-      return
-    }
-
-    const ids = selected
-      .filter((_, i) => i !== flatIndex)
-      .map(endpointId)
-
-    if (flatIndex < ids.length) {
-      focusTargetRef.current = ids[flatIndex]
-    } else {
-      focusTargetRef.current = ids[ids.length - 1]
-    }
-
+    scheduleRemovalFocus(flatIndex)
     onRemove(endpoint)
   }
 

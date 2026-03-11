@@ -1,10 +1,11 @@
-import { useCallback, useDeferredValue, useMemo, useRef, useState } from 'react'
+import { useCallback, useDeferredValue, useMemo, useRef } from 'react'
 import { ActionIcon, Center, Container, Divider, Grid, Group, Loader, Paper, Stack, Text, Title, Tooltip } from '@mantine/core'
 import { notifications } from '@mantine/notifications'
 import { IconLink } from '@tabler/icons-react'
 import AtdLogo from './assets/atd-logo.svg?react'
 import { useEndpoints } from './hooks/useEndpoints'
 import { useLocale } from './hooks/useLocale'
+import { useLocalePreference } from './hooks/useLocalePreference'
 import { useUrlSelection } from './hooks/useUrlSelection'
 import { useLocaleSync } from './hooks/useLocaleSync'
 import { EndpointSelector } from './components/EndpointSelector'
@@ -16,8 +17,6 @@ import { LanguagePicker } from './components/LanguagePicker'
 import { HelpModal } from './components/HelpModal'
 import { AppTranslationsProvider, useAppTranslations } from './context/AppTranslationsContext'
 import { aggregatePermissions } from './utils/permissionAggregator'
-import { detectLocale } from './utils/detectLocale'
-import { SUPPORTED_LOCALES, isSupportedLocale } from './i18n/locales'
 import type { Endpoint, PermissionRef } from './types'
 
 type ReadyContentProps = {
@@ -194,25 +193,11 @@ function AppContent({
 }
 
 function App() {
-  const [locale, setLocale] = useState(() => {
-    const stored = localStorage.getItem('locale')
-    if (stored && isSupportedLocale(stored)) return stored
-    if (stored) localStorage.removeItem('locale')
-    return detectLocale(SUPPORTED_LOCALES)
-  })
-
-  const handleLocaleChange = useCallback((newLocale: string) => {
-    if (newLocale === detectLocale(SUPPORTED_LOCALES)) {
-      localStorage.removeItem('locale')
-    } else {
-      localStorage.setItem('locale', newLocale)
-    }
-    setLocale(newLocale)
-  }, [])
+  const [locale, setLocale] = useLocalePreference()
 
   return (
     <AppTranslationsProvider locale={locale}>
-      <AppContent locale={locale} onLocaleChange={handleLocaleChange} />
+      <AppContent locale={locale} onLocaleChange={setLocale} />
     </AppTranslationsProvider>
   )
 }

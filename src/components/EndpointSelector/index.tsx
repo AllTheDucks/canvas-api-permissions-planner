@@ -9,6 +9,7 @@ import {
   Tooltip,
   useCombobox,
 } from '@mantine/core'
+import { useMergedRef } from '@mantine/hooks'
 import { IconInfoCircle, IconSearch } from '@tabler/icons-react'
 import { useAppTranslations } from '../../context/AppTranslationsContext'
 import { trackEvent } from '../../utils/analytics'
@@ -174,13 +175,7 @@ export function EndpointSelector({ endpoints, selected, onToggle, onBulkToggle, 
 
   const hasResults = displayGroups.length > 0
 
-  const mergedInputRef = useCallback((node: HTMLInputElement | null) => {
-    if (typeof inputRef === 'function') {
-      inputRef(node)
-    } else if (inputRef && typeof inputRef === 'object') {
-      (inputRef as React.MutableRefObject<HTMLInputElement | null>).current = node
-    }
-  }, [inputRef])
+  const mergedInputRef = useMergedRef(inputRef ?? null)
 
   return (
     <Combobox
