@@ -1,7 +1,7 @@
 import type { Endpoint, HttpMethod } from '../types';
 import { isHttpMethod } from '../types';
 
-const SIS_ID_PREFIXES = [
+const ID_PREFIXES = [
   'sis_course_id',
   'sis_user_id',
   'sis_login_id',
@@ -9,11 +9,18 @@ const SIS_ID_PREFIXES = [
   'sis_account_id',
   'sis_term_id',
   'sis_group_id',
+  'sis_group_category_id',
+  'sis_integration_id',
+  'lti_context_id',
+  'lti_1_1_id',
+  'lti_1_3_id',
 ] as const;
 
-const SIS_ID_REGEX = new RegExp(
-  `^(${SIS_ID_PREFIXES.join('|')}):.+$`
+const ID_PREFIX_REGEX = new RegExp(
+  `^(?:hex:)?(${ID_PREFIXES.join('|')}):.+$`
 );
+
+const SPECIAL_ID_VALUES = new Set(['self', 'default', 'site_admin', 'current']);
 
 function normalisePath(raw: string): { method: HttpMethod | null; tokens: string[] } {
   let input = raw.trim();
@@ -45,7 +52,8 @@ function normalisePath(raw: string): { method: HttpMethod | null; tokens: string
   // Replace numeric-only tokens and SIS ID tokens with :id
   const normalised = tokens.map((token) => {
     if (/^\d+$/.test(token)) return ':id';
-    if (SIS_ID_REGEX.test(token)) return ':id';
+    if (ID_PREFIX_REGEX.test(token)) return ':id';
+    if (SPECIAL_ID_VALUES.has(token)) return ':id';
     if (token.startsWith(':')) return ':id';
     return token;
   });

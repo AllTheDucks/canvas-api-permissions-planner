@@ -126,6 +126,60 @@ describe('matchEndpoints', () => {
       expect(result[0].path).toBe('/api/v1/users/:user_id/profile');
     });
 
+    it('normalises sis_group_category_id prefix', () => {
+      const result = matchEndpoints(
+        'GET /api/v1/courses/sis_course_id:BIOL101/enrollments',
+        sampleEndpoints,
+      );
+      expect(result).toHaveLength(1);
+      expect(result[0].path).toBe('/api/v1/courses/:course_id/enrollments');
+    });
+
+    it('normalises sis_integration_id prefix', () => {
+      const result = matchEndpoints(
+        'GET /api/v1/users/sis_integration_id:ext123/profile',
+        sampleEndpoints,
+      );
+      expect(result).toHaveLength(1);
+      expect(result[0].path).toBe('/api/v1/users/:user_id/profile');
+    });
+
+    it('normalises lti_context_id prefix', () => {
+      const result = matchEndpoints(
+        'GET /api/v1/courses/lti_context_id:abc123/assignments',
+        sampleEndpoints,
+      );
+      expect(result).toHaveLength(1);
+      expect(result[0].method).toBe('GET');
+    });
+
+    it('normalises lti_1_1_id prefix', () => {
+      const result = matchEndpoints(
+        'GET /api/v1/courses/lti_1_1_id:tool123/assignments',
+        sampleEndpoints,
+      );
+      expect(result).toHaveLength(1);
+      expect(result[0].method).toBe('GET');
+    });
+
+    it('normalises lti_1_3_id prefix', () => {
+      const result = matchEndpoints(
+        'GET /api/v1/courses/lti_1_3_id:tool456/assignments',
+        sampleEndpoints,
+      );
+      expect(result).toHaveLength(1);
+      expect(result[0].method).toBe('GET');
+    });
+
+    it('normalises hex:sis_user_id prefix', () => {
+      const result = matchEndpoints(
+        'GET /api/v1/users/hex:sis_user_id:6a646f65/profile',
+        sampleEndpoints,
+      );
+      expect(result).toHaveLength(1);
+      expect(result[0].path).toBe('/api/v1/users/:user_id/profile');
+    });
+
     it('does not normalise unrecognised SIS-style tokens but still matches via wildcard', () => {
       const result = matchEndpoints(
         'GET /api/v1/users/sis_foo_id:bar/profile',
@@ -145,6 +199,53 @@ describe('matchEndpoints', () => {
       );
       // "sis_foo_id:bar" is at position where "courses" is expected — mismatch
       expect(result).toEqual([]);
+    });
+  });
+
+  describe('special ID value normalisation', () => {
+    it('normalises "self" to :id for user paths', () => {
+      const result = matchEndpoints(
+        'GET /api/v1/users/self/profile',
+        sampleEndpoints,
+      );
+      expect(result).toHaveLength(1);
+      expect(result[0].path).toBe('/api/v1/users/:user_id/profile');
+    });
+
+    it('normalises "self" to :id for course paths', () => {
+      const result = matchEndpoints(
+        'GET /api/v1/courses/self/assignments',
+        sampleEndpoints,
+      );
+      expect(result).toHaveLength(1);
+      expect(result[0].method).toBe('GET');
+    });
+
+    it('normalises "default" to :id', () => {
+      const result = matchEndpoints(
+        'GET /api/v1/courses/default/assignments',
+        sampleEndpoints,
+      );
+      expect(result).toHaveLength(1);
+      expect(result[0].method).toBe('GET');
+    });
+
+    it('normalises "site_admin" to :id', () => {
+      const result = matchEndpoints(
+        'GET /api/v1/courses/site_admin/assignments',
+        sampleEndpoints,
+      );
+      expect(result).toHaveLength(1);
+      expect(result[0].method).toBe('GET');
+    });
+
+    it('normalises "current" to :id', () => {
+      const result = matchEndpoints(
+        'GET /api/v1/courses/current/assignments',
+        sampleEndpoints,
+      );
+      expect(result).toHaveLength(1);
+      expect(result[0].method).toBe('GET');
     });
   });
 
