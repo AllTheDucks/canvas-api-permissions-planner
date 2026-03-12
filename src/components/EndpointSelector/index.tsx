@@ -1,4 +1,4 @@
-import { memo, useCallback, useMemo, useOptimistic, useState, startTransition } from 'react'
+import { memo, useCallback, useMemo, useOptimistic, useRef, useState, startTransition } from 'react'
 import {
   ActionIcon,
   Checkbox,
@@ -175,7 +175,59 @@ export function EndpointSelector({ endpoints, selected, onToggle, onBulkToggle, 
 
   const hasResults = displayGroups.length > 0
 
-  const mergedInputRef = useMergedRef(inputRef ?? null)
+  const internalInputRef = useRef<HTMLInputElement>(null)
+  const mergedInputRef = useMergedRef(inputRef ?? null, internalInputRef)
+  const dropdownRef = useRef<HTMLDivElement>(null)
+
+  const getCheckboxes = useCallback((): HTMLInputElement[] => {
+    if (!dropdownRef.current) return []
+    return Array.from(dropdownRef.current.querySelectorAll<HTMLInputElement>('input[type="checkbox"]'))
+  }, [])
+
+  const handleInputKeyDown = useCallback((e: React.KeyboardEvent<HTMLInputElement>) => {
+    if (e.key === 'ArrowDown') {
+      e.preventDefault()
+      if (!combobox.dropdownOpened) {
+        combobox.openDropdown()
+        requestAnimationFrame(() => {
+          const boxes = getCheckboxes()
+          if (boxes.length > 0) boxes[0].focus()
+        })
+      } else {
+        const boxes = getCheckboxes()
+        if (boxes.length > 0) boxes[0].focus()
+      }
+    } else if (e.key === 'ArrowUp' && combobox.dropdownOpened) {
+      e.preventDefault()
+      const boxes = getCheckboxes()
+      if (boxes.length > 0) boxes[boxes.length - 1].focus()
+    }
+  }, [combobox, getCheckboxes])
+
+  const handleDropdownKeyDown = useCallback((e: React.KeyboardEvent<HTMLDivElement>) => {
+    if (e.key !== 'ArrowDown' && e.key !== 'ArrowUp') return
+    const target = e.target as HTMLInputElement
+    if (target.type !== 'checkbox') return
+
+    e.preventDefault()
+    const boxes = getCheckboxes()
+    const idx = boxes.indexOf(target)
+    if (idx === -1) return
+
+    if (e.key === 'ArrowDown') {
+      if (idx < boxes.length - 1) {
+        boxes[idx + 1].focus()
+      } else {
+        internalInputRef.current?.focus()
+      }
+    } else {
+      if (idx > 0) {
+        boxes[idx - 1].focus()
+      } else {
+        internalInputRef.current?.focus()
+      }
+    }
+  }, [getCheckboxes])
 
   return (
     <Combobox
@@ -198,6 +250,7 @@ export function EndpointSelector({ endpoints, selected, onToggle, onBulkToggle, 
               combobox.openDropdown()
             }
           }}
+          onKeyDown={handleInputKeyDown}
           onFocus={() => combobox.openDropdown()}
           onClick={() => combobox.openDropdown()}
         />
@@ -205,11 +258,13 @@ export function EndpointSelector({ endpoints, selected, onToggle, onBulkToggle, 
 
       <Combobox.Dropdown>
         <div
+          ref={dropdownRef}
           style={{
             maxHeight: 'min(400px, 60vh)',
             overflowY: 'auto',
             padding: 'var(--mantine-spacing-xs)',
           }}
+          onKeyDown={handleDropdownKeyDown}
           onMouseDown={(e) => {
             e.preventDefault()
           }}
