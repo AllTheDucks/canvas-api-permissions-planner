@@ -45,6 +45,12 @@ const sampleEndpoints: Endpoint[] = [
     category: 'Users',
     permissions: [{ symbol: 'read_roster' }],
   },
+  {
+    method: 'GET',
+    path: '/api/v1/users/self/activity_stream',
+    category: 'Users',
+    permissions: [{ symbol: 'read_course_content' }],
+  },
 ];
 
 describe('matchEndpoints', () => {
@@ -246,6 +252,15 @@ describe('matchEndpoints', () => {
       );
       expect(result).toHaveLength(1);
       expect(result[0].method).toBe('GET');
+    });
+
+    it('matches endpoints whose known path contains literal "self" via wildcard', () => {
+      const result = matchEndpoints(
+        'GET /api/v1/users/self/activity_stream',
+        sampleEndpoints,
+      );
+      expect(result).toHaveLength(1);
+      expect(result[0].path).toBe('/api/v1/users/self/activity_stream');
     });
   });
 
