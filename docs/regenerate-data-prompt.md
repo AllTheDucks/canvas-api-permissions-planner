@@ -142,10 +142,19 @@ Mark these as `required: false` entries in the endpoint's `permissions` array, w
    { "anyOf": ["read_sis", "manage_sis"], "required": false, "note": "Required to receive SIS ID fields in response" }
    ```
 
-2. **SIS URL ID references** — endpoints with entity ID path parameters (`:course_id`, `:user_id`, `:section_id`, `:account_id`) that accept SIS ID syntax (e.g. `sis_course_id:ABC123`). The SIS ID lookup itself requires `read_sis` or `manage_sis`. Mark as:
+2. **SIS URL ID references** — Canvas allows referencing resources by SIS ID in URL path parameters (e.g. `/api/v1/courses/sis_course_id:ABC123/assignments`). The SIS ID lookup requires `read_sis` or `manage_sis`. Add this optional permission to any endpoint that has a SIS-resolvable path parameter:
+
+   **SIS-resolvable named parameters:** `:account_id`, `:course_id`, `:user_id`, `:section_id`, `:term_id`, `:group_id`, `:group_category_id`, `:login_id`
+
+   **Generic `:id`** is SIS-resolvable when the preceding path segment is a known resource type: `accounts`, `courses`, `users`, `sections`, `groups`
+
+   **Not SIS-resolvable:** `:assignment_id`, `:topic_id`, `:module_id`, `:quiz_id`, `:submission_id`, `:folder_id`, and other non-entity parameters. Also skip endpoints with only literal `self` in the path (e.g. `/api/v1/users/self/todo`) since these don't accept alternative ID forms.
+
+   Mark as:
    ```json
    { "anyOf": ["read_sis", "manage_sis"], "required": false, "note": "Required if referencing this entity by SIS ID in the URL" }
    ```
+   Add at most one such entry per endpoint, even if the path contains multiple SIS-resolvable parameters. Skip if the endpoint already has a `read_sis` or `manage_sis` entry (to avoid duplicates with categories 1, 3, or 4).
 
 3. **SIS write fields** — mutating endpoints (POST/PUT) where `manage_sis` is needed to write SIS ID fields. Mark as:
    ```json
