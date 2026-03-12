@@ -183,6 +183,7 @@ export function EndpointSelector({ endpoints, selected, onToggle, onBulkToggle, 
       onOptionSubmit={() => {}}
       width="min(780px, 90vw)"
       position="bottom-start"
+      withinPortal={false}
     >
       <Combobox.Target>
         <TextInput
