@@ -15,8 +15,9 @@ Paste the prompt below into a new Claude conversation. Claude will read the Canv
 After Claude produces the output:
 1. Replace `canvas_api_permissions.md` and `public/data/endpoints.json` with the new versions.
 2. The `**Last updated:**` date in `canvas_api_permissions.md` and `"version"` in `endpoints.json` should already be set by Claude — verify they match the stable branch date from Step 0.
-3. Run `pnpm run dev` — any Zod schema violations will surface as an error state in the browser.
-4. Spot-check 5–10 endpoints across different categories against the source markdown.
+3. Run `pnpm run validate-endpoints-json` — this checks schema validity, referential integrity, uniqueness, format, and semantic rules. Fix any errors before proceeding.
+4. Run `pnpm run dev` — any remaining Zod schema violations will surface as an error state in the browser.
+5. Spot-check 5–10 endpoints across different categories against the source markdown.
 
 ---
 
@@ -296,6 +297,20 @@ Rules for the `permissions` array entries:
 The `permissions` array on each endpoint must contain only symbols that exist as keys in the top-level `permissions` map.
 
 **No duplicate endpoints.** Each `method + path` combination must appear exactly once in the `endpoints` array. If the same API endpoint appears in multiple controllers or route contexts (e.g. a permissions-check endpoint listed under both "Accounts" and "Roles"), merge them into a single entry. Use the category and notes from the more specific or informative context.
+
+---
+
+---
+
+### Step 5: Validate the output
+
+After producing both files, run the validation script:
+
+```
+pnpm run validate-endpoints-json
+```
+
+This checks all structural, referential integrity, uniqueness, format, and semantic invariants on `endpoints.json`. Fix any errors it reports before considering the output complete. Warnings about missing SIS URL reference coverage are expected and can be addressed in a follow-up pass.
 
 ---
 
