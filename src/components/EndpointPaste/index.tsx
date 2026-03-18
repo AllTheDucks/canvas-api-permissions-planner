@@ -5,6 +5,7 @@ import { useAppTranslations } from '../../context/AppTranslationsContext'
 import { trackEvent } from '../../utils/analytics'
 import { matchEndpoints } from '../../utils/endpointMatcher'
 import type { Endpoint } from '../../types'
+import classes from './EndpointPaste.module.css'
 
 type EndpointPasteProps = {
   endpoints: Endpoint[]
@@ -72,7 +73,7 @@ export function EndpointPaste({ endpoints, onAdd }: EndpointPasteProps) {
         >
           <Stack gap={4}>
             {unmatched.map((line, i) => (
-              <Code key={i} block style={{ whiteSpace: 'pre-wrap', wordBreak: 'break-all' }}>
+              <Code key={i} block className={classes.codeBlock}>
                 {line}
               </Code>
             ))}

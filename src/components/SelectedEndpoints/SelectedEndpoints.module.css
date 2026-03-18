@@ -20,3 +20,13 @@
 .endpointPath:hover .pathText bdo {
   unicode-bidi: normal;
 }
+
+.separatedRow {
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--mantine-color-default-border);
+  }
+}
+
+.noShrink {
+  flex-shrink: 0;
+}

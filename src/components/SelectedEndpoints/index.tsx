@@ -60,9 +60,8 @@ export function SelectedEndpoints({ selected, onRemove, onRemoveCategory }: Sele
                 onClick={() => onRemoveCategory(items.map(({ endpoint }) => endpoint))}
               />
             </Group>
-            {items.map(({ endpoint: ep, originalIndex }, i) => {
+            {items.map(({ endpoint: ep, originalIndex }) => {
               const id = endpointId(ep)
-              const isLastInGroup = i === items.length - 1
               return (
                 <Group
                   key={id}
@@ -70,15 +69,15 @@ export function SelectedEndpoints({ selected, onRemove, onRemoveCategory }: Sele
                   wrap="nowrap"
                   justify="space-between"
                   py={6}
-                  style={isLastInGroup ? undefined : { borderBottom: '1px solid var(--mantine-color-default-border)' }}
+                  className={classes.separatedRow}
                 >
                   <Text size="xs" ff="monospace" className={classes.endpointPath}>
-                    <Text span fw={700} size="xs" ff="monospace" style={{ flexShrink: 0 }}>{ep.method}&nbsp;</Text>
+                    <Text span fw={700} size="xs" ff="monospace" className={classes.noShrink}>{ep.method}&nbsp;</Text>
                     <span className={classes.pathText}>
                       <bdo dir="ltr"><StyledPath path={ep.path} /></bdo>
                     </span>
                   </Text>
-                  <Group gap={4} wrap="nowrap" style={{ flexShrink: 0 }}>
+                  <Group gap={4} wrap="nowrap" className={classes.noShrink}>
                     {ep.notes && (
                       <Tooltip label={t(ep.notes)} multiline maw={300} withArrow>
                         <ActionIcon

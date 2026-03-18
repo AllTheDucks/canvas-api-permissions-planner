@@ -1,0 +1,24 @@
+.dropdownScroll {
+  max-height: min(400px, 60vh);
+  overflow-y: auto;
+  padding: var(--mantine-spacing-xs);
+}
+
+.categoryContent {
+  margin-inline-start: 10px;
+  padding-inline-start: 14px;
+  border-inline-start: 2px solid var(--mantine-color-default-border);
+}
+
+.endpointRow {
+  padding-block: 4px;
+
+  &:not(:last-child) {
+    border-bottom: 1px solid var(--mantine-color-default-border);
+  }
+}
+
+.infoIcon {
+  vertical-align: middle;
+  margin-left: 4px;
+}

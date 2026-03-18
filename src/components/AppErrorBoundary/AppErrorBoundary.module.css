@@ -1,0 +1,9 @@
+.container {
+  padding: 2rem;
+  font-family: monospace;
+}
+
+.errorMessage {
+  white-space: pre-wrap;
+  color: red;
+}

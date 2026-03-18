@@ -15,6 +15,7 @@ import { useAppTranslations } from '../../context/AppTranslationsContext'
 import { trackEvent } from '../../utils/analytics'
 import type { Endpoint } from '../../types'
 import { StyledPath } from '../StyledPath'
+import classes from './EndpointSelector.module.css'
 
 type EndpointSelectorProps = {
   endpoints: Endpoint[]
@@ -63,7 +64,7 @@ const EndpointRow = memo(function EndpointRow({ endpoint, checked, onToggle }: E
                 size="sm"
                 variant="transparent"
                 component="span"
-                style={{ verticalAlign: 'middle', marginLeft: 4 }}
+                className={classes.infoIcon}
               >
                 <IconInfoCircle size={14} />
               </ActionIcon>
@@ -260,11 +261,7 @@ export function EndpointSelector({ endpoints, selected, onToggle, onBulkToggle, 
       <Combobox.Dropdown>
         <div
           ref={dropdownRef}
-          style={{
-            maxHeight: 'min(400px, 60vh)',
-            overflowY: 'auto',
-            padding: 'var(--mantine-spacing-xs)',
-          }}
+          className={classes.dropdownScroll}
           onKeyDown={handleDropdownKeyDown}
           onMouseDown={(e) => {
             e.preventDefault()
@@ -279,20 +276,11 @@ export function EndpointSelector({ endpoints, selected, onToggle, onBulkToggle, 
                   selectedIds={optimisticIds}
                   onBulkToggle={onBulkToggle}
                 />
-                <div
-                  style={{
-                    marginInlineStart: 10,
-                    paddingInlineStart: 14,
-                    borderInlineStart: '2px solid var(--mantine-color-default-border)',
-                  }}
-                >
-                  {items.map((ep, i) => (
+                <div className={classes.categoryContent}>
+                  {items.map((ep) => (
                     <div
                       key={endpointId(ep)}
-                      style={{
-                        paddingBlock: 4,
-                        borderBottom: i < items.length - 1 ? '1px solid var(--mantine-color-default-border)' : undefined,
-                      }}
+                      className={classes.endpointRow}
                     >
                       <EndpointRow
                         endpoint={ep}

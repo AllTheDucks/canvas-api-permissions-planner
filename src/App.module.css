@@ -1,0 +1,18 @@
+.appLayout {
+  display: flex;
+  flex-direction: column;
+  min-height: 100vh;
+}
+
+.inheritLink {
+  color: inherit;
+}
+
+.plainLink {
+  color: inherit;
+  text-decoration: none;
+}
+
+.mainContent {
+  flex: 1;
+}

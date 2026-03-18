@@ -1,4 +1,5 @@
 import React from 'react';
+import classes from './AppErrorBoundary.module.css';
 
 type State = { error: Error | null };
 
@@ -12,9 +13,9 @@ export class AppErrorBoundary extends React.Component<React.PropsWithChildren, S
   render() {
     if (this.state.error) {
       return (
-        <div style={{ padding: '2rem', fontFamily: 'monospace' }}>
+        <div className={classes.container}>
           <h1>Something went wrong</h1>
-          <pre style={{ whiteSpace: 'pre-wrap', color: 'red' }}>
+          <pre className={classes.errorMessage}>
             {this.state.error.message}
           </pre>
         </div>

@@ -33,9 +33,9 @@ function RequiredByTooltip({ requiredBy, children }: { requiredBy: string[]; chi
             const method = ep.slice(0, spaceIdx)
             const path = ep.slice(spaceIdx + 1)
             return (
-              <Text key={ep} size="xs" ff="monospace" style={{ display: 'flex', overflow: 'hidden' }}>
-                <Text span fw={700} size="xs" ff="monospace" style={{ flexShrink: 0 }}>{method}&nbsp;</Text>
-                <span style={{ direction: 'rtl', overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>
+              <Text key={ep} size="xs" ff="monospace" className={classes.tooltipRow}>
+                <Text span fw={700} size="xs" ff="monospace" className={classes.methodBadge}>{method}&nbsp;</Text>
+                <span className={classes.rtlPath}>
                   <bdo dir="ltr"><StyledPath path={path} /></bdo>
                 </span>
               </Text>
@@ -85,7 +85,7 @@ function AnyOfRow({ perm }: { perm: AnyOfAggregated }) {
           maw={300}
           withArrow
         >
-          <ActionIcon size="sm" variant="transparent" component="span" style={{ cursor: 'help' }}>
+          <ActionIcon size="sm" variant="transparent" component="span" className={classes.helpCursor}>
             <IconInfoCircle size={14} />
           </ActionIcon>
         </Tooltip>

@@ -17,3 +17,23 @@
     }
   }
 }
+
+.tooltipRow {
+  display: flex;
+  overflow: hidden;
+}
+
+.methodBadge {
+  flex-shrink: 0;
+}
+
+.rtlPath {
+  direction: rtl;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+}
+
+.helpCursor {
+  cursor: help;
+}

@@ -19,6 +19,7 @@ import { HelpModal } from './components/HelpModal'
 import { AppTranslationsProvider, useAppTranslations } from './context/AppTranslationsContext'
 import { aggregatePermissions } from './utils/permissionAggregator'
 import type { Endpoint, PermissionRef } from './types'
+import classes from './App.module.css'
 
 type ReadyContentProps = {
   allPermissions: Record<string, PermissionRef>
@@ -120,7 +121,7 @@ function AppContent({
   useLocaleSync(locale, isRtl)
 
   return (
-    <div style={{ display: 'flex', flexDirection: 'column', minHeight: '100vh' }}>
+    <div className={classes.appLayout}>
       <header>
         <Container size="xl" py="sm">
           <Group justify="space-between">
@@ -130,7 +131,7 @@ function AppContent({
               </a>
               <Stack gap={0} visibleFrom="sm">
                 <Title order={1} size="h3">{t('app.title')}</Title>
-                <Text size="xs" c="dimmed" ta="right" pr="xs">from <a href="https://alltheducks.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit', textDecoration: 'none' }}>All the Ducks</a></Text>
+                <Text size="xs" c="dimmed" ta="right" pr="xs">from <a href="https://alltheducks.com" target="_blank" rel="noopener noreferrer" className={classes.plainLink}>All the Ducks</a></Text>
               </Stack>
             </Group>
             <Group gap="xs">
@@ -146,7 +147,7 @@ function AppContent({
         <Divider />
       </header>
 
-      <main aria-label={t('app.title')} style={{ flex: 1 }}>
+      <main aria-label={t('app.title')} className={classes.mainContent}>
         <Container size="xl" py="md">
           {endpoints.status === 'loading' && (
             <Center h="60vh"><Loader /></Center>
@@ -185,7 +186,7 @@ function AppContent({
             </Text>
             <Group gap="xs" align="center">
               <Text size="xs" c="dimmed">{t('footer.credit')}</Text>
-              <a href="https://alltheducks.com" target="_blank" rel="noopener noreferrer" style={{ color: 'inherit' }}>
+              <a href="https://alltheducks.com" target="_blank" rel="noopener noreferrer" className={classes.inheritLink}>
                 <AtdLogo height={24} aria-label="All the Ducks" />
               </a>
             </Group>
