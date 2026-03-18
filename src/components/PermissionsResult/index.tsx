@@ -85,7 +85,7 @@ function AnyOfRow({ perm }: { perm: AnyOfAggregated }) {
           maw={300}
           withArrow
         >
-          <ActionIcon size="sm" variant="transparent" component="span" className={classes.helpCursor} role="img" aria-label={t('common.moreInfo')}>
+          <ActionIcon size="sm" variant="transparent" component="span" className={classes.helpCursor} aria-hidden="true">
             <IconInfoCircle size={14} />
           </ActionIcon>
         </Tooltip>

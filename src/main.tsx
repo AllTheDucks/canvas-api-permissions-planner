@@ -1,7 +1,7 @@
 import React, { lazy, StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
-import { Center, Loader, MantineProvider } from '@mantine/core'
+import { Center, Loader, MantineProvider, VisuallyHidden } from '@mantine/core'
 import { Notifications } from '@mantine/notifications'
 import { AppErrorBoundary } from './components/AppErrorBoundary'
 import { theme } from './theme'
@@ -36,7 +36,7 @@ createRoot(document.getElementById('root')!).render(
       <QueryClientProvider client={queryClient}>
         <MantineProvider theme={theme} defaultColorScheme="auto">
           <Notifications />
-          <Suspense fallback={<main><Center h="60vh"><Loader aria-label="Loading" /></Center></main>}>
+          <Suspense fallback={<main><VisuallyHidden><h1>Canvas API Permissions Planner</h1></VisuallyHidden><Center h="60vh"><Loader aria-label="Loading" /></Center></main>}>
             <App />
           </Suspense>
         </MantineProvider>

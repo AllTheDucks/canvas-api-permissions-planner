@@ -65,8 +65,7 @@ const EndpointRow = memo(function EndpointRow({ endpoint, checked, onToggle }: E
                 variant="transparent"
                 component="span"
                 className={classes.infoIcon}
-                role="img"
-                aria-label={t('common.moreInfo')}
+                aria-hidden="true"
               >
                 <IconInfoCircle size={14} />
               </ActionIcon>

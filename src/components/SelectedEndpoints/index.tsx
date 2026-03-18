@@ -85,8 +85,7 @@ export function SelectedEndpoints({ selected, onRemove, onRemoveCategory }: Sele
                           variant="transparent"
                           component="span"
                           tabIndex={-1}
-                          role="img"
-                          aria-label={t('common.moreInfo')}
+                          aria-hidden="true"
                         >
                           <IconInfoCircle size={14} />
                         </ActionIcon>
