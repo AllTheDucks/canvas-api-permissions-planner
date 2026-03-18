@@ -8,6 +8,9 @@
     <!-- Content Security Policy -->
     <meta http-equiv="Content-Security-Policy" content="default-src 'self'; script-src 'self' 'unsafe-inline' https://www.googletagmanager.com; style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; font-src https://fonts.gstatic.com; connect-src 'self' https://raw.githubusercontent.com https://www.google-analytics.com; img-src 'self' data:;" />
 
+    <!-- Preload app data so the fetch starts while JS parses -->
+    <link rel="preload" href="/data/endpoints.json" as="fetch" crossorigin />
+
     <!-- Favicon -->
     <link rel="icon" href="/favicon.svg" type="image/svg+xml" />
     <link rel="icon" href="/favicon.ico" sizes="any" />
