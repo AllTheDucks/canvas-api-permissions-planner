@@ -80,7 +80,7 @@ export function SelectedEndpoints({ selected, onRemove, onRemoveCategory }: Sele
                   </Text>
                   <Group gap={4} wrap="nowrap" style={{ flexShrink: 0 }}>
                     {ep.notes && (
-                      <Tooltip label={ep.notes} multiline maw={300} withArrow>
+                      <Tooltip label={t(ep.notes)} multiline maw={300} withArrow>
                         <ActionIcon
                           size="sm"
                           variant="transparent"

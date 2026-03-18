@@ -359,7 +359,7 @@
       "path": "/api/v1/accounts",
       "category": "Accounts",
       "permissions": [],
-      "notes": "Returns accounts the current user has access to. No specific permission required beyond authentication."
+      "notes": "notes.endpoint.returnsAccountsTheCurrentUserHasAccessToNoSpecificPermissionRequiredBeyondAuthentication"
     },
     {
       "method": "GET",
@@ -369,7 +369,7 @@
         {
           "symbol": "manage_account_settings",
           "required": false,
-          "note": "Required to see full account details"
+          "note": "notes.perm.requiredToSeeFullAccountDetails"
         },
         {
           "anyOf": [
@@ -377,7 +377,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -392,12 +392,12 @@
         {
           "symbol": "manage_sis",
           "required": false,
-          "note": "Required to set sis_account_id"
+          "note": "notes.perm.requiredToSetSisAccountId"
         },
         {
           "symbol": "manage_storage_quotas",
           "required": false,
-          "note": "Required to change storage quotas"
+          "note": "notes.perm.requiredToChangeStorageQuotas"
         }
       ]
     },
@@ -412,7 +412,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -430,7 +430,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required to receive SIS ID fields in response"
+          "note": "notes.perm.requiredToReceiveSisIdFieldsInResponse"
         }
       ]
     },
@@ -439,7 +439,7 @@
       "path": "/api/v1/course_accounts",
       "category": "Accounts",
       "permissions": [],
-      "notes": "Returns accounts the user can create courses in."
+      "notes": "notes.endpoint.returnsAccountsTheUserCanCreateCoursesIn"
     },
     {
       "method": "GET",
@@ -452,10 +452,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Returns enrollment terms. Accessible to users with any account role."
+      "notes": "notes.endpoint.returnsEnrollmentTermsAccessibleToUsersWithAnyAccountRole"
     },
     {
       "method": "GET",
@@ -468,7 +468,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -483,7 +483,7 @@
         {
           "symbol": "manage_sis",
           "required": false,
-          "note": "Required to write SIS ID fields"
+          "note": "notes.perm.requiredToWriteSisIdFields"
         }
       ]
     },
@@ -498,7 +498,7 @@
         {
           "symbol": "manage_sis",
           "required": false,
-          "note": "Required to write SIS ID fields"
+          "note": "notes.perm.requiredToWriteSisIdFields"
         }
       ]
     },
@@ -516,7 +516,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -531,10 +531,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Returns permission flags for the current user in this account."
+      "notes": "notes.endpoint.returnsPermissionFlagsForTheCurrentUserInThisAccount"
     },
     {
       "method": "GET",
@@ -550,7 +550,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -568,17 +568,17 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required to receive SIS ID fields in response"
+          "note": "notes.perm.requiredToReceiveSisIdFieldsInResponse"
         },
         {
           "symbol": "view_user_logins",
           "required": false,
-          "note": "Required to receive login_id / sis_login_id in response"
+          "note": "notes.perm.requiredToReceiveLoginIdSisLoginIdInResponse"
         },
         {
           "symbol": "read_email_addresses",
           "required": false,
-          "note": "Required to receive email addresses in response"
+          "note": "notes.perm.requiredToReceiveEmailAddressesInResponse"
         }
       ]
     },
@@ -593,7 +593,7 @@
         {
           "symbol": "manage_sis",
           "required": false,
-          "note": "Required to write SIS ID fields"
+          "note": "notes.perm.requiredToWriteSisIdFields"
         }
       ]
     },
@@ -608,10 +608,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Requires ability to view the user. Admins can view any user in their account."
+      "notes": "notes.endpoint.requiresAbilityToViewTheUserAdminsCanViewAnyUserInTheirAccount"
     },
     {
       "method": "PUT",
@@ -621,7 +621,7 @@
         {
           "symbol": "manage_user_logins",
           "required": false,
-          "note": "Required to update name, email, or login details for other users"
+          "note": "notes.perm.requiredToUpdateNameEmailOrLoginDetailsForOtherUsers"
         },
         {
           "anyOf": [
@@ -629,7 +629,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -647,7 +647,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -662,59 +662,59 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Returns courses for the specified user. The current user can list their own courses."
+      "notes": "notes.endpoint.returnsCoursesForTheSpecifiedUserTheCurrentUserCanListTheirOwnCourses"
     },
     {
       "method": "GET",
       "path": "/api/v1/users/self/activity_stream",
       "category": "Users",
       "permissions": [],
-      "notes": "Returns the current user's activity stream."
+      "notes": "notes.endpoint.returnsTheCurrentUsersActivityStream"
     },
     {
       "method": "GET",
       "path": "/api/v1/users/self/activity_stream/summary",
       "category": "Users",
       "permissions": [],
-      "notes": "Returns a summary of the current user's activity stream."
+      "notes": "notes.endpoint.returnsASummaryOfTheCurrentUsersActivityStream"
     },
     {
       "method": "DELETE",
       "path": "/api/v1/users/self/activity_stream/:id",
       "category": "Users",
       "permissions": [],
-      "notes": "Hides a stream item from the current user's activity stream."
+      "notes": "notes.endpoint.hidesAStreamItemFromTheCurrentUsersActivityStream"
     },
     {
       "method": "DELETE",
       "path": "/api/v1/users/self/activity_stream",
       "category": "Users",
       "permissions": [],
-      "notes": "Hides all stream items from the current user's activity stream."
+      "notes": "notes.endpoint.hidesAllStreamItemsFromTheCurrentUsersActivityStream"
     },
     {
       "method": "GET",
       "path": "/api/v1/users/self/todo",
       "category": "Users",
       "permissions": [],
-      "notes": "Returns the current user's TODO items."
+      "notes": "notes.endpoint.returnsTheCurrentUsersTodoItems"
     },
     {
       "method": "GET",
       "path": "/api/v1/users/self/todo_item_count",
       "category": "Users",
       "permissions": [],
-      "notes": "Returns the count of the current user's TODO items."
+      "notes": "notes.endpoint.returnsTheCountOfTheCurrentUsersTodoItems"
     },
     {
       "method": "GET",
       "path": "/api/v1/users/self/upcoming_events",
       "category": "Users",
       "permissions": [],
-      "notes": "Returns the current user's upcoming events."
+      "notes": "notes.endpoint.returnsTheCurrentUsersUpcomingEvents"
     },
     {
       "method": "GET",
@@ -727,10 +727,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Returns missing submissions for a student."
+      "notes": "notes.endpoint.returnsMissingSubmissionsForAStudent"
     },
     {
       "method": "GET",
@@ -743,10 +743,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Returns user settings. Users can view their own settings."
+      "notes": "notes.endpoint.returnsUserSettingsUsersCanViewTheirOwnSettings"
     },
     {
       "method": "PUT",
@@ -756,7 +756,7 @@
         {
           "symbol": "manage_user_logins",
           "required": false,
-          "note": "Required to update settings for other users"
+          "note": "notes.perm.requiredToUpdateSettingsForOtherUsers"
         },
         {
           "anyOf": [
@@ -764,7 +764,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -779,10 +779,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Returns custom colors for the user. Users can view their own."
+      "notes": "notes.endpoint.returnsCustomColorsForTheUserUsersCanViewTheirOwn"
     },
     {
       "method": "GET",
@@ -795,7 +795,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -810,10 +810,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Sets a custom color for a context. Users can set their own."
+      "notes": "notes.endpoint.setsACustomColorForAContextUsersCanSetTheirOwn"
     },
     {
       "method": "GET",
@@ -826,7 +826,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -841,7 +841,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -856,10 +856,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Returns user profile data."
+      "notes": "notes.endpoint.returnsUserProfileData"
     },
     {
       "method": "GET",
@@ -872,7 +872,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -890,7 +890,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -908,7 +908,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -926,7 +926,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -941,7 +941,7 @@
         {
           "symbol": "manage_sis",
           "required": false,
-          "note": "Required to update SIS login ID"
+          "note": "notes.perm.requiredToUpdateSisLoginId"
         }
       ]
     },
@@ -959,7 +959,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -977,10 +977,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Also requires user to have a student enrollment and account self-registration to be enabled."
+      "notes": "notes.endpoint.alsoRequiresUserToHaveAStudentEnrollmentAndAccountSelfRegistrationToBeEnabled"
     },
     {
       "method": "GET",
@@ -996,7 +996,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1014,7 +1014,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1032,7 +1032,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1047,10 +1047,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Initiates a file upload for the user's personal files."
+      "notes": "notes.endpoint.initiatesAFileUploadForTheUsersPersonalFiles"
     },
     {
       "method": "GET",
@@ -1063,10 +1063,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Lists files in the user's personal files area."
+      "notes": "notes.endpoint.listsFilesInTheUsersPersonalFilesArea"
     },
     {
       "method": "GET",
@@ -1079,7 +1079,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1094,7 +1094,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1109,7 +1109,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1124,7 +1124,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1142,10 +1142,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Merges one user account into another. Requires site admin."
+      "notes": "notes.endpoint.mergesOneUserAccountIntoAnotherRequiresSiteAdmin"
     },
     {
       "method": "POST",
@@ -1161,10 +1161,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Splits a previously merged user. Requires site admin."
+      "notes": "notes.endpoint.splitsAPreviouslyMergedUserRequiresSiteAdmin"
     },
     {
       "method": "GET",
@@ -1177,7 +1177,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1192,10 +1192,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Lists access tokens for a user."
+      "notes": "notes.endpoint.listsAccessTokensForAUser"
     },
     {
       "method": "GET",
@@ -1208,7 +1208,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1223,7 +1223,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1238,7 +1238,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1253,7 +1253,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1262,7 +1262,7 @@
       "path": "/api/v1/courses",
       "category": "Courses",
       "permissions": [],
-      "notes": "Returns courses the current user is enrolled in or has access to."
+      "notes": "notes.endpoint.returnsCoursesTheCurrentUserIsEnrolledInOrHasAccessTo"
     },
     {
       "method": "GET",
@@ -1275,10 +1275,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Returns course details. Enrolled users and admins can view."
+      "notes": "notes.endpoint.returnsCourseDetailsEnrolledUsersAndAdminsCanView"
     },
     {
       "method": "POST",
@@ -1291,17 +1291,17 @@
         {
           "symbol": "manage_sis",
           "required": false,
-          "note": "Required to set SIS course ID"
+          "note": "notes.perm.requiredToSetSisCourseId"
         },
         {
           "symbol": "manage_course_visibility",
           "required": false,
-          "note": "Required to set course visibility"
+          "note": "notes.perm.requiredToSetCourseVisibility"
         },
         {
           "symbol": "manage_storage_quotas",
           "required": false,
-          "note": "Required to set storage quotas"
+          "note": "notes.perm.requiredToSetStorageQuotas"
         }
       ]
     },
@@ -1313,12 +1313,12 @@
         {
           "symbol": "manage_courses_admin",
           "required": false,
-          "note": "Account-level permission to manage courses"
+          "note": "notes.perm.accountLevelPermissionToManageCourses"
         },
         {
           "symbol": "manage_sis",
           "required": false,
-          "note": "Required to update SIS course ID"
+          "note": "notes.perm.requiredToUpdateSisCourseId"
         },
         {
           "anyOf": [
@@ -1326,10 +1326,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Course teachers/admins can update their own courses."
+      "notes": "notes.endpoint.courseTeachersAdminsCanUpdateTheirOwnCourses"
     },
     {
       "method": "DELETE",
@@ -1339,12 +1339,12 @@
         {
           "symbol": "manage_courses_delete",
           "required": false,
-          "note": "Required for event=delete"
+          "note": "notes.perm.requiredForEventDelete"
         },
         {
           "symbol": "manage_courses_conclude",
           "required": false,
-          "note": "Required for event=conclude"
+          "note": "notes.perm.requiredForEventConclude"
         },
         {
           "anyOf": [
@@ -1352,10 +1352,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "The event parameter determines which permission is checked: 'delete' or 'conclude'."
+      "notes": "notes.endpoint.theEventParameterDeterminesWhichPermissionIsCheckedDeleteOrConclude"
     },
     {
       "method": "PUT",
@@ -1371,10 +1371,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Batch update courses in an account."
+      "notes": "notes.endpoint.batchUpdateCoursesInAnAccount"
     },
     {
       "method": "POST",
@@ -1390,7 +1390,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1412,17 +1412,17 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required to receive SIS ID fields in response"
+          "note": "notes.perm.requiredToReceiveSisIdFieldsInResponse"
         },
         {
           "symbol": "read_email_addresses",
           "required": false,
-          "note": "Required to receive email addresses in response"
+          "note": "notes.perm.requiredToReceiveEmailAddressesInResponse"
         },
         {
           "symbol": "view_user_logins",
           "required": false,
-          "note": "Required to receive login_id / sis_login_id in response"
+          "note": "notes.perm.requiredToReceiveLoginIdSisLoginIdInResponse"
         }
       ]
     },
@@ -1440,7 +1440,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1458,7 +1458,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1476,7 +1476,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1491,7 +1491,7 @@
             "manage_grades"
           ],
           "required": false,
-          "note": "Required to view progress for other users"
+          "note": "notes.perm.requiredToViewProgressForOtherUsers"
         },
         {
           "anyOf": [
@@ -1499,7 +1499,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1520,7 +1520,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1538,7 +1538,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1556,7 +1556,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1574,7 +1574,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1592,7 +1592,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1610,7 +1610,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1628,7 +1628,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1646,7 +1646,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1667,7 +1667,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1682,10 +1682,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Returns permission flags for the current user in this course."
+      "notes": "notes.endpoint.returnsPermissionFlagsForTheCurrentUserInThisCourse"
     },
     {
       "method": "GET",
@@ -1705,7 +1705,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required to receive SIS ID fields in response"
+          "note": "notes.perm.requiredToReceiveSisIdFieldsInResponse"
         }
       ]
     },
@@ -1723,7 +1723,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required to receive SIS ID fields in response"
+          "note": "notes.perm.requiredToReceiveSisIdFieldsInResponse"
         }
       ]
     },
@@ -1741,7 +1741,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required to receive SIS ID fields in response"
+          "note": "notes.perm.requiredToReceiveSisIdFieldsInResponse"
         }
       ]
     },
@@ -1759,7 +1759,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1774,7 +1774,7 @@
         {
           "symbol": "manage_sis",
           "required": false,
-          "note": "Required to write SIS ID fields"
+          "note": "notes.perm.requiredToWriteSisIdFields"
         }
       ]
     },
@@ -1789,7 +1789,7 @@
         {
           "symbol": "manage_sis",
           "required": false,
-          "note": "Required to write SIS ID fields"
+          "note": "notes.perm.requiredToWriteSisIdFields"
         }
       ]
     },
@@ -1807,7 +1807,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1822,7 +1822,7 @@
         {
           "symbol": "manage_courses_admin",
           "required": false,
-          "note": "Required on the destination course"
+          "note": "notes.perm.requiredOnTheDestinationCourse"
         },
         {
           "anyOf": [
@@ -1830,7 +1830,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1848,7 +1848,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1870,12 +1870,12 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required to receive SIS ID fields in response"
+          "note": "notes.perm.requiredToReceiveSisIdFieldsInResponse"
         },
         {
           "symbol": "read_email_addresses",
           "required": false,
-          "note": "Required to receive email addresses in response"
+          "note": "notes.perm.requiredToReceiveEmailAddressesInResponse"
         },
         {
           "anyOf": [
@@ -1883,12 +1883,12 @@
             "manage_grades"
           ],
           "required": false,
-          "note": "Required to see grade data for all students"
+          "note": "notes.perm.requiredToSeeGradeDataForAllStudents"
         },
         {
           "symbol": "manage_sis",
           "required": false,
-          "note": "Required to receive sis_import_id in response"
+          "note": "notes.perm.requiredToReceiveSisImportIdInResponse"
         }
       ]
     },
@@ -1910,12 +1910,12 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required to receive SIS ID fields in response"
+          "note": "notes.perm.requiredToReceiveSisIdFieldsInResponse"
         },
         {
           "symbol": "read_email_addresses",
           "required": false,
-          "note": "Required to receive email addresses in response"
+          "note": "notes.perm.requiredToReceiveEmailAddressesInResponse"
         },
         {
           "anyOf": [
@@ -1923,12 +1923,12 @@
             "manage_grades"
           ],
           "required": false,
-          "note": "Required to see grade data for all students"
+          "note": "notes.perm.requiredToSeeGradeDataForAllStudents"
         },
         {
           "symbol": "manage_sis",
           "required": false,
-          "note": "Required to receive sis_import_id in response"
+          "note": "notes.perm.requiredToReceiveSisImportIdInResponse"
         }
       ]
     },
@@ -1943,10 +1943,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Lists enrollments for a user. Users can list their own enrollments."
+      "notes": "notes.endpoint.listsEnrollmentsForAUserUsersCanListTheirOwnEnrollments"
     },
     {
       "method": "GET",
@@ -1959,7 +1959,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -1971,7 +1971,7 @@
         {
           "symbol": "manage_students",
           "required": false,
-          "note": "Required to enroll students"
+          "note": "notes.perm.requiredToEnrollStudents"
         },
         {
           "anyOf": [
@@ -1981,15 +1981,15 @@
             "add_designer_to_course"
           ],
           "required": false,
-          "note": "Required to enroll non-student roles"
+          "note": "notes.perm.requiredToEnrollNonStudentRoles"
         },
         {
           "symbol": "manage_sis",
           "required": false,
-          "note": "Required to write SIS ID fields"
+          "note": "notes.perm.requiredToWriteSisIdFields"
         }
       ],
-      "notes": "The specific permission depends on the enrollment type being created."
+      "notes": "notes.endpoint.theSpecificPermissionDependsOnTheEnrollmentTypeBeingCreated"
     },
     {
       "method": "POST",
@@ -1999,7 +1999,7 @@
         {
           "symbol": "manage_students",
           "required": false,
-          "note": "Required to enroll students"
+          "note": "notes.perm.requiredToEnrollStudents"
         },
         {
           "anyOf": [
@@ -2009,15 +2009,15 @@
             "add_designer_to_course"
           ],
           "required": false,
-          "note": "Required to enroll non-student roles"
+          "note": "notes.perm.requiredToEnrollNonStudentRoles"
         },
         {
           "symbol": "manage_sis",
           "required": false,
-          "note": "Required to write SIS ID fields"
+          "note": "notes.perm.requiredToWriteSisIdFields"
         }
       ],
-      "notes": "The specific permission depends on the enrollment type being created."
+      "notes": "notes.endpoint.theSpecificPermissionDependsOnTheEnrollmentTypeBeingCreated"
     },
     {
       "method": "DELETE",
@@ -2027,7 +2027,7 @@
         {
           "symbol": "manage_students",
           "required": false,
-          "note": "Required to remove student enrollments"
+          "note": "notes.perm.requiredToRemoveStudentEnrollments"
         },
         {
           "anyOf": [
@@ -2037,7 +2037,7 @@
             "remove_designer_from_course"
           ],
           "required": false,
-          "note": "Required to remove non-student roles"
+          "note": "notes.perm.requiredToRemoveNonStudentRoles"
         },
         {
           "anyOf": [
@@ -2045,10 +2045,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "The specific permission depends on the enrollment type being removed."
+      "notes": "notes.endpoint.theSpecificPermissionDependsOnTheEnrollmentTypeBeingRemoved"
     },
     {
       "method": "POST",
@@ -2061,10 +2061,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Accept an enrollment invitation. Only the invited user can accept."
+      "notes": "notes.endpoint.acceptAnEnrollmentInvitationOnlyTheInvitedUserCanAccept"
     },
     {
       "method": "POST",
@@ -2077,10 +2077,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Reject an enrollment invitation. Only the invited user can reject."
+      "notes": "notes.endpoint.rejectAnEnrollmentInvitationOnlyTheInvitedUserCanReject"
     },
     {
       "method": "PUT",
@@ -2096,7 +2096,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2117,7 +2117,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2139,7 +2139,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2157,10 +2157,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Bulk enrollment at the account level."
+      "notes": "notes.endpoint.bulkEnrollmentAtTheAccountLevel"
     },
     {
       "method": "GET",
@@ -2180,7 +2180,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2198,7 +2198,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2220,7 +2220,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2238,7 +2238,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2256,7 +2256,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2275,7 +2275,7 @@
             "manage_assignments_delete"
           ],
           "required": false,
-          "note": "Required to see unpublished assignments"
+          "note": "notes.perm.requiredToSeeUnpublishedAssignments"
         },
         {
           "anyOf": [
@@ -2283,7 +2283,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2302,7 +2302,7 @@
             "manage_assignments_delete"
           ],
           "required": false,
-          "note": "Required to see unpublished assignments"
+          "note": "notes.perm.requiredToSeeUnpublishedAssignments"
         },
         {
           "anyOf": [
@@ -2310,7 +2310,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2328,7 +2328,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2346,7 +2346,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2361,7 +2361,7 @@
         {
           "symbol": "manage_grades",
           "required": false,
-          "note": "Required if modifying grading attributes with existing submissions"
+          "note": "notes.perm.requiredIfModifyingGradingAttributesWithExistingSubmissions"
         },
         {
           "anyOf": [
@@ -2369,7 +2369,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2387,7 +2387,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2405,7 +2405,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2420,7 +2420,7 @@
         {
           "symbol": "view_all_grades",
           "required": false,
-          "note": "Required to see all students' assignment data"
+          "note": "notes.perm.requiredToSeeAllStudentsAssignmentData"
         },
         {
           "anyOf": [
@@ -2428,7 +2428,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2446,7 +2446,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2464,7 +2464,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2482,7 +2482,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2500,7 +2500,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2518,7 +2518,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2536,7 +2536,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2554,7 +2554,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2572,7 +2572,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2590,7 +2590,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2608,7 +2608,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2626,7 +2626,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2644,10 +2644,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Batch retrieve overrides for multiple assignments."
+      "notes": "notes.endpoint.batchRetrieveOverridesForMultipleAssignments"
     },
     {
       "method": "POST",
@@ -2663,10 +2663,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Batch create overrides."
+      "notes": "notes.endpoint.batchCreateOverrides"
     },
     {
       "method": "PUT",
@@ -2682,10 +2682,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Batch update overrides."
+      "notes": "notes.endpoint.batchUpdateOverrides"
     },
     {
       "method": "POST",
@@ -2701,7 +2701,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2716,7 +2716,7 @@
         {
           "symbol": "manage_grades",
           "required": false,
-          "note": "Required to see peer review details for all students"
+          "note": "notes.perm.requiredToSeePeerReviewDetailsForAllStudents"
         },
         {
           "anyOf": [
@@ -2724,7 +2724,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2739,7 +2739,7 @@
         {
           "symbol": "manage_grades",
           "required": false,
-          "note": "Required to see peer review details for all students"
+          "note": "notes.perm.requiredToSeePeerReviewDetailsForAllStudents"
         },
         {
           "anyOf": [
@@ -2747,7 +2747,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2765,7 +2765,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2783,7 +2783,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2801,7 +2801,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2819,7 +2819,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2840,7 +2840,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2861,7 +2861,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2882,10 +2882,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Students can also view their own submissions without these permissions."
+      "notes": "notes.endpoint.studentsCanAlsoViewTheirOwnSubmissionsWithoutThesePermissions"
     },
     {
       "method": "GET",
@@ -2904,7 +2904,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2919,10 +2919,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Users can view their own submissions. Instructors can view any student's submission."
+      "notes": "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission"
     },
     {
       "method": "GET",
@@ -2935,7 +2935,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2950,10 +2950,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Students submit their own work. No specific role permission required."
+      "notes": "notes.endpoint.studentsSubmitTheirOwnWorkNoSpecificRolePermissionRequired"
     },
     {
       "method": "POST",
@@ -2966,7 +2966,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2978,7 +2978,7 @@
         {
           "symbol": "proxy_assignment_submission",
           "required": false,
-          "note": "Required to upload files on behalf of another student"
+          "note": "notes.perm.requiredToUploadFilesOnBehalfOfAnotherStudent"
         },
         {
           "anyOf": [
@@ -2986,7 +2986,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -2998,7 +2998,7 @@
         {
           "symbol": "proxy_assignment_submission",
           "required": false,
-          "note": "Required to upload files on behalf of another student"
+          "note": "notes.perm.requiredToUploadFilesOnBehalfOfAnotherStudent"
         },
         {
           "anyOf": [
@@ -3006,7 +3006,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3024,10 +3024,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Grades a submission or adds a comment."
+      "notes": "notes.endpoint.gradesASubmissionOrAddsAComment"
     },
     {
       "method": "PUT",
@@ -3043,7 +3043,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3061,10 +3061,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Bulk grade update."
+      "notes": "notes.endpoint.bulkGradeUpdate"
     },
     {
       "method": "POST",
@@ -3080,7 +3080,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3098,7 +3098,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3119,7 +3119,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3140,7 +3140,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3161,7 +3161,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3182,7 +3182,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3197,10 +3197,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Upload a file to attach to a submission comment."
+      "notes": "notes.endpoint.uploadAFileToAttachToASubmissionComment"
     },
     {
       "method": "PUT",
@@ -3216,10 +3216,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Update a submission comment."
+      "notes": "notes.endpoint.updateASubmissionComment"
     },
     {
       "method": "DELETE",
@@ -3235,10 +3235,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Delete a submission comment."
+      "notes": "notes.endpoint.deleteASubmissionComment"
     },
     {
       "method": "GET",
@@ -3254,7 +3254,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3272,7 +3272,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3293,7 +3293,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3311,7 +3311,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3329,7 +3329,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3347,7 +3347,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3367,7 +3367,7 @@
             "manage_course_content_delete"
           ],
           "required": false,
-          "note": "Required to see unpublished discussion topics"
+          "note": "notes.perm.requiredToSeeUnpublishedDiscussionTopics"
         },
         {
           "anyOf": [
@@ -3375,7 +3375,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3393,7 +3393,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3411,7 +3411,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3429,7 +3429,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3444,7 +3444,7 @@
         {
           "symbol": "moderate_forum",
           "required": false,
-          "note": "Required to set topic as announcement or pin it"
+          "note": "notes.perm.requiredToSetTopicAsAnnouncementOrPinIt"
         },
         {
           "anyOf": [
@@ -3452,7 +3452,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3470,7 +3470,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3482,7 +3482,7 @@
         {
           "symbol": "moderate_forum",
           "required": false,
-          "note": "Required to change published state, lock, pin, or set as announcement"
+          "note": "notes.perm.requiredToChangePublishedStateLockPinOrSetAsAnnouncement"
         },
         {
           "anyOf": [
@@ -3490,10 +3490,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Topic author can edit their own topic content."
+      "notes": "notes.endpoint.topicAuthorCanEditTheirOwnTopicContent"
     },
     {
       "method": "PUT",
@@ -3506,7 +3506,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3524,7 +3524,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3542,7 +3542,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3560,7 +3560,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3578,7 +3578,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3596,7 +3596,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3614,7 +3614,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3632,7 +3632,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3650,7 +3650,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3668,7 +3668,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3686,7 +3686,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3704,7 +3704,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3722,7 +3722,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3740,7 +3740,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3758,7 +3758,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3776,7 +3776,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3794,7 +3794,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3812,10 +3812,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Requires rating to be enabled on the topic."
+      "notes": "notes.endpoint.requiresRatingToBeEnabledOnTheTopic"
     },
     {
       "method": "POST",
@@ -3831,7 +3831,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3856,10 +3856,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Returns global announcements for the current user."
+      "notes": "notes.endpoint.returnsGlobalAnnouncementsForTheCurrentUser"
     },
     {
       "method": "GET",
@@ -3872,7 +3872,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3890,7 +3890,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3908,7 +3908,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3926,10 +3926,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Admin deletion of a global announcement."
+      "notes": "notes.endpoint.adminDeletionOfAGlobalAnnouncement"
     },
     {
       "method": "GET",
@@ -3942,7 +3942,7 @@
         {
           "symbol": "manage_wiki_update",
           "required": false,
-          "note": "Required to see unpublished pages"
+          "note": "notes.perm.requiredToSeeUnpublishedPages"
         },
         {
           "anyOf": [
@@ -3950,7 +3950,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3968,7 +3968,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -3986,7 +3986,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4004,7 +4004,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4022,7 +4022,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4040,7 +4040,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4058,7 +4058,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4076,7 +4076,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4094,7 +4094,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4112,7 +4112,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4130,7 +4130,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4148,7 +4148,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4166,10 +4166,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Reverts a page to a previous revision."
+      "notes": "notes.endpoint.revertsAPageToAPreviousRevision"
     },
     {
       "method": "GET",
@@ -4185,7 +4185,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4203,7 +4203,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4221,7 +4221,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4239,7 +4239,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4257,7 +4257,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4275,7 +4275,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4293,7 +4293,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4311,7 +4311,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4329,7 +4329,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4347,7 +4347,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4365,7 +4365,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4383,7 +4383,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4401,7 +4401,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4419,10 +4419,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Students select a mastery path option."
+      "notes": "notes.endpoint.studentsSelectAMasteryPathOption"
     },
     {
       "method": "GET",
@@ -4438,7 +4438,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4456,7 +4456,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4474,7 +4474,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4492,7 +4492,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4501,7 +4501,7 @@
       "path": "/api/v1/files/:id",
       "category": "Files",
       "permissions": [],
-      "notes": "Returns file details. Requires read access on the file's context."
+      "notes": "notes.endpoint.returnsFileDetailsRequiresReadAccessOnTheFilesContext"
     },
     {
       "method": "PUT",
@@ -4537,7 +4537,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4546,7 +4546,7 @@
       "path": "/api/v1/files/:id/public_url",
       "category": "Files",
       "permissions": [],
-      "notes": "Returns a temporary public download URL. Requires download access on the file."
+      "notes": "notes.endpoint.returnsATemporaryPublicDownloadUrlRequiresDownloadAccessOnTheFile"
     },
     {
       "method": "GET",
@@ -4562,7 +4562,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4580,7 +4580,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4589,7 +4589,7 @@
       "path": "/api/v1/folders/:id",
       "category": "Files",
       "permissions": [],
-      "notes": "Returns folder details. Requires read access on the folder's context."
+      "notes": "notes.endpoint.returnsFolderDetailsRequiresReadAccessOnTheFoldersContext"
     },
     {
       "method": "POST",
@@ -4605,7 +4605,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4643,7 +4643,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4672,14 +4672,14 @@
       "path": "/api/v1/folders/:id/folders",
       "category": "Files",
       "permissions": [],
-      "notes": "Lists subfolders. Requires read access on the folder."
+      "notes": "notes.endpoint.listsSubfoldersRequiresReadAccessOnTheFolder"
     },
     {
       "method": "GET",
       "path": "/api/v1/folders/:id/files",
       "category": "Files",
       "permissions": [],
-      "notes": "Lists files in a folder. Requires read access on the folder."
+      "notes": "notes.endpoint.listsFilesInAFolderRequiresReadAccessOnTheFolder"
     },
     {
       "method": "GET",
@@ -4695,7 +4695,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4713,7 +4713,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4722,7 +4722,7 @@
       "path": "/api/v1/users/self/groups",
       "category": "Groups",
       "permissions": [],
-      "notes": "Lists groups the current user belongs to."
+      "notes": "notes.endpoint.listsGroupsTheCurrentUserBelongsTo"
     },
     {
       "method": "GET",
@@ -4735,7 +4735,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4760,7 +4760,7 @@
         {
           "symbol": "manage_sis",
           "required": false,
-          "note": "Required to set SIS ID"
+          "note": "notes.perm.requiredToSetSisId"
         }
       ]
     },
@@ -4775,7 +4775,7 @@
         {
           "symbol": "manage_sis",
           "required": false,
-          "note": "Required to change SIS ID"
+          "note": "notes.perm.requiredToChangeSisId"
         },
         {
           "anyOf": [
@@ -4783,7 +4783,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4801,7 +4801,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4816,7 +4816,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4834,7 +4834,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4849,7 +4849,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4867,7 +4867,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4885,7 +4885,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4903,7 +4903,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4925,7 +4925,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4947,7 +4947,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -4962,7 +4962,7 @@
         {
           "symbol": "manage_sis",
           "required": false,
-          "note": "Required to set SIS ID on the group category"
+          "note": "notes.perm.requiredToSetSisIdOnTheGroupCategory"
         }
       ]
     },
@@ -4977,7 +4977,7 @@
         {
           "symbol": "manage_sis",
           "required": false,
-          "note": "Required to change SIS ID on the group category"
+          "note": "notes.perm.requiredToChangeSisIdOnTheGroupCategory"
         }
       ]
     },
@@ -4995,7 +4995,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5017,7 +5017,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5035,7 +5035,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5053,7 +5053,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5068,10 +5068,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Initiates a file upload to the group."
+      "notes": "notes.endpoint.initiatesAFileUploadToTheGroup"
     },
     {
       "method": "GET",
@@ -5084,7 +5084,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5099,7 +5099,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5114,7 +5114,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5123,7 +5123,7 @@
       "path": "/api/v1/calendar_events",
       "category": "Calendar Events",
       "permissions": [],
-      "notes": "Returns calendar events for the current user's visible contexts."
+      "notes": "notes.endpoint.returnsCalendarEventsForTheCurrentUsersVisibleContexts"
     },
     {
       "method": "GET",
@@ -5166,7 +5166,7 @@
       "path": "/api/v1/calendar_events/:id/reservations",
       "category": "Calendar Events",
       "permissions": [],
-      "notes": "Reserve a time slot in an appointment group."
+      "notes": "notes.endpoint.reserveATimeSlotInAnAppointmentGroup"
     },
     {
       "method": "GET",
@@ -5192,7 +5192,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5201,7 +5201,7 @@
       "path": "/api/v1/account_calendars",
       "category": "Calendar Events",
       "permissions": [],
-      "notes": "Lists account calendars visible to the current user."
+      "notes": "notes.endpoint.listsAccountCalendarsVisibleToTheCurrentUser"
     },
     {
       "method": "GET",
@@ -5214,7 +5214,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5232,7 +5232,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5250,7 +5250,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5268,10 +5268,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Bulk update account calendar visibility."
+      "notes": "notes.endpoint.bulkUpdateAccountCalendarVisibility"
     },
     {
       "method": "GET",
@@ -5287,7 +5287,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5305,7 +5305,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5323,7 +5323,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5341,7 +5341,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5359,7 +5359,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5377,7 +5377,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5395,7 +5395,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5413,7 +5413,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5431,7 +5431,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5449,7 +5449,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5467,7 +5467,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5482,7 +5482,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5500,7 +5500,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5518,7 +5518,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5536,7 +5536,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5554,7 +5554,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5572,7 +5572,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5587,10 +5587,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Returns the current user's own gradebook filters."
+      "notes": "notes.endpoint.returnsTheCurrentUsersOwnGradebookFilters"
     },
     {
       "method": "GET",
@@ -5603,7 +5603,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5618,10 +5618,10 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ],
-      "notes": "Creates a gradebook filter for the current user."
+      "notes": "notes.endpoint.createsAGradebookFilterForTheCurrentUser"
     },
     {
       "method": "PUT",
@@ -5634,7 +5634,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5649,7 +5649,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5670,7 +5670,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5688,7 +5688,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5706,7 +5706,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5724,7 +5724,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5742,7 +5742,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5763,7 +5763,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5781,7 +5781,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5799,7 +5799,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5817,7 +5817,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5835,7 +5835,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5853,7 +5853,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5871,7 +5871,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5889,7 +5889,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5907,7 +5907,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5925,7 +5925,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5943,7 +5943,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5961,7 +5961,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5979,7 +5979,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -5997,7 +5997,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6015,7 +6015,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6033,7 +6033,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6051,7 +6051,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6069,7 +6069,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6087,7 +6087,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6105,7 +6105,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6123,7 +6123,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6141,7 +6141,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6159,7 +6159,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6177,7 +6177,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6195,7 +6195,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6236,7 +6236,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6257,7 +6257,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6278,7 +6278,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6296,7 +6296,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6314,7 +6314,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6332,7 +6332,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6350,7 +6350,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6368,7 +6368,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6386,7 +6386,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6401,7 +6401,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6419,7 +6419,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6437,7 +6437,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6455,7 +6455,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6470,7 +6470,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6488,7 +6488,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6507,7 +6507,7 @@
             "manage_assignments_delete"
           ],
           "required": false,
-          "note": "Required to see unpublished assignments"
+          "note": "notes.perm.requiredToSeeUnpublishedAssignments"
         },
         {
           "anyOf": [
@@ -6515,7 +6515,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6533,7 +6533,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6551,7 +6551,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6569,7 +6569,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6587,7 +6587,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6605,7 +6605,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6626,7 +6626,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6644,7 +6644,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6662,7 +6662,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6680,7 +6680,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6698,7 +6698,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6713,7 +6713,7 @@
         {
           "symbol": "create_collaborations",
           "required": false,
-          "note": "Required to create new collaborations"
+          "note": "notes.perm.requiredToCreateNewCollaborations"
         },
         {
           "anyOf": [
@@ -6721,7 +6721,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6736,7 +6736,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6760,7 +6760,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6775,7 +6775,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6797,7 +6797,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6819,7 +6819,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6837,7 +6837,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6855,7 +6855,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6877,7 +6877,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6895,7 +6895,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6913,7 +6913,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6931,7 +6931,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6949,7 +6949,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6967,7 +6967,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -6985,7 +6985,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7003,7 +7003,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7018,7 +7018,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7033,7 +7033,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7048,7 +7048,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7063,7 +7063,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7078,7 +7078,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7093,7 +7093,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7118,7 +7118,7 @@
         {
           "symbol": "send_messages_all",
           "required": false,
-          "note": "Required to send to all course members at once"
+          "note": "notes.perm.requiredToSendToAllCourseMembersAtOnce"
         }
       ]
     },
@@ -7127,7 +7127,7 @@
       "path": "/api/v1/conversations/:id",
       "category": "Conversations",
       "permissions": [],
-      "notes": "Users can view their own conversations."
+      "notes": "notes.endpoint.usersCanViewTheirOwnConversations"
     },
     {
       "method": "PUT",
@@ -7187,7 +7187,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7202,7 +7202,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7220,7 +7220,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7235,7 +7235,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7253,7 +7253,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7271,7 +7271,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7289,7 +7289,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7307,7 +7307,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7325,7 +7325,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7343,7 +7343,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7361,7 +7361,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7379,7 +7379,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7394,7 +7394,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7412,7 +7412,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7427,7 +7427,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7445,7 +7445,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7460,7 +7460,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7478,7 +7478,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7496,7 +7496,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7514,7 +7514,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7532,7 +7532,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7550,7 +7550,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7669,7 +7669,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7687,7 +7687,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7705,7 +7705,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7723,7 +7723,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7741,7 +7741,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7759,7 +7759,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7780,7 +7780,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7801,7 +7801,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7822,7 +7822,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7840,7 +7840,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7858,7 +7858,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7876,7 +7876,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7894,7 +7894,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7912,7 +7912,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7930,7 +7930,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7948,7 +7948,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -7979,7 +7979,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -8012,7 +8012,7 @@
           "symbol": "view_grade_changes"
         }
       ],
-      "notes": "Query grade change audit logs with filters."
+      "notes": "notes.endpoint.queryGradeChangeAuditLogsWithFilters"
     },
     {
       "method": "GET",
@@ -8028,7 +8028,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -8046,7 +8046,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -8064,7 +8064,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -8082,7 +8082,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -8100,7 +8100,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -8112,7 +8112,7 @@
         {
           "symbol": "manage_courses_admin",
           "required": false,
-          "note": "Required to see full template details"
+          "note": "notes.perm.requiredToSeeFullTemplateDetails"
         },
         {
           "anyOf": [
@@ -8120,7 +8120,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -8138,7 +8138,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -8156,7 +8156,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -8174,7 +8174,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -8192,7 +8192,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -8210,7 +8210,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -8228,7 +8228,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -8246,7 +8246,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -8264,7 +8264,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -8282,7 +8282,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -8300,7 +8300,7 @@
             "manage_sis"
           ],
           "required": false,
-          "note": "Required if referencing this entity by SIS ID in the URL"
+          "note": "notes.perm.requiredIfReferencingThisEntityBySisIdInTheUrl"
         }
       ]
     },
@@ -8313,14 +8313,14 @@
           "symbol": "view_notifications"
         }
       ],
-      "notes": "Requires the account setting 'admins_can_view_notifications' to be enabled."
+      "notes": "notes.endpoint.requiresTheAccountSettingAdminsCanViewNotificationsToBeEnabled"
     },
     {
       "method": "GET",
       "path": "/api/v1/dashboard/dashboard_cards",
       "category": "Users",
       "permissions": [],
-      "notes": "Returns dashboard cards for the current user."
+      "notes": "notes.endpoint.returnsDashboardCardsForTheCurrentUser"
     }
   ]
 }

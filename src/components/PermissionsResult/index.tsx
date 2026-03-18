@@ -53,6 +53,8 @@ function RequiredByTooltip({ requiredBy, children }: { requiredBy: string[]; chi
 }
 
 function SingleRow({ perm }: { perm: SingleAggregated }) {
+  const { t } = useAppTranslations()
+
   return (
     <li data-print-no-break>
       <Group gap="xs" wrap="nowrap">
@@ -63,7 +65,7 @@ function SingleRow({ perm }: { perm: SingleAggregated }) {
       {perm.notes.length > 0 && (
         <Stack gap={0} ml="xs" mt={2}>
           {perm.notes.map((note) => (
-            <Text key={note} size="xs" c="dimmed">{note}</Text>
+            <Text key={note} size="xs" c="dimmed">{t(note)}</Text>
           ))}
         </Stack>
       )}
@@ -102,7 +104,7 @@ function AnyOfRow({ perm }: { perm: AnyOfAggregated }) {
       {perm.notes.length > 0 && (
         <Stack gap={0} ml="xs" mt={2}>
           {perm.notes.map((note) => (
-            <Text key={note} size="xs" c="dimmed">{note}</Text>
+            <Text key={note} size="xs" c="dimmed">{t(note)}</Text>
           ))}
         </Stack>
       )}

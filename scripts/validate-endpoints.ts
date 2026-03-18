@@ -6,6 +6,7 @@ import type { EndpointsData } from "../src/schemas/endpoints.ts";
 
 const __dirname = dirname(fileURLToPath(import.meta.url));
 const DATA_PATH = resolve(__dirname, "../public/data/endpoints.json");
+const EN_PATH = resolve(__dirname, "../src/i18n/en.json");
 
 let errors = 0;
 let warnings = 0;
@@ -193,6 +194,47 @@ for (const ep of data.endpoints) {
   }
 }
 if (noteErrors === 0) info("All optional permissions have notes");
+
+// ---------------------------------------------------------------------------
+// 9b. Note values must be valid translation keys in en.json
+// ---------------------------------------------------------------------------
+console.log("\n--- Note translation keys ---");
+const enStrings: Record<string, string> = JSON.parse(
+  readFileSync(EN_PATH, "utf-8"),
+);
+let noteKeyErrors = 0;
+for (const ep of data.endpoints) {
+  if (ep.notes) {
+    if (!ep.notes.startsWith("notes.endpoint.")) {
+      error(
+        `${ep.method} ${ep.path}: endpoint notes "${ep.notes}" does not use a notes.endpoint.* key`,
+      );
+      noteKeyErrors++;
+    } else if (!(ep.notes in enStrings)) {
+      error(
+        `${ep.method} ${ep.path}: endpoint notes key "${ep.notes}" not found in en.json`,
+      );
+      noteKeyErrors++;
+    }
+  }
+  for (const perm of ep.permissions) {
+    if ("note" in perm && perm.note) {
+      if (!perm.note.startsWith("notes.perm.")) {
+        error(
+          `${ep.method} ${ep.path}: permission note "${perm.note}" does not use a notes.perm.* key`,
+        );
+        noteKeyErrors++;
+      } else if (!(perm.note in enStrings)) {
+        error(
+          `${ep.method} ${ep.path}: permission note key "${perm.note}" not found in en.json`,
+        );
+        noteKeyErrors++;
+      }
+    }
+  }
+}
+if (noteKeyErrors === 0)
+  info("All note values are valid translation keys in en.json");
 
 // ---------------------------------------------------------------------------
 // 10. SIS URL reference coverage

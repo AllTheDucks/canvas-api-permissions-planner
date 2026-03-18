@@ -35,6 +35,7 @@ type EndpointRowProps = {
 }
 
 const EndpointRow = memo(function EndpointRow({ endpoint, checked, onToggle }: EndpointRowProps) {
+  const { t } = useAppTranslations()
   const handleChange = useCallback(() => {
     if (!checked) {
       trackEvent('endpoint_selected', { category: endpoint.category })
@@ -57,7 +58,7 @@ const EndpointRow = memo(function EndpointRow({ endpoint, checked, onToggle }: E
         <>
           <strong>{endpoint.method}</strong>{' '}<StyledPath path={endpoint.path} />
           {endpoint.notes && (
-            <Tooltip label={endpoint.notes} multiline maw={300} withArrow>
+            <Tooltip label={t(endpoint.notes)} multiline maw={300} withArrow>
               <ActionIcon
                 size="sm"
                 variant="transparent"
