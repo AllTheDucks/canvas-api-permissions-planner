@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "Оновити коментар до роботи.",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "Завантажити файл для прикрiплення до коментаря роботи.",
   "notes.endpoint.usersCanViewTheirOwnConversations": "Користувачi можуть переглядати власнi розмови.",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Користувачi можуть переглядати власнi роботи. Iнструктори можуть переглядати роботи будь-якого студента."
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Користувачi можуть переглядати власнi роботи. Iнструктори можуть переглядати роботи будь-якого студента.",
+  "permissions.or": "або"
 }

@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "제출물 댓글을 업데이트합니다.",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "제출물 댓글에 첨부할 파일을 업로드합니다.",
   "notes.endpoint.usersCanViewTheirOwnConversations": "사용자는 자신의 대화를 볼 수 있습니다.",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "사용자는 자신의 제출물을 볼 수 있습니다. 교수자는 모든 학생의 제출물을 볼 수 있습니다."
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "사용자는 자신의 제출물을 볼 수 있습니다. 교수자는 모든 학생의 제출물을 볼 수 있습니다.",
+  "permissions.or": "또는"
 }

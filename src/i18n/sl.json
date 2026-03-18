@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "Posodobiti komentar k oddaji.",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "Nalozi datoteko za prilogo komentarju oddaje.",
   "notes.endpoint.usersCanViewTheirOwnConversations": "Uporabniki si lahko ogledajo svoje lastne pogovore.",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Uporabniki si lahko ogledajo svoje lastne oddaje. Ucitelji si lahko ogledajo oddajo kateregakoli studenta."
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Uporabniki si lahko ogledajo svoje lastne oddaje. Ucitelji si lahko ogledajo oddajo kateregakoli studenta.",
+  "permissions.or": "ali"
 }

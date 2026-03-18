@@ -12,7 +12,7 @@
   - Add `test: { environment: 'jsdom', globals: true }` to `vite.config.ts`
   - Add `"vitest/globals"` to `tsconfig.app.json` types
 - [ ] Install Storybook (`pnpm dlx storybook@latest init`) and configure `.storybook/preview.tsx` with `AppTranslationsProvider locale="en"` + `MantineProvider` decorators
-- [ ] Install `@axe-core/react` (devDependency) and enable in `main.tsx` during development for automated WCAG violation reporting
+- [x] Install `@axe-core/react` (devDependency) and enable in `main.tsx` during development for automated WCAG violation reporting
 - [x] Configure `vite.config.ts` (SVGR plugin, Vitest config)
 - [x] Confirm `tsconfig.json` strict mode is enabled
 
@@ -141,9 +141,9 @@
 
 ## Accessibility Verification
 
-- [ ] Keyboard-only walkthrough: add endpoints, remove one, open help, switch language — no mouse required at any step
-- [ ] Screen reader test (VoiceOver on macOS): confirm `aria-live` announces permission list updates; confirm modal open/close is announced and focus is managed correctly
-- [ ] Check browser console for `@axe-core/react` violations in dev mode; resolve all WCAG AA failures
+- [x] Keyboard-only walkthrough: add endpoints, remove one, open help, switch language — no mouse required at any step
+- [x] Screen reader test (VoiceOver on macOS): confirm `aria-live` announces permission list updates; confirm modal open/close is announced and focus is managed correctly
+- [x] Check browser console for `@axe-core/react` violations in dev mode; resolve all WCAG AA failures
 
 ## URL Sharing / Deep Linking
 

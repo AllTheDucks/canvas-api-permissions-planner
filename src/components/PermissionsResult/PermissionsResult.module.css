@@ -5,13 +5,13 @@
 
   & > li {
     position: relative;
-    padding-left: 1rem;
+    padding-inline-start: 1rem;
     margin-bottom: var(--mantine-spacing-xs);
 
     &::before {
       content: '\2022';
       position: absolute;
-      left: 0;
+      inset-inline-start: 0;
       color: var(--mantine-color-dimmed);
       opacity: 0.5;
     }

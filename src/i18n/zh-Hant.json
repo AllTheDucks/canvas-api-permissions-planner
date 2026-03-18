@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "更新提交評論。",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "上傳檔案以附加至提交評論。",
   "notes.endpoint.usersCanViewTheirOwnConversations": "使用者可以檢視自己的對話。",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "使用者可以檢視自己的提交。講師可以檢視任何學生的提交。"
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "使用者可以檢視自己的提交。講師可以檢視任何學生的提交。",
+  "permissions.or": "或"
 }

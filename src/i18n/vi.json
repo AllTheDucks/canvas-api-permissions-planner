@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "Cap nhat binh luan bai nop.",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "Tai len tep de dinh kem vao binh luan bai nop.",
   "notes.endpoint.usersCanViewTheirOwnConversations": "Nguoi dung co the xem cuoc tro chuyen cua chinh ho.",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Nguoi dung co the xem bai nop cua chinh ho. Giang vien co the xem bai nop cua bat ky sinh vien nao."
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Nguoi dung co the xem bai nop cua chinh ho. Giang vien co the xem bai nop cua bat ky sinh vien nao.",
+  "permissions.or": "hoặc"
 }

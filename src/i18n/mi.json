@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "Whakahou i tetahi tuhipoka tukuanga.",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "Tukuake i tetahi kōnae hei tāpiri ki tetahi tuhipoka tukuanga.",
   "notes.endpoint.usersCanViewTheirOwnConversations": "Ka taea e nga kaiwhakamahi te matua i o raatou korero ake.",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Ka taea e nga kaiwhakamahi te matua i o raatou tukuanga ake. Ka taea e nga kaiako te matua i nga tukuanga o tetahi akonga."
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Ka taea e nga kaiwhakamahi te matua i o raatou tukuanga ake. Ka taea e nga kaiako te matua i nga tukuanga o tetahi akonga.",
+  "permissions.or": "rānei"
 }

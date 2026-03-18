@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "یک نظر تکلیف را به‌روز می‌کند.",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "یک فایل را برای پیوست به نظر تکلیف بارگذاری می‌کند.",
   "notes.endpoint.usersCanViewTheirOwnConversations": "کاربران می‌توانند مکالمات خود را مشاهده کنند.",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "کاربران می‌توانند تکالیف تحویل‌داده‌شده خود را مشاهده کنند. مدرسان می‌توانند تکالیف تحویل‌داده‌شده هر دانشجویی را مشاهده کنند."
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "کاربران می‌توانند تکالیف تحویل‌داده‌شده خود را مشاهده کنند. مدرسان می‌توانند تکالیف تحویل‌داده‌شده هر دانشجویی را مشاهده کنند.",
+  "permissions.or": "یا"
 }

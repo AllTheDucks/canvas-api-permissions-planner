@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "Aktualizuj komentarz do przeslania.",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "Przeslij plik, aby dolaczyc go do komentarza przeslania.",
   "notes.endpoint.usersCanViewTheirOwnConversations": "Uzytkownicy moga wyswietlac wlasne rozmowy.",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Uzytkownicy moga wyswietlac wlasne przeslania. Instruktorzy moga wyswietlac przeslania dowolnego studenta."
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Uzytkownicy moga wyswietlac wlasne przeslania. Instruktorzy moga wyswietlac przeslania dowolnego studenta.",
+  "permissions.or": "lub"
 }

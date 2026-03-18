@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "Opdater en afleveringskommentar.",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "Upload en fil til at vedhæfte til en afleveringskommentar.",
   "notes.endpoint.usersCanViewTheirOwnConversations": "Brugere kan se deres egne samtaler.",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Brugere kan se deres egne afleveringer. Undervisere kan se enhver studerendes aflevering."
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Brugere kan se deres egne afleveringer. Undervisere kan se enhver studerendes aflevering.",
+  "permissions.or": "eller"
 }

@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "Beadványhoz fűzött megjegyzés frissítése.",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "Fájl feltöltése beadványhoz fűzött megjegyzéshez csatoláshoz.",
   "notes.endpoint.usersCanViewTheirOwnConversations": "A felhasználók megtekinthetik saját beszélgetéseiket.",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "A felhasználók megtekinthetik saját beadványaikat. Az oktatók bármely hallgató beadványát megtekinthetik."
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "A felhasználók megtekinthetik saját beadványaikat. Az oktatók bármely hallgató beadványát megtekinthetik.",
+  "permissions.or": "vagy"
 }

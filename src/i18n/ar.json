@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "تحديث تعليق على تسليم.",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "رفع ملف لإرفاقه بتعليق على تسليم.",
   "notes.endpoint.usersCanViewTheirOwnConversations": "يمكن للمستخدمين عرض محادثاتهم الخاصة.",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "يمكن للمستخدمين عرض تسليماتهم الخاصة. يمكن للمدرسين عرض تسليمات أي طالب."
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "يمكن للمستخدمين عرض تسليماتهم الخاصة. يمكن للمدرسين عرض تسليمات أي طالب.",
+  "permissions.or": "أو"
 }

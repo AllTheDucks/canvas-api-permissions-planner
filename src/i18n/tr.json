@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "Gonderi yorumunu guncelle.",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "Gonderi yorumuna eklemek icin bir dosya yukle.",
   "notes.endpoint.usersCanViewTheirOwnConversations": "Kullanicilar kendi konusmalarini gorebilir.",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Kullanicilar kendi gonderimleri-ni gorebilir. Egitmenler herhangi bir ogrencinin gonderimleri-ni gorebilir."
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Kullanicilar kendi gonderimleri-ni gorebilir. Egitmenler herhangi bir ogrencinin gonderimleri-ni gorebilir.",
+  "permissions.or": "veya"
 }

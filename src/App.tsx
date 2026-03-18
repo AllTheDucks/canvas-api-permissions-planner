@@ -96,6 +96,7 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion }: Rea
                   onClick={handleCopyLink}
                   aria-label={t('share.copyLink')}
                   variant="subtle"
+                  size="lg"
                 >
                   <IconLink size={18} />
                 </ActionIcon>

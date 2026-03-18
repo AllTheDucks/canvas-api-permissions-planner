@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "Oppdater en innleveringskommentar.",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "Last opp en fil for a legge ved en innleveringskommentar.",
   "notes.endpoint.usersCanViewTheirOwnConversations": "Brukere kan se sine egne samtaler.",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Brukere kan se sine egne innleveringer. Laerere kan se alle studenters innleveringer."
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Brukere kan se sine egne innleveringer. Laerere kan se alle studenters innleveringer.",
+  "permissions.or": "eller"
 }

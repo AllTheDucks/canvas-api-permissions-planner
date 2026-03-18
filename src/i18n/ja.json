@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "提出物のコメントを更新します。",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "提出物のコメントに添付するファイルをアップロードします。",
   "notes.endpoint.usersCanViewTheirOwnConversations": "ユーザーは自分の会話を表示できます。",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "ユーザーは自分の提出物を表示できます。インストラクターはすべての学生の提出物を表示できます。"
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "ユーザーは自分の提出物を表示できます。インストラクターはすべての学生の提出物を表示できます。",
+  "permissions.or": "または"
 }

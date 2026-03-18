@@ -10,6 +10,7 @@
   "permissions.noAdditional": "No additional permissions required for the selected endpoints",
   "permissions.anyOf": "Any one of:",
   "permissions.anyOfTooltip": "Your API user needs at least one of these permissions. Any single one is sufficient to satisfy this requirement.",
+  "permissions.or": "or",
   "permissions.optionalNote": "These permissions unlock additional data fields. Review the notes to decide if your integration needs them.",
   "endpoints.heading": "Add Endpoints",
   "endpoints.searchPlaceholder": "Search endpoints…",

@@ -85,7 +85,7 @@ function AnyOfRow({ perm }: { perm: AnyOfAggregated }) {
           maw={300}
           withArrow
         >
-          <ActionIcon size="sm" variant="transparent" component="span" className={classes.helpCursor}>
+          <ActionIcon size="sm" variant="transparent" component="span" className={classes.helpCursor} aria-label={t('common.moreInfo')}>
             <IconInfoCircle size={14} />
           </ActionIcon>
         </Tooltip>
@@ -93,7 +93,7 @@ function AnyOfRow({ perm }: { perm: AnyOfAggregated }) {
           <Text size="sm" fw={600}>{t('permissions.anyOf')}</Text>
           {perm.options.map((opt, i) => (
             <Group key={opt.symbol} gap={4} wrap="nowrap">
-              {i > 0 && <Text size="sm" c="dimmed" fs="italic">or</Text>}
+              {i > 0 && <Text size="sm" c="dimmed" fs="italic">{t('permissions.or')}</Text>}
               <RequiredByTooltip requiredBy={perm.requiredBy}>
                 <Text size="sm">{opt.label}</Text>
               </RequiredByTooltip>
@@ -148,7 +148,7 @@ export function PermissionsResult({ permissions, selectedCount, isLoadingLocale 
       )}
 
       {hasRequired && (
-        <section>
+        <section aria-label={t('permissions.heading')}>
           <ul className={classes.permissionList}>
             {required.map((perm, i) =>
               perm.kind === 'single' ? (
@@ -164,7 +164,7 @@ export function PermissionsResult({ permissions, selectedCount, isLoadingLocale 
       {hasRequired && hasOptional && <Divider my="md" />}
 
       {hasOptional && (
-        <section>
+        <section aria-label={t('permissions.optionalHeading')}>
           <Title order={3} size="h5" mb="xs">{t('permissions.optionalHeading')}</Title>
           <Text size="xs" c="dimmed" mb="sm">
             {t('permissions.optionalNote')}

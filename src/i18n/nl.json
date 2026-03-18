@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "Een inzendingscommentaar bijwerken.",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "Een bestand uploaden om bij een inzendingscommentaar te voegen.",
   "notes.endpoint.usersCanViewTheirOwnConversations": "Gebruikers kunnen hun eigen gesprekken bekijken.",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Gebruikers kunnen hun eigen inzendingen bekijken. Instructeurs kunnen de inzending van elke student bekijken."
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Gebruikers kunnen hun eigen inzendingen bekijken. Instructeurs kunnen de inzending van elke student bekijken.",
+  "permissions.or": "of"
 }

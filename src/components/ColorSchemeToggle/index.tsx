@@ -24,6 +24,7 @@ export function ColorSchemeToggle() {
       <ActionIcon
         onClick={() => setColorScheme(next)}
         variant="default"
+        size="lg"
         aria-label={label}
       >
         {icons[colorScheme]}

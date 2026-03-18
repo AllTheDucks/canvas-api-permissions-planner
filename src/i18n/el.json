@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "Ενημέρωση σχολίου υποβολής.",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "Μεταφόρτωση αρχείου για επισύναψη σε σχόλιο υποβολής.",
   "notes.endpoint.usersCanViewTheirOwnConversations": "Οι χρήστες μπορούν να δουν τις δικές τους συνομιλίες.",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Οι χρήστες μπορούν να δουν τις δικές τους υποβολές. Οι εκπαιδευτές μπορούν να δουν την υποβολή οποιουδήποτε φοιτητή."
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Οι χρήστες μπορούν να δουν τις δικές τους υποβολές. Οι εκπαιδευτές μπορούν να δουν την υποβολή οποιουδήποτε φοιτητή.",
+  "permissions.or": "ή"
 }

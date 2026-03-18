@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "Uppdatera en inlaemningskommentar.",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "Ladda upp en fil foer att bifoga till en inlaemningskommentar.",
   "notes.endpoint.usersCanViewTheirOwnConversations": "Anvaendare kan visa sina egna konversationer.",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Anvaendare kan visa sina egna inlaemningar. Instruktorer kan visa valfri students inlaemning."
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Anvaendare kan visa sina egna inlaemningar. Instruktorer kan visa valfri students inlaemning.",
+  "permissions.or": "eller"
 }

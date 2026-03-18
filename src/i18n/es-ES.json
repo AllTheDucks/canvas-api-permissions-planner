@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "Actualiza un comentario de entrega.",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "Sube un archivo para adjuntar a un comentario de entrega.",
   "notes.endpoint.usersCanViewTheirOwnConversations": "Los usuarios pueden ver sus propias conversaciones.",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Los usuarios pueden ver sus propias entregas. Los instructores pueden ver la entrega de cualquier estudiante."
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Los usuarios pueden ver sus propias entregas. Los instructores pueden ver la entrega de cualquier estudiante.",
+  "permissions.or": "o"
 }

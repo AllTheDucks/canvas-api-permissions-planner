@@ -1,4 +1,4 @@
-import { lazy, StrictMode, Suspense } from 'react'
+import React, { lazy, StrictMode, Suspense } from 'react'
 import { createRoot } from 'react-dom/client'
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import { Center, Loader, MantineProvider } from '@mantine/core'
@@ -9,6 +9,14 @@ import { theme } from './theme'
 import '@mantine/core/styles.css'
 import '@mantine/notifications/styles.css'
 import './styles/print.css'
+
+if (import.meta.env.DEV) {
+  import('@axe-core/react').then((axe) =>
+    import('react-dom').then((ReactDOM) =>
+      axe.default(React, ReactDOM, 1000)
+    )
+  )
+}
 
 const App = lazy(() => import('./App'))
 
@@ -28,7 +36,7 @@ createRoot(document.getElementById('root')!).render(
       <QueryClientProvider client={queryClient}>
         <MantineProvider theme={theme} defaultColorScheme="auto">
           <Notifications />
-          <Suspense fallback={<Center h="60vh"><Loader /></Center>}>
+          <Suspense fallback={<main><Center h="60vh"><Loader aria-label="Loading" /></Center></main>}>
             <App />
           </Suspense>
         </MantineProvider>

@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "Diweddaru sylw ar gyflwyniad.",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "Llwytho ffeil i'w atodi i sylw ar gyflwyniad.",
   "notes.endpoint.usersCanViewTheirOwnConversations": "Gall defnyddwyr weld eu sgyrsiau eu hunain.",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Gall defnyddwyr weld eu cyflwyniadau eu hunain. Gall hyfforddwyr weld cyflwyniad unrhyw fyfyriwr."
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Gall defnyddwyr weld eu cyflwyniadau eu hunain. Gall hyfforddwyr weld cyflwyniad unrhyw fyfyriwr.",
+  "permissions.or": "neu"
 }

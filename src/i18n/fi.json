@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "Päivittää palautuskommentin.",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "Lataa tiedoston liitettäväksi palautuskommenttiin.",
   "notes.endpoint.usersCanViewTheirOwnConversations": "Käyttäjät voivat tarkastella omia keskustelujaan.",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Käyttäjät voivat tarkastella omia palautuksiaan. Opettajat voivat tarkastella minkä tahansa opiskelijan palautuksia."
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Käyttäjät voivat tarkastella omia palautuksiaan. Opettajat voivat tarkastella minkä tahansa opiskelijan palautuksia.",
+  "permissions.or": "tai"
 }

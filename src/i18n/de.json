@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "Einen Einreichungskommentar aktualisieren.",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "Eine Datei hochladen, um sie an einen Einreichungskommentar anzuhängen.",
   "notes.endpoint.usersCanViewTheirOwnConversations": "Benutzer können ihre eigenen Gespräche anzeigen.",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Benutzer können ihre eigenen Einreichungen anzeigen. Lehrende können die Einreichung jedes Studierenden anzeigen."
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Benutzer können ihre eigenen Einreichungen anzeigen. Lehrende können die Einreichung jedes Studierenden anzeigen.",
+  "permissions.or": "oder"
 }

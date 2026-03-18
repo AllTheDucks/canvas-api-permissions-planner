@@ -53,7 +53,7 @@ export function SelectedEndpoints({ selected, onRemove, onRemoveCategory }: Sele
                 {category} ({items.length})
               </Text>
               <CloseButton
-                size="xs"
+                size="sm"
                 variant="subtle"
                 c="dimmed"
                 aria-label={`${t('selectedEndpoints.remove')} ${category}`}
@@ -85,6 +85,7 @@ export function SelectedEndpoints({ selected, onRemove, onRemoveCategory }: Sele
                           variant="transparent"
                           component="span"
                           tabIndex={-1}
+                          aria-label={t('common.moreInfo')}
                         >
                           <IconInfoCircle size={14} />
                         </ActionIcon>

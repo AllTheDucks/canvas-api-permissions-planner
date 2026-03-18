@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "Atualizar um comentario de envio.",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "Enviar um arquivo para anexar a um comentario de envio.",
   "notes.endpoint.usersCanViewTheirOwnConversations": "Usuarios podem visualizar suas proprias conversas.",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Usuarios podem visualizar seus proprios envios. Instrutores podem visualizar o envio de qualquer estudante."
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "Usuarios podem visualizar seus proprios envios. Instrutores podem visualizar o envio de qualquer estudante.",
+  "permissions.or": "ou"
 }

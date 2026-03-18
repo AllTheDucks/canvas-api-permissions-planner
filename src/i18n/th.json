@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "อัปเดตความคิดเห็นการส่งงาน",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "อัปโหลดไฟล์เพื่อแนบกับความคิดเห็นการส่งงาน",
   "notes.endpoint.usersCanViewTheirOwnConversations": "ผู้ใช้สามารถดูการสนทนาของตนเองได้",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "ผู้ใช้สามารถดูงานที่ส่งของตนเองได้ ผู้สอนสามารถดูงานที่ส่งของนักศึกษาคนใดก็ได้"
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "ผู้ใช้สามารถดูงานที่ส่งของตนเองได้ ผู้สอนสามารถดูงานที่ส่งของนักศึกษาคนใดก็ได้",
+  "permissions.or": "หรือ"
 }

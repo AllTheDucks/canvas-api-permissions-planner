@@ -172,5 +172,6 @@
   "notes.endpoint.updateASubmissionComment": "עדכון תגובה להגשה.",
   "notes.endpoint.uploadAFileToAttachToASubmissionComment": "העלאת קובץ לצירוף לתגובה להגשה.",
   "notes.endpoint.usersCanViewTheirOwnConversations": "משתמשים יכולים לצפות בשיחות שלהם.",
-  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "משתמשים יכולים לצפות בהגשות שלהם. מדריכים יכולים לצפות בהגשות של כל סטודנט."
+  "notes.endpoint.usersCanViewTheirOwnSubmissionsInstructorsCanViewAnyStudentsSubmission": "משתמשים יכולים לצפות בהגשות שלהם. מדריכים יכולים לצפות בהגשות של כל סטודנט.",
+  "permissions.or": "או"
 }
