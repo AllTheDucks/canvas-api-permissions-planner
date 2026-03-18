@@ -173,12 +173,12 @@
 ## Deployment
 
 - [x] Add `<meta http-equiv="Content-Security-Policy">` to `index.html` `<head>` — lock down `script-src`, `style-src`, `font-src`, `connect-src`, `img-src` to known origins (see plan for full directive)
-- [ ] Add `public/CNAME` file containing `canvas-permissions.alltheducks.com`
-- [ ] Add `public/404.html` SPA redirect (preserves query string for shareable links)
-- [ ] Create `.github/workflows/deploy.yml` — build with pnpm, deploy via `actions/deploy-pages@v4` on push to `main`
+- [x] Add `public/CNAME` file containing `canvas-permissions.alltheducks.com`
+- [x] Add `public/404.html` SPA redirect (preserves query string for shareable links)
+- [x] Create `.github/workflows/deploy.yml` — build with pnpm, deploy via `actions/deploy-pages@v4` on push to `main`
 - [x] Update `index.html` `og:url` / `og:image` / `twitter:image` URLs to use `https://canvas-permissions.alltheducks.com/`
 - [ ] Configure DNS: `canvas-permissions.alltheducks.com` CNAME → `alltheducks.github.io`
 - [ ] Configure repo Settings → Pages: source "GitHub Actions", custom domain, enforce HTTPS
-- [ ] Add `LICENSE` file to repo root (MIT, 2026, All the Ducks)
+- [x] Add `LICENSE` file to repo root (MIT, 2026, All the Ducks)
 - [ ] Write `README.md` (project description, how to use, how to run locally, how to contribute, license)
 - [ ] Set up GitHub repository and push initial code
