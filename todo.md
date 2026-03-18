@@ -11,7 +11,7 @@
 - [x] Install Vitest and Testing Library (`vitest`, `@testing-library/react`, `@testing-library/user-event`, `jsdom`)
   - Add `test: { environment: 'jsdom', globals: true }` to `vite.config.ts`
   - Add `"vitest/globals"` to `tsconfig.app.json` types
-- [ ] Install Storybook (`pnpm dlx storybook@latest init`) and configure `.storybook/preview.tsx` with `AppTranslationsProvider locale="en"` + `MantineProvider` decorators
+- [x] Install Storybook (`pnpm dlx storybook@latest init`) and configure `.storybook/preview.tsx` with `AppTranslationsProvider locale="en"` + `MantineProvider` decorators
 - [x] Install `@axe-core/react` (devDependency) and enable in `main.tsx` during development for automated WCAG violation reporting
 - [x] Configure `vite.config.ts` (SVGR plugin, Vitest config)
 - [x] Confirm `tsconfig.json` strict mode is enabled
@@ -25,7 +25,7 @@
 - [x] Generate 10-shade Mantine colour palette for #FFAF11 (use mantine.dev/colors-generator) — confirm shade [5] is assigned **dark (black) text** by Mantine's auto-contrast; override if not (accessibility: #FFAF11 on white is only ~1.8:1)
 - [x] Configure custom Mantine theme in `main.tsx` — `primaryColor: 'atdOrange'`, `fontFamily: 'Poppins'`, `headings.fontFamily: 'Source Sans 3'`
 - [x] Set `defaultColorScheme="auto"` on `MantineProvider` in `main.tsx`
-- [ ] Update `.storybook/preview.tsx` — use custom theme + add global color scheme toolbar toggle (`forceColorScheme` per story)
+- [x] Update `.storybook/preview.tsx` — use custom theme + add global color scheme toolbar toggle (`forceColorScheme` per story)
 - [x] `App.tsx` header — `<AtdLogo>` SVGR component + tool name on the left, controls on the right
 - [x] `App.tsx` footer — `Group` with `justify="space-between"`: left side shows Canvas data version (`t('footer.dataVersion', { version })` where `version` comes from `useEndpoints()`); right side shows "A free tool by" + `<AtdLogo>` SVGR component linked to alltheducks.com
 
@@ -64,13 +64,13 @@
   - Result: required singles/OR groups followed by optional singles/OR groups, each with `notes[]`
 - [x] `src/utils/permissionAggregator.test.ts` — unit tests: required singles, optional singles, required OR groups, optional OR groups, optional suppressed when already required, notes collected and deduplicated, subsumption, result sort order
 - [x] `src/components/EndpointSelector/index.tsx` — props: `{ endpoints, selected, onToggle, inputRef?: React.Ref<HTMLInputElement> }` (inputRef forwarded to the search TextInput for external focus control); `TextInput` (search) + `ScrollArea` + one `Checkbox.Group`; category headings as `Text` dividers (not accordion); checkbox value is `` `${e.method} ${e.path}` ``; search filters by case-insensitive substring on method+path, hiding category headers with zero matches; already-selected endpoints always visible regardless of search; endpoints with `notes` show inline `IconInfoCircle` + `Tooltip`; "No endpoints match" empty state when nothing matches
-- [ ] `src/components/EndpointSelector/EndpointSelector.stories.tsx` — Default, WithSearch, WithSelections
+- [x] `src/components/EndpointSelector/EndpointSelector.stories.tsx` — Default, WithSearch, WithSelections
 - [x] `src/components/EndpointPaste/index.tsx` — textarea to paste a list of endpoints
-- [ ] `src/components/EndpointPaste/EndpointPaste.stories.tsx` — Default, WithUnmatched, WithMultipleMethodMatches
+- [x] `src/components/EndpointPaste/EndpointPaste.stories.tsx` — Default, WithUnmatched, WithMultipleMethodMatches
 - [x] `src/components/SelectedEndpoints/index.tsx` — props: `{ selected, onRemove: (endpoint) => void, onLastRemoved?: () => void }`; display selected endpoints with remove controls; badge text truncated at `max-width: 280px` with ellipsis, full path shown in `Tooltip`; endpoints with a `notes` field show an `IconInfoCircle` + Mantine `Tooltip` on the badge; each remove button needs `aria-label="${t('selectedEndpoints.remove')} METHOD /path"`; on removal focus moves to: next badge → previous badge → calls `onLastRemoved` (App.tsx then focuses EndpointSelector search input); renders nothing when `selected` is empty
-- [ ] `src/components/SelectedEndpoints/SelectedEndpoints.stories.tsx` — Empty, WithItems, WithNotes
+- [x] `src/components/SelectedEndpoints/SelectedEndpoints.stories.tsx` — Empty, WithItems, WithNotes
 - [x] `src/components/PermissionsResult/index.tsx` — two sections: Required Permissions (singles alphabetically + OR groups) and Optional Permissions (flat list with notes in dimmed text); each section suppressed when empty; `<Divider />` between sections when both present; each OR group row: `[ⓘ] Any one of: Label · Label` per option; optional permission rows show `notes[]` below label as `Text size="xs" c="dimmed"`; add `aria-live="polite"` `aria-atomic="false"` on the container; add `aria-busy="true"` during locale fetch; scope field removed (Canvas permissions are either account-only or available at both levels — no course-only category exists)
-- [ ] `src/components/PermissionsResult/PermissionsResult.stories.tsx` — Empty, SinglesOnly, WithAnyOfGroup, Mixed, WithOptionalPermissions
+- [x] `src/components/PermissionsResult/PermissionsResult.stories.tsx` — Empty, SinglesOnly, WithAnyOfGroup, Mixed, WithOptionalPermissions
 - [x] `src/App.tsx` — wire all components into the two-panel layout; use `<header>`, `<main>`, `<footer>` landmarks; heading hierarchy: `<h1>` app title, `<h2>` panel headings, `<h3>` subsections; implement `handleToggleEndpoint` (single handler passed to `EndpointSelector` as `onToggle` and `SelectedEndpoints` as `onRemove`); pass `aggregatePermissions(selectedEndpoints, allPermissions, localeLabels)` result to `<PermissionsResult>`
 
 ## Localisation
@@ -107,7 +107,7 @@
 
 ### Language picker
 - [x] `src/components/LanguagePicker/index.tsx` — Mantine Select; options built from `SUPPORTED_LOCALES` using `LOCALE_NAMES[code]` as label; value is the locale code
-- [ ] `src/components/LanguagePicker/LanguagePicker.stories.tsx` — Default, LocaleSelected
+- [x] `src/components/LanguagePicker/LanguagePicker.stories.tsx` — Default, LocaleSelected
 
 ## Help and Documentation
 
@@ -116,7 +116,7 @@
   - Tab 1 "How to use": step-by-step guide for using the tool
   - Tab 2 "Canvas Permissions": RBAC overview, course vs account scope, permission inheritance, OR groups
   - Tab 3 "Common setups": read-only / gradebook / SIS integration examples
-- [ ] `src/components/HelpModal/HelpModal.stories.tsx` — Closed (default), Open
+- [x] `src/components/HelpModal/HelpModal.stories.tsx` — Closed (default), Open
 - [x] Add `[?]` HelpModal trigger to the `App.tsx` header (next to LanguagePicker)
 - [ ] `PermissionsResult` contextual tooltips:
   - OR group row info icon: "any one is sufficient" explanation

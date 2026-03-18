@@ -9,7 +9,9 @@
     "preview": "vite preview",
     "test": "vitest run --passWithNoTests",
     "test:watch": "vitest",
-    "validate-endpoints-json": "node --disable-warning=ExperimentalWarning --experimental-transform-types scripts/validate-endpoints.ts"
+    "validate-endpoints-json": "node --disable-warning=ExperimentalWarning --experimental-transform-types scripts/validate-endpoints.ts",
+    "storybook": "storybook dev -p 6006",
+    "build-storybook": "storybook build"
   },
   "dependencies": {
     "@mantine/core": "^8.3.16",
@@ -26,6 +28,9 @@
   },
   "devDependencies": {
     "@axe-core/react": "^4.11.1",
+    "@storybook/addon-a11y": "^10.2.19",
+    "@storybook/addon-docs": "^10.2.19",
+    "@storybook/react-vite": "^10.2.19",
     "@testing-library/jest-dom": "^6.9.1",
     "@testing-library/react": "^16.3.2",
     "@testing-library/user-event": "^14.6.1",
@@ -33,10 +38,12 @@
     "@types/react": "^19.0.0",
     "@types/react-dom": "^19.0.0",
     "@vitejs/plugin-react": "^5.1.4",
+    "@vitest/coverage-v8": "4.0.18",
     "jsdom": "^28.1.0",
     "postcss": "^8.5.8",
     "postcss-preset-mantine": "^1.18.0",
     "postcss-simple-vars": "^7.0.1",
+    "storybook": "^10.2.19",
     "typescript": "~5.9.3",
     "vite": "^7.3.1",
     "vite-plugin-svgr": "^4.5.0",
