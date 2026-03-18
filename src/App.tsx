@@ -1,5 +1,5 @@
 import { useCallback, useDeferredValue, useMemo, useRef } from 'react'
-import { ActionIcon, Center, Container, Divider, Grid, Group, Loader, Paper, Stack, Text, Title, Tooltip } from '@mantine/core'
+import { ActionIcon, Center, Container, Divider, Grid, Group, Loader, Paper, Stack, Text, Title, Tooltip, VisuallyHidden } from '@mantine/core'
 import { notifications } from '@mantine/notifications'
 import { IconLink } from '@tabler/icons-react'
 import AtdLogo from './assets/atd-logo.svg?react'
@@ -124,6 +124,7 @@ function AppContent({
   return (
     <div className={classes.appLayout}>
       <header>
+        <VisuallyHidden><h1>{t('app.title')}</h1></VisuallyHidden>
         <Container size="xl" py="sm">
           <Group justify="space-between">
             <Group gap="sm">
@@ -131,7 +132,7 @@ function AppContent({
                 <AtdLogoIcon height={48} aria-label="All the Ducks" />
               </a>
               <Stack gap={0} visibleFrom="sm">
-                <Title order={1} size="h3">{t('app.title')}</Title>
+                <Title order={2} size="h3">{t('app.title')}</Title>
                 <Text size="xs" c="dimmed" ta="right" pr="xs">from <a href="https://alltheducks.com" target="_blank" rel="noopener noreferrer" className={classes.plainLink}>All the Ducks</a></Text>
               </Stack>
             </Group>
