@@ -36,7 +36,7 @@ createRoot(document.getElementById('root')!).render(
       <QueryClientProvider client={queryClient}>
         <MantineProvider theme={theme} defaultColorScheme="auto">
           <Notifications />
-          <Suspense fallback={<main><VisuallyHidden><h1>Canvas API Permissions Planner</h1></VisuallyHidden><Center h="60vh"><Loader aria-label="Loading" /></Center></main>}>
+          <Suspense fallback={<main><VisuallyHidden><h1>Canvas API Permissions Planner</h1></VisuallyHidden><Center h="60vh" role="status" aria-label="Loading"><Loader /></Center></main>}>
             <App />
           </Suspense>
         </MantineProvider>
