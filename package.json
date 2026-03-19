@@ -9,6 +9,7 @@
     "preview": "vite preview",
     "test": "vitest run --passWithNoTests",
     "test:watch": "vitest",
+    "archive-endpoints": "node --disable-warning=ExperimentalWarning --experimental-transform-types scripts/archive-endpoints.ts",
     "validate-endpoints-json": "node --disable-warning=ExperimentalWarning --experimental-transform-types scripts/validate-endpoints.ts",
     "storybook": "storybook dev -p 6006",
     "build-storybook": "storybook build"

@@ -13,11 +13,12 @@ This document contains the prompt to give Claude when the Canvas LMS releases ne
 Paste the prompt below into a new Claude conversation. Claude will read the Canvas LMS source code on GitHub and produce updated versions of both output files. Work through the endpoint categories in batches if needed — the Canvas codebase is large and it may be practical to regenerate a few categories at a time rather than all 43 in one session.
 
 After Claude produces the output:
-1. Replace `canvas_api_permissions.md` and `public/data/endpoints.json` with the new versions.
-2. The `**Last updated:**` date in `canvas_api_permissions.md` and `"version"` in `endpoints.json` should already be set by Claude — verify they match the stable branch date from Step 0.
-3. Run `pnpm run validate-endpoints-json` — this checks schema validity, referential integrity, uniqueness, format, and semantic rules. Fix any errors before proceeding.
-4. Run `pnpm run dev` — any remaining Zod schema violations will surface as an error state in the browser.
-5. Spot-check 5–10 endpoints across different categories against the source markdown.
+1. **Archive the current data** — run `pnpm run archive-endpoints` to copy the current `endpoints.json` to `public/data/endpoints.{version}.json`. This preserves the old data so shared links created with the previous version can still resolve.
+2. Replace `canvas_api_permissions.md` and `public/data/endpoints.json` with the new versions.
+3. The `**Last updated:**` date in `canvas_api_permissions.md` and `"version"` in `endpoints.json` should already be set by Claude — verify they match the stable branch date from Step 0.
+4. Run `pnpm run validate-endpoints-json` — this checks schema validity, referential integrity, uniqueness, format, and semantic rules. Fix any errors before proceeding.
+5. Run `pnpm run dev` — any remaining Zod schema violations will surface as an error state in the browser.
+6. Spot-check 5–10 endpoints across different categories against the source markdown.
 
 ---
 

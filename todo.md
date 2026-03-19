@@ -153,7 +153,7 @@
 - [x] `App.tsx` — write URL on state change: `useEffect` encodes current selection via `replaceState`; clears query string when empty
 - [x] "Copy link" `ActionIcon` (`IconLink`) in app header — copies `window.location.href` to clipboard; Mantine notification confirms; always visible
 - [x] "Print" `ActionIcon` (`IconPrinter`) in app header — calls `window.print()`; always visible
-- [ ] Data update workflow: before updating `endpoints.json`, copy it to `public/data/endpoints.{version}.json` to preserve old link resolution
+- [x] Data update workflow: `pnpm run archive-endpoints` copies current `endpoints.json` to `public/data/endpoints.{version}.json`; documented as step 1 in `docs/regenerate-data-prompt.md`; initial archive `endpoints.2026-02-11.json` created
 - [x] Add `share.*` translation keys to `src/i18n/en.json` (and all locale files): `copyLink`, `copied`, `staleLink`, `staleLinkMessage`, `endpointsDropped`, `endpointsDroppedMessage`
 - [x] Analytics: fire `shared_link_opened` event (with `endpoint_count` and `version_match`) when page loads from a shared URL
 
