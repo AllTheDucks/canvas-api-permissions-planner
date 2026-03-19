@@ -34,7 +34,7 @@ function RequiredByTooltip({ requiredBy, children }: { requiredBy: string[]; chi
             const path = ep.slice(spaceIdx + 1)
             return (
               <Text key={ep} size="xs" ff="monospace" className={classes.tooltipRow}>
-                <span className={classes.methodBadge}><Text span size="xs" ff="monospace"><MethodBadge method={method} /></Text>&nbsp;</span>
+                <span className={classes.methodBadge}><Text span size="xs" ff="monospace"><MethodBadge method={method} inverted /></Text>&nbsp;</span>
                 <span className={classes.rtlPath}>
                   <bdo dir="ltr"><StyledPath path={path} /></bdo>
                 </span>

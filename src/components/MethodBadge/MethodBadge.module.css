@@ -26,3 +26,23 @@
 .DELETE {
   color: var(--method-delete);
 }
+
+.inverted.GET {
+  color: var(--method-get-inv);
+}
+
+.inverted.POST {
+  color: var(--method-post-inv);
+}
+
+.inverted.PUT {
+  color: var(--method-put-inv);
+}
+
+.inverted.PATCH {
+  color: var(--method-patch-inv);
+}
+
+.inverted.DELETE {
+  color: var(--method-delete-inv);
+}
