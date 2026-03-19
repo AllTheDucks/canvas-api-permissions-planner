@@ -134,7 +134,7 @@
   - Touch targets: `ActionIcon` info icons use `size="sm"` minimum (never `size="xs"`); verify badge `CloseButton` meets 44×44px on device
   - Wrap `Grid` in `Container` / `maw="100%"` to prevent horizontal overflow at ≥ 375px
 - [x] Empty state for permissions panel (no endpoints selected yet)
-- [ ] Copy-to-clipboard button for permissions list
+- [x] Copy-to-clipboard button for permissions list — `IconClipboard` ActionIcon in top-right of permissions panel; formats aggregated permissions as Markdown (headings, bullet points, bold "Any one of:" for OR groups, notes after em-dash); `navigator.clipboard.writeText` with notification; hidden in print; translations in all 30 locale files
 - [x] `src/styles/print.css` — `@media print` stylesheet: hide left panel, header controls, footer, action buttons; show permissions result full-width with print-only header (tool name, selected endpoints list, date); force light scheme; `break-inside: avoid` on permission rows; import in `main.tsx`
 - [x] Print-only header block in `App.tsx` — `div` with `display: none` default / `display: block` in print; contains tool name, selected endpoint list, and `data-print-date` attribute for current date
 

@@ -1,7 +1,7 @@
 import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
 import { ActionIcon, Center, Container, Divider, Grid, Group, Loader, Paper, Stack, Text, Title, Tooltip, VisuallyHidden } from '@mantine/core'
 import { notifications } from '@mantine/notifications'
-import { IconLink, IconPrinter } from '@tabler/icons-react'
+import { IconClipboard, IconLink, IconPrinter } from '@tabler/icons-react'
 import AtdLogo from './assets/atd-logo.svg?react'
 import AtdLogoIcon from './assets/atd-logo-icon.svg?react'
 import { useEndpoints } from './hooks/useEndpoints'
@@ -18,6 +18,7 @@ import { LanguagePicker } from './components/LanguagePicker'
 import { HelpModal } from './components/HelpModal'
 import { AppTranslationsProvider, useAppTranslations } from './context/AppTranslationsContext'
 import { aggregatePermissions } from './utils/permissionAggregator'
+import { formatPermissionsMarkdown } from './utils/formatPermissionsMarkdown'
 import type { Endpoint, PermissionRef } from './types'
 import classes from './App.module.css'
 
@@ -27,9 +28,10 @@ type ReadyContentProps = {
   locale: string
   dataVersion: string
   onLocaleLoadingChange: (loading: boolean) => void
+  onCopyMarkdownReady: (fn: (() => string) | null) => void
 }
 
-function ReadyContent({ allPermissions, endpointList, locale, dataVersion, onLocaleLoadingChange }: ReadyContentProps) {
+function ReadyContent({ allPermissions, endpointList, locale, dataVersion, onLocaleLoadingChange, onCopyMarkdownReady }: ReadyContentProps) {
   const { t } = useAppTranslations()
   const { localeLabels, isLoading: localeLoading } = useLocale(locale, allPermissions, dataVersion)
 
@@ -44,6 +46,22 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion, onLoc
     () => aggregatePermissions(deferredSelected, allPermissions, localeLabels),
     [deferredSelected, allPermissions, localeLabels],
   )
+
+  useEffect(() => {
+    if (deferredSelected.length === 0) {
+      onCopyMarkdownReady(null)
+      return
+    }
+    onCopyMarkdownReady(() => formatPermissionsMarkdown(deferredSelected, aggregated, {
+      title: t('app.title'),
+      selectedHeading: t('selectedEndpoints.heading'),
+      requiredHeading: t('permissions.requiredHeading'),
+      optionalHeading: t('permissions.optionalHeading'),
+      anyOf: t('permissions.anyOf'),
+      or: t('permissions.or'),
+      credit: t('permissions.markdownCredit', { appTitle: t('app.title') }),
+    }, t))
+  }, [deferredSelected, aggregated, t, onCopyMarkdownReady])
 
   return (
     <>
@@ -101,6 +119,12 @@ function AppContent({
   const { t, isRtl, isLoading: isLoadingUiStrings } = useAppTranslations()
   const [isLoadingCanvasLocale, setIsLoadingCanvasLocale] = useState(false)
   const isInitialLoad = useRef(true)
+  const copyMarkdownRef = useRef<(() => string) | null>(null)
+  const [hasCopyContent, setHasCopyContent] = useState(false)
+  const handleCopyMarkdownReady = useCallback((fn: (() => string) | null) => {
+    copyMarkdownRef.current = fn
+    setHasCopyContent(fn !== null)
+  }, [])
   useLocaleSync(locale, isRtl)
 
   const handleCopyLink = useCallback(() => {
@@ -158,6 +182,24 @@ function AppContent({
                   <IconLink size={18} />
                 </ActionIcon>
               </Tooltip>
+              <Tooltip label={t('permissions.copyMarkdown')} withArrow>
+                <ActionIcon
+                  onClick={() => {
+                    const md = copyMarkdownRef.current?.()
+                    if (!md) return
+                    navigator.clipboard.writeText(md).then(
+                      () => notifications.show({ message: t('permissions.copied'), autoClose: 3000 }),
+                      () => notifications.show({ color: 'red', message: t('permissions.copyFailed'), autoClose: 3000 }),
+                    )
+                  }}
+                  aria-label={t('permissions.copyMarkdown')}
+                  variant="subtle"
+                  size="lg"
+                  disabled={!hasCopyContent}
+                >
+                  <IconClipboard size={18} />
+                </ActionIcon>
+              </Tooltip>
               <Tooltip label={t('share.print')} withArrow>
                 <ActionIcon
                   onClick={() => window.print()}
@@ -201,6 +243,7 @@ function AppContent({
               locale={locale}
               dataVersion={endpoints.version}
               onLocaleLoadingChange={setIsLoadingCanvasLocale}
+              onCopyMarkdownReady={handleCopyMarkdownReady}
             />
           )}
         </Container>
