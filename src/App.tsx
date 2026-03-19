@@ -36,12 +36,21 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion }: Rea
   const deferredSelected = useDeferredValue(selectedEndpoints)
 
   const handleCopyLink = useCallback(() => {
-    navigator.clipboard.writeText(window.location.href).then(() => {
-      notifications.show({
-        message: t('share.copied'),
-        autoClose: 3000,
-      })
-    })
+    navigator.clipboard.writeText(window.location.href).then(
+      () => {
+        notifications.show({
+          message: t('share.copied'),
+          autoClose: 3000,
+        })
+      },
+      () => {
+        notifications.show({
+          color: 'red',
+          message: t('share.copyFailed'),
+          autoClose: 3000,
+        })
+      },
+    )
   }, [t])
 
   const aggregated = useMemo(

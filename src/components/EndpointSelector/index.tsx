@@ -127,22 +127,40 @@ export function EndpointSelector({ endpoints, selected, onToggle, onBulkToggle, 
     [selected],
   )
 
+  type OptimisticAction =
+    | { type: 'toggle'; id: string }
+    | { type: 'bulk'; ids: string[]; select: boolean }
+
   const [optimisticIds, applyOptimistic] = useOptimistic(
     selectedIds,
-    (current, toggledId: string) => {
+    (current, action: OptimisticAction) => {
       const next = new Set(current)
-      if (next.has(toggledId)) next.delete(toggledId)
-      else next.add(toggledId)
+      if (action.type === 'toggle') {
+        if (next.has(action.id)) next.delete(action.id)
+        else next.add(action.id)
+      } else {
+        for (const id of action.ids) {
+          if (action.select) next.add(id)
+          else next.delete(id)
+        }
+      }
       return next
     },
   )
 
   const handleToggle = useCallback((endpoint: Endpoint) => {
     startTransition(() => {
-      applyOptimistic(endpointId(endpoint))
+      applyOptimistic({ type: 'toggle', id: endpointId(endpoint) })
       onToggle(endpoint)
     })
   }, [onToggle, applyOptimistic])
+
+  const handleBulkToggle = useCallback((endpoints: Endpoint[], select: boolean) => {
+    startTransition(() => {
+      applyOptimistic({ type: 'bulk', ids: endpoints.map(endpointId), select })
+      onBulkToggle(endpoints, select)
+    })
+  }, [onBulkToggle, applyOptimistic])
 
   const grouped = useMemo(() => {
     const map = new Map<string, Endpoint[]>()
@@ -275,7 +293,7 @@ export function EndpointSelector({ endpoints, selected, onToggle, onBulkToggle, 
                   category={category}
                   items={items}
                   selectedIds={optimisticIds}
-                  onBulkToggle={onBulkToggle}
+                  onBulkToggle={handleBulkToggle}
                 />
                 <div className={classes.categoryContent}>
                   {items.map((ep) => (

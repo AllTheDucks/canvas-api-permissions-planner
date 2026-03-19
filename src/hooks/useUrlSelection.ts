@@ -1,4 +1,4 @@
-import { useCallback, useEffect, useMemo, useState } from 'react'
+import { useCallback, useEffect, useMemo, useRef, useState } from 'react'
 import { notifications } from '@mantine/notifications'
 import { useAppTranslations } from '../context/AppTranslationsContext'
 import { trackEvent } from '../utils/analytics'
@@ -8,6 +8,8 @@ import type { Endpoint } from '../types'
 
 export function useUrlSelection(endpointList: Endpoint[], dataVersion: string) {
   const { t } = useAppTranslations()
+  const tRef = useRef(t)
+  tRef.current = t
   const urlState = useMemo(() => readUrlParams(), [])
 
   const [selectedEndpoints, setSelectedEndpoints] = useState<Endpoint[]>(() => {
@@ -66,8 +68,8 @@ export function useUrlSelection(endpointList: Endpoint[], dataVersion: string) {
         if (dropped.length > 0) {
           notifications.show({
             color: 'yellow',
-            title: t('share.endpointsDropped'),
-            message: t('share.endpointsDroppedMessage', {
+            title: tRef.current('share.endpointsDropped'),
+            message: tRef.current('share.endpointsDroppedMessage', {
               count: String(dropped.length),
               endpoints: dropped.join(', '),
             }),
@@ -79,13 +81,13 @@ export function useUrlSelection(endpointList: Endpoint[], dataVersion: string) {
         if (err.name === 'AbortError') return
         notifications.show({
           color: 'red',
-          title: t('share.staleLink'),
-          message: t('share.staleLinkMessage'),
+          title: tRef.current('share.staleLink'),
+          message: tRef.current('share.staleLinkMessage'),
         })
       })
 
     return () => controller.abort()
-  }, [urlState, dataVersion, endpointList, t])
+  }, [urlState, dataVersion, endpointList])
 
   // Write URL on state change
   useEffect(() => {

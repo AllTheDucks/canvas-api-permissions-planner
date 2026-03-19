@@ -4,6 +4,7 @@ import { notifications } from '@mantine/notifications';
 import yaml from 'js-yaml';
 import { canvasLocaleSchema, getTranslation } from '../schemas/canvasLocale';
 import { i18nKey } from '../utils/i18nKey';
+import { useAppTranslations } from '../context/AppTranslationsContext';
 import { LOCALE_NAMES } from '../i18n/locales';
 import type { PermissionRef } from '../types';
 
@@ -63,10 +64,11 @@ export function useLocale(
   allPermissions: Record<string, PermissionRef>,
   dataVersion: string,
 ): UseLocaleResult {
+  const { t } = useAppTranslations();
   const englishLabels = useMemo(() => buildEnglishLabels(allPermissions), [allPermissions]);
 
   const { data, isPending, isError, error } = useQuery({
-    queryKey: ['canvasLocale', locale],
+    queryKey: ['canvasLocale', locale, dataVersion],
     queryFn: () => fetchCanvasLocale(locale, dataVersion, allPermissions),
     enabled: locale !== 'en',
     placeholderData: englishLabels,
@@ -77,10 +79,10 @@ export function useLocale(
     const localeName = isLocaleNameKey(locale) ? LOCALE_NAMES[locale] : locale;
     notifications.show({
       color: 'red',
-      title: 'Locale load failed',
-      message: `Could not load ${localeName} labels — showing in English`,
+      title: t('error.localeLoadFailed'),
+      message: t('error.localeLoadFailedMessage', { locale: localeName }),
     });
-  }, [isError, error, locale]);
+  }, [isError, error, locale, t]);
 
   if (locale === 'en') return { localeLabels: englishLabels, isLoading: false };
 
