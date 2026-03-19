@@ -1,4 +1,4 @@
-import { useCallback, useDeferredValue, useMemo, useRef } from 'react'
+import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
 import { ActionIcon, Center, Container, Divider, Grid, Group, Loader, Paper, Stack, Text, Title, Tooltip, VisuallyHidden } from '@mantine/core'
 import { notifications } from '@mantine/notifications'
 import { IconLink } from '@tabler/icons-react'
@@ -26,11 +26,16 @@ type ReadyContentProps = {
   endpointList: Endpoint[]
   locale: string
   dataVersion: string
+  onLocaleLoadingChange: (loading: boolean) => void
 }
 
-function ReadyContent({ allPermissions, endpointList, locale, dataVersion }: ReadyContentProps) {
+function ReadyContent({ allPermissions, endpointList, locale, dataVersion, onLocaleLoadingChange }: ReadyContentProps) {
   const { t } = useAppTranslations()
   const { localeLabels, isLoading: localeLoading } = useLocale(locale, allPermissions, dataVersion)
+
+  useEffect(() => {
+    onLocaleLoadingChange(localeLoading)
+  }, [localeLoading, onLocaleLoadingChange])
   const searchInputRef = useRef<HTMLInputElement>(null)
   const { selectedEndpoints, handleToggle, handleAddMany, handleBulkToggle } = useUrlSelection(endpointList, dataVersion)
   const deferredSelected = useDeferredValue(selectedEndpoints)
@@ -127,8 +132,18 @@ function AppContent({
   onLocaleChange: (locale: string) => void
 }) {
   const endpoints = useEndpoints()
-  const { t, isRtl } = useAppTranslations()
+  const { t, isRtl, isLoading: isLoadingUiStrings } = useAppTranslations()
+  const [isLoadingCanvasLocale, setIsLoadingCanvasLocale] = useState(false)
+  const isInitialLoad = useRef(true)
   useLocaleSync(locale, isRtl)
+
+  if (!isLoadingUiStrings && isInitialLoad.current) {
+    isInitialLoad.current = false
+  }
+
+  if (isLoadingUiStrings && isInitialLoad.current) {
+    return <Center h="100vh"><Loader /></Center>
+  }
 
   return (
     <div className={classes.appLayout}>
@@ -149,7 +164,7 @@ function AppContent({
               {locale !== 'en' && (
                 <Text size="xs" c="dimmed">{t('aiTranslation.note')}</Text>
               )}
-              <LanguagePicker value={locale} onChange={onLocaleChange} />
+              <LanguagePicker value={locale} onChange={onLocaleChange} loading={isLoadingUiStrings || isLoadingCanvasLocale} />
               <ColorSchemeToggle />
               <HelpModal />
             </Group>
@@ -181,6 +196,7 @@ function AppContent({
               endpointList={endpoints.endpoints}
               locale={locale}
               dataVersion={endpoints.version}
+              onLocaleLoadingChange={setIsLoadingCanvasLocale}
             />
           )}
         </Container>

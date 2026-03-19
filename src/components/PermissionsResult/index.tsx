@@ -3,8 +3,7 @@ import {
   Box,
   Divider,
   Group,
-  Loader,
-  Overlay,
+  Skeleton,
   Stack,
   Text,
   Title,
@@ -52,15 +51,17 @@ function RequiredByTooltip({ requiredBy, children }: { requiredBy: string[]; chi
   )
 }
 
-function SingleRow({ perm }: { perm: SingleAggregated }) {
+function SingleRow({ perm, isLoadingLocale }: { perm: SingleAggregated; isLoadingLocale: boolean }) {
   const { t } = useAppTranslations()
 
   return (
     <li data-print-no-break>
       <Group gap="xs" wrap="nowrap">
-        <RequiredByTooltip requiredBy={perm.requiredBy}>
-          <Text size="sm">{perm.label}</Text>
-        </RequiredByTooltip>
+        <Skeleton visible={isLoadingLocale} w="fit-content">
+          <RequiredByTooltip requiredBy={perm.requiredBy}>
+            <Text size="sm">{perm.label}</Text>
+          </RequiredByTooltip>
+        </Skeleton>
       </Group>
       {perm.notes.length > 0 && (
         <Stack gap={0} ml="xs" mt={2}>
@@ -73,7 +74,7 @@ function SingleRow({ perm }: { perm: SingleAggregated }) {
   )
 }
 
-function AnyOfRow({ perm }: { perm: AnyOfAggregated }) {
+function AnyOfRow({ perm, isLoadingLocale }: { perm: AnyOfAggregated; isLoadingLocale: boolean }) {
   const { t } = useAppTranslations()
 
   return (
@@ -94,9 +95,11 @@ function AnyOfRow({ perm }: { perm: AnyOfAggregated }) {
           {perm.options.map((opt, i) => (
             <Group key={opt.symbol} gap={4} wrap="nowrap">
               {i > 0 && <Text size="sm" c="dimmed" fs="italic">{t('permissions.or')}</Text>}
-              <RequiredByTooltip requiredBy={perm.requiredBy}>
-                <Text size="sm">{opt.label}</Text>
-              </RequiredByTooltip>
+              <Skeleton visible={isLoadingLocale} w="fit-content">
+                <RequiredByTooltip requiredBy={perm.requiredBy}>
+                  <Text size="sm">{opt.label}</Text>
+                </RequiredByTooltip>
+              </Skeleton>
             </Group>
           ))}
         </Group>
@@ -129,12 +132,6 @@ export function PermissionsResult({ permissions, selectedCount, isLoadingLocale 
       aria-atomic={false}
       aria-busy={isLoadingLocale}
     >
-      {isLoadingLocale && (
-        <Overlay backgroundOpacity={0.4} blur={1} center zIndex={10}>
-          <Loader />
-        </Overlay>
-      )}
-
       {isEmpty && selectedCount === 0 && (
         <Text c="dimmed" ta="center" py="xl">
           {t('permissions.empty')}
@@ -152,9 +149,9 @@ export function PermissionsResult({ permissions, selectedCount, isLoadingLocale 
           <ul className={classes.permissionList}>
             {required.map((perm) =>
               perm.kind === 'single' ? (
-                <SingleRow key={perm.symbol} perm={perm} />
+                <SingleRow key={perm.symbol} perm={perm} isLoadingLocale={isLoadingLocale} />
               ) : (
-                <AnyOfRow key={perm.options.map(o => o.symbol).join('|')} perm={perm} />
+                <AnyOfRow key={perm.options.map(o => o.symbol).join('|')} perm={perm} isLoadingLocale={isLoadingLocale} />
               ),
             )}
           </ul>
@@ -172,9 +169,9 @@ export function PermissionsResult({ permissions, selectedCount, isLoadingLocale 
           <ul className={classes.permissionList}>
             {optional.map((perm) =>
               perm.kind === 'single' ? (
-                <SingleRow key={perm.symbol} perm={perm} />
+                <SingleRow key={perm.symbol} perm={perm} isLoadingLocale={isLoadingLocale} />
               ) : (
-                <AnyOfRow key={perm.options.map(o => o.symbol).join('|')} perm={perm} />
+                <AnyOfRow key={perm.options.map(o => o.symbol).join('|')} perm={perm} isLoadingLocale={isLoadingLocale} />
               ),
             )}
           </ul>

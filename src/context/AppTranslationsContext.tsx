@@ -1,16 +1,16 @@
-import { createContext, useContext, useEffect, useMemo, useState } from 'react'
+import { createContext, useContext, useMemo } from 'react'
 import type { ReactNode } from 'react'
+import { useQuery } from '@tanstack/react-query'
 import fallback from '../i18n/en.json'
 import { RTL_LOCALES } from '../i18n/locales'
 
 type AppTranslationsValue = {
   t: (key: string, params?: Record<string, string | number>) => string
   isRtl: boolean
+  isLoading: boolean
 }
 
 const AppTranslationsContext = createContext<AppTranslationsValue | null>(null)
-
-const localeCache = new Map<string, Record<string, string>>()
 
 function extractStringRecord(mod: unknown): Record<string, string> | null {
   const obj = typeof mod === 'object' && mod !== null && 'default' in mod
@@ -22,49 +22,34 @@ function extractStringRecord(mod: unknown): Record<string, string> | null {
   return record as Record<string, string>
 }
 
+async function fetchLocaleStrings(locale: string): Promise<Record<string, string>> {
+  const mod: unknown = await import(`../i18n/${locale}.json`)
+  const strings = extractStringRecord(mod)
+  if (!strings) throw new Error('Invalid locale file')
+  return strings
+}
+
 type AppTranslationsProviderProps = {
   locale: string
   children: ReactNode
 }
 
 export function AppTranslationsProvider({ locale, children }: AppTranslationsProviderProps) {
-  const [translations, setTranslations] = useState<Record<string, string>>(
-    locale === 'en' ? fallback : (localeCache.get(locale) ?? fallback),
-  )
+  const { data: translations, isPlaceholderData } = useQuery({
+    queryKey: ['appTranslations', locale],
+    queryFn: () => fetchLocaleStrings(locale),
+    enabled: locale !== 'en',
+    placeholderData: (previousData) => previousData ?? fallback,
+  })
 
-  useEffect(() => {
-    if (locale === 'en') {
-      setTranslations(fallback)
-      return
-    }
-
-    const cached = localeCache.get(locale)
-    if (cached) {
-      setTranslations(cached)
-      return
-    }
-
-    let cancelled = false
-
-    import(`../i18n/${locale}.json`)
-      .then((mod: unknown) => {
-        const strings = extractStringRecord(mod)
-        if (!strings) throw new Error('Invalid locale file')
-        localeCache.set(locale, strings)
-        if (!cancelled) setTranslations(strings)
-      })
-      .catch(() => {
-        if (!cancelled) setTranslations(fallback)
-      })
-
-    return () => { cancelled = true }
-  }, [locale])
-
+  const isLoading = locale !== 'en' && isPlaceholderData
   const isRtl = (RTL_LOCALES as readonly string[]).includes(locale)
 
   const value = useMemo<AppTranslationsValue>(() => {
+    const strings: Record<string, string> = locale === 'en' ? fallback : (translations ?? fallback)
+
     function t(key: string, params?: Record<string, string | number>): string {
-      let value = translations[key] ?? (fallback as Record<string, string>)[key] ?? key
+      let value = strings[key] ?? (fallback as Record<string, string>)[key] ?? key
       if (params) {
         for (const [k, v] of Object.entries(params)) {
           value = value.split(`{{${k}}}`).join(String(v))
@@ -73,8 +58,8 @@ export function AppTranslationsProvider({ locale, children }: AppTranslationsPro
       return value
     }
 
-    return { t, isRtl }
-  }, [translations, isRtl])
+    return { t, isRtl, isLoading }
+  }, [locale, translations, isRtl, isLoading])
 
   return (
     <AppTranslationsContext.Provider value={value}>

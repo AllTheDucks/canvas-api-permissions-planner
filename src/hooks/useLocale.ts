@@ -67,11 +67,11 @@ export function useLocale(
   const { t } = useAppTranslations();
   const englishLabels = useMemo(() => buildEnglishLabels(allPermissions), [allPermissions]);
 
-  const { data, isPending, isError, error } = useQuery({
+  const { data, isPlaceholderData, isError, error } = useQuery({
     queryKey: ['canvasLocale', locale, dataVersion],
     queryFn: () => fetchCanvasLocale(locale, dataVersion, allPermissions),
     enabled: locale !== 'en',
-    placeholderData: englishLabels,
+    placeholderData: (previousData) => previousData ?? englishLabels,
   });
 
   useEffect(() => {
@@ -88,6 +88,6 @@ export function useLocale(
 
   return {
     localeLabels: data ?? englishLabels,
-    isLoading: isPending,
+    isLoading: isPlaceholderData,
   };
 }
