@@ -8,6 +8,7 @@ import { theme } from './theme'
 
 import '@mantine/core/styles.css'
 import '@mantine/notifications/styles.css'
+import './styles/theme.css'
 import './styles/print.css'
 
 if (import.meta.env.DEV) {

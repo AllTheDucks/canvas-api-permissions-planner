@@ -49,7 +49,7 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion, onLoc
     <Grid>
       <Grid.Col span={{ base: 12, sm: 5 }} data-print-hide>
         <Stack gap="md">
-          <Paper shadow="xs" radius="md" p="md" withBorder>
+          <Paper shadow="xs" radius="md" p="md" withBorder className={classes.accentPanel}>
             <Title order={2} size="h4" mb="sm">{t('endpoints.heading')}</Title>
             <EndpointSelector
               endpoints={endpointList}
@@ -59,7 +59,7 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion, onLoc
               inputRef={searchInputRef}
             />
           </Paper>
-          <Paper shadow="xs" radius="md" p="md" withBorder>
+          <Paper shadow="xs" radius="md" p="md" withBorder className={classes.accentPanel}>
             <EndpointPaste endpoints={endpointList} onAdd={handleAddMany} />
           </Paper>
           <SelectedEndpoints
@@ -83,7 +83,7 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion, onLoc
             </Stack>
           )}
         </div>
-        <Paper shadow="xs" radius="md" p="md" withBorder>
+        <Paper shadow="xs" radius="md" p="md" withBorder className={classes.accentPanel}>
           <Title order={2} size="h4" mb="sm">{t('permissions.heading')}</Title>
           <PermissionsResult permissions={aggregated} selectedCount={deferredSelected.length} isLoadingLocale={localeLoading} />
         </Paper>

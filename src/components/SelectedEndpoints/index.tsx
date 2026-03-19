@@ -4,6 +4,7 @@ import { IconInfoCircle } from '@tabler/icons-react'
 import { useAppTranslations } from '../../context/AppTranslationsContext'
 import { useListRemovalFocus } from '../../hooks/useListRemovalFocus'
 import type { Endpoint } from '../../types'
+import { MethodBadge } from '../MethodBadge'
 import { StyledPath } from '../StyledPath'
 import classes from './SelectedEndpoints.module.css'
 
@@ -43,7 +44,7 @@ export function SelectedEndpoints({ selected, onRemove, onRemoveCategory }: Sele
   }
 
   return (
-    <Paper shadow="xs" radius="md" p="md" withBorder>
+    <Paper shadow="xs" radius="md" p="md" withBorder className={classes.accentPanel}>
       <Title order={2} size="h4" mb="sm">{t('selectedEndpoints.heading')}</Title>
       <Stack gap={0}>
         {Array.from(grouped, ([category, items]) => (
@@ -72,7 +73,7 @@ export function SelectedEndpoints({ selected, onRemove, onRemoveCategory }: Sele
                   className={classes.separatedRow}
                 >
                   <Text size="xs" ff="monospace" className={classes.endpointPath}>
-                    <Text span fw={700} size="xs" ff="monospace" className={classes.noShrink}>{ep.method}&nbsp;</Text>
+                    <span className={classes.noShrink}><Text span size="xs" ff="monospace"><MethodBadge method={ep.method} /></Text>&nbsp;</span>
                     <span className={classes.pathText}>
                       <bdo dir="ltr"><StyledPath path={ep.path} /></bdo>
                     </span>

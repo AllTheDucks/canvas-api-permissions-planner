@@ -1,0 +1,17 @@
+:root {
+  --method-get: #16864e;
+  --method-post: #1864ab;
+  --method-put: #b45309;
+  --method-patch: #7c3aed;
+  --method-delete: #c92a2a;
+
+  --panel-accent: var(--mantine-color-atdOrange-5);
+}
+
+[data-mantine-color-scheme="dark"] {
+  --method-get: #51cf66;
+  --method-post: #74c0fc;
+  --method-put: #fbbf24;
+  --method-patch: #b197fc;
+  --method-delete: #ff6b6b;
+}

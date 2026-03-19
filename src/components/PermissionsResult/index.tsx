@@ -12,6 +12,7 @@ import {
 import { IconInfoCircle } from '@tabler/icons-react'
 import { useAppTranslations } from '../../context/AppTranslationsContext'
 import type { AggregatedPermission, AnyOfAggregated, SingleAggregated } from '../../types'
+import { MethodBadge } from '../MethodBadge'
 import { StyledPath } from '../StyledPath'
 import classes from './PermissionsResult.module.css'
 
@@ -33,7 +34,7 @@ function RequiredByTooltip({ requiredBy, children }: { requiredBy: string[]; chi
             const path = ep.slice(spaceIdx + 1)
             return (
               <Text key={ep} size="xs" ff="monospace" className={classes.tooltipRow}>
-                <Text span fw={700} size="xs" ff="monospace" className={classes.methodBadge}>{method}&nbsp;</Text>
+                <span className={classes.methodBadge}><Text span size="xs" ff="monospace"><MethodBadge method={method} /></Text>&nbsp;</span>
                 <span className={classes.rtlPath}>
                   <bdo dir="ltr"><StyledPath path={path} /></bdo>
                 </span>

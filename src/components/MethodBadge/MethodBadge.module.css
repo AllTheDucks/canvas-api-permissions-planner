@@ -1,0 +1,28 @@
+.badge {
+  display: inline-block;
+  font-weight: 700;
+  font-size: inherit;
+  font-family: var(--mantine-font-family-monospace);
+  line-height: inherit;
+  white-space: nowrap;
+}
+
+.GET {
+  color: var(--method-get);
+}
+
+.POST {
+  color: var(--method-post);
+}
+
+.PUT {
+  color: var(--method-put);
+}
+
+.PATCH {
+  color: var(--method-patch);
+}
+
+.DELETE {
+  color: var(--method-delete);
+}
