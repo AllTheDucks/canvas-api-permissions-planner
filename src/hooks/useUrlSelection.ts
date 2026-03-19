@@ -3,7 +3,7 @@ import { notifications } from '@mantine/notifications'
 import { useAppTranslations } from '../context/AppTranslationsContext'
 import { trackEvent } from '../utils/analytics'
 import { encodeSelection, decodeSelection, readUrlParams } from '../utils/urlState'
-import { EndpointsDataSchema } from '../schemas/endpoints'
+import { useArchivedEndpoints } from './useArchivedEndpoints'
 import type { Endpoint } from '../types'
 
 export function useUrlSelection(endpointList: Endpoint[], dataVersion: string) {
@@ -29,65 +29,38 @@ export function useUrlSelection(endpointList: Endpoint[], dataVersion: string) {
   // eslint-disable-next-line react-hooks/exhaustive-deps
   }, [])
 
-  // Async resolution for version mismatch
+  const versionMismatch = urlState && urlState.version !== dataVersion
+  const { data: archiveResult, error: archiveError } = useArchivedEndpoints(
+    versionMismatch ? urlState.version : undefined,
+    versionMismatch ? urlState.selectionEncoded : undefined,
+    endpointList,
+  )
+
   useEffect(() => {
-    if (!urlState || urlState.version === dataVersion) return
+    if (!archiveResult) return
+    setSelectedEndpoints(archiveResult.resolved)
 
-    const controller = new AbortController()
+    if (archiveResult.dropped.length > 0) {
+      notifications.show({
+        color: 'yellow',
+        title: tRef.current('share.endpointsDropped'),
+        message: tRef.current('share.endpointsDroppedMessage', {
+          count: String(archiveResult.dropped.length),
+          endpoints: archiveResult.dropped.join(', '),
+        }),
+        autoClose: false,
+      })
+    }
+  }, [archiveResult])
 
-    fetch(`${import.meta.env.BASE_URL}data/endpoints.${urlState.version}.json`, {
-      signal: controller.signal,
+  useEffect(() => {
+    if (!archiveError) return
+    notifications.show({
+      color: 'red',
+      title: tRef.current('share.staleLink'),
+      message: tRef.current('share.staleLinkMessage'),
     })
-      .then(res => {
-        if (!res.ok) throw new Error(`Archive not found: ${res.status}`)
-        return res.json()
-      })
-      .then(raw => {
-        const archived = EndpointsDataSchema.parse(raw)
-        const indices = decodeSelection(urlState.selectionEncoded)
-        const oldEndpoints = indices
-          .map(i => archived.endpoints[i])
-          .filter(Boolean)
-
-        const currentMap = new Map(endpointList.map(e => [`${e.method} ${e.path}`, e]))
-        const resolved: Endpoint[] = []
-        const dropped: string[] = []
-
-        for (const old of oldEndpoints) {
-          const id = `${old.method} ${old.path}`
-          const current = currentMap.get(id)
-          if (current) {
-            resolved.push(current)
-          } else {
-            dropped.push(id)
-          }
-        }
-
-        setSelectedEndpoints(resolved)
-
-        if (dropped.length > 0) {
-          notifications.show({
-            color: 'yellow',
-            title: tRef.current('share.endpointsDropped'),
-            message: tRef.current('share.endpointsDroppedMessage', {
-              count: String(dropped.length),
-              endpoints: dropped.join(', '),
-            }),
-            autoClose: false,
-          })
-        }
-      })
-      .catch(err => {
-        if (err.name === 'AbortError') return
-        notifications.show({
-          color: 'red',
-          title: tRef.current('share.staleLink'),
-          message: tRef.current('share.staleLinkMessage'),
-        })
-      })
-
-    return () => controller.abort()
-  }, [urlState, dataVersion, endpointList])
+  }, [archiveError])
 
   // Write URL on state change
   useEffect(() => {
