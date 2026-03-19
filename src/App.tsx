@@ -46,10 +46,15 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion, onLoc
   )
 
   return (
+    <>
+    <div data-print-only>
+      <Text fw={700} size="lg" mb={2}>{t('app.title')}</Text>
+      <Text data-print-date size="xs" c="dimmed" mb="md">{new Date().toLocaleDateString()}</Text>
+    </div>
     <Grid>
-      <Grid.Col span={{ base: 12, sm: 5 }} data-print-hide>
+      <Grid.Col span={{ base: 12, sm: 5 }}>
         <Stack gap="md">
-          <Paper shadow="xs" radius="md" p="md" withBorder className={classes.accentPanel}>
+          <Paper shadow="xs" radius="md" p="md" withBorder className={classes.accentPanel} data-print-hide>
             <Title order={2} size="h4" mb="sm">{t('endpoints.heading')}</Title>
             <EndpointSelector
               endpoints={endpointList}
@@ -59,7 +64,7 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion, onLoc
               inputRef={searchInputRef}
             />
           </Paper>
-          <Paper shadow="xs" radius="md" p="md" withBorder className={classes.accentPanel}>
+          <Paper shadow="xs" radius="md" p="md" withBorder className={classes.accentPanel} data-print-hide>
             <EndpointPaste endpoints={endpointList} onAdd={handleAddMany} />
           </Paper>
           <SelectedEndpoints
@@ -70,25 +75,18 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion, onLoc
         </Stack>
       </Grid.Col>
       <Grid.Col span={{ base: 12, sm: 7 }} data-print-permissions>
-        <div data-print-only>
-          <Text fw={700} size="lg" mb={2}>{t('app.title')}</Text>
-          <Text data-print-date size="xs" c="dimmed" mb="md">{new Date().toLocaleDateString()}</Text>
-          {deferredSelected.length > 0 && (
-            <Stack gap={0} mb="md">
-              {deferredSelected.map(e => (
-                <Text key={`${e.method} ${e.path}`} size="sm" c="dimmed">
-                  {e.method} {e.path}
-                </Text>
-              ))}
-            </Stack>
-          )}
-        </div>
         <Paper shadow="xs" radius="md" p="md" withBorder className={classes.accentPanel}>
           <Title order={2} size="h4" mb="sm">{t('permissions.heading')}</Title>
           <PermissionsResult permissions={aggregated} selectedCount={deferredSelected.length} isLoadingLocale={localeLoading} />
         </Paper>
+        <Text size="sm" c="dimmed" mt="xl" pt="md" data-print-only style={{ borderTop: '1px solid var(--mantine-color-gray-3)' }}>
+          Planned using the Canvas API Permissions Planner by{' '}
+          <AtdLogo height={24} aria-label="All the Ducks" style={{ display: 'inline', verticalAlign: 'middle' }} />
+          {' '}— alltheducks.com
+        </Text>
       </Grid.Col>
     </Grid>
+    </>
   )
 }
 

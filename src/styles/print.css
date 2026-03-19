@@ -1,13 +1,33 @@
 @media print {
-  /* Force light colour scheme */
-  :root {
-    color-scheme: light;
-    color: black;
-    background: white;
+  /* Force light colour scheme regardless of user preference */
+  :root,
+  [data-mantine-color-scheme="dark"] {
+    color-scheme: light !important;
+    color: black !important;
+    background: white !important;
+
+    --mantine-color-body: white !important;
+    --mantine-color-text: black !important;
+    --mantine-color-dimmed: #868e96 !important;
+    --mantine-color-default-border: #dee2e6 !important;
+    --mantine-color-default: white !important;
+    --mantine-color-default-hover: #f8f9fa !important;
+
+    --method-get: #16864e !important;
+    --method-post: #1864ab !important;
+    --method-put: #b45309 !important;
+    --method-patch: #7c3aed !important;
+    --method-delete: #c92a2a !important;
+    --panel-accent: #ffaf11 !important;
   }
 
   /* Hide left panel, header controls, footer, action buttons */
   [data-print-hide] {
+    display: none !important;
+  }
+
+  /* Hide interactive controls for print */
+  .mantine-CloseButton-root {
     display: none !important;
   }
 
@@ -28,6 +48,12 @@
   *::after {
     box-shadow: none !important;
     text-shadow: none !important;
+  }
+
+  /* Remove Paper borders, accent borders, and padding in print */
+  .mantine-Paper-root {
+    border: none !important;
+    padding: 0 !important;
   }
 
   /* Scope badges: bordered outlines instead of filled */
