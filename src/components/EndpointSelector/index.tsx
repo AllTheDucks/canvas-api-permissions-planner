@@ -13,7 +13,7 @@ import { useMergedRef } from '@mantine/hooks'
 import { IconInfoCircle, IconSearch } from '@tabler/icons-react'
 import { useAppTranslations } from '../../context/AppTranslationsContext'
 import { trackEvent } from '../../utils/analytics'
-import type { Endpoint } from '../../types'
+import { endpointId, type Endpoint } from '../../types'
 import { MethodBadge } from '../MethodBadge'
 import { StyledPath } from '../StyledPath'
 import classes from './EndpointSelector.module.css'
@@ -24,10 +24,6 @@ type EndpointSelectorProps = {
   onToggle: (endpoint: Endpoint) => void
   onBulkToggle: (endpoints: Endpoint[], select: boolean) => void
   inputRef?: React.Ref<HTMLInputElement>
-}
-
-function endpointId(e: Endpoint): string {
-  return `${e.method} ${e.path}`
 }
 
 type EndpointRowProps = {

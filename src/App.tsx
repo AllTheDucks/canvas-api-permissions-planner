@@ -80,9 +80,9 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion, onLoc
           <PermissionsResult permissions={aggregated} selectedCount={deferredSelected.length} isLoadingLocale={localeLoading} />
         </Paper>
         <Text size="sm" c="dimmed" mt="xl" pt="md" data-print-only style={{ borderTop: '1px solid var(--mantine-color-gray-3)' }}>
-          Planned using the Canvas API Permissions Planner by{' '}
+          {t('footer.printCreditPrefix')}{' '}
           <AtdLogo height={24} aria-label="All the Ducks" style={{ display: 'inline', verticalAlign: 'middle' }} />
-          {' '}— alltheducks.com
+          {' '}{t('footer.printCreditSuffix')}
         </Text>
       </Grid.Col>
     </Grid>

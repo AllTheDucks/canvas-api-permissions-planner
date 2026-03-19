@@ -30,6 +30,8 @@
   "footer.dataVersion": "Canvas data: {{version}}",
   "footer.dataNotLoaded": "Canvas data: (not loaded)",
   "footer.credit": "A free tool by",
+  "footer.printCreditPrefix": "Planned using the Canvas API Permissions Planner by",
+  "footer.printCreditSuffix": "— alltheducks.com",
   "error.loadFailed": "Failed to load permission data",
   "error.localeLoadFailed": "Locale load failed",
   "error.localeLoadFailedMessage": "Could not load {{locale}} labels — showing in English",

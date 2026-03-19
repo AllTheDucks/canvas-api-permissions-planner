@@ -1,7 +1,7 @@
 import { useQuery } from '@tanstack/react-query'
 import { EndpointsDataSchema } from '../schemas/endpoints'
 import { decodeSelection } from '../utils/urlState'
-import type { Endpoint } from '../types'
+import { endpointId, type Endpoint } from '../types'
 
 type ResolvedArchive = {
   resolved: Endpoint[]
@@ -25,12 +25,12 @@ async function fetchAndResolve(
   const indices = decodeSelection(selectionEncoded)
   const oldEndpoints = indices.map(i => archived.endpoints[i]).filter(Boolean)
 
-  const currentMap = new Map(currentEndpoints.map(e => [`${e.method} ${e.path}`, e]))
+  const currentMap = new Map(currentEndpoints.map(e => [endpointId(e), e]))
   const resolved: Endpoint[] = []
   const dropped: string[] = []
 
   for (const old of oldEndpoints) {
-    const id = `${old.method} ${old.path}`
+    const id = endpointId(old)
     const current = currentMap.get(id)
     if (current) {
       resolved.push(current)

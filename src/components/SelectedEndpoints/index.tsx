@@ -3,7 +3,7 @@ import { ActionIcon, CloseButton, Group, Paper, Stack, Text, Title, Tooltip } fr
 import { IconInfoCircle } from '@tabler/icons-react'
 import { useAppTranslations } from '../../context/AppTranslationsContext'
 import { useListRemovalFocus } from '../../hooks/useListRemovalFocus'
-import type { Endpoint } from '../../types'
+import { endpointId, type Endpoint } from '../../types'
 import { MethodBadge } from '../MethodBadge'
 import { StyledPath } from '../StyledPath'
 import classes from './SelectedEndpoints.module.css'
@@ -12,10 +12,6 @@ type SelectedEndpointsProps = {
   selected: Endpoint[]
   onRemove: (endpoint: Endpoint) => void
   onRemoveCategory: (endpoints: Endpoint[]) => void
-}
-
-function endpointId(e: Endpoint): string {
-  return `${e.method} ${e.path}`
 }
 
 export function SelectedEndpoints({ selected, onRemove, onRemoveCategory }: SelectedEndpointsProps) {

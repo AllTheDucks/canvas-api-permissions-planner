@@ -50,3 +50,7 @@ export type AnyOfAggregated = {
 };
 
 export type AggregatedPermission = SingleAggregated | AnyOfAggregated;
+
+export function endpointId(e: Endpoint): string {
+  return `${e.method} ${e.path}`;
+}

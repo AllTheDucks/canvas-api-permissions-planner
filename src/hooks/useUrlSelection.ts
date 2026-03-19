@@ -4,7 +4,7 @@ import { useAppTranslations } from '../context/AppTranslationsContext'
 import { trackEvent } from '../utils/analytics'
 import { encodeSelection, decodeSelection, readUrlParams } from '../utils/urlState'
 import { useArchivedEndpoints } from './useArchivedEndpoints'
-import type { Endpoint } from '../types'
+import { endpointId, type Endpoint } from '../types'
 
 export function useUrlSelection(endpointList: Endpoint[], dataVersion: string) {
   const { t } = useAppTranslations()
@@ -72,9 +72,9 @@ export function useUrlSelection(endpointList: Endpoint[], dataVersion: string) {
     const params = new URLSearchParams()
     params.set('v', dataVersion)
 
-    const indexMap = new Map(endpointList.map((e, i) => [`${e.method} ${e.path}`, i]))
+    const indexMap = new Map(endpointList.map((e, i) => [endpointId(e), i]))
     const selectedIndices = selectedEndpoints
-      .map(e => indexMap.get(`${e.method} ${e.path}`))
+      .map(e => indexMap.get(endpointId(e)))
       .filter((i): i is number => i !== undefined)
 
     params.set('s', encodeSelection(selectedIndices, endpointList.length))
@@ -83,31 +83,31 @@ export function useUrlSelection(endpointList: Endpoint[], dataVersion: string) {
   }, [selectedEndpoints, dataVersion, endpointList])
 
   const handleToggle = useCallback((endpoint: Endpoint) => {
-    const id = `${endpoint.method} ${endpoint.path}`
+    const id = endpointId(endpoint)
     setSelectedEndpoints(prev =>
-      prev.some(e => `${e.method} ${e.path}` === id)
-        ? prev.filter(e => `${e.method} ${e.path}` !== id)
+      prev.some(e => endpointId(e) === id)
+        ? prev.filter(e => endpointId(e) !== id)
         : [...prev, endpoint]
     )
   }, [])
 
   const handleAddMany = useCallback((newEndpoints: Endpoint[]) => {
     setSelectedEndpoints(prev => {
-      const existing = new Set(prev.map(e => `${e.method} ${e.path}`))
-      const toAdd = newEndpoints.filter(e => !existing.has(`${e.method} ${e.path}`))
+      const existing = new Set(prev.map(e => endpointId(e)))
+      const toAdd = newEndpoints.filter(e => !existing.has(endpointId(e)))
       return toAdd.length > 0 ? [...prev, ...toAdd] : prev
     })
   }, [])
 
   const handleBulkToggle = useCallback((endpoints: Endpoint[], select: boolean) => {
-    const ids = new Set(endpoints.map(e => `${e.method} ${e.path}`))
+    const ids = new Set(endpoints.map(e => endpointId(e)))
     setSelectedEndpoints(prev => {
       if (select) {
-        const existing = new Set(prev.map(e => `${e.method} ${e.path}`))
-        const toAdd = endpoints.filter(e => !existing.has(`${e.method} ${e.path}`))
+        const existing = new Set(prev.map(e => endpointId(e)))
+        const toAdd = endpoints.filter(e => !existing.has(endpointId(e)))
         return toAdd.length > 0 ? [...prev, ...toAdd] : prev
       }
-      return prev.filter(e => !ids.has(`${e.method} ${e.path}`))
+      return prev.filter(e => !ids.has(endpointId(e)))
     })
   }, [])
 

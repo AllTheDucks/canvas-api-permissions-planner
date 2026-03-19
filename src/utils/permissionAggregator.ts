@@ -5,10 +5,7 @@ import type {
   SingleAggregated,
   AnyOfAggregated,
 } from '../types';
-
-function endpointKey(e: Endpoint): string {
-  return `${e.method} ${e.path}`;
-}
+import { endpointId } from '../types';
 
 function canonicalKey(symbols: string[]): string {
   return [...symbols].sort().join('|');
@@ -107,7 +104,7 @@ export function aggregatePermissions(
   const optionalGroupMap = new Map<string, CollectedGroup>();
 
   for (const ep of selectedEndpoints) {
-    const epKey = endpointKey(ep);
+    const epKey = endpointId(ep);
     for (const perm of ep.permissions) {
       if ('symbol' in perm) {
         if (perm.required !== false) {
