@@ -19,7 +19,7 @@
 ## Branding
 
 - [x] `src/assets/atd-logo.svg` — text group has `fill="currentColor"`; icon mark fixed `#FFAF11` (single file, no dark variant needed)
-- [ ] Create `public/og-image.png` — 1200×630 branded social card (dark background, ATD logo, tool name + description); manual design step required before first public deploy
+- [x] Create `public/og-image.png` — 1200×630 branded social card (light background, ATD logo, tool name + description, orange accent strip)
 - [x] Write `index.html` `<head>` — use the complete block from the plan (charset, viewport, title, favicon links, meta description, Open Graph + Twitter card tags, Google Fonts preconnect + stylesheet, ColorSchemeScript inline script); update GitHub Pages URLs (`og:url`, `og:image`) when repo URL is finalised
 - [x] Favicon — create `public/favicon.svg` (icon mark only, square viewBox ~`18 26 110 95`, `#FFAF11` duck shape extracted from `atd-logo.svg`) and `public/favicon.ico` (16×16 raster, generated from the SVG)
 - [x] Generate 10-shade Mantine colour palette for #FFAF11 (use mantine.dev/colors-generator) — confirm shade [5] is assigned **dark (black) text** by Mantine's auto-contrast; override if not (accessibility: #FFAF11 on white is only ~1.8:1)
