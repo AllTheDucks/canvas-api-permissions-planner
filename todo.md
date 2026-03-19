@@ -180,5 +180,5 @@
 - [x] Configure DNS: `canvas-permissions.alltheducks.com` CNAME → `alltheducks.github.io`
 - [x] Configure repo Settings → Pages: source "GitHub Actions", custom domain, enforce HTTPS
 - [x] Add `LICENSE` file to repo root (MIT, 2026, All the Ducks)
-- [ ] Write `README.md` (project description, how to use, how to run locally, how to contribute, license)
+- [x] Write `README.md` (project description, how to use, how to run locally, how to contribute, license)
 - [x] Set up GitHub repository and push initial code
