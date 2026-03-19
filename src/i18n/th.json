@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "นำเข้า SIS ซิงค์ผู้ใช้",
   "help.commonSetups.optional": "ไม่บังคับ",
   "share.copyLink": "คัดลอกลิงก์สำหรับแชร์",
+  "share.print": "พิมพ์",
   "share.copied": "คัดลอกลิงก์ไปยังคลิปบอร์ดแล้ว",
   "share.copyFailed": "ไม่สามารถคัดลอกลิงก์ไปยังคลิปบอร์ด",
   "share.staleLink": "ลิงก์ล้าสมัย",

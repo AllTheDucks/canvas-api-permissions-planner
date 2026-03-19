@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "Εισαγωγές SIS, συγχρονισμός χρηστών",
   "help.commonSetups.optional": "προαιρετικό",
   "share.copyLink": "Αντιγραφή κοινοποιήσιμου συνδέσμου",
+  "share.print": "Εκτύπωση",
   "share.copied": "Ο σύνδεσμος αντιγράφηκε στο πρόχειρο",
   "share.copyFailed": "Δεν ήταν δυνατή η αντιγραφή του συνδέσμου στο πρόχειρο",
   "share.staleLink": "Παλαιός σύνδεσμος",

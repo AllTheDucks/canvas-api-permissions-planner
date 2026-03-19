@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "Импорт SIS, синхронизация пользователей",
   "help.commonSetups.optional": "необязательно",
   "share.copyLink": "Скопировать ссылку для обмена",
+  "share.print": "Печать",
   "share.copied": "Ссылка скопирована в буфер обмена",
   "share.copyFailed": "Не удалось скопировать ссылку в буфер обмена",
   "share.staleLink": "Устаревшая ссылка",

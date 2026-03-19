@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "SIS-import, brukersynkronisering",
   "help.commonSetups.optional": "valgfri",
   "share.copyLink": "Kopier delbar lenke",
+  "share.print": "Skriv ut",
   "share.copied": "Lenke kopiert til utklippstavlen",
   "share.copyFailed": "Kunne ikke kopiere lenken til utklippstavlen",
   "share.staleLink": "Utdatert lenke",

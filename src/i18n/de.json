@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "SIS-Importe, Benutzersynchronisierung",
   "help.commonSetups.optional": "optional",
   "share.copyLink": "Teilbaren Link kopieren",
+  "share.print": "Drucken",
   "share.copied": "Link in die Zwischenablage kopiert",
   "share.copyFailed": "Link konnte nicht in die Zwischenablage kopiert werden",
   "share.staleLink": "Veralteter Link",

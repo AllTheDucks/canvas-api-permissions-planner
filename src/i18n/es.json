@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "Importaciones SIS, sincronización de usuarios",
   "help.commonSetups.optional": "opcional",
   "share.copyLink": "Copiar enlace para compartir",
+  "share.print": "Imprimir",
   "share.copied": "Enlace copiado al portapapeles",
   "share.copyFailed": "No se pudo copiar el enlace al portapapeles",
   "share.staleLink": "Enlace desactualizado",

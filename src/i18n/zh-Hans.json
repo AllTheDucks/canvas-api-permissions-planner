@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "SIS 导入、用户同步",
   "help.commonSetups.optional": "可选",
   "share.copyLink": "复制分享链接",
+  "share.print": "打印",
   "share.copied": "链接已复制到剪贴板",
   "share.copyFailed": "无法将链接复制到剪贴板",
   "share.staleLink": "过期链接",

@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "Mewnforion SIS, cysoni defnyddwyr",
   "help.commonSetups.optional": "dewisol",
   "share.copyLink": "Copïo dolen y gellir ei rhannu",
+  "share.print": "Argraffu",
   "share.copied": "Dolen wedi'i chopïo i'r clipfwrdd",
   "share.copyFailed": "Methu copïo'r ddolen i'r clipfwrdd",
   "share.staleLink": "Dolen hen",

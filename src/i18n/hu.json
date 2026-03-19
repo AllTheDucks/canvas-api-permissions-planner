@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "SIS importok, felhasználó-szinkronizálás",
   "help.commonSetups.optional": "opcionális",
   "share.copyLink": "Megosztható link másolása",
+  "share.print": "Nyomtatás",
   "share.copied": "Link vágólapra másolva",
   "share.copyFailed": "A hivatkozás másolása a vágólapra sikertelen",
   "share.staleLink": "Elavult link",

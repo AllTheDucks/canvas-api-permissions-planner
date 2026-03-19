@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "Uvozi SIS, sinhronizacija uporabnikov",
   "help.commonSetups.optional": "neobvezno",
   "share.copyLink": "Kopiraj povezavo za deljenje",
+  "share.print": "Natisni",
   "share.copied": "Povezava kopirana v odložišče",
   "share.copyFailed": "Povezave ni bilo mogoče kopirati v odložišče",
   "share.staleLink": "Zastarela povezava",

@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "Nhap SIS, dong bo nguoi dung",
   "help.commonSetups.optional": "tuy chon",
   "share.copyLink": "Sao chép liên kết chia sẻ",
+  "share.print": "In",
   "share.copied": "Đã sao chép liên kết vào bộ nhớ tạm",
   "share.copyFailed": "Không thể sao chép liên kết vào khay nhớ tạm",
   "share.staleLink": "Liên kết lỗi thời",

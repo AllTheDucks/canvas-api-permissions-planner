@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "SIS 가져오기, 사용자 동기화",
   "help.commonSetups.optional": "선택 사항",
   "share.copyLink": "공유 링크 복사",
+  "share.print": "인쇄",
   "share.copied": "링크가 클립보드에 복사되었습니다",
   "share.copyFailed": "링크를 클립보드에 복사할 수 없습니다",
   "share.staleLink": "오래된 링크",

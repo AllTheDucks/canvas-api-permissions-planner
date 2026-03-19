@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "SIS icerik-aktarilari, kullanici senkronizasyonu",
   "help.commonSetups.optional": "istege bagli",
   "share.copyLink": "Paylaşılabilir bağlantıyı kopyala",
+  "share.print": "Yazdır",
   "share.copied": "Bağlantı panoya kopyalandı",
   "share.copyFailed": "Bağlantı panoya kopyalanamadı",
   "share.staleLink": "Eski bağlantı",

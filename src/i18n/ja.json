@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "SISインポート、ユーザー同期",
   "help.commonSetups.optional": "オプション",
   "share.copyLink": "共有リンクをコピー",
+  "share.print": "印刷",
   "share.copied": "リンクをクリップボードにコピーしました",
   "share.copyFailed": "リンクをクリップボードにコピーできませんでした",
   "share.staleLink": "古いリンク",

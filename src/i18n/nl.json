@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "SIS-imports, gebruikerssynchronisatie",
   "help.commonSetups.optional": "optioneel",
   "share.copyLink": "Deelbare link kopiëren",
+  "share.print": "Afdrukken",
   "share.copied": "Link gekopieerd naar klembord",
   "share.copyFailed": "Kon de link niet naar het klembord kopiëren",
   "share.staleLink": "Verouderde link",

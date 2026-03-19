@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "استيراد SIS، مزامنة المستخدمين",
   "help.commonSetups.optional": "اختياري",
   "share.copyLink": "نسخ رابط قابل للمشاركة",
+  "share.print": "طباعة",
   "share.copied": "تم نسخ الرابط إلى الحافظة",
   "share.copyFailed": "تعذّر نسخ الرابط إلى الحافظة",
   "share.staleLink": "رابط قديم",

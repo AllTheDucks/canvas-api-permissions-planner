@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "Importacoes SIS, sincronizacao de utilizadores",
   "help.commonSetups.optional": "opcional",
   "share.copyLink": "Copiar ligação partilhável",
+  "share.print": "Imprimir",
   "share.copied": "Ligação copiada para a área de transferência",
   "share.copyFailed": "Não foi possível copiar a ligação para a área de transferência",
   "share.staleLink": "Ligação desatualizada",

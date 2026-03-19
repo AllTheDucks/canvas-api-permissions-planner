@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "Import SIS, synchronizacja uzytkownikow",
   "help.commonSetups.optional": "opcjonalnie",
   "share.copyLink": "Kopiuj link do udostępnienia",
+  "share.print": "Drukuj",
   "share.copied": "Link skopiowany do schowka",
   "share.copyFailed": "Nie udało się skopiować linku do schowka",
   "share.staleLink": "Nieaktualny link",

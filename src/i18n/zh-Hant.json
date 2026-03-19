@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "SIS 匯入、使用者同步",
   "help.commonSetups.optional": "選擇性",
   "share.copyLink": "複製分享連結",
+  "share.print": "列印",
   "share.copied": "連結已複製到剪貼簿",
   "share.copyFailed": "無法將連結複製到剪貼簿",
   "share.staleLink": "過期連結",

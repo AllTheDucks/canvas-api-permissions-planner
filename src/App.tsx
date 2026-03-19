@@ -1,7 +1,7 @@
 import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
 import { ActionIcon, Center, Container, Divider, Grid, Group, Loader, Paper, Stack, Text, Title, Tooltip, VisuallyHidden } from '@mantine/core'
 import { notifications } from '@mantine/notifications'
-import { IconLink } from '@tabler/icons-react'
+import { IconLink, IconPrinter } from '@tabler/icons-react'
 import AtdLogo from './assets/atd-logo.svg?react'
 import AtdLogoIcon from './assets/atd-logo-icon.svg?react'
 import { useEndpoints } from './hooks/useEndpoints'
@@ -39,24 +39,6 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion, onLoc
   const searchInputRef = useRef<HTMLInputElement>(null)
   const { selectedEndpoints, handleToggle, handleAddMany, handleBulkToggle } = useUrlSelection(endpointList, dataVersion)
   const deferredSelected = useDeferredValue(selectedEndpoints)
-
-  const handleCopyLink = useCallback(() => {
-    navigator.clipboard.writeText(window.location.href).then(
-      () => {
-        notifications.show({
-          message: t('share.copied'),
-          autoClose: 3000,
-        })
-      },
-      () => {
-        notifications.show({
-          color: 'red',
-          message: t('share.copyFailed'),
-          autoClose: 3000,
-        })
-      },
-    )
-  }, [t])
 
   const aggregated = useMemo(
     () => aggregatePermissions(deferredSelected, allPermissions, localeLabels),
@@ -102,21 +84,7 @@ function ReadyContent({ allPermissions, endpointList, locale, dataVersion, onLoc
           )}
         </div>
         <Paper shadow="xs" radius="md" p="md" withBorder>
-          <Group justify="space-between" mb="sm">
-            <Title order={2} size="h4">{t('permissions.heading')}</Title>
-            {deferredSelected.length > 0 && (
-              <Tooltip label={t('share.copyLink')} withArrow>
-                <ActionIcon
-                  onClick={handleCopyLink}
-                  aria-label={t('share.copyLink')}
-                  variant="subtle"
-                  size="lg"
-                >
-                  <IconLink size={18} />
-                </ActionIcon>
-              </Tooltip>
-            )}
-          </Group>
+          <Title order={2} size="h4" mb="sm">{t('permissions.heading')}</Title>
           <PermissionsResult permissions={aggregated} selectedCount={deferredSelected.length} isLoadingLocale={localeLoading} />
         </Paper>
       </Grid.Col>
@@ -136,6 +104,24 @@ function AppContent({
   const [isLoadingCanvasLocale, setIsLoadingCanvasLocale] = useState(false)
   const isInitialLoad = useRef(true)
   useLocaleSync(locale, isRtl)
+
+  const handleCopyLink = useCallback(() => {
+    navigator.clipboard.writeText(window.location.href).then(
+      () => {
+        notifications.show({
+          message: t('share.copied'),
+          autoClose: 3000,
+        })
+      },
+      () => {
+        notifications.show({
+          color: 'red',
+          message: t('share.copyFailed'),
+          autoClose: 3000,
+        })
+      },
+    )
+  }, [t])
 
   if (!isLoadingUiStrings && isInitialLoad.current) {
     isInitialLoad.current = false
@@ -164,6 +150,26 @@ function AppContent({
               {locale !== 'en' && (
                 <Text size="xs" c="dimmed">{t('aiTranslation.note')}</Text>
               )}
+              <Tooltip label={t('share.copyLink')} withArrow>
+                <ActionIcon
+                  onClick={handleCopyLink}
+                  aria-label={t('share.copyLink')}
+                  variant="subtle"
+                  size="lg"
+                >
+                  <IconLink size={18} />
+                </ActionIcon>
+              </Tooltip>
+              <Tooltip label={t('share.print')} withArrow>
+                <ActionIcon
+                  onClick={() => window.print()}
+                  aria-label={t('share.print')}
+                  variant="subtle"
+                  size="lg"
+                >
+                  <IconPrinter size={18} />
+                </ActionIcon>
+              </Tooltip>
               <LanguagePicker value={locale} onChange={onLocaleChange} loading={isLoadingUiStrings || isLoadingCanvasLocale} />
               <ColorSchemeToggle />
               <HelpModal />

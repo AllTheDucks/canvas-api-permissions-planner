@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "יבוא SIS, סנכרון משתמשים",
   "help.commonSetups.optional": "אופציונלי",
   "share.copyLink": "העתק קישור לשיתוף",
+  "share.print": "הדפסה",
   "share.copied": "הקישור הועתק ללוח",
   "share.copyFailed": "לא ניתן להעתיק את הקישור ללוח",
   "share.staleLink": "קישור מיושן",

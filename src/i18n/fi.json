@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "SIS-tuonnit, käyttäjien synkronointi",
   "help.commonSetups.optional": "valinnainen",
   "share.copyLink": "Kopioi jaettava linkki",
+  "share.print": "Tulosta",
   "share.copied": "Linkki kopioitu leikepöydälle",
   "share.copyFailed": "Linkin kopiointi leikepöydälle epäonnistui",
   "share.staleLink": "Vanhentunut linkki",

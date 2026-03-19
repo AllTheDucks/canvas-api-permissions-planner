@@ -58,6 +58,7 @@
   "help.commonSetups.sis.description": "SIS-import, anvaendarsynkronisering",
   "help.commonSetups.optional": "valfri",
   "share.copyLink": "Kopiera delbar länk",
+  "share.print": "Skriv ut",
   "share.copied": "Länk kopierad till urklipp",
   "share.copyFailed": "Kunde inte kopiera länken till urklipp",
   "share.staleLink": "Föråldrad länk",
