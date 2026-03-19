@@ -6,6 +6,7 @@
   --method-delete: #c92a2a;
 
   --panel-accent: var(--mantine-color-atdOrange-5);
+  --header-bg: rgba(255, 175, 17, 0.06);
 }
 
 [data-mantine-color-scheme="dark"] {
@@ -14,4 +15,6 @@
   --method-put: #fbbf24;
   --method-patch: #b197fc;
   --method-delete: #ff6b6b;
+
+  --header-bg: rgba(255, 175, 17, 0.04);
 }

@@ -146,7 +146,8 @@ export function PermissionsResult({ permissions, selectedCount, isLoadingLocale 
       )}
 
       {hasRequired && (
-        <section aria-label={t('permissions.heading')}>
+        <section aria-label={t('permissions.requiredHeading')}>
+          <Title order={3} size="h5" mb="xs">{t('permissions.requiredHeading')}</Title>
           <ul className={classes.permissionList}>
             {required.map((perm) =>
               perm.kind === 'single' ? (
@@ -167,7 +168,7 @@ export function PermissionsResult({ permissions, selectedCount, isLoadingLocale 
           <Text size="xs" c="dimmed" mb="sm">
             {t('permissions.optionalNote')}
           </Text>
-          <ul className={classes.permissionList}>
+          <ul className={`${classes.permissionList} ${classes.optionalList}`}>
             {optional.map((perm) =>
               perm.kind === 'single' ? (
                 <SingleRow key={perm.symbol} perm={perm} isLoadingLocale={isLoadingLocale} />

@@ -7,15 +7,21 @@
     position: relative;
     padding-inline-start: 1rem;
     margin-bottom: var(--mantine-spacing-xs);
+    font-size: var(--mantine-font-size-sm);
+    line-height: var(--mantine-line-height);
 
     &::before {
       content: '\2022';
       position: absolute;
       inset-inline-start: 0;
-      color: var(--mantine-color-dimmed);
-      opacity: 0.5;
+      color: var(--panel-accent);
     }
   }
+}
+
+.optionalList > li::before {
+  color: var(--mantine-color-dimmed);
+  opacity: 0.5;
 }
 
 .tooltipRow {

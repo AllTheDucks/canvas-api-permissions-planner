@@ -133,7 +133,7 @@ function AppContent({
 
   return (
     <div className={classes.appLayout}>
-      <header>
+      <header className={classes.header}>
         <VisuallyHidden><h1>{t('app.title')}</h1></VisuallyHidden>
         <Container size="xl" py="sm">
           <Group justify="space-between">
