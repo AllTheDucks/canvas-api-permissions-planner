@@ -98,7 +98,7 @@
 - [x] `src/utils/detectLocale.ts` — `detectLocale(supportedLocales)`: iterates `navigator.languages`, strips subtags iteratively, returns first match or `'en'`
 - [x] `src/utils/detectLocale.test.ts` — exact match, prefix match (`es-MX` → `es`), multi-subtag (`zh-Hans-CN` → `zh-Hans`), fallback to `'en'`
 - [x] `App.tsx` locale state: init with a `useState` lazy initializer — read `localStorage.getItem('locale')`, validate against `SUPPORTED_LOCALES` (if invalid/missing, call `localStorage.removeItem` and fall back to `detectLocale(SUPPORTED_LOCALES)`); `handleLocaleChange` saves to localStorage, but calls `localStorage.removeItem('locale')` when the selected locale matches the auto-detected value (clears unnecessary pin; browser-language changes are picked up again automatically)
-- [ ] Write `src/i18n/en.json` with all keys: UI chrome keys (from Translation Key Structure table), `colorScheme.switchToDark/Light`, `selectedEndpoints.remove`, `common.moreInfo`, `endpoints.noResults`, and all `help.*` content keys (tabs 1–2 as defined in Help Modal Content Keys section)
+- [x] Write `src/i18n/en.json` with all keys: UI chrome keys (from Translation Key Structure table), `colorScheme.switchToDark/Light`, `selectedEndpoints.remove`, `common.moreInfo`, `endpoints.noResults`, and all `help.*` content keys (tabs 1–2 as defined in Help Modal Content Keys section)
 - [x] Generate AI translations for all 30 non-English locale JSON files in `src/i18n/` (matching SUPPORTED_LOCALES in locales.ts)
 - [x] Update all components to use `t()` from `useAppTranslations()` for all hardcoded UI strings
 - [x] `src/utils/supplementalFont.ts` — idempotent loader: injects Google Fonts `<link>` for non-Latin locales (module-level `Set` prevents double-loading); returns the font family name
@@ -117,11 +117,11 @@
   - Tab 2 "Canvas Permissions": RBAC overview, course vs account scope, permission inheritance, OR groups
 - [x] `src/components/HelpModal/HelpModal.stories.tsx` — Closed (default), Open
 - [x] Add `[?]` HelpModal trigger to the `App.tsx` header (next to LanguagePicker)
-- [ ] `PermissionsResult` contextual tooltips:
+- [x] `PermissionsResult` contextual tooltips:
   - OR group row info icon: "any one is sufficient" explanation
   - Permission label tooltip listing contributing endpoints (`requiredBy` array)
-- [ ] `EndpointPaste` info icon tooltip explaining accepted input formats
-- [ ] `LanguagePicker` info icon tooltip explaining locale source and English fallback
+- [x] `EndpointPaste` info icon tooltip explaining accepted input formats
+- [x] `LanguagePicker` info icon tooltip explaining locale source and English fallback
 
 ## Polish
 
@@ -177,8 +177,8 @@
 - [x] Add `public/404.html` SPA redirect (preserves query string for shareable links)
 - [x] Create `.github/workflows/deploy.yml` — build with pnpm, deploy via `actions/deploy-pages@v4` on push to `main`
 - [x] Update `index.html` `og:url` / `og:image` / `twitter:image` URLs to use `https://canvas-permissions.alltheducks.com/`
-- [ ] Configure DNS: `canvas-permissions.alltheducks.com` CNAME → `alltheducks.github.io`
-- [ ] Configure repo Settings → Pages: source "GitHub Actions", custom domain, enforce HTTPS
+- [x] Configure DNS: `canvas-permissions.alltheducks.com` CNAME → `alltheducks.github.io`
+- [x] Configure repo Settings → Pages: source "GitHub Actions", custom domain, enforce HTTPS
 - [x] Add `LICENSE` file to repo root (MIT, 2026, All the Ducks)
 - [ ] Write `README.md` (project description, how to use, how to run locally, how to contribute, license)
-- [ ] Set up GitHub repository and push initial code
+- [x] Set up GitHub repository and push initial code

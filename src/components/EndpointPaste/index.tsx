@@ -1,6 +1,6 @@
 import { useState } from 'react'
-import { Alert, Button, Code, Stack, Title, Textarea } from '@mantine/core'
-import { IconAlertCircle } from '@tabler/icons-react'
+import { ActionIcon, Alert, Button, Code, Group, Stack, Title, Textarea, Tooltip } from '@mantine/core'
+import { IconAlertCircle, IconInfoCircle } from '@tabler/icons-react'
 import { useAppTranslations } from '../../context/AppTranslationsContext'
 import { trackEvent } from '../../utils/analytics'
 import { matchEndpoints } from '../../utils/endpointMatcher'
@@ -49,7 +49,14 @@ export function EndpointPaste({ endpoints, onAdd }: EndpointPasteProps) {
 
   return (
     <Stack gap="xs">
-      <Title order={2} size="h4">{t('endpoints.pasteLabel')}</Title>
+      <Group gap={4} align="center">
+        <Title order={2} size="h4">{t('endpoints.pasteLabel')}</Title>
+        <Tooltip label={t('endpoints.pasteTooltip')} multiline maw={300} withArrow>
+          <ActionIcon size="sm" variant="transparent" component="span" style={{ cursor: 'help' }} aria-label={t('common.moreInfo')}>
+            <IconInfoCircle size={16} />
+          </ActionIcon>
+        </Tooltip>
+      </Group>
       <Textarea
         placeholder={t('endpoints.pastePlaceholder')}
         aria-label={t('endpoints.pasteLabel')}
