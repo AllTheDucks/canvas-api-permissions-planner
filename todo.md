@@ -159,7 +159,7 @@
 
 ## Analytics (Google Analytics 4)
 
-- [ ] Create GA4 property and obtain measurement ID (`G-XXXXXXXXXX`)
+- [x] Create GA4 property and obtain measurement ID (`G-H971KVRSYF`)
 - [x] Add GA4 script tag to `index.html` `<head>` with cookieless consent mode (`analytics_storage: 'denied'`)
 - [x] `src/utils/analytics.ts` — `trackEvent(name, params?)` wrapper around global `gtag()`; no-op if `gtag` is unavailable (ad blockers, dev without GA)
 - [x] Add `gtag` type declaration to `src/vite-env.d.ts`
