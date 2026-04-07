@@ -1,7 +1,7 @@
 import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
-import { ActionIcon, Center, Container, Divider, Grid, Group, Loader, Paper, Stack, Text, Title, Tooltip, VisuallyHidden } from '@mantine/core'
+import { ActionIcon, Anchor, Center, CloseButton, Container, Divider, Grid, Group, Loader, Paper, Stack, Text, Title, Tooltip, VisuallyHidden } from '@mantine/core'
 import { notifications } from '@mantine/notifications'
-import { IconClipboard, IconLink, IconPrinter } from '@tabler/icons-react'
+import { IconClipboard, IconLink, IconPrinter, IconSparkles } from '@tabler/icons-react'
 import AtdLogo from './assets/atd-logo.svg?react'
 import AtdLogoIcon from './assets/atd-logo-icon.svg?react'
 import { useEndpoints } from './hooks/useEndpoints'
@@ -118,6 +118,7 @@ function AppContent({
   const endpoints = useEndpoints()
   const { t, isRtl, isLoading: isLoadingUiStrings } = useAppTranslations()
   const [isLoadingCanvasLocale, setIsLoadingCanvasLocale] = useState(false)
+  const [bannerDismissed, setBannerDismissed] = useState(false)
   const isInitialLoad = useRef(true)
   const copyMarkdownRef = useRef<(() => string) | null>(null)
   const [hasCopyContent, setHasCopyContent] = useState(false)
@@ -218,6 +219,30 @@ function AppContent({
         </Container>
         <Divider />
       </header>
+
+      {!bannerDismissed && (
+        <div className={classes.blogBanner} data-print-hide>
+          <Container size="xl">
+            <Group justify="space-between" gap="xs">
+              <Group gap="xs">
+                <IconSparkles size={16} />
+                <Text size="sm">
+                  <Anchor
+                    href="https://alltheducks.com/insights/introducing-the-canvas-permissions-planner-built-entirely-with-ai"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    inherit
+                    fw={600}
+                  >
+                    How we built this with AI
+                  </Anchor>
+                </Text>
+              </Group>
+              <CloseButton size="sm" aria-label="Dismiss" onClick={() => setBannerDismissed(true)} />
+            </Group>
+          </Container>
+        </div>
+      )}
 
       <main aria-label={t('app.title')} className={classes.mainContent}>
         <Container size="xl" py="md">
