@@ -1,7 +1,7 @@
 import { useCallback, useDeferredValue, useEffect, useMemo, useRef, useState } from 'react'
 import { ActionIcon, Anchor, Center, CloseButton, Container, Divider, Grid, Group, Loader, Paper, Stack, Text, Title, Tooltip, VisuallyHidden } from '@mantine/core'
 import { notifications } from '@mantine/notifications'
-import { IconClipboard, IconLink, IconPrinter, IconSparkles } from '@tabler/icons-react'
+import { IconBrandGithub, IconClipboard, IconLink, IconPrinter, IconSparkles } from '@tabler/icons-react'
 import AtdLogo from './assets/atd-logo.svg?react'
 import AtdLogoIcon from './assets/atd-logo-icon.svg?react'
 import { useEndpoints } from './hooks/useEndpoints'
@@ -209,6 +209,20 @@ function AppContent({
                   size="lg"
                 >
                   <IconPrinter size={18} />
+                </ActionIcon>
+              </Tooltip>
+              <Tooltip label={t('share.viewOnGitHub')} withArrow>
+                <ActionIcon
+                  component="a"
+                  href="https://github.com/AllTheDucks/canvas-api-permissions-planner"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  aria-label={t('share.viewOnGitHub')}
+                  variant="subtle"
+                  size="lg"
+                  data-print-hide
+                >
+                  <IconBrandGithub size={18} />
                 </ActionIcon>
               </Tooltip>
               <LanguagePicker value={locale} onChange={onLocaleChange} loading={isLoadingUiStrings || isLoadingCanvasLocale} />

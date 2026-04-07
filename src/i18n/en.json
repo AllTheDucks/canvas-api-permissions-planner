@@ -56,6 +56,7 @@
   "permissions.markdownCredit": "Planned using {{appTitle}} by All the Ducks — alltheducks.com",
   "share.copyLink": "Copy shareable link",
   "share.print": "Print",
+  "share.viewOnGitHub": "View on GitHub",
   "share.copied": "Link copied to clipboard",
   "share.copyFailed": "Could not copy link to clipboard",
   "share.staleLink": "Outdated link",
